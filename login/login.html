@@ -10,25 +10,32 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
-    
+    <link  rel="icon"   href="./media/faviconSporty.ico" type="image/png" />
+    <script src="https://kit.fontawesome.com/d4cd33a1a3.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="container">
-        <span class="logo">SPORTY</span>
-        <span class="sales">SALES MANAGER</span>
-        <div class="campoLogin">
+    <ul class="container">
+        <li class="logo">SPORTY </li>
+        <li class="sales">SALES MANAGER </li>
+        <li>
+            <div class="textfield loginText"  >
+                <i class="fas fa-user"></i>
+                <input class= "text" type="text" name="pass" placeholder="ID de usuario">
+            </div>
+        </li>
+        <li>
+            <div class="textfield passText">
+                <i class="fas fa-lock"></i>
+                <input class= "text" type="password" name="pass" placeholder="Contraseña">
+            </div>
             
-            <input class= "loginText firstField" type="text" name="pass" placeholder="Id usuario">
-            <input class= "loginText secondField" type="password" name="pass" placeholder="Contraseña">
+
+        </li>
+        <li>
             <input class="loginButton" type="submit" value="LOGIN">
-        </div>
-       
-        
-        
-    </div>   
+        </li>
+    </ul>
     
 </body>
 </html>
