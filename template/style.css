@@ -14,16 +14,32 @@ li{
     height: 34px;
     width: 100%;
     display: inline-block;
-    margin: auto;
+    padding: auto;
 }
 
 li:hover{
     background-color: #62686C;
+    cursor: pointer;
 }
 
 li:active{
     background-color: #45BBBB;
 }
+
+i{
+    width: 26px;
+    height: 26px;
+    color:#BFBFBF;
+    margin-left: 18px;
+  
+}
+
+a{
+    text-decoration: none;
+    color: #BFBFBF;
+    justify-content: center;
+}
+
 
 body{
     height: 100vh;
@@ -66,16 +82,8 @@ main{
     font-size: 14px;
 }
 
-a{
-    text-decoration: none;
-    color: #BFBFBF;
-    justify-content: center;
-    margin-left
-}
 
-i{
-    color:#BFBFBF;
-}
+
 /*
 .logo-sidebar{
     font-size: 45.4378px;
