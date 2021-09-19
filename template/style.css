@@ -157,6 +157,18 @@ header{
     height: 76px;
 }
 
+#searchbar{
+    width: 363px;
+    height: 36px;
+    border-radius: 32px;
+    color: #BFBFBF;
+    border: none;
+}
+
+.fas fa-search{
+    color: #BFBFBF;
+}
+
 main{
     height: 100%;
     width: 100%;
