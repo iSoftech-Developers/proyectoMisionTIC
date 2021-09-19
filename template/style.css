@@ -80,21 +80,26 @@ body{
 }
 
 .sidebar_options{
+    height: 100%;
     margin-top: 90px;
     font-size: 14px;
     display: inline-flex;
-    justify-content: space-between;
     flex-direction: column;
+    justify-content: space-between;
+  
 }
 
 .sidebar_upper_section{
     align-self: auto;
+   
 }
 
 .sidebar_lower_section{
     align-self: auto;
     align-content: end;
-    margin-top: 270px;
+    margin-bottom: 30px;
+
+
 }
 
 /*
