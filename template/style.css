@@ -1,3 +1,4 @@
+/*SIDE BAR*/
 *{
     margin: 0;
     padding: 0;
@@ -46,7 +47,6 @@ a{
     justify-content: center;
 }
 
-
 body{
     height: 100vh;
     width: 100%;
@@ -54,11 +54,7 @@ body{
     position: relative;
     display: flex;
 }
-main{
-    width: 100%;
-    height: 76px;
-    background-color: white;
-}
+
 .logo_sporty{
     width: 80%;
     margin-top: 18px;
@@ -69,11 +65,12 @@ main{
     text-shadow: 0px 5.90959px 23.6383px rgba(0, 0, 0, 0.5);
     font-family: 'Rubik Mono One', sans-serif;
     display:inline-block;
-}*/
+}
 .sales{
     font-size: 31px;
-    padding: 0 0 45px;
-}
+    padding: 0 0 45px;  
+}*/
+
 .sidebar{
     display: flex;
     height: 100%;
@@ -100,9 +97,6 @@ main{
     margin-top: 270px;
 }
 
-
-
-
 /*
 .logo-sidebar{
     font-size: 45.4378px;
@@ -128,7 +122,6 @@ main{
     padding: 4px;
     border-radius: 8px;
   }
-  
 
 .textfield  > input {
     outline: none;
@@ -139,6 +132,7 @@ main{
     color:#BFBFBF;
     padding-left: 15px;
 }
+
 .text{
     width: 552px;
     height: 59px;
@@ -151,4 +145,12 @@ main{
 .logo-container{
     display: flex;
     justify-content: center;
+}
+
+
+/* MAIN*/
+main{
+    width: 100%;
+    height: 76px;
+    background-color: white;
 }
