@@ -34,7 +34,7 @@ li:active{
     background-color: #45BBBB;
 }
 
-i{
+.sidebar_icon{
     color:#BFBFBF;
     margin: auto;
     margin-left: 18px;
@@ -59,6 +59,7 @@ body{
     width: 80%;
     margin-top: 18px;
 }
+
 /*
 .logo{
     font-size: 85px;
@@ -122,18 +123,21 @@ body{
 .textfield {
     background-color: rgb(255, 255, 255);
     border: 1px solid gray;
-    padding: 4px;
     border-radius: 8px;
+    margin-left: 30px;
+    border-radius: 32px;
   }
 
 .textfield  > input {
     outline: none;
     border: 0px;
+    font-size: 14px;
   }
 
 .textfield  > i {
     color:#BFBFBF;
     padding-left: 15px;
+    margin-right: 5px;
 }
 
 .text{
@@ -155,6 +159,9 @@ body{
 header{
     width: 100%;
     height: 76px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
 }
 
 #searchbar{
@@ -172,10 +179,17 @@ header{
 main{
     height: 100%;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    
 }
 
-section{
+.contenido{
     background-color: white;
-    height: 100%;
     width: 100%;
+    height: 100%;
+
+}
+.user_bar>i{
+    margin-right: 40px;
 }
