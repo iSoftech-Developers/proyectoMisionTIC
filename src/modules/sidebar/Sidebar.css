@@ -1,0 +1,43 @@
+
+  .sidebar_icon{
+    color:#BFBFBF;
+    margin: auto;
+    margin-left: 18px;
+    width: 34px;
+  }
+
+  .logo_sporty{
+    width: 80%;
+    margin-top: 18px;
+  }
+  
+  .sidebar{
+    display: flex;
+    height: 100%;
+    width: 272px;
+    flex-direction: column;
+    background-color: #252A2D;
+  }
+  
+  .sidebar_options{
+    height: 100%;
+    margin-top: 90px;
+    font-size: 14px;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .sidebar_upper_section{
+    align-self: auto;
+  }
+  
+  .sidebar_lower_section{
+    align-self: auto;
+    align-content: end;
+    margin-bottom: 30px;
+}
+  .logo-container{
+    display: flex;
+    justify-content: center;
+}
