@@ -12,7 +12,7 @@ ul {
     display : flex;
     flex-direction: column;
     font-size: 0.5rem;
-  }
+}
 
 li{
     width: 100%;
@@ -101,25 +101,6 @@ body{
     margin-bottom: 30px;
 }
 
-/*
-.logo-sidebar{
-    font-size: 45.4378px;
-    margin-top:53px;
-    padding: 0px 24px;
-}
-.sales-sidebar{
-    font-size: 16.5714px;
-}*/
-/*
-.container{
-    width:100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}*/
-
 .textfield {
     background-color: rgb(255, 255, 255);
     border: 1px solid gray;
@@ -187,20 +168,14 @@ header{
 }
 
 .user_bar{
-    display:flex;
+    display: flex;
     align-items: center;
 }
 
 .infoUser{
-    display:flex;
-    flex-direction: column;
     margin-right: 25px;
     text-align: end;
     color: white;
-}
-
-.idUser{
-    font-weight: bold;
 }
 
 .user_bar>i{
@@ -217,13 +192,11 @@ header{
 .barra-ventas>span{
     font-size :24px;
     color:#3E3E3E;
-    font-weight: bold;
-
 }
+
 .barra-ventas>button{
     background-color:#68B04D;
     font-size: 14px;
-    font-weight: bold;
     padding: 6px 22px;
     border: none;
     color: white;
@@ -239,8 +212,7 @@ header{
 }
 
 
-
-
+/*MODAL*/
 
 modal-body{
     display: flex;
@@ -255,6 +227,7 @@ modal-body{
 .upper-container-modal{
     display: flex;
     margin: 51px 32px 0 31px;
+    align-items: center;
 }
 
 .info-container-modal{
@@ -264,12 +237,12 @@ modal-body{
     margin-left: 47px;
 }
 
-.upper-info-container-modal{
+.text-over-text{
     display: flex;
     flex-direction: column;
 }
 
-.upper-info-container-modal>div{
+.text-over-text>div{
     display: flex;
 }
 
@@ -291,7 +264,8 @@ modal-body{
 
 .photo-container{
     padding: 31px 25px;
-    border: 0.187328px solid #808080;
+    border: 0.09px solid #E2E1E1;
+    
 }
 
 .photo-container>i{
@@ -324,6 +298,7 @@ modal-body{
     color: white;
     font-size: 11px;
 }
+
 .bolder{
     font-weight: bold;
 }
