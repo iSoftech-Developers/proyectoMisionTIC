@@ -6,20 +6,20 @@ const Navbar=(props)=>{
  
 
   return (
-    <header class="navbar">
+    <header>
     <div class="textfield searchText">
         <i class="fas fa-search"></i>
-        <input type="text" id="searchbar" placeholder= {mensaje} title="Type in a category"/>
+        <input type="text" id="searchbar" placeholder="Buscar usuario por ID o nombre" title="Type in a category"/>
     </div>
     <div class="user_bar">
-        <div class="infoUser">
-            <span class="idUser">ID 2345</span>
+        <div class="text-over-text infoUser">
+            <span class="bolder">ID 2345</span>
             <span clase="nameUser">Juan Pérez Pérez</span>
         </div>
         <i class="fas fa-user-circle fa-3x"></i>
     </div>
     
-</header>
+  </header>
 
   )
 }
