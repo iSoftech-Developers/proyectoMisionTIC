@@ -1,6 +1,7 @@
 import Sidebar from '../modules/sidebar/Sidebar';
 import Navbar from '../modules/navbar/Navbar';
-
+import Cards from '../modules/cards/Cards';
+import NoButtonUpperBarSection from '../modules/noButtonUpperBarSection/NoButtonUpperBarSection';
 
 const PaginaVendedores =()=> {
 
@@ -13,7 +14,8 @@ const PaginaVendedores =()=> {
         <Navbar  />
       
           <section className="contenido">
-            
+            <NoButtonUpperBarSection/>
+            <Cards/>
           </section>
       </main>
      </> 
