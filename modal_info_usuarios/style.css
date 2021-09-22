@@ -2,21 +2,16 @@
 *{
     margin: 0;
     padding: 0;
-   
     font-family: 'Roboto', sans-serif;
 }
-
 ul {
     list-style: none;
     padding: 0px !important;
     margin: 0px;
     display : flex;
-    font-size: 0.5rem;
-}
-
-.sidebar_upper_text{
     flex-direction: column;
-}
+    font-size: 0.5rem;
+  }
 
 li{
     width: 100%;
@@ -51,6 +46,7 @@ li:active{
 a{
     text-decoration: none !important;
 }
+
 
 body{
     height: 100vh;
@@ -103,8 +99,6 @@ body{
     align-content: end;
     margin-bottom: 30px;
 }
-
-
 
 /*
 .logo-sidebar{
@@ -201,31 +195,30 @@ header{
     flex-direction: column;
     margin-right: 25px;
     text-align: end;
-    color:white;
+    color: white;
 }
 
 .idUser{
     font-weight: bold;
-    color:white;
 }
 
 .user_bar>i{
     margin-right: 40px;
-    color:white;
+    color: white;
 }
 
 .barra-ventas{
     margin : 32px;
     display: flex;
     justify-content: space-between;
+    
 }
-
 .barra-ventas>span{
     font-size :24px;
     color:#3E3E3E;
     font-weight: bold;
-}
 
+}
 .barra-ventas>button{
     background-color:#68B04D;
     font-size: 14px;
@@ -240,14 +233,15 @@ header{
     border: 0.187328px solid #808080;
     margin : 32px;
 }
-
 .cards-vendedor>span{
     color:#3E3E3E;
 }
 
-/*MODAL*/
 
-.modal-body{
+
+
+
+modal-body{
     display: flex;
 }
 
@@ -259,8 +253,7 @@ header{
 
 .upper-container-modal{
     display: flex;
-    width: 100%;
-    margin: 51px 0 0 31px;
+    margin: 51px 32px 0 31px;
 }
 
 .info-container-modal{
@@ -270,21 +263,27 @@ header{
     margin-left: 47px;
 }
 
-.upper-info-container-modal{
+.texto-over-text{
     display: flex;
     flex-direction: column;
 }
 
-.upper-info-container-modal>div{
+.texto-over-text>div{
     display: flex;
 }
 
 .lower-info-container-modal{
+    display: flex;
     width: 100%;
+    margin-top: 35px;
+    font-size: 15px;
+    color: #6C6C6C;
 }
+
 
 .form-lower-info-container{
     font-size: 15px;
+    display: flex;
     width: 100%;
     justify-content: space-between;
 }
@@ -310,10 +309,6 @@ header{
     justify-content: space-between;
 }
 
-.item-user{
-    font-size: 15px;
-}
-
 .user-id{
     font-size: 24px;
     font-weight: 600;
@@ -323,4 +318,7 @@ header{
     background-color: black;
     color: white;
     font-size: 11px;
+}
+.bolder{
+    font-weight: bold;
 }
