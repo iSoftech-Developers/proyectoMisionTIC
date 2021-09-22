@@ -18,11 +18,12 @@ const DetalleUsuarios=()=>{
                                 <span class="user-id">023466</span>
                             </div>
                         </div>
+
                         <div class="lower-info-container-modal">
                             <div class="form-lower-info-container">
                                 <div class="text-over-text">
                                     <div>
-                                        <span class="bolder">Nombre:</span>
+                                        <span class="bolder">Nombre</span>
                                     </div>
                                     <div>
                                         <span>Juan Camilo Gomez</span>
@@ -30,7 +31,7 @@ const DetalleUsuarios=()=>{
                                 </div>
                                 <div class="text-over-text">
                                     <div>
-                                        <span class="bolder">Fecha de ingreso:</span>
+                                        <span class="bolder">Fecha de ingreso</span>
                                     </div>
                                     <div>
                                         <span>10/04/2019</span>
@@ -38,7 +39,7 @@ const DetalleUsuarios=()=>{
                                 </div>
                                 <div class="text-over-text">
                                     <div>
-                                        <span class="bolder">Celular:</span>
+                                        <span class="bolder">Celular</span>
                                     </div>
                                     <div>
                                         <span>302 1234567</span>
@@ -46,20 +47,20 @@ const DetalleUsuarios=()=>{
                                 </div>
                                 <div class="text-over-text">
                                     <div>
-                                        <span class="bolder">Especialidad:</span> 
+                                        <span class="bolder">Especialidad</span> 
                                     </div>
                                     <div>
-                                        <span>Seccion Gym</span>
+                                        <span>Sección Gym</span>
                                     </div>
                                 </div>
-
-                            </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="lower-conteiner-modal">
-                    </div>
                 </div>
 
+                <div class="lower-container-modal-form">
+                    <p>hola</p>
+                </div>
             </div>
         </>
     );

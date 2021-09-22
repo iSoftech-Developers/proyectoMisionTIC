@@ -19,6 +19,8 @@ modal-body{
     flex-direction: column;
     width: 100%;
     margin-left: 47px;
+    justify-content: center;
+    background-color:blue;
 }
 
 .texto-over-text{
@@ -38,12 +40,12 @@ modal-body{
     color: #6C6C6C;
 }
 
-
 .form-lower-info-container{
     font-size: 15px;
     display: flex;
     width: 100%;
     justify-content: space-between;
+    background-color: green;
 }
 
 .photo-container{
@@ -53,13 +55,6 @@ modal-body{
 
 .photo-container>i{
     color: #E2E1E1;
-}
-
-.info-container{
-    width: 698px;
-    height: 167px;
-    display: flex;
-    flex-direction: column;
 }
 
 .info-user{
@@ -79,4 +74,9 @@ modal-body{
 }
 .bolder{
     font-weight: bold;
+}
+
+.lower-container-modal-form{
+    background-color: black;
+    margin: 32px;
 }

@@ -1,10 +1,9 @@
 import Sidebar from '../modules/sidebar/Sidebar';
 import Navbar from '../modules/navbar/Navbar';
-import NoButtonUpperBarSection from '../modules/noButtonUpperBarSection/NoButtonUpperBarSection';
+import DetalleVentas from '../modules/detalleVentas/DetalleVentas';
 import DetalleUsuarios from '../modules/detalleUsuarios/DetalleUsuarios';
 
-
-const PaginaInfoDetalleUsuarios =()=>{
+const PaginaDetalleUsuarios =()=>{
 
     return(
         <>
@@ -12,13 +11,11 @@ const PaginaInfoDetalleUsuarios =()=>{
         <main>
           <Navbar/>
             <section className="contenido">
-                <NoButtonUpperBarSection/>
-                <DetalleUsuarios/>
-                
+                <DetalleUsuarios/>  
             </section>
         </main>
        </> 
     );
 }
 
-export default PaginaInfoDetalleUsuarios;
+export default PaginaDetalleUsuarios;

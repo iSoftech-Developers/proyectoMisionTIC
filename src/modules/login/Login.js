@@ -21,8 +21,8 @@ const Login=()=>{
                 <input class= "text-login" type="password" name="pass" placeholder="Contraseña"/>
             </div>
         </div>
-        <div>
-            <button class="loginButton-login"><Link className="active" to="/moduloVendedores">LOGIN</Link></button>
+        <div className="link-button">
+            <Link className="active" class="loginButton-login" to="/moduloVendedores">LOGIN</Link>
         </div>
     </div>
 
