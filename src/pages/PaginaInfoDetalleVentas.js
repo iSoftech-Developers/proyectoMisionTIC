@@ -5,13 +5,14 @@ import DetalleVentas from '../modules/detalleVentas/DetalleVentas';
 import NoButtonUpperBarSection from '../modules/noButtonUpperBarSection/NoButtonUpperBarSection';
 import Cards from '../modules/cards/Cards';
 
+
 const PaginaInfoDetalleVentas =()=>{
 
     return(
         <>
         <Sidebar />
         <main>
-          <Navbar   />
+          <Navbar/>
             <section className="contenido">
                 <NoButtonUpperBarSection/>
                 <DetalleVentas/>
