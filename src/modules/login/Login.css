@@ -46,6 +46,7 @@
 }
 .passText-login{
     margin-top:25px;
+    margin-bottom: 90px;
 }
 
 .loginText-login{
@@ -58,8 +59,9 @@
     color: white;
     background-color: Black;
     border: 1px solid #00FFFF;
-    margin-top  : 90px;
+    
     font-size: 17px;
     font-weight: bold;
     padding:14px 64px;
+
 }

@@ -8,7 +8,7 @@ const DetalleVentas=()=>{
                 <div className="container-text-over-text">
                     <div className="text-over-text">
                         <div>
-                            <span className="bolder independent-child">ID Responsable:</span>
+                            <span class="bolder independent-child">ID Responsable</span>
                         </div>
                         <div>
                             <span>XXX.XXX.XXX - Y</span>
@@ -28,13 +28,13 @@ const DetalleVentas=()=>{
                     </div>
                     <div className="text-over-text">
                         <div>
-                            <span className="bolder independent-child">NIT/C.C:</span>
+                            <span class="bolder independent-child">NIT/C.C</span>
                         </div>
                         <div>
                             <span>D9999999</span>
                         </div>
                         <div>
-                            <span className="bolder independent-child">Dirección:</span>
+                            <span class="bolder independent-child">Dirección</span>
                         </div>
                         <div>
                             <span>10/04/2019</span>
@@ -48,13 +48,13 @@ const DetalleVentas=()=>{
                     </div>
                     <div className="text-over-text">
                         <div>
-                            <span className="bolder independent-child">Fecha de pago:</span>
+                            <span class="bolder independent-child">Fecha de pago</span>
                         </div>
                         <div>
                             <span>11/04/2021</span>
                         </div>
                         <div>
-                            <span className="bolder independent-child">Celular:</span>
+                            <span class="bolder independent-child">Celular</span>
                         </div>
                         <div>
                             <span>302 1234567</span>
@@ -62,13 +62,13 @@ const DetalleVentas=()=>{
                     </div>
                     <div className="text-over-text">
                         <div>
-                            <span className="bolder independent-child">Estado de venta:</span>
+                            <span class="bolder independent-child">Estado de venta</span>
                         </div>
                         <div>
                             <span>ruta</span>
                         </div>
                         <div>
-                            <span className="bolder independent-child">Email:</span> 
+                            <span class="bolder independent-child">Email</span> 
                         </div>
                         <div>
                             <span>ejemplo@ejemplo.com</span>

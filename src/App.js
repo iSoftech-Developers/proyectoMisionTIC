@@ -2,20 +2,23 @@
 import PaginaVendedores from './pages/PaginaVendedores';
 import './App.css';
 import PaginaInfoDetalleVentas from './pages/PaginaInfoDetalleVentas';
-import { BrowserRouter as Router,Route } from 'react-router-dom';
+import { BrowserRouter as Router,Route ,Switch } from 'react-router-dom';
 import Login from './modules/login/Login';
 
 
 
 const App =()=> {
   return (
+    <div className="template">
     <Router>
-      <div className="template">
+      <Switch>
+      
         <Route path="/moduloVendedores" component={PaginaVendedores} />
         <Route path="/moduloVentas/detalleVenta" component={PaginaInfoDetalleVentas} />
-        <Route path="/login" component={Login} />
-    </div> 
-   </Router>
+        <Route path="/" component={Login} />
+      </Switch>
+    </Router>
+   </div> 
   );
 }
 
