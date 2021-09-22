@@ -1,0 +1,13 @@
+.barra-ventas{
+    margin : 32px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.barra-ventas>button{
+    background-color:#68B04D;
+    font-size: 14px;
+    padding: 6px 22px;
+    border: none;
+    color: white;
+}
