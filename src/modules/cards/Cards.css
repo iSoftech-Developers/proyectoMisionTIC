@@ -2,9 +2,7 @@
     color:white;
     background-color:#252A2D;
     padding: 14px 12px 7px;
-    margin-right:16px;
-   
-
+    margin-right: 16px;
 }   
 
 .cards-sp{
@@ -14,9 +12,8 @@
 .card-upper{
     display: flex;
     margin-bottom: 12px;
-    
-
 }
+
 .cards-container{
     background-color: #F8F8F8;
     border: 0.09px solid #E2E1E1;
@@ -37,14 +34,17 @@
       justify-content:space-between;
       display:flex;
   }
- 
 
   table {
-    border: 0.374657px solid #3E3E3E;
-  }
+    font-size: 13px;
+    width: 100%;
+    background-color: white;
+    border: 0.20px solid #767676;
+    margin-top: 14px;
+}
+
   td{
     border-top: 0.374657px solid #3E3E3E;
-
   }
   
   table {

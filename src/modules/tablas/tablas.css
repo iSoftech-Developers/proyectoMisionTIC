@@ -1,0 +1,25 @@
+.table-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+}
+
+.table-title{
+    color: #252A2D;
+}
+
+.textfield{
+    border-color: #CBCBCB;
+}
+
+.table-container{
+    margin: 64px 32px;
+}
+  
+table {
+    font-size: 13px;
+    width: 100%;
+    background-color: white;
+    border: 0.20px solid #767676;
+    margin-top: 14px;
+}

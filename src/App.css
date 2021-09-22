@@ -34,7 +34,6 @@ li:active{
   background-color: #45BBBB;
 }
 
-
 a{
   text-decoration: none;
   color: #BFBFBF;
@@ -55,6 +54,7 @@ main{
   display: flex;
   flex-direction: column;
 }
+
 header{
   width: 100%;
   height: 76px;
