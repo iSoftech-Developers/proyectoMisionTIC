@@ -1,0 +1,82 @@
+
+modal-body{
+    display: flex;
+}
+
+.modal .modal-dialog{
+    max-width: none;
+    height: 100%;
+    width: 70%;
+}
+
+.upper-container-modal{
+    display: flex;
+    margin: 51px 32px 0 31px;
+}
+
+.info-container-modal{
+    display: inline-flex;
+    flex-direction: column;
+    width: 100%;
+    margin-left: 47px;
+}
+
+.texto-over-text{
+    display: flex;
+    flex-direction: column;
+}
+
+.texto-over-text>div{
+    display: flex;
+}
+
+.lower-info-container-modal{
+    display: flex;
+    width: 100%;
+    margin-top: 35px;
+    font-size: 15px;
+    color: #6C6C6C;
+}
+
+
+.form-lower-info-container{
+    font-size: 15px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.photo-container{
+    padding: 31px 25px;
+    border: 0.187328px solid #808080;
+}
+
+.photo-container>i{
+    color: #E2E1E1;
+}
+
+.info-container{
+    width: 698px;
+    height: 167px;
+    display: flex;
+    flex-direction: column;
+}
+
+.info-user{
+    display: flex;
+    justify-content: space-between;
+}
+
+.user-id{
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.rol-tag{
+    background-color: black;
+    color: white;
+    font-size: 11px;
+}
+.bolder{
+    font-weight: bold;
+}

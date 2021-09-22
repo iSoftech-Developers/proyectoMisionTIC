@@ -5,7 +5,7 @@ const DetalleVentas=()=>{
     return(
 
         <>
-                <div className="container-text-over-text">
+                <div className="container_text-over-text">
                     <div className="text-over-text">
                         <div>
                             <span class="bolder independent-child">ID Responsable</span>
