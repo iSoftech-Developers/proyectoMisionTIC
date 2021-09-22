@@ -1,8 +1,6 @@
 import './DetalleVentas.css';
 
-
 const DetalleVentas=()=>{
-
 
     return(
 
