@@ -3,8 +3,8 @@ import './NoButtonUpperBarSection.css';
 const NoButtonUpperBarSection =()=>{
 
     return(
-        <div class="barra-ventas">
-            <span class="bolder">Vendedores</span>
+        <div className="barra-ventas">
+            <span className="bolder">Vendedores</span>
         </div >
     )
   }

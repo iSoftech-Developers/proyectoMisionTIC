@@ -5,70 +5,70 @@ const DetalleVentas=()=>{
     return(
 
         <>
-                <div class="container-text-over-text">
-                    <div class="text-over-text">
+                <div className="container-text-over-text">
+                    <div className="text-over-text">
                         <div>
-                            <span class="bolder independent-child">ID Responsable:</span>
+                            <span className="bolder independent-child">ID Responsable:</span>
                         </div>
                         <div>
                             <span>XXX.XXX.XXX - Y</span>
                         </div>
                         <div>
-                            <span class="bolder independent-child">Razón Social</span>
+                            <span className="bolder independent-child">Razón Social</span>
                         </div>
                         <div>
                             <span>Juan Camilo Gomez</span>
                         </div>
                         <div>
-                            <span class="bolder independent-child">Departamento</span>
+                            <span className="bolder independent-child">Departamento</span>
                         </div>
                         <div>
-                            <span class="">Depto</span>
+                            <span className="">Depto</span>
                         </div>
                     </div>
-                    <div class="text-over-text">
+                    <div className="text-over-text">
                         <div>
-                            <span class="bolder independent-child">NIT/C.C:</span>
+                            <span className="bolder independent-child">NIT/C.C:</span>
                         </div>
                         <div>
                             <span>D9999999</span>
                         </div>
                         <div>
-                            <span class="bolder independent-child">Dirección:</span>
+                            <span className="bolder independent-child">Dirección:</span>
                         </div>
                         <div>
                             <span>10/04/2019</span>
                         </div>
                         <div>
-                            <span class="bolder independent-child">Municipio</span>
+                            <span className="bolder independent-child">Municipio</span>
                         </div>
                         <div>
                             <span>Municipio</span>
                         </div>
                     </div>
-                    <div class="text-over-text">
+                    <div className="text-over-text">
                         <div>
-                            <span class="bolder independent-child">Fecha de pago:</span>
+                            <span className="bolder independent-child">Fecha de pago:</span>
                         </div>
                         <div>
                             <span>11/04/2021</span>
                         </div>
                         <div>
-                            <span class="bolder independent-child">Celular:</span>
+                            <span className="bolder independent-child">Celular:</span>
                         </div>
                         <div>
                             <span>302 1234567</span>
                         </div>
                     </div>
-                    <div class="text-over-text">
+                    <div className="text-over-text">
                         <div>
-                            <span class="bolder independent-child">Estado de venta:</span>
+                            <span className="bolder independent-child">Estado de venta:</span>
                         </div>
                         <div>
                             <span>ruta</span>
                         </div>
                         <div>
-                            <span class="bolder independent-child">Email:</span> 
+                            <span className="bolder independent-child">Email:</span> 
                         </div>
                         <div>
                             <span>ejemplo@ejemplo.com</span>
