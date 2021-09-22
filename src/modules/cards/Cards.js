@@ -1,7 +1,7 @@
 import './Cards.css';
 
 
-const Cards=()=>{
+const Cards=(props)=>{
 
     return(
         <>
@@ -10,18 +10,18 @@ const Cards=()=>{
                     <div className="card-upper">
                         <i className="fas fa-user"></i>
                         <div className="card-info">
-                            <span className="bolder">Vendedor 001</span>
+                            <span className="bolder">Vendedor ID : </span>
                             <button className="edit-card"><i class="fas fa-pen"></i></button>
                         </div>
                     </div>
                     <div className="card-detail">
                         <table>
                             <tr>
-                                <th >Documento</th>
-                                <th >Nombre y apellidos</th>
-                                <th >Especialidad</th>
-                                <th >Numero de celular</th>
-                                <th >Fecha de ingreso</th>
+                                <th >{props.field1}</th>
+                                <th >{props.field2}</th>
+                                <th >{props.field3}</th>
+                                <th >{props.field4}</th>
+                                <th >{props.field5}</th>
                                 
                             </tr>
                             <tr>
