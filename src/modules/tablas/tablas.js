@@ -1,4 +1,4 @@
-import './Tablas.css';
+import './tablas.css';
 
 const Tablas=(props)=>{
 

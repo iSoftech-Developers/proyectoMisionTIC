@@ -14,9 +14,9 @@ const Siderbar =()=>{
             <div className="sidebar_upper_section" >
                 <ul className="sidebar_upper_text">
                     <li className="sidebar-li"><i className="fas fa-plus-circle fa-2x sidebar_icon"></i><Link className="active" to="#new_sale">Nueva venta</Link></li>
-                    <li className="sidebar-li"><i className="fas fa-users fa-2x sidebar_icon "></i><Link className="active" to="#costumers">Clientes</Link></li>
+                    <li className="sidebar-li"><i className="fas fa-users fa-2x sidebar_icon "></i><Link className="active" to="/moduloClientes">Clientes</Link></li>
                     <li className="sidebar-li"><i className="fas fa-user-tag fa-2x sidebar_icon"></i><Link className="active" to="/moduloVendedores">Vendedores</Link></li>
-                    <li className="sidebar-li"><i className="far fa-list-alt fa-2x sidebar_icon "></i><Link className="active" to="#sales">Ventas</Link></li>
+                    <li className="sidebar-li"><i className="far fa-list-alt fa-2x sidebar_icon "></i><Link className="active" to="/moduloVentas">Ventas</Link></li>
                 </ul>
             </div>
             <div className="sidebar_lower_section">   

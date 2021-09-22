@@ -5,7 +5,8 @@ const DetalleVentas=()=>{
     return(
 
         <>
-                <div className="container_text-over-text">
+            <div className="max-ontainer">
+            <div className="container-text-over-text">
                     <div className="text-over-text">
                         <div>
                             <span class="bolder independent-child">ID Responsable</span>
@@ -74,7 +75,9 @@ const DetalleVentas=()=>{
                             <span>ejemplo@ejemplo.com</span>
                         </div>
                     </div>
-                </div>  
+                </div> 
+            </div>
+                 
         </>
     );
 }
