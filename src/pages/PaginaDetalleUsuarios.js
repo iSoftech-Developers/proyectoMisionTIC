@@ -11,8 +11,9 @@ const PaginaDetalleUsuarios =()=>{
         <main>
           <Navbar/>
             <section className="contenido">
-                <DetalleUsuarios/>  
+                <DetalleUsuarios/>
             </section>
+            
         </main>
        </> 
     );
