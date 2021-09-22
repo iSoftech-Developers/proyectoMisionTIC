@@ -19,23 +19,23 @@
 </head>
 <body>
 
-    <div class="sidebar">
-        <div class="logo-container">
-            <img class="logo_sporty" src="./media/logoSporty.png" alt="logo Sporty"/>
+    <div className="sidebar">
+        <div className="logo-container">
+            <img className="logo_sporty" src="./media/logoSporty.png" alt="logo Sporty"/>
         </div>
-        <div class="sidebar_options">
-            <div class="sidebar_upper_section" >
-                <ul class="sidebar_upper_text">
-                    <li class="sidebar-li"><i class="fas fa-plus-circle fa-2x sidebar_icon"></i><a class="active" href="#new_sale">Nueva venta</a></li>
-                    <li class="sidebar-li"><i class="fas fa-users fa-2x sidebar_icon "></i><a class="active" href="#costumers">Clientes</a></li>
-                    <li class="sidebar-li"><i class="fas fa-user-tag fa-2x sidebar_icon"></i><a class="active" href="#sellers">Vendedores</a></li>
-                    <li class="sidebar-li"><i class="far fa-list-alt fa-2x sidebar_icon "></i><a class="active" href="#sales">Ventas</a></li>
+        <div className="sidebar_options">
+            <div className="sidebar_upper_section" >
+                <ul className="sidebar_upper_text">
+                    <li className="sidebar-li"><i className="fas fa-plus-circle fa-2x sidebar_icon"></i><a className="active" href="#new_sale">Nueva venta</a></li>
+                    <li className="sidebar-li"><i className="fas fa-users fa-2x sidebar_icon "></i><a className="active" href="#costumers">Clientes</a></li>
+                    <li className="sidebar-li"><i className="fas fa-user-tag fa-2x sidebar_icon"></i><a className="active" href="#sellers">Vendedores</a></li>
+                    <li className="sidebar-li"><i className="far fa-list-alt fa-2x sidebar_icon "></i><a className="active" href="#sales">Ventas</a></li>
                 </ul>
             </div>
-            <div class="sidebar_lower_section">   
-                <ul class="sidebar_lower_text">
-                    <li class="sidebar-li" ><i class="fas fa-users-cog fa-2x sidebar_icon"></i><a class="active" href="#users">Administrar Usuarios</a></li>
-                    <li class="sidebar-li"><i class="fas fa-sign-out-alt fa-2x sidebar_icon"></i><a class="active" href="#new_sale">Cerrar Sesión</a></li>
+            <div className="sidebar_lower_section">   
+                <ul className="sidebar_lower_text">
+                    <li className="sidebar-li" ><i className="fas fa-users-cog fa-2x sidebar_icon"></i><a className="active" href="#users">Administrar Usuarios</a></li>
+                    <li className="sidebar-li"><i className="fas fa-sign-out-alt fa-2x sidebar_icon"></i><a className="active" href="#new_sale">Cerrar Sesión</a></li>
                 </ul>
             </div>
         </div>
@@ -43,78 +43,78 @@
 
     <main>
         <header>
-            <div class="textfield searchText">
-                <i class="fas fa-search"></i>
+            <div className="textfield searchText">
+                <i className="fas fa-search"></i>
                 <input type="text" id="searchbar" placeholder="Buscar usuario por ID o nombre" title="Type in a category">
             </div>
-            <div class="user_bar">
-                <div class="infoUser">
-                    <span class="idUser">ID 2345</span>
+            <div className="user_bar">
+                <div className="infoUser">
+                    <span className="idUser">ID 2345</span>
                     <span clase="nameUser">Juan Pérez Pérez</span>
                 </div>
-                <i class="fas fa-user-circle fa-3x"></i>
+                <i className="fas fa-user-circle fa-3x"></i>
             </div>
             
         </header>
-        <section class="contenido">
+        <section className="contenido">
 
-            <div class="barra-ventas">
+            <div className="barra-ventas">
                 <span>Ventas</span>
                 <button data-bs-toggle="modal" data-bs-target="#exampleModal">NUEVA VENTA</button>
 
             </div >
-            <div class="cards-vendedor">
+            <div className="cards-vendedor">
                 <!-- Button trigger modal -->
-                <!--<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <!--<button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Launch demo modal
                 </button> -->
                 <!-- Modal -->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content">
-                                <div class="modal-body">
-                                    <div class="upper-container-modal">
-                                        <div class="photo-container">
-                                            <i class="fas fa-user fa-10x"></i>
+                    <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div className="modal-dialog modal-dialog-centered">
+                            <div className="modal-content">
+                                <div className="modal-body">
+                                    <div className="upper-container-modal">
+                                        <div className="photo-container">
+                                            <i className="fas fa-user fa-10x"></i>
                                         </div>
-                                        <div class="info-container-modal">
-                                            <div class="text-over-text">
+                                        <div className="info-container-modal">
+                                            <div className="text-over-text">
                                                 <div>
-                                                    <span class="rol-tag">Administrador</span>
+                                                    <span className="rol-tag">Administrador</span>
                                                 </div>
                                                 <div>
-                                                    <span class="user-id">023466</span>
+                                                    <span className="user-id">023466</span>
                                                 </div>
                                             </div>
-                                            <div class="lower-info-container-modal">
-                                                <div class="form-lower-info-container">
-                                                    <div class="text-over-text">
+                                            <div className="lower-info-container-modal">
+                                                <div className="form-lower-info-container">
+                                                    <div className="text-over-text">
                                                         <div>
-                                                            <span class="bolder">Nombre:</span>
+                                                            <span className="bolder">Nombre:</span>
                                                         </div>
                                                         <div>
                                                             <span>Juan Camilo Gomez</span>
                                                         </div>
                                                     </div>
-                                                    <div class="text-over-text">
+                                                    <div className="text-over-text">
                                                         <div>
-                                                            <span class="bolder">Fecha de ingreso:</span>
+                                                            <span className="bolder">Fecha de ingreso:</span>
                                                         </div>
                                                         <div>
                                                             <span>10/04/2019</span>
                                                         </div>
                                                     </div>
-                                                    <div class="text-over-text">
+                                                    <div className="text-over-text">
                                                         <div>
-                                                            <span class="bolder">Celular:</span>
+                                                            <span className="bolder">Celular:</span>
                                                         </div>
                                                         <div>
                                                             <span>302 1234567</span>
                                                         </div>
                                                     </div>
-                                                    <div class="text-over-text">
+                                                    <div className="text-over-text">
                                                         <div>
-                                                            <span class="bolder">Especialidad:</span> 
+                                                            <span className="bolder">Especialidad:</span> 
                                                         </div>
                                                         <div>
                                                             <span>Seccion Gym</span>
@@ -124,7 +124,7 @@
                                                 </div>
                                                 </div>
                                             </div>
-                                            <div class="lower-conteiner-modal">
+                                            <div className="lower-conteiner-modal">
     
                                             </div>
                                     </div>
@@ -139,19 +139,19 @@
                                         </div>
                                     </div>
                                     
-                                    <div class="lower-conteiner-modal">
+                                    <div className="lower-conteiner-modal">
                                         
                                     </div>
                                 </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                <div className="modal-footer">
+                                    <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" className="btn btn-primary">Save changes</button>
                                 </div>
                             </div>
                         </div>
                     </div>
             </div>
-            <div class="cards-vendedor">
+            <div className="cards-vendedor">
                 <span>{vendores.nombre2}</span>
 
 

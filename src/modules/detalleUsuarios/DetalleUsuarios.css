@@ -11,7 +11,7 @@ modal-body{
 
 .upper-container-modal{
     display: flex;
-    margin: 51px 32px 0 31px;
+    margin: 51px 32px 70px 31px;
 }
 
 .info-container-modal{
@@ -20,22 +20,20 @@ modal-body{
     width: 100%;
     margin-left: 47px;
     justify-content: center;
-    background-color:blue;
 }
 
-.texto-over-text{
+.text-over-text{
     display: flex;
     flex-direction: column;
 }
 
-.texto-over-text>div{
+.text-over-text>div{
     display: flex;
 }
 
 .lower-info-container-modal{
     display: flex;
     width: 100%;
-    margin-top: 35px;
     font-size: 15px;
     color: #6C6C6C;
 }
@@ -45,7 +43,7 @@ modal-body{
     display: flex;
     width: 100%;
     justify-content: space-between;
-    background-color: green;
+    margin-top: 46px;
 }
 
 .photo-container{
@@ -65,18 +63,47 @@ modal-body{
 .user-id{
     font-size: 24px;
     font-weight: 600;
+    margin-top: 17px;
 }
 
 .rol-tag{
     background-color: black;
     color: white;
     font-size: 11px;
+    margin-top: 23px;
 }
+
 .bolder{
     font-weight: bold;
+    margin: 0px;
+    color: #6C6C6C;
 }
 
 .lower-container-modal-form{
-    background-color: black;
+    display: flex;
+    justify-content: space-between;
     margin: 32px;
+}
+
+.input-form-users{
+    width: 230px;
+    height: 32px;
+    border-color: #CFCFCF;
+    border: 0px;
+    border-radius: 1px;
+    margin-top: 17px;
+    
+}
+
+.container-text-over-text{
+    margin: 33px;
+}
+
+.text-over-text{
+    box-sizing: content-box;
+}
+
+.independent-child{
+    color: #6C6C6C;
+    margin-top: 33px;
 }
