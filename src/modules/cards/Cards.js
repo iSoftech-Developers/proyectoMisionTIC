@@ -11,7 +11,7 @@ const Cards=(props)=>{
                         <i className="fas fa-user"></i>
                         <div className="card-info">
                             <span className="bolder">Vendedor ID : </span>
-                            <button className="edit-card"><i class="fas fa-pen"></i></button>
+                            <button className="edit-card"><i className="fas fa-pen"></i></button>
                         </div>
                     </div>
                     <div className="card-detail">
