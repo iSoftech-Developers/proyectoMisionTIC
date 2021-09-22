@@ -9,7 +9,7 @@ const App =()=> {
   return (
    <div className="template">
 
-    <PaginaVendedores/>
+    <PaginaInfoDetalleVentas/>
    </div> 
     
   );

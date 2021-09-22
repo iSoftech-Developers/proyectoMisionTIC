@@ -3,6 +3,7 @@ import Navbar from '../modules/navbar/Navbar';
 import UpperBarSection from '../modules/upperBarSection/UpperBarSection';
 import DetalleVentas from '../modules/detalleVentas/DetalleVentas';
 import NoButtonUpperBarSection from '../modules/noButtonUpperBarSection/NoButtonUpperBarSection';
+import Cards from '../modules/cards/Cards';
 
 const PaginaInfoDetalleVentas =()=>{
 
@@ -12,8 +13,9 @@ const PaginaInfoDetalleVentas =()=>{
         <main>
           <Navbar   />
             <section className="contenido">
-                <UpperBarSection/>
+                <NoButtonUpperBarSection/>
                 <DetalleVentas/>
+                <Cards/>
             </section>
         </main>
        </> 
