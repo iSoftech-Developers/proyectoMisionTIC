@@ -15,8 +15,8 @@ const PaginaClientes =()=> {
         <Navbar/>
       
           <section className="contenido">
-            <UpperBarSection />
-            <Cards field1="Razon Social*" field2="NIT/CC*" field3="Email" field4="Dirección" field5="Teléfono"/>
+            <UpperBarSection titlePage="Clientes" nameButton="AGREGAR CLIENTE" />
+            <Cards titleCard="Cliente ID :"field1="Razon Social*" field2="NIT/CC*" field3="Email" field4="Dirección" field5="Teléfono"/>
           </section>
       </main>
      </> 

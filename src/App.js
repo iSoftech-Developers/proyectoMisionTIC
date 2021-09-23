@@ -6,6 +6,7 @@ import { BrowserRouter as Router,Route ,Switch } from 'react-router-dom';
 import Login from './modules/login/Login';
 import PaginaClientes from './pages/PaginaClientes';
 import PaginaVentas from './pages/PaginaVentas';
+import PaginaNuevaVenta from './pages/PaginaNuevaVenta';
 
 
 
@@ -18,7 +19,8 @@ const App =()=> {
         <Route path="/moduloVendedores" component={PaginaVendedores} />
         <Route path="/moduloVentas" component={PaginaVentas} />
         <Route path="/detalleVenta" component={PaginaInfoDetalleVentas} />
-        <Route path="/moduloClientes/" component={PaginaClientes} /> 
+        <Route path="/moduloClientes" component={PaginaClientes} />
+        <Route path="/nuevaVenta" component={PaginaNuevaVenta} />
         <Route path="/" component={Login} />
 
       </Switch>
