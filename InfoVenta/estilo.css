@@ -265,7 +265,7 @@ header{
     font-family: Roboto;
     padding: 5px 30px;
     cursor: pointer;
-    border-radius: 10px;
+    border-radius: 3px;
 }
 .navbar>form{
     display: flex;
@@ -310,7 +310,7 @@ input:focus{
     font-family: Roboto;
     padding: 5px 30px;
     cursor: pointer;
-    border-radius: 10px;
+    border-radius: 3px;
 }
 td{
     color: black;
