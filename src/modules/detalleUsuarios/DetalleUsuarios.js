@@ -102,6 +102,10 @@ const DetalleUsuarios=()=>{
                         </div>
                     </div>
                 </div> 
+
+                <div className="modal-bottom">
+                    <button className="bolder save-button"  data-bs-toggle="modal" data-bs-target="#modal-edit-user-info">GUARDAR</button >
+                </div>
             </div>
         </>
     );

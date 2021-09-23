@@ -73,7 +73,7 @@ modal-body{
     margin-top: 23px;
 }
 
-.bolder{
+.text-over-text>bolder{
     font-weight: bold;
     margin: 0px;
     color: #6C6C6C;
@@ -106,4 +106,19 @@ modal-body{
 .independent-child{
     color: #6C6C6C;
     margin-top: 33px;
+}
+
+.modal-bottom{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.save-button{
+    background-color:#68B04D;
+    font-size: 14px;
+    padding: 6px 22px;
+    border: none;
+    color: white;
+    width: 282px;
 }
