@@ -256,7 +256,8 @@ header{
 }
 .navbar>li>button{
     color: white;
-    background-color: green;
+    background-color: #68B04D;
+    border-color: #68B04D;
     font-weight: bolder;
     bottom: 80.74%;
     font-family: Roboto;
@@ -273,7 +274,9 @@ label{
     width: 100%;
     color: #6C6C6C;
     font-weight: bolder;
-
+}
+.headerTable>td{
+    font-size: 12px;
 }
 input textarea{
     border: 2px;
@@ -295,6 +298,7 @@ input:focus{
     justify-content: space-between;
     padding:0px;
     font-family: Roboto;
+    transform: scale(1,1);
 }
 .buttonElect>button{
     color: white;
@@ -310,4 +314,21 @@ td{
     color: black;
     font-weight: bolder;
     font-size: 10px;
+}
+.search{
+    background-color: white;
+    border: 1px solid gray;
+    padding: 4px;
+    border-radius: 20px;
+}
+.search:focus-within{
+    border: 2px solid gray;
+}
+.search>input{
+    outline: none;
+    border: 0px;
+}
+.search>i{
+    color: black;
+    font-size: 12px;
 }
