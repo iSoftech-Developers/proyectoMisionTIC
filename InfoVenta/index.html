@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sporty</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link  rel="icon"   href="./media/favicon.ico" type="image/png" />
+    <script src="https://kit.fontawesome.com/d4cd33a1a3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+    <div class="sidebar">
+        <div class="logo-container">
+            <img class="logo_sporty" src="./media/logoSporty.png" alt="logo Sporty"/>
+            <!--
+                <li class="logo logo-sidebar">SPORTY </li>
+                <li class="sales sales-sidebar">SALES MANAGER </li>
+            -->
+        </div>
+        <div class=sidebar_options>
+            <div class="sidebar_upper_section" >
+                <ul class="sidebar_upper_text">
+                    <li><i class="fas fa-plus-circle fa-2x sidebar_icon"></i><a class="active" href="#new_sale">Nueva venta</a></li>
+                    <li><i class="fas fa-users fa-2x sidebar_icon "></i><a class="active" href="#costumers">Clientes</a></li>
+                    <li><i class="fas fa-user-tag fa-2x sidebar_icon"></i><a class="active" href="#sellers">Vendedores</a></li>
+                    <li><i class="far fa-list-alt fa-2x sidebar_icon "></i><a class="active" href="#sales">Ventas</a></li>
+                </ul>
+            </div>
+            <div class=sidebar_lower_section>   
+                <ul class="sidebar_lower_text">
+                    <li><i class="fas fa-users-cog fa-2x sidebar_icon"></i><a class="active" href="#users">Administrar Usuarios</a></li>
+                    <li><i class="fas fa-sign-out-alt fa-2x sidebar_icon"></i><a class="active" href="#new_sale">Cerrar Sesión</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <header>
+            <div class="textfield searchText">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchbar" placeholder="Buscar usuario por ID o nombre" title="Type in a category">
+            </div>
+            <div class="user_bar">
+                <div class="infoUser">
+                    <span class="idUser">ID 2345</span>
+                    <span clase="nameUser">Juan Pérez Pérez</span>
+                </div>
+                <i class="fas fa-user-circle fa-3x"></i>
+            </div>
+        </header>
+        <!--SECCION MODULO NUEVA VENTA-->
+        <section class="contenido">
+            <ul class="navbar">
+                <li><h1>Nueva Venta</h1>
+                <button type="button" class="btn btn-primary btn-lg btn-block">GUARDAR</button>
+                </li>
+            </ul>
+            <ul class="navbar">
+                <form action="">
+                <div class="field-container" >   
+                    <label for="">Id vendedor responsable*</label>
+                    <input type="text" id="Id" name="ID"><br>
+                </div>  
+                </form>
+            </ul>
+            <ul class="navbar">
+                <form action="">
+                <div class="field-container" >   
+                    <label for="">Razón Social*</label>
+                    <input type="text" id="Razon" name="RAZON"><br>
+                </div>  
+                <div class="field-container"> 
+                    <label for="">NIT / C.C.*</label>
+                    <input type="text" id="Nit" name="NIT"><br><br>
+                </div>
+                <div class="field-container">   
+                    <label for="">Fecha de pago*</label>
+                    <input type="text" id="Fecha" name="FECHA"><br><br>
+                </div>
+                <div class="field-container">   
+                    <label for="">Celular*</label>
+                    <input type="text" id="Celu" name="CELU"><br><br>
+                </div>
+                
+                </form>
+            </ul>
+            <ul class="navbar">
+                <form action="">
+                <div class="field-container">   
+                    <label for="">E-mail*</label>
+                    <input type="text" id="Email" name="EMAIL"><br><br>
+                </div>
+                <div class="field-container"> 
+                    <label for="">Dirección*</label>
+                    <input type="text" id="Direccion" name="DIRECCION"><br><br>
+                </div>
+                <div class="field-container" >   
+                    <label for="">Departamento*</label>
+                    <input type="text" id="Departamento" name="DEPARTAMENTO"><br>
+                </div>  
+                <div class="field-container"> 
+                    <label for="">Municipio*</label>
+                    <input type="text" id="Municipio" name="MUNICIPIO"><br><br>
+                </div>
+                </form>
+            </ul>
+            <ul class="navbar">
+                <div class="buttonElect">
+                    <button type="button" class="btn btn-primary btn-lg btn-block">ELEGIR PRODUCTOS</button>
+                </div>
+            </ul>
+            <ul class="navbar">
+                <li><p>Descripcion de la venta</p>
+                    <div class="search">
+                        <input placeholder="Buscar Producto">
+                        <i class="fas fa-search"></i>
+                    </div>
+                </li>
+            </ul>
+            <style>
+                table, th, td {
+                border:1px solid black;
+                padding-right: 5px 5px 5px;
+                margin: 1px 33px;
+                margin-right: 33px;
+                display:inline-flexbox;
+                }
+            </style>
+                <body>
+                <table style="width:93%">
+                <tr class="headerTable">
+                    <td>ID Producto</td>
+                    <td>Producto</td>
+                    <td>Precio</td>
+                    <td>Talla</td>
+                    <td>Cantidad</td>
+                    <td>Total</td>
+                </tr>
+                <tr>
+                    <td>23930</td>
+                    <td>camiseta</td>
+                    <td>$35.000</td>
+                    <td>M</td>
+                    <td>2</td>
+                    <td>$70.000</td>
+                </tr>
+                <tr>
+                    <td>23931</td>
+                    <td>tenis</td>
+                    <td>$200.000</td>
+                    <td>39</td>
+                    <td>1</td>
+                    <td>$200.000</td>
+                </tr>
+                </table>
+                </body>
+            </style>
+        </section>
+        <!--CIERRE SECCION MODULO NUEVA VENTA-->
+    </main>
+</body>
+</html>
