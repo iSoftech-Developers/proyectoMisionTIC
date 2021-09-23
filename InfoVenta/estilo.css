@@ -204,20 +204,110 @@ header{
     margin-right: 40px;
     color: white;
 }
-.infoSeller{
+/*.salesModule{
+    display: flex;
     position: absolute;
-    left: 23.44%;
+    left: 25%;
     right: 0.09%;
-    top: 25.15%;
-    bottom: 67.39%;
-
+    top: 20%;
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+    bottom: 80.74%;
     font-family: Roboto;
     font-style: normal;
     font-weight: 500;
     font-size: 24px;
-    line-height: 28px;
-    text-align: center;
+    line-height: 28px
 }
-.infoSeller>b{
+.salesModule>p{
     color: black;
+}
+.salesModule>button{
+    color: white;
+    line-height: 50px;
+    background-color:#68B04D;
+    border-radius: 10px;
+    padding-inline-end: 100px;
+    padding-block-end: 50px;
+}*/
+.navbar{
+    display: flex;
+    color: ghostwhite;
+    justify-content: space-between;
+    padding: 5px 33px;
+    
+}
+.navbar>li{
+    display: flex;
+    justify-content:space-between;
+    background-color: white;
+}
+.navbar>li>h1{
+    color:#6C6C6C;
+    font-size: 20px;
+    cursor: default;
+}
+.navbar>li>p{
+        color: #6C6C6C;
+        font-size: 15px;
+        cursor: default;
+        font-weight: bolder;
+}
+.navbar>li>button{
+    color: white;
+    background-color: green;
+    font-weight: bolder;
+    bottom: 80.74%;
+    font-family: Roboto;
+    padding: 5px 30px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+.navbar>form{
+    display: flex;
+}
+label{
+    font-size: 12px;
+    display: block;
+    width: 100%;
+    color: #6C6C6C;
+    font-weight: bolder;
+
+}
+input textarea{
+    border: 2px;
+}
+input:focus{
+    border: 1px solid #616c01;
+}
+.field-container>input{
+    margin-top: 10px;
+    margin-bottom: 0px;
+    margin-right: 10px;
+    width: 90%;
+    box-sizing: content-box;
+    display: flex;
+}
+.buttonElect{
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding:0px;
+    font-family: Roboto;
+}
+.buttonElect>button{
+    color: white;
+    background-color:#FDC80B;
+    font-weight: bolder;
+    border-color: #FDC80B;
+    font-family: Roboto;
+    padding: 5px 30px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+td{
+    color: black;
+    font-weight: bolder;
+    font-size: 10px;
 }
