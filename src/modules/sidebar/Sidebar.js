@@ -10,19 +10,19 @@ const Siderbar =()=>{
         <div className="logo-container">
             <img className="logo_sporty" src={logoSporty} alt="logo Sporty"/>
         </div>
-        <div className="sidebar_options">
-            <div className="sidebar_upper_section" >
-                <ul className="sidebar_upper_text">
-                    <li className="sidebar-li"><i className="fas fa-plus-circle fa-2x sidebar_icon"></i><Link className="active" to="/nuevaVenta">Nueva venta</Link></li>
-                    <li className="sidebar-li"><i className="fas fa-users fa-2x sidebar_icon "></i><Link className="active" to="/moduloClientes">Clientes</Link></li>
-                    <li className="sidebar-li"><i className="fas fa-user-tag fa-2x sidebar_icon"></i><Link className="active" to="/moduloVendedores">Vendedores</Link></li>
-                    <li className="sidebar-li"><i className="far fa-list-alt fa-2x sidebar_icon "></i><Link className="active" to="/moduloVentas">Ventas</Link></li>
+        <div className="sidebar-options">
+            <div className="sidebar-upper-section" >
+                <ul className="sidebar-upper-text">
+                    <Link className="active sidebar-li sidebar-link" to="/nuevaVenta"><i className="fas fa-plus-circle fa-lg  sidebar-icon"></i>Nueva venta</Link>  
+                    <Link className="active sidebar-li sidebar-link" to="/moduloClientes"><i className="fas fa-users fa-lg  sidebar-icon"></i>Clientes</Link> 
+                    <Link className="active sidebar-li sidebar-link" to="/moduloVendedores"><i className="fas fa-user-tag  fa-lg sidebar-icon"></i>Vendedores</Link>
+                    <Link className="active sidebar-li sidebar-link" to="/moduloVentas"><i className="far fa-list-alt fa-lg sidebar-icon"></i>Ventas</Link> 
                 </ul>
             </div>
-            <div className="sidebar_lower_section">   
-                <ul className="sidebar_lower_text">
-                    <li className="sidebar-li" ><i className="fas fa-users-cog fa-2x sidebar_icon"></i><Link className="active" to="#users">Administrar Usuarios</Link></li>
-                    <li className="sidebar-li"><i className="fas fa-sign-out-alt fa-2x sidebar_icon"></i><Link className="active" to="#new_sale">Cerrar Sesión</Link></li>
+            <div className="sidebar-lower-section">   
+                <ul className="sidebar-lower-text">
+                    <Link className="active sidebar-li sidebar-link" to="/moduloVentas"><i className="fas fa-users-cog fa-lg sidebar-icon"></i>Administrar Usuarios</Link>
+                    <Link className="active sidebar-li sidebar-link" to="/"><i className="fas fa-sign-out-alt fa-lg sidebar-icon"></i>Cerrar Sesión</Link>
                 </ul>
             </div>
         </div>

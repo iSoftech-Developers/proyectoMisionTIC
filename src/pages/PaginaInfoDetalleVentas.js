@@ -1,9 +1,7 @@
 import Sidebar from '../modules/sidebar/Sidebar';
 import Navbar from '../modules/navbar/Navbar';
-import UpperBarSection from '../modules/upperBarSection/UpperBarSection';
 import DetalleVentas from '../modules/detalleVentas/DetalleVentas';
 import NoButtonUpperBarSection from '../modules/noButtonUpperBarSection/NoButtonUpperBarSection';
-import Cards from '../modules/cards/Cards';
 import Tablas from '../modules/tablas/tablas'
 
 
