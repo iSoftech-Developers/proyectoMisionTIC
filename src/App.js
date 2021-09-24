@@ -24,6 +24,7 @@ const App =()=> {
         <Route path="/moduloClientes/" component={PaginaClientes}/> 
         <Route path="/detalleUsuarios" component={PaginaDetalleUsuarios}/> 
         <Route path="/perfilUsuarios" component={PaginaVistaPerfilUsuario}/> 
+        <Route path="/listadoProductos" component={PaginaProductos}/> 
         <Route path="/" component={Login} />
 
       </Switch>
