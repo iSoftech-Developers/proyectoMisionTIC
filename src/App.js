@@ -1,6 +1,7 @@
 
 import PaginaVendedores from './pages/PaginaVendedores';
 import './App.css';
+import './index.css';
 import PaginaInfoDetalleVentas from './pages/PaginaInfoDetalleVentas';
 import { BrowserRouter as Router,Route ,Switch } from 'react-router-dom';
 import Login from './modules/login/Login';
