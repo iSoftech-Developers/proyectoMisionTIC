@@ -84,17 +84,14 @@
     margin: 0px 32px 0px 32px;
 }
 
-.items-form-modal-container{
-    flex-grow: 2;
-}
-
 .input-form-users{
+    width: 300px;
     height: 32px;
-    border-color: #CFCFCF;
-    border: 0px;
-    border-radius: 1px;
+    color: #BFBFBF;
+    border: none;
+    border-color: #a4a2a2;
     margin-top: 17px;
-    padding-left: 150px;
+    padding-left: 15px;
 }
 
 .gray-letter{

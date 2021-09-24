@@ -64,13 +64,13 @@ const DetalleUsuarios=()=>{
                             <span className="bolder gray-letter">ID*</span>
                         </div>
                         <div>
-                            <input className="input-form-users" type="text" ></input>
+                            <input className="input-form-users" type="text"></input>
                         </div>
                         <div>
                             <span className="bolder gray-letter independent-child">Número Celular</span>
                         </div>
                         <div>
-                            <input className="input-form-users" type="text" ></input>
+                            <input className="input-form-users" type="text"></input>
                         </div>
                     </div>
                     <div className="text-over-text">
@@ -78,13 +78,13 @@ const DetalleUsuarios=()=>{
                             <span className="bolder gray-letter">Nombres y Apellidos*</span>
                         </div>
                         <div>
-                            <input className="input-form-users" type="text" ></input>
+                            <input className="input-form-users" type="text"></input>
                         </div>
                         <div>
                             <span className="bolder gray-letter independent-child">Especialidad*</span>
                         </div>
                         <div>
-                            <input className="input-form-users" type="text" ></input>
+                            <input className="input-form-users" type="text"></input>
                         </div>
                     </div>
                     <div className="text-over-text">
@@ -92,13 +92,13 @@ const DetalleUsuarios=()=>{
                             <span className="bolder gray-letter">Fecha de ingreso*</span>
                         </div>
                         <div>
-                            <input className="input-form-users" type="text" ></input>
+                            <input className="input-form-users" type="text"></input>
                         </div>
                         <div>
                             <span className="bolder gray-letter independent-child">Rol*</span>
                         </div>
                         <div>
-                            <input className="input-form-users" type="text" ></input>
+                            <input className="input-form-users" type="text"></input>
                         </div>
                     </div>
                 </div>
