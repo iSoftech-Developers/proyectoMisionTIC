@@ -6,23 +6,23 @@ const Login=()=>{
     return(
         <>
 
-    <div class="container-login">
-        <div class="logo">SPORTY </div>
-        <div class="sales">SALES MANAGER </div>
+    <div className="container-login">
+        <div className="logo">SPORTY </div>
+        <div className="sales">SALES MANAGER </div>
         <div>
-            <div class="textfield-login loginText-login"  >
-                <i class="fas fa-user"></i>
-                <input class= "text-login" type="text" name="pass" placeholder="ID de usuario"/>
+            <div className="textfield-login loginText-login"  >
+                <i className="fas fa-user"></i>
+                <input className= "text-login" type="text" name="pass" placeholder="ID de usuario"/>
             </div>
         </div>
         <div>
-            <div class="textfield-login passText-login">
-                <i class="fas fa-lock"></i>
-                <input class= "text-login" type="password" name="pass" placeholder="Contraseña"/>
+            <div className="textfield-login passText-login">
+                <i className="fas fa-lock"></i>
+                <input className= "text-login" type="password" name="pass" placeholder="Contraseña"/>
             </div>
         </div>
         <div className="link-button">
-            <Link className="active" class="loginButton-login" to="/moduloVendedores">LOGIN</Link>
+            <Link className="active" className="loginButton-login" to="/moduloVendedores">LOGIN</Link>
         </div>
     </div>
 
@@ -34,4 +34,4 @@ const Login=()=>{
 
 export default Login;
 
-//<input class="loginButton" type="submit" value="LOGIN"/>
+//<input className="loginButton" type="submit" value="LOGIN"/>
