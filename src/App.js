@@ -9,6 +9,7 @@ import PaginaVentas from './pages/PaginaVentas';
 import PaginaNuevaVenta from './pages/PaginaNuevaVenta';
 import PaginaDetalleUsuarios from './pages/PaginaDetalleUsuarios';
 import PaginaVistaPerfilUsuario from './pages/PaginaVistaPerfilUsuario';
+import PaginaProductos from './pages/PaginaProductos';
 
 
 
@@ -23,8 +24,8 @@ const App =()=> {
         <Route path="/detalleVenta" component={PaginaInfoDetalleVentas}/>
         <Route path="/moduloClientes/" component={PaginaClientes}/> 
         <Route path="/detalleUsuarios" component={PaginaDetalleUsuarios}/> 
-        <Route path="/perfilUsuarios" component={PaginaVistaPerfilUsuario}/> 
-        <Route path="/listadoProductos" component={PaginaProductos}/> 
+        <Route path="/perfilUsuarios" component={PaginaVistaPerfilUsuario}/>
+        <Route path="/listadoProductos" component={PaginaProductos}/>
         <Route path="/" component={Login} />
 
       </Switch>
