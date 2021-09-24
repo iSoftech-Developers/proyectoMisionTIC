@@ -7,6 +7,7 @@ import Login from './modules/login/Login';
 import PaginaClientes from './pages/PaginaClientes';
 import PaginaVentas from './pages/PaginaVentas';
 import PaginaDetalleUsuarios from './pages/PaginaDetalleUsuarios';
+import PaginaVistaPerfilUsuario from './pages/PaginaVistaPerfilUsuario';
 
 const App =()=> {
   return (
@@ -18,6 +19,7 @@ const App =()=> {
         <Route path="/detalleVenta" component={PaginaInfoDetalleVentas}/>
         <Route path="/moduloClientes/" component={PaginaClientes}/> 
         <Route path="/detalleUsuarios" component={PaginaDetalleUsuarios}/> 
+        <Route path="/perfilUsuarios" component={PaginaVistaPerfilUsuario}/> 
         <Route path="/" component={Login} />
 
       </Switch>
