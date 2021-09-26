@@ -1,6 +1,5 @@
 import Sidebar from '../modules/sidebar/Sidebar';
 import Navbar from '../modules/navbar/Navbar';
-import DetalleVentas from '../modules/detalleVentas/DetalleVentas';
 import DetalleUsuarios from '../modules/detalleUsuarios/DetalleUsuarios';
 import Form from '../modules/Formularios/Form'
 
