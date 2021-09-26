@@ -9,8 +9,10 @@ const PaginaVistaPerfilUsuario =()=> {
       <Sidebar />
       <main>
         <Navbar/>
-          <section className="contenido">
-            <VistaPerfilUsuario/>
+          <section className="container-cards">
+            <section className="contenido">
+              <VistaPerfilUsuario/>
+            </section>
           </section>  
       </main>
      </>    

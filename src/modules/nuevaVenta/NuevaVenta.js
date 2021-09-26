@@ -7,71 +7,71 @@ const NuevaVenta=()=>{
 
     return(
         <>
-                <div className="container-text-over-text">
+                <form className="container-text-over-text">
                     <div className="text-over-text">
                         
                         <div>
-                            <span class="bolder independent-child">ID Responsable</span>
+                            <label class="bolder independent-child">ID Responsable</label>
                         </div>
                         <div>
-                            <input type="text" />
+                            <input required type="text" />
                         </div>
                         <div>
-                            <span className="bolder independent-child">Razón Social</span>
+                            <label className="bolder independent-child">Razón Social</label>
                         </div>
                         <div>
-                            <input type="text" />
+                            <input required type="text" />
                         </div>
                         <div>
-                            <span className="bolder independent-child">Departamento</span>
+                            <label className="bolder independent-child">Departamento</label>
                         </div>
                         <div>
-                            <input type="text" className=""/>
+                            <input required type="text" className=""/>
                         </div>
                     </div>
                     <div className="text-over-text">
                         <div>
-                            <span class="bolder independent-child">NIT/C.C</span>
+                            <label class="bolder independent-child">NIT/C.C</label>
                         </div>
                         <div>
-                            <input type="text" />
+                            <input required type="text" />
                         </div>
                         <div>
-                            <span class="bolder independent-child">Dirección</span>
+                            <label class="bolder independent-child">Dirección</label>
                         </div>
                         <div>
-                            <input type="text"/>
+                            <input required type="text"/>
                         </div>
                     </div>
                     <div className="text-over-text">
                         <div>
-                            <span class="bolder independent-child">Fecha de pago</span>
+                            <label class="bolder independent-child">Fecha de pago</label>
                         </div>
                         <div>
-                            <input type="text"/>
+                            <input required type="text"/>
                         </div>
                         <div>
-                            <span class="bolder independent-child">Celular</span>
+                            <label class="bolder independent-child">Celular</label>
                         </div>
                         <div>
-                            <input type="text"/>
+                            <input required type="text"/>
                         </div>
                     </div>
                     <div className="text-over-text">
                         <div>
-                            <span class="bolder independent-child">Estado de venta</span>
+                            <label class="bolder independent-child">Estado de venta</label>
                         </div>
                         <div>
-                            <input type="text"/>
+                            <input required type="text"/>
                         </div>
                         <div>
-                            <span class="bolder independent-child">Email</span> 
+                            <label class="bolder independent-child">Email</label> 
                         </div>
                         <div>
-                            <input type="text"/>
+                            <input required type="text"/>
                         </div>
                     </div>
-                </div>  
+                </form>  
 
         </>
 

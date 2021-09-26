@@ -9,11 +9,12 @@ const PaginaDetalleUsuarios =()=>{
         <>
         <Sidebar />
         <main>
-          <Navbar/>
-            <section className="contenido">
-                <DetalleUsuarios/>
-            </section>
-            
+              <Navbar/>
+                <section className="container-cards">
+                    <section className="contenido">
+                        <DetalleUsuarios/>
+                    </section>
+                </section>
         </main>
        </> 
     );

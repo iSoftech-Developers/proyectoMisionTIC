@@ -12,10 +12,12 @@ const PaginaInfoDetalleVentas =()=>{
         <Sidebar />
         <main>
           <Navbar/>
-            <section className="contenido">
-                <NoButtonUpperBarSection/>
-                <DetalleVentas/>
-                <Tablas field1="ID Producto" field2="Producto" field3="Precio" field4="Talla" field5="Cantidad" field6="Total"/>
+            <section className="container-cards">
+                <section className="contenido">
+                    <NoButtonUpperBarSection/>
+                    <DetalleVentas/>
+                    <Tablas field1="ID Producto" field2="Producto" field3="Precio" field4="Talla" field5="Cantidad" field6="Total"/>
+                </section>
             </section>
         </main>
        </> 

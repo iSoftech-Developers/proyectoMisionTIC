@@ -5,11 +5,11 @@ const Cards=(props)=>{
 
     return(
         <>
-            <div className="cards-container">
-                <div className="cards-sp">
-                    <div className="card-upper">
-                        <i className="fas fa-user"></i>
-                        <div className="card-info">
+            <div className="cards-container m-8 shadow bg-gray-50 border-solid ">
+                <div className="mx-6 mb-5">
+                    <div className="flex">
+                        <i className="fas fa-user text-white bg-gray-800 mr-4 pt-4 px-3 pb-2"></i>
+                        <div className="card-info w-full align-center flex justify-between">
                             <span className="bolder">{props.titleCard}</span>
                             <button className="edit-card"><i className="fas fa-pen"></i></button>
                         </div>

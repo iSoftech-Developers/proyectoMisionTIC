@@ -13,11 +13,13 @@ const PaginaClientes =()=> {
       <Sidebar />
       <main>
         <Navbar/>
+        <section className="container-cards">
       
           <section className="contenido">
             <UpperBarSection titlePage="Clientes" nameButton="AGREGAR CLIENTE" />
             <Cards titleCard="Cliente ID :"field1="Razon Social*" field2="NIT/CC*" field3="Email" field4="Dirección" field5="Teléfono"/>
           </section>
+        </section>
       </main>
      </> 
       

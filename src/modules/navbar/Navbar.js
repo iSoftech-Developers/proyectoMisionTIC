@@ -4,7 +4,8 @@ const Navbar=()=>{
 
   return (
     <header>
-      <div class ="navbar-container">
+    
+      <div className ="navbar-container">
         <div className="textfield searchText">
             <i className="fas fa-search"></i>
             <input type="text" id="searchbar" placeholder="Buscar usuario por ID o nombre" title="Type in a category"/>
@@ -17,8 +18,7 @@ const Navbar=()=>{
             <i className="fas fa-user-circle fa-3x"></i>
         </div>
     </div>
-    
-</header>
+    </header>
 
   )
 }
