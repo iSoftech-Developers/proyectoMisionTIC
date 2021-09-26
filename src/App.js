@@ -23,8 +23,8 @@ const App =()=> {
         <Route path="/nuevaVenta" component={PaginaNuevaVenta} />
         <Route path="/detalleVenta" component={PaginaInfoDetalleVentas}/>
         <Route path="/moduloClientes/" component={PaginaClientes}/> 
-        <Route path="/detalleUsuarios" component={PaginaDetalleUsuarios}/> 
-        <Route path="/agregarUsuarios" component={PaginaVistaPerfilUsuario}/> 
+        <Route path="/agregarUsuarios" component={PaginaDetalleUsuarios}/> 
+        <Route path="/perfilUsuario" component={PaginaVistaPerfilUsuario}/> 
         <Route path="/" component={Login} />
 
       </Switch>
