@@ -1,29 +1,10 @@
 
-
 .cards-container{
     border: 0.09px solid #E2E1E1;
   }
-  .edit-card{
-      background-color :#F8F8F8;
-      border: 0;
-  }
-  .edit-card>i{
-      color:rgb(154, 155, 156);
-  }
 
-  table {
-    font-size: 13px;
-    width: 100%;
-    background-color: white;
-    border: 0.20px solid #767676;
-    margin-top: 14px;
-}
 
   td{
     border-top: 0.374657px solid #3E3E3E;
   }
   
-  table {
-    width: 100%;
-    border-collapse: collapse;
-  }
