@@ -10,7 +10,7 @@ const Cards=(props)=>{
                     <div className="flex">
                         <i className="fas fa-user text-white bg-gray-800 mr-4 pt-4 px-3 pb-2"></i>
                         <div className="card-info w-full align-center flex justify-between">
-                            <span className="font-semibold">{props.titleCard}</span>
+                            <span className="font-semibold self-center flex">{props.titleCard}</span>
                             <button className="edit-card bg-gray-50 border-0"><i className="fas fa-pen text-gray-400"></i></button>
                         </div>
                     </div>

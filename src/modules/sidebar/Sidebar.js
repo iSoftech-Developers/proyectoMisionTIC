@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const Siderbar =()=>{
 
     return(
-    <div className="sidebar fixed">
+    <div className="sidebar fixed w-72">
         <div className="logo-container">
             <img className="logo_sporty" src={logoSporty} alt="logo Sporty"/>
         </div>
