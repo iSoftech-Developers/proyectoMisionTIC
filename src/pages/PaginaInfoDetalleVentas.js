@@ -5,6 +5,7 @@ import NoButtonUpperBarSection from '../modules/noButtonUpperBarSection/NoButton
 import Tablas from '../modules/tablas/tablas'
 
 
+
 const PaginaInfoDetalleVentas =()=>{
 
     return(
