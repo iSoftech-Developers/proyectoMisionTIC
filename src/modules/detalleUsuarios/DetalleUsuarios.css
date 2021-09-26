@@ -34,7 +34,7 @@
 .lower-info-container-modal{
     display: flex;
     font-size: 15px;
-    color: #6C6C6C;
+    color: black;
 }
 
 .lower-info-container{
@@ -72,44 +72,9 @@
     margin-top: 23px;
 }
 
-.text-over-text>bolder{
-    font-weight: bold;
-    margin: 0px;
-    color: #6C6C6C;
-}
-
-.lower-container-modal-form{
-    display: flex;
-    justify-content: space-between;
-    margin: 0px 32px 0px 32px;
-}
-
-.input-form-users{
-    width: 300px;
-    height: 32px;
-    color: #BFBFBF;
-    border: none;
-    border-color: #a4a2a2;
-    margin-top: 17px;
-    padding-left: 15px;
-}
-
 .gray-letter{
-    color: #6C6C6C;
+    color:red;
 }
 
-.modal-bottom{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
-.save-button{
-    background-color:#68B04D;
-    font-size: 14px;
-    padding: 6px 22px;
-    border: none;
-    color: white;
-    width: 282px;
-    margin-bottom: 30px;
-}
+
