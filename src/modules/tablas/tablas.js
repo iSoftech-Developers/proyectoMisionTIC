@@ -3,7 +3,7 @@ const Tablas=(props)=>{
     return(
 
         <>
-            <div className="my-48 ">
+            <div className="my-24 ">
                 <div className="">
                     <div className="flex align-center justify-between">
                         <span className="bolder align-center">Descripción de la venta</span>
