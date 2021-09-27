@@ -1,13 +1,5 @@
 
 
-#searchbar{
-  width: 363px;
-  height: 36px;
-  border-radius: 32px;
-  color: #BFBFBF;
-  border: none;
-}
-
 .user_bar{
   display: flex;
   align-items: center;
