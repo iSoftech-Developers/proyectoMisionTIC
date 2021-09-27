@@ -1,8 +1,8 @@
-import Sidebar from "../modules/sidebar/Sidebar";
-import Navbar from "../modules/navbar/Navbar";
-import UpperBarSection from "../modules/upperBarSection/UpperBarSection";
-import NuevaVenta from "../modules/nuevaVenta/NuevaVenta";
-import Tablas from "../modules/tablas/tablas";
+import Sidebar from "../../modules/sidebar/Sidebar";
+import Navbar from "../../modules/navbar/Navbar";
+import UpperBarSection from "../../modules/upperBarSection/UpperBarSection";
+import NuevaVenta from "../../modules/nuevaVenta/NuevaVenta";
+import Tablas from "../../modules/tablas/tablas";
 
 
 const PaginaNuevaVenta =()=>{

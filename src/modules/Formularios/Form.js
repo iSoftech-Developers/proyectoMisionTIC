@@ -2,8 +2,8 @@ const Form=(props)=>{
 
     return(
         <>
-        <div className="form-container">
-            <form className="px-8 space-y-8 my-16">
+        <div >
+            <form className=" space-y-8 my-16">
                 <div className="form-upper-section flex justify-between font-bold label-color">
                     <div className="w-1/4">
                         <label for="userid">{props.formLabelTitle.label1}</label>

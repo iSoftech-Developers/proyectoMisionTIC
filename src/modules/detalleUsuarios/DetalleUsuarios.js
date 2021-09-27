@@ -3,7 +3,7 @@ const DetalleUsuarios=()=>{
     return(
         <>
         
-                <div className="flex mt-14 mx-8">
+                <div className="flex mt-14">
                     <div className="p-8 border-solid border-2 border-gray-400">
                         <i className="fas fa-user fa-10x text-gray-300"></i>
                     </div>

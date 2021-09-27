@@ -1,6 +1,6 @@
-import Sidebar from '../modules/sidebar/Sidebar';
-import Navbar from '../modules/navbar/Navbar';
-import DetalleUsuarios from '../modules/detalleUsuarios/DetalleUsuarios';
+import Sidebar from '../../modules/sidebar/Sidebar';
+import Navbar from '../../modules/navbar/Navbar';
+import DetalleUsuarios from '../../modules/detalleUsuarios/DetalleUsuarios';
 
 const PaginaVistaPerfilUsuario =()=> {
 
