@@ -31,11 +31,15 @@ body{
   height: 100%;
   max-width: 80rem;
   margin: 0 auto;
+  overflow-y: scroll;
+  
 }
 
 .container-cards{
   margin-left: 20rem;
   margin-right: 2rem;
+  height: 100%;
+  
 }
 
 .bolder{

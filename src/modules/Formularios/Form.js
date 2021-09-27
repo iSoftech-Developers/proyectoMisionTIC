@@ -1,9 +1,7 @@
 const Form=(props)=>{
 
     return(
-        <>
-        <div className="form-container">
-            <form className="px-8 space-y-8 my-16">
+            <form className=" space-y-8 my-16">
                 <div className="form-upper-section flex justify-between font-bold label-color">
                     <div className="w-1/4">
                         <label for="userid">{props.formLabelTitle.label1}</label>
@@ -40,9 +38,7 @@ const Form=(props)=>{
                     <input className="w-1/4 cursor-pointe bg-green-400 h-7 text-white font-bold my-16" type="submit" value="Guardar"/>
                 </div>
             </form>
-        </div>
-        
-        </>
+      
     );
 }
 

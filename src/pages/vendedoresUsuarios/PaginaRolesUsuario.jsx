@@ -1,6 +1,6 @@
-import Navbar from "../modules/navbar/Navbar";
-import Sidebar from "../modules/sidebar/Sidebar";
-import UpperBarSection from "../modules/upperBarSection/UpperBarSection";
+import Navbar from "../../modules/navbar/Navbar";
+import Sidebar from "../../modules/sidebar/Sidebar";
+import UpperBarSection from "../../modules/upperBarSection/UpperBarSection";
 
 
 const PaginaRolesUsuario =()=>{
