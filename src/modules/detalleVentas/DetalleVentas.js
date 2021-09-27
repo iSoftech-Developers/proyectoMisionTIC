@@ -3,7 +3,7 @@ const DetalleVentas=()=>{
     return(
 
         <>
-        <div className="container-text-over-text">
+        <div className="flex justify-between">
                 <div className="px-8">
                     <div>
                         <span className="block bolder">ID Responsable</span>
