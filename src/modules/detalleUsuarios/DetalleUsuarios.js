@@ -7,48 +7,62 @@ const DetalleUsuarios=()=>{
                 <div className="p-8 border-solid border-2 border-gray-400">
                     <i className="fas fa-user fa-10x text-gray-300"></i>
                 </div>
-                <div className="w-full ml-10">
-                    <div className="flex flex-col">
-                        <div>
-                            <span className="bg-black text-white text-xs">Administrador</span>
+                <div className="w-full ml-10 mt-8">
+                    <div className="flex justify-between">
+                        <div className="flex flex-col">
+                            <div>
+                                <span className="bg-black text-white text-xs">Administrador</span>
+                            </div>
+                            <div>
+                                <span className="text-lg">ID 023466</span>
+                            </div>  
                         </div>
-                        <div>
-                            <span className="text-lg">023466</span>
-                        </div>  
+                        <div className="">
+                            <div>
+                                <span>10/04/2021</span>
+                            </div>
+                            <div>
+                                
+                            </div>
+                        </div>
+
                     </div>
+                    
+
+                            
 
                     <div className="flex">
                         <div className="flex w-full justify-between mt-12">
                             <div className="flex flex-col ">
                                 <div>
-                                    <span className="font-bold">Nombre</span>
+                                    <span className="font-bold">Documento</span>
                                 </div>
                                 <div>
-                                    <span>Juan Camilo Gomez</span>
-                                </div>
-                            </div>
-                            <div className="flex flex-col">
-                                <div>
-                                    <span className="font-bold">Fecha de ingreso</span>
-                                </div>
-                                <div>
-                                    <span>10/04/2019</span>
+                                    <span>1.234566</span>
                                 </div>
                             </div>
                             <div className="flex flex-col">
                                 <div>
-                                    <span className="font-bold">Celular</span>
+                                    <span className="font-bold">Nombres y apellidos</span>
                                 </div>
                                 <div>
-                                    <span>302 1234567</span>
+                                    <span>Juan Camilo Gómez</span>
                                 </div>
                             </div>
                             <div className="flex flex-col">
                                 <div>
-                                    <span className="font-bold">Especialidad</span> 
+                                    <span className="font-bold">Especialidad</span>
                                 </div>
                                 <div>
                                     <span>Sección Gym</span>
+                                </div>
+                            </div>
+                            <div className="flex flex-col">
+                                <div>
+                                    <span className="font-bold">Celular</span> 
+                                </div>
+                                <div>
+                                    <span>310234567</span>
                                 </div>
                             </div>
                         </div>
