@@ -255,11 +255,11 @@ header{
         font-size: 15px;
         cursor: default;
         font-weight: bolder;
-}
+}    
 .navbar>li>button{
     color: white;
     background-color: #68B04D;
-    border-color: #68B04D;
+    border:none;
     font-weight: bolder;
     bottom: 80.74%;
     font-family: Roboto;

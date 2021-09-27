@@ -15,7 +15,7 @@ const PaginaInfoDetalleVentas =()=>{
           <Navbar/>
             <section className="container-cards">
                 <section className="contenido">
-                    <NoButtonUpperBarSection/>
+                    <NoButtonUpperBarSection title="Detalle de venta"/>
                     <DetalleVentas/>
                     <Tablas field1="ID Producto" field2="Producto" field3="Precio" field4="Talla" field5="Cantidad" field6="Total"/>
                 </section>

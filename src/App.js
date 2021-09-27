@@ -16,6 +16,7 @@ import PaginaNuevoCliente from './pages/clientes/PaginaNuevoCliente';
 import PaginaNuevoProducto from './pages/productos/PaginaNuevoProducto'
 import PaginaActulizarProducto from'./pages/productos/PaginaActualizarProducto'
 import PaginaOk from './pages/PaginaOk';
+import PaginaDetalleClientes from  './pages/clientes/PaginaDetalleClientes';
 
 
 const App =()=> {
@@ -27,10 +28,11 @@ const App =()=> {
         <Route path="/moduloVentas" component={PaginaVentas}/>
         <Route path="/nuevaVenta" component={PaginaNuevaVenta}/>
         <Route path="/detalleVenta" component={PaginaInfoDetalleVentas}/>
-        <Route path="/moduloClientes" component={PaginaClientes}/> 
         <Route path="/agregarUsuarios" component={PaginaDetalleUsuarios}/> 
         <Route path="/perfilUsuario" component={PaginaVistaPerfilUsuario}/>
         <Route path="/nuevoCliente" component={PaginaNuevoCliente}/>
+        <Route path="/moduloClientes" component={PaginaClientes}/> 
+        <Route path="/detalleCliente" component={PaginaDetalleClientes}/>
         <Route path="/productos" component={PaginaProductos}/>
         <Route path="/detalleProducto" component={PaginaDetalleProducto}/>
         <Route path="/nuevoProducto" component={PaginaNuevoProducto}/>

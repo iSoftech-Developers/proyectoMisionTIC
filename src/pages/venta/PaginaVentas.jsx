@@ -6,6 +6,20 @@ import UpperBarSection from '../../modules/upperBarSection/UpperBarSection';
 
 const PaginaVentas =()=> {
 
+  const variableCards = {
+    cardTo:"/detalleVenta",
+    linkIcon:"/actualizarProducto",
+    titleCard:"Id Venta",
+    field1:"Documento",
+    field2:"Nombres y apellidos",
+    field3:"Valor total",
+    field4:"Fecha de pago",
+    field5:"Estado",
+}
+
+const cardIcon = {
+    iconProperties:"far fa-list-alt text-white bg-gray-800 mr-4 pt-4 px-3 pb-2"
+}
 
     return (
      <>
@@ -17,7 +31,7 @@ const PaginaVentas =()=> {
       
             <section className="contenido">
               <UpperBarSection titlePage="Listado de ventas" nameButton="Nueva Venta" selectorButton="/nuevaVenta"/>
-              <Cards titleCard="Venta ID"field1="Documento" field2="Nombres y apellidos" field3="Valor total" field4="Fecha de pago" field5="Estado"/>
+              <Cards cardIcon={cardIcon} variableCards={variableCards}/>
             </section>  
           </section>
       </main>
