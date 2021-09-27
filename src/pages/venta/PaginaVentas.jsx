@@ -1,7 +1,7 @@
-import Sidebar from '../modules/sidebar/Sidebar';
-import Navbar from '../modules/navbar/Navbar';
-import Cards from '../modules/cards/Cards';
-import UpperBarSection from '../modules/upperBarSection/UpperBarSection';
+import Sidebar from '../../modules/sidebar/Sidebar';
+import Navbar from '../../modules/navbar/Navbar';
+import Cards from '../../modules/cards/Cards';
+import UpperBarSection from '../../modules/upperBarSection/UpperBarSection';
 
 
 const PaginaVentas =()=> {

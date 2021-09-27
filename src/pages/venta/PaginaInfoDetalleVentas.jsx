@@ -1,8 +1,8 @@
-import Sidebar from '../modules/sidebar/Sidebar';
-import Navbar from '../modules/navbar/Navbar';
-import DetalleVentas from '../modules/detalleVentas/DetalleVentas';
-import NoButtonUpperBarSection from '../modules/noButtonUpperBarSection/NoButtonUpperBarSection';
-import Tablas from '../modules/tablas/tablas'
+import Sidebar from '../../modules/sidebar/Sidebar';
+import Navbar from '../../modules/navbar/Navbar';
+import DetalleVentas from '../../modules/detalleVentas/DetalleVentas';
+import NoButtonUpperBarSection from '../../modules/noButtonUpperBarSection/NoButtonUpperBarSection';
+import Tablas from '../../modules/tablas/tablas'
 
 
 

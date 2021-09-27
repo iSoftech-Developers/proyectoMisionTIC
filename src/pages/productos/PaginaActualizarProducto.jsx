@@ -1,8 +1,8 @@
-import Sidebar from '../modules/sidebar/Sidebar';
-import Navbar from '../modules/navbar/Navbar';
-import UpperBarSection from '../modules/upperBarSection/UpperBarSection';
-import Tablas from '../modules/tablas/tablas';
-import ActualizarProducto from '../modules/actualizarProducto/ActualizarProducto';
+import Sidebar from '../../modules/sidebar/Sidebar';
+import Navbar from '../../modules/navbar/Navbar';
+import UpperBarSection from '../../modules/upperBarSection/UpperBarSection';
+import Tablas from '../../modules/tablas/tablas';
+import ActualizarProducto from '../../modules/actualizarProducto/ActualizarProducto';
 
 
 const PaginaActualizarProducto =()=> {

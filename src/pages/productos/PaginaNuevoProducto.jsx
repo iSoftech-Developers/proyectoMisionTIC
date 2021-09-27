@@ -1,8 +1,8 @@
-import Sidebar from '../modules/sidebar/Sidebar';
-import Navbar from '../modules/navbar/Navbar';
-import UpperBarSection from '../modules/upperBarSection/UpperBarSection';
-import NuevoProducto from '../modules/nuevoProducto/NuevoProducto';
-import Tablas from '../modules/tablas/tablas';
+import Sidebar from '../../modules/sidebar/Sidebar';
+import Navbar from '../../modules/navbar/Navbar';
+import UpperBarSection from '../../modules/upperBarSection/UpperBarSection';
+import NuevoProducto from '../../modules/nuevoProducto/NuevoProducto';
+import Tablas from '../../modules/tablas/tablas';
 
 
 const PaginaNuevoProducto =()=> {

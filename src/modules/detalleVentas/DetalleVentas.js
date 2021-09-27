@@ -4,6 +4,7 @@ const DetalleVentas=()=>{
 
         <>
         <div className="flex justify-between">
+                <div className="px-8">
                     <div>
                         <span className="block font-bold">ID Responsable</span>
                         <span>XXX.XXX.XXX - Y</span>
@@ -51,6 +52,8 @@ const DetalleVentas=()=>{
                         <span>ejemplo@ejemplo.com</span>
                     </div>
                 </div>
+            </div> 
+                 
         </>
     );
 }
