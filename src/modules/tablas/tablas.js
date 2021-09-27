@@ -7,7 +7,7 @@ const Tablas=(props)=>{
         <>
             <div className="table-container">
                 <div className="table-header">
-                    <span className="bolder table-title">Descripción de la venta</span>
+                    <span className="bolder table-title">{props.titleListProduct}</span>
                     <div className="textfield searchText"> 
                     <i className="fas fa-search"></i>
                     <input type="text" id="searchbar" placeholder="Buscar usuario por ID o nombre" title="Type in a category"/>

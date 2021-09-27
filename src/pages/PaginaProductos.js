@@ -15,12 +15,12 @@ const PaginaProductos =()=>{
         <Navbar/>
       
           <section className="contenido">
-          <NoButtonUpperBarSection />
-          <Tablas field1="ID Producto" field2="Producto" field3="Precio" field4="Talla" field5="Cantidad" field6="Total"/>
+          <NoButtonUpperBarSection titlePageProduct="Listado de Productos"/>
+          <Tablas titleListProduct="" field1="ID Producto" field2="Producto" field3="Precio" field4="Talla" field5="Cantidad" field6="Total"/>
            
           </section>
       </main>
-        </>
+      </>
 
     );
 

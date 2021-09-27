@@ -1,10 +1,10 @@
 import './NoButtonUpperBarSection.css';
 
-const NoButtonUpperBarSection =()=>{
+const NoButtonUpperBarSection =(props)=>{
 
     return(
         <div className="barra-ventas">
-            <span className="bolder title-sales-bar">Vendedores</span>
+            <span className="bolder title-sales-bar">{props.titlePageProduct}</span>
         </div >
     )
   }
