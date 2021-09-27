@@ -34,11 +34,9 @@ body{
 }
 
 .container-cards{
-  margin-left: 18rem;
+  margin-left: 20rem;
+  margin-right: 2rem;
 }
-
-
-
 
 .bolder{
   font-weight: bold;
