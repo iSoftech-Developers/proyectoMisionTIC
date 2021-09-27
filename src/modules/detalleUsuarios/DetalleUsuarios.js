@@ -17,15 +17,6 @@ const DetalleUsuarios=()=>{
                                 <span className="text-lg">ID 023466</span>
                             </div>  
                         </div>
-                        <div className="">
-                            <div>
-                                <span>10/04/2021</span>
-                            </div>
-                            <div>
-                                
-                            </div>
-                        </div>
-
                     </div>
                     
 
@@ -35,10 +26,10 @@ const DetalleUsuarios=()=>{
                         <div className="flex w-full justify-between mt-12">
                             <div className="flex flex-col ">
                                 <div>
-                                    <span className="font-bold">Documento</span>
+                                    <span className="font-bold">Fecha de ingreso</span>
                                 </div>
                                 <div>
-                                    <span>1.234566</span>
+                                    <span>11/04/2021</span>
                                 </div>
                             </div>
                             <div className="flex flex-col">
