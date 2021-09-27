@@ -3,19 +3,6 @@ const Tablas=(props)=>{
     return(
 
         <>
-<<<<<<< HEAD
-            <div className="table-container">
-                <div className="table-header">
-                    <span className="bolder table-title">{props.titleListProduct}</span>
-                    <div className="textfield searchText"> 
-                    <i className="fas fa-search"></i>
-                    <input type="text" id="searchbar" placeholder="Buscar usuario por ID o nombre" title="Type in a category"/>
-                </div>
-
-                </div>
-                
-                <table>
-=======
             <div className="my-20">
                 <div className="">
                     <div className="flex align-center justify-between">
@@ -27,7 +14,6 @@ const Tablas=(props)=>{
                     </div>
                 </div>                      
                 <table className="table-auto w-full bg-white border-solid border-gray-400 border my-5">
->>>>>>> edbb6b30ec31bc4ee6715a183efc10dd34f32c2b
                     <tr>
                         <th>{props.field1}</th>
                         <th>{props.field2}</th>
