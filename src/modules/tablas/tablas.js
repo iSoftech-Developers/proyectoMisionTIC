@@ -7,9 +7,9 @@ const Tablas=(props)=>{
                 <div className="">
                     <div className="flex align-center justify-between">
                         <span className="bolder align-center">Descripción de la venta</span>
-                        <div className="textfield"> 
-                            <i className="fas fa-search"></i>
-                            <input type="text" id="searchbar" placeholder="Buscar usuario por ID o nombre" title="Type in a category"/>
+                        <div className="bg-white border border-gray-500 rounded-xl ml-8"> 
+                            <i className="fas fa-search text-gray-500 pl-4 mr-3"></i>
+                            <input  className="outline-none w-96 h-9 rounded-xl"type="text"  placeholder="Buscar usuario por ID o nombre" title="Type in a category"/>
                         </div>
                     </div>
                 </div>

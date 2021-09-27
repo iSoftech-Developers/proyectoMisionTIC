@@ -1,4 +1,3 @@
-import './NoButtonUpperBarSection.css';
 
 const NoButtonUpperBarSection =()=>{
 
