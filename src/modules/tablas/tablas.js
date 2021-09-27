@@ -3,7 +3,7 @@ const Tablas=(props)=>{
     return(
 
         <>
-            <div className="my-20 pl-8">
+            <div className="my-48 ">
                 <div className="">
                     <div className="flex align-center justify-between">
                         <span className="bolder align-center">Descripción de la venta</span>
@@ -12,8 +12,7 @@ const Tablas=(props)=>{
                             <input  className="outline-none w-96 h-9 rounded-xl"type="text"  placeholder="Buscar usuario por ID o nombre" title="Type in a category"/>
                         </div>
                     </div>
-                </div>
-                        
+                </div>                      
                 <table className="table-auto w-full bg-white border-solid border-gray-400 border my-5">
                     <tr>
                         <th>{props.field1}</th>

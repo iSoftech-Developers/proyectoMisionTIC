@@ -10,6 +10,10 @@ import PaginaVentas from './pages/PaginaVentas';
 import PaginaNuevaVenta from './pages/PaginaNuevaVenta';
 import PaginaDetalleUsuarios from './pages/PaginaDetalleUsuarios';
 import PaginaVistaPerfilUsuario from './pages/PaginaVistaPerfilUsuario';
+import PaginaProductos from './pages/PaginaProductos';
+import PaginaDetalleProducto from './pages/PaginaDetalleProducto';
+import PaginaNuevoProducto from './pages/PaginaNuevoProducto';
+import PaginaActualizarProducto from './pages/PaginaActualizarProducto';
 
 
 
@@ -18,14 +22,18 @@ const App =()=> {
     <div className="template">
     <Router>
       <Switch>
-        <Route path="/moduloVendedores" component={PaginaVendedores} />
-        <Route path="/moduloVentas" component={PaginaVentas} />
-        <Route path="/nuevaVenta" component={PaginaNuevaVenta} />
+        <Route path="/moduloVendedores" component={PaginaVendedores}/>
+        <Route path="/moduloVentas" component={PaginaVentas}/>
+        <Route path="/nuevaVenta" component={PaginaNuevaVenta}/>
         <Route path="/detalleVenta" component={PaginaInfoDetalleVentas}/>
-        <Route path="/moduloClientes/" component={PaginaClientes}/> 
+        <Route path="/moduloClientes" component={PaginaClientes}/> 
         <Route path="/agregarUsuarios" component={PaginaDetalleUsuarios}/> 
-        <Route path="/perfilUsuario" component={PaginaVistaPerfilUsuario}/> 
-        <Route path="/" component={Login} />
+        <Route path="/perfilUsuario" component={PaginaVistaPerfilUsuario}/>
+        <Route path="/paginaProductos" component={PaginaProductos}/>
+        <Route path="/paginaDetalleProducto" component={PaginaDetalleProducto}/> 
+        <Route path="/nuevoProducto" component={PaginaNuevoProducto}/> 
+        <Route path="/actualizarProducto" component={PaginaActualizarProducto}/> 
+        <Route path="/" component={Login}/>
 
       </Switch>
     </Router>

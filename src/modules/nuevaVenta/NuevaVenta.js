@@ -7,7 +7,7 @@ const NuevaVenta=()=>{
 
     return(
         <>
-                <form className="flex justify-between mx-9">
+                <form className="flex justify-between">
                     <div className="flex flex-col">
                         
                         <div>

@@ -5,7 +5,7 @@ const Cards=(props)=>{
 
     return(
         <>
-            <div className="cards-container m-8 shadow bg-gray-100 ">
+            <div className="cards-container mb-4 shadow bg-gray-100 ">
                 <div className="mx-6 mb-5">
                     <div className="flex">
                         <i className="fas fa-user text-white bg-gray-800 mr-4 pt-4 px-3 pb-2"></i>
