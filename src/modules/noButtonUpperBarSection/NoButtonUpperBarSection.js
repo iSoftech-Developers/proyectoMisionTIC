@@ -3,7 +3,7 @@ const NoButtonUpperBarSection =(props)=>{
 
     return(
         <div className=" my-9 flex  items-start">
-            <span className="font-bold text-2xl">Vendedores</span>
+            <span className="font-bold text-2xl">{props.title}</span>
         </div >
     )
   }

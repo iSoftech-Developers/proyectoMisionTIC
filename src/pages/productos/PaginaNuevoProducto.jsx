@@ -1,6 +1,6 @@
 import Sidebar from '../../modules/sidebar/Sidebar';
 import Navbar from '../../modules/navbar/Navbar';
-import UpperBarSection from '../../modules/upperBarSection/UpperBarSection';
+import NoButtonUpperBarSection from '../../modules/noButtonUpperBarSection/NoButtonUpperBarSection';
 import NuevoProducto from '../../modules/nuevoProducto/NuevoProducto';
 import Tablas from '../../modules/tablas/tablas';
 
@@ -25,7 +25,7 @@ const PaginaNuevoProducto =()=> {
         <section className="container-cards">
       
           <section className="contenido">
-            <UpperBarSection titlePage="Registrar producto" nameButton="Agregar" />
+            <NoButtonUpperBarSection title="Nuevo Producto"/>
             <NuevoProducto formLabelTitle = {formLabelTitle}/>
             <Tablas field1="ID Producto" field2="Descripción" field3="Talla" field4="Valor unitario" field6="Estado"/>
           </section>

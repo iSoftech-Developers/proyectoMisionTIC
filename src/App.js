@@ -34,7 +34,7 @@ const App =()=> {
         <Route path="/productos" component={PaginaProductos}/>
         <Route path="/detalleProducto" component={PaginaDetalleProducto}/>
         <Route path="/nuevoProducto" component={PaginaNuevoProducto}/>
-        <Route path="/actulizarProducto" component={PaginaActulizarProducto}/>
+        <Route path="/actualizarProducto" component={PaginaActulizarProducto}/>
         <Route path="/ok" component={PaginaOk}/>
         <Route path="/" component={Login} />
 
