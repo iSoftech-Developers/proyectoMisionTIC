@@ -7,65 +7,65 @@ const NuevaVenta=()=>{
 
     return(
         <>
-                <form className="container-text-over-text">
-                    <div className="text-over-text">
+                <form className="flex justify-between mx-9">
+                    <div className="flex flex-col">
                         
                         <div>
-                            <label class="bolder independent-child">ID Responsable</label>
+                            <label class="font-bold ">ID Responsable</label>
                         </div>
                         <div>
                             <input required type="text" />
                         </div>
                         <div>
-                            <label className="bolder independent-child">Razón Social</label>
+                            <label className="font-bold ">Razón Social</label>
                         </div>
                         <div>
                             <input required type="text" />
                         </div>
                         <div>
-                            <label className="bolder independent-child">Departamento</label>
+                            <label className="font-bold ">Departamento</label>
                         </div>
                         <div>
                             <input required type="text" className=""/>
                         </div>
                     </div>
-                    <div className="text-over-text">
+                    <div className="flex flex-col">
                         <div>
-                            <label class="bolder independent-child">NIT/C.C</label>
+                            <label class="font-bold ">NIT/C.C</label>
                         </div>
                         <div>
                             <input required type="text" />
                         </div>
                         <div>
-                            <label class="bolder independent-child">Dirección</label>
+                            <label class="font-bold ">Dirección</label>
                         </div>
                         <div>
                             <input required type="text"/>
                         </div>
                     </div>
-                    <div className="text-over-text">
+                    <div className="flex flex-col">
                         <div>
-                            <label class="bolder independent-child">Fecha de pago</label>
+                            <label class="font-bold ">Fecha de pago</label>
                         </div>
                         <div>
                             <input required type="text"/>
                         </div>
                         <div>
-                            <label class="bolder independent-child">Celular</label>
+                            <label class="font-bold ">Celular</label>
                         </div>
                         <div>
                             <input required type="text"/>
                         </div>
                     </div>
-                    <div className="text-over-text">
+                    <div className="flex flex-col">
                         <div>
-                            <label class="bolder independent-child">Estado de venta</label>
+                            <label class="font-bold ">Estado de venta</label>
                         </div>
                         <div>
                             <input required type="text"/>
                         </div>
                         <div>
-                            <label class="bolder independent-child">Email</label> 
+                            <label class="font-bold ">Email</label> 
                         </div>
                         <div>
                             <input required type="text"/>

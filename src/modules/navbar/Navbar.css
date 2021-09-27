@@ -1,45 +1,4 @@
 
-
-#searchbar{
-  width: 363px;
-  height: 36px;
-  border-radius: 32px;
-  color: #BFBFBF;
-  border: none;
-}
-
-.user_bar{
-  display: flex;
-  align-items: center;
-}
-
-.infoUser{
-  margin-right: 25px;
-  text-align: end;
-  color: white;
-}
-
-.user_bar>i{
-  margin-right: 40px;
-  color: white;
-}
-
-.textfield {
-  background-color: rgb(255, 255, 255);
-  border: 1px solid gray;
-  border-radius: 8px;
-  margin-left: 30px;
-  border-radius: 32px;
-}
-
-.textfield  > input {
-  outline: none;
-  border: 0px;
-  font-size: 14px;
-}
-
-.textfield  > i {
-  color:#BFBFBF;
-  padding-left: 15px;
-  margin-right: 5px;
+header{
+  background: linear-gradient(145deg,#616c01,#123629,#0c1f32,#720143);
 }
