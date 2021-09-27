@@ -9,7 +9,7 @@ import PaginaVentas from './pages/PaginaVentas';
 import PaginaNuevaVenta from './pages/PaginaNuevaVenta';
 import PaginaDetalleUsuarios from './pages/PaginaDetalleUsuarios';
 import PaginaVistaPerfilUsuario from './pages/PaginaVistaPerfilUsuario';
-
+import PaginaGestorRoles from './pages/PaginaGestorRoles';
 
 
 const App =()=> {
@@ -23,7 +23,8 @@ const App =()=> {
         <Route path="/detalleVenta" component={PaginaInfoDetalleVentas}/>
         <Route path="/moduloClientes/" component={PaginaClientes}/> 
         <Route path="/detalleUsuarios" component={PaginaDetalleUsuarios}/> 
-        <Route path="/perfilUsuarios" component={PaginaVistaPerfilUsuario}/> 
+        <Route path="/perfilUsuarios" component={PaginaVistaPerfilUsuario}/>
+        <Route path="/RolesdeUsuarios" component={PaginaGestorRoles}/>
         <Route path="/" component={Login} />
 
       </Switch>
