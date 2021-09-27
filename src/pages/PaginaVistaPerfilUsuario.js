@@ -1,6 +1,6 @@
 import Sidebar from '../modules/sidebar/Sidebar';
 import Navbar from '../modules/navbar/Navbar';
-import VistaPerfilUsuario from '../modules/vistaPerfilUsuario/VistaPerfilUsuario';
+import DetalleUsuarios from '../modules/detalleUsuarios/DetalleUsuarios';
 
 const PaginaVistaPerfilUsuario =()=> {
 
@@ -9,8 +9,10 @@ const PaginaVistaPerfilUsuario =()=> {
       <Sidebar />
       <main>
         <Navbar/>
-          <section className="contenido">
-            <VistaPerfilUsuario/>
+          <section className="container-cards">
+            <section className="contenido">
+              <DetalleUsuarios/>
+            </section>
           </section>  
       </main>
      </>    
