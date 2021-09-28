@@ -8,7 +8,7 @@ const EstadoDeVenta = () => {
                 <h5>Venta ID: ADB1233455</h5>
             </div>
             
-            <form className="text-center mt-9">
+            <form className="text-center mt-12">
                 <div>
                     <input type="radio" id="sold" name="salestatus" value="sold"/>
                     <label className="ml-2" for="sold">Vendido</label>
@@ -23,7 +23,7 @@ const EstadoDeVenta = () => {
                 </div>
                     
                 <div className="flex justify-center">
-                    <input type="submit" className="w-1/6 cursor-pointer bg-green-400 h-7 text-white font-bold my-16" value="Guardar"/>
+                    <input type="submit" className="w-1/6 cursor-pointer bg-green-400 h-7 text-white font-bold my-14" value="Guardar"/>
                 </div>    
             </form>
             
