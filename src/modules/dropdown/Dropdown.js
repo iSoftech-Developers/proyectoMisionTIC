@@ -9,7 +9,7 @@ const EditarUsuarios = () => {
                 <option value="notavailable">No disponible</option>
             </select>
         </div>
-    )
+    );
 }
 
-export default EditarUsuarios
+export default EditarUsuarios;
