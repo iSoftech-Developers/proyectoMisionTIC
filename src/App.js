@@ -19,7 +19,8 @@ import PaginaActualizarProducto from'./pages/productos/PaginaActualizarProducto'
 import PaginaOk from './pages/PaginaOk';
 import PaginaDetalleClientes from  './pages/clientes/PaginaDetalleClientes';
 import PaginaRolesUsuario from './pages/vendedoresUsuarios/PaginaRolesUsuario';
-import PaginaEstadoVenta from './pages/venta/PaginaEstadoVenta'
+import PaginaEstadoVenta from './pages/venta/PaginaEstadoVenta';
+import PaginaClientesCris from './pages/clientes/PaginaClientesCris';
 
 
 const App =()=> {
@@ -42,7 +43,8 @@ const App =()=> {
         <Route path="/detalleProducto" component={PaginaDetalleProducto}/>
         <Route path="/nuevoProducto" component={PaginaNuevoProducto}/>
         <Route path="/actualizarProducto" component={PaginaActualizarProducto}/>
-        <Route path="/rolesUsuarios" component={PaginaRolesUsuario}/>  
+        <Route path="/rolesUsuarios" component={PaginaRolesUsuario}/>
+        <Route path="/crearClienteCris" component={PaginaClientesCris}/>   
         <Route path="/ok" component={PaginaOk}/>
         <Route path="/" component={Login} />
 
