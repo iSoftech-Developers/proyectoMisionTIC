@@ -1,10 +1,9 @@
-import './NoButtonUpperBarSection.css';
 
-const NoButtonUpperBarSection =()=>{
+const NoButtonUpperBarSection =(props)=>{
 
     return(
-        <div className="barra-ventas">
-            <span className="bolder title-sales-bar">Vendedores</span>
+        <div className=" my-9 flex  items-start">
+            <span className="font-bold text-2xl">{props.title}</span>
         </div >
     )
   }

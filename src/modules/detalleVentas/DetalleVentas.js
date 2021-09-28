@@ -1,76 +1,54 @@
-import './DetalleVentas.css';
-
 const DetalleVentas=()=>{
 
     return(
 
         <>
-        <div className="container-text-over-text">
-                <div className="text-over-text">
+        <div className="flex justify-between">
+                <div className="px-8">
                     <div>
-                        <span className="bolder independent-child">ID Responsable</span>
-                    </div>
-                    <div>
+                        <span className="block font-bold">ID Responsable</span>
                         <span>XXX.XXX.XXX - Y</span>
                     </div>
-                    <div>
-                        <span className="bolder independent-child">Razón Social</span>
-                    </div>
-                    <div>
+                    <div className="my-8">
+                        <span className="block font-bold">Razón Social</span>
                         <span>Juan Camilo Gomez</span>
                     </div>
-                    <div>
-                        <span className="bolder independent-child">Departamento</span>
-                    </div>
-                    <div>
+                    <div >
+                        <span className="block font-bold">Departamento</span>
                         <span className="">Depto</span>
                     </div>
                 </div>
-                <div className="text-over-text">
+                <div>
                     <div>
-                        <span className="bolder independent-child">NIT/C.C</span>
-                    </div>
-                    <div>
+                        <span className="block font-bold">NIT/C.C</span>
                         <span>D9999999</span>
                     </div>
-                    <div>
-                        <span className="bolder independent-child">Dirección</span>
-                    </div>
-                    <div>
+                    <div className="my-8">
+                        <span className="block font-bold">Dirección</span>
                         <span>10/04/2019</span>
                     </div>
                     <div>
-                        <span className="bolder independent-child">Municipio</span>
-                    </div>
-                    <div>
+                        <span className="block font-bold">Municipio</span>
                         <span>Municipio</span>
                     </div>
                 </div>
-                <div className="text-over-text">
+                <div className="">
                     <div>
-                        <span className="bolder independent-child">Fecha de pago</span>
-                    </div>
-                    <div>
+                        <span className="block font-bold">Fecha de pago</span>
                         <span>11/04/2021</span>
                     </div>
-                    <div>
-                        <span className="bolder independent-child">Celular</span>
-                    </div>
-                    <div>
+                    <div className="my-8">
+                        <span className="block font-bold">Celular</span>
                         <span>302 1234567</span>
                     </div>
                 </div>
-                <div className="text-over-text">
+                <div className="">
                     <div>
-                        <span className="bolder independent-child">Estado de venta</span>
-                    </div>
-                    <div>
+                        <span className="block font-bold">Estado de venta</span>
                         <span>ruta</span>
                     </div>
-                    <div>
-                        <span className="bolder independent-child">Email</span> 
-                    </div>
-                    <div>
+                    <div className="my-8">
+                        <span className="block font-bold">Email</span>
                         <span>ejemplo@ejemplo.com</span>
                     </div>
                 </div>

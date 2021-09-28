@@ -1,15 +1,24 @@
 
-import PaginaVendedores from './pages/PaginaVendedores';
 import './App.css';
-import PaginaInfoDetalleVentas from './pages/PaginaInfoDetalleVentas';
+import './index.css';
 import { BrowserRouter as Router,Route ,Switch } from 'react-router-dom';
+import PaginaVendedores from './pages/vendedoresUsuarios/PaginaVendedores';
+import PaginaInfoDetalleVentas from './pages/venta/PaginaInfoDetalleVentas';
 import Login from './modules/login/Login';
-import PaginaClientes from './pages/PaginaClientes';
-import PaginaVentas from './pages/PaginaVentas';
-import PaginaNuevaVenta from './pages/PaginaNuevaVenta';
-import PaginaDetalleUsuarios from './pages/PaginaDetalleUsuarios';
-import PaginaVistaPerfilUsuario from './pages/PaginaVistaPerfilUsuario';
+import PaginaClientes from './pages/clientes/PaginaClientes';
+import PaginaVentas from './pages/venta/PaginaVentas';
+import PaginaNuevaVenta from './pages/venta/PaginaNuevaVenta';
+import PaginaDetalleUsuarios from './pages/vendedoresUsuarios/PaginaDetalleUsuarios';
+import PaginaVistaPerfilUsuario from './pages/vendedoresUsuarios/PaginaVistaPerfilUsuario';
+import PaginaProductos from './pages/productos/PaginaProductos';
+import PaginaDetalleProducto from './pages/productos/PaginaDetalleProducto';
+import PaginaNuevoCliente from './pages/clientes/PaginaNuevoCliente';
+import PaginaNuevoProducto from './pages/productos/PaginaNuevoProducto'
+import PaginaActulizarProducto from'./pages/productos/PaginaActualizarProducto'
+import PaginaOk from './pages/PaginaOk';
+import PaginaDetalleClientes from  './pages/clientes/PaginaDetalleClientes';
 import PaginaGestorRoles from './pages/PaginaGestorRoles';
+import PaginaRolesUsuario from './pages/vendedoresUsuarios/PaginaRolesUsuario';
 
 
 const App =()=> {
@@ -17,14 +26,22 @@ const App =()=> {
     <div className="template">
     <Router>
       <Switch>
-        <Route path="/moduloVendedores" component={PaginaVendedores} />
-        <Route path="/moduloVentas" component={PaginaVentas} />
-        <Route path="/nuevaVenta" component={PaginaNuevaVenta} />
+        <Route path="/moduloVendedores" component={PaginaVendedores}/>
+        <Route path="/moduloVentas" component={PaginaVentas}/>
+        <Route path="/nuevaVenta" component={PaginaNuevaVenta}/>
         <Route path="/detalleVenta" component={PaginaInfoDetalleVentas}/>
-        <Route path="/moduloClientes/" component={PaginaClientes}/> 
-        <Route path="/detalleUsuarios" component={PaginaDetalleUsuarios}/> 
-        <Route path="/perfilUsuarios" component={PaginaVistaPerfilUsuario}/>
-        <Route path="/RolesdeUsuarios" component={PaginaGestorRoles}/>
+        <Route path="/agregarUsuarios" component={PaginaDetalleUsuarios}/> 
+        <Route path="/perfilUsuario" component={PaginaVistaPerfilUsuario}/>
+        <Route path="/nuevoCliente" component={PaginaNuevoCliente}/>
+        <Route path="/moduloClientes" component={PaginaClientes}/> 
+        <Route path="/detalleCliente" component={PaginaDetalleClientes}/>
+        <Route path="/productos" component={PaginaProductos}/>
+        <Route path="/detalleProducto" component={PaginaDetalleProducto}/>
+        <Route path="/nuevoProducto" component={PaginaNuevoProducto}/>
+        <Route path="/actualizarProducto" component={PaginaActulizarProducto}/>
+        <Route path="/gestionRoles" component={PaginaGestorRoles}/>
+        <Route path="/gestionRoles1" component={PaginaRolesUsuario}/>
+        <Route path="/ok" component={PaginaOk}/>
         <Route path="/" component={Login} />
 
       </Switch>
