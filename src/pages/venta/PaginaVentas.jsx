@@ -18,7 +18,7 @@ const PaginaVentas =()=> {
 }
 
 const cardIcon = {
-    iconProperties:"far fa-list-alt text-white bg-gray-800 mr-4 pt-4 px-3 pb-2"
+    iconProperties:"fas fa-tag text-white bg-gray-800 mr-4 pt-4 px-3 pb-2"
 }
 
     return (

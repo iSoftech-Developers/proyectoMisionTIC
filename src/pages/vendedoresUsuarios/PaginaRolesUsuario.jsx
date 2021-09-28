@@ -10,16 +10,15 @@ const PaginaRolesUsuario =()=>{
     return(
         <>
       <Sidebar />
-      
+      <main>
         <Navbar/>
           <section className="container-cards">
       
             <section className="contenido">
-              <UpperBarSection titlePage="Administrar Usuarios" nameButton="NUEVO USUARIO"/>
-
-              
+              <UpperBarSection titlePage="Administrar Usuarios" nameButton="NUEVO USUARIO"/>         
             </section>
           </section>
+          </main>
         </>
 
 

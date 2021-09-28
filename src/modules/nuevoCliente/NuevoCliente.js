@@ -3,7 +3,7 @@ const NuevoCliente = (props) => {
     return (
     
         <div>
-            <h1 className="text-2xl font-semibold    my-9">Crear Nuevo Cliente</h1>
+            <h1 className="text-2xl font-semibold my-9">Crear Nuevo Cliente</h1>
             <form className=" space-y-8 my-16">
                 <div className="form-upper-section flex justify-between font-bold label-color">
                     <div className="w-1/5">
@@ -44,7 +44,7 @@ const NuevoCliente = (props) => {
                 <div className=" w-full flex justify-center">
                     <input className="w-1/5 cursor-pointe bg-green-400 h-7 text-white font-bold my-16" type="submit" value="Guardar"/>
                 </div>
-            </form>
+            </form> 
         </div>
     )
 }
