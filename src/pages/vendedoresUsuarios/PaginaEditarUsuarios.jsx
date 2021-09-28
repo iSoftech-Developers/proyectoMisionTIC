@@ -1,9 +1,10 @@
 import Sidebar from '../../modules/sidebar/Sidebar';
 import Navbar from '../../modules/navbar/Navbar';
 import DetalleUsuarios from '../../modules/detalleUsuarios/DetalleUsuarios';
-import Form from '../../modules/Formularios/Form'
+import Form from '../../modules/Formularios/Form';
+import UpperBarSection from '../../modules/upperBarSection/UpperBarSection';
 
-const PaginaDetalleUsuarios =()=>{
+const PaginaEditarUsuarios =()=>{
 
     const formLabelTitle = {
         label1:"ID",
@@ -30,4 +31,4 @@ const PaginaDetalleUsuarios =()=>{
     );
 }
 
-export default PaginaDetalleUsuarios;
+export default PaginaEditarUsuarios;

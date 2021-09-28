@@ -13,12 +13,12 @@ import PaginaVistaPerfilUsuario from './pages/vendedoresUsuarios/PaginaVistaPerf
 import PaginaProductos from './pages/productos/PaginaProductos';
 import PaginaDetalleProducto from './pages/productos/PaginaDetalleProducto';
 import PaginaNuevoCliente from './pages/clientes/PaginaNuevoCliente';
-import PaginaNuevoProducto from './pages/productos/PaginaNuevoProducto'
-import PaginaActulizarProducto from'./pages/productos/PaginaActualizarProducto'
+import PaginaNuevoProducto from './pages/productos/PaginaNuevoProducto';
+import PaginaActulizarProducto from'./pages/productos/PaginaActualizarProducto';
 import PaginaOk from './pages/PaginaOk';
 import PaginaDetalleClientes from  './pages/clientes/PaginaDetalleClientes';
-import PaginaRolesUsuario from './pages/vendedoresUsuarios/PaginaRolesUsuario'
-
+import PaginaRolesUsuario from './pages/vendedoresUsuarios/PaginaRolesUsuario';
+import PaginaEditarUsuarios from './pages/vendedoresUsuarios/PaginaEditarUsuarios';
 
 const App =()=> {
   return (
@@ -31,6 +31,7 @@ const App =()=> {
         <Route path="/detalleVenta" component={PaginaInfoDetalleVentas}/>
         <Route path="/agregarUsuarios" component={PaginaDetalleUsuarios}/> 
         <Route path="/perfilUsuario" component={PaginaVistaPerfilUsuario}/>
+        <Route path="/editarUsuarios" component={PaginaEditarUsuarios}/>
         <Route path="/nuevoCliente" component={PaginaNuevoCliente}/>
         <Route path="/moduloClientes" component={PaginaClientes}/> 
         <Route path="/detalleCliente" component={PaginaDetalleClientes}/>

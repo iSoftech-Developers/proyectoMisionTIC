@@ -7,7 +7,7 @@ import NoButtonUpperBarSection from '../../modules/noButtonUpperBarSection/NoBut
 const PaginaVendedores =()=> {
   const variableCards = {
     cardTo:"/perfilUsuario",
-    linkIcon:"/actualizarProducto",
+    linkIcon:"/editarUsuarios",
     titleCard:"Vendedor Id",
     field1:"Documento",
     field2:"Nombre y Apellidos",
