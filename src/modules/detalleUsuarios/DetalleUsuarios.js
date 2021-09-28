@@ -2,7 +2,6 @@ const DetalleUsuarios=()=>{
 
     return(
         <>
-        
             <div className="flex mt-14">
                 <div className="p-8 border-solid border-2 border-gray-400">
                     <i className="fas fa-user fa-10x text-gray-300"></i>
@@ -18,9 +17,7 @@ const DetalleUsuarios=()=>{
                             </div>  
                         </div>
                     </div>
-                    
-
-                            
+                                
 
                     <div className="flex">
                         <div className="flex w-full justify-between mt-12">
@@ -59,7 +56,7 @@ const DetalleUsuarios=()=>{
                         </div>
                     </div>
                 </div>
-            </div> 
+            </div>
       
 
             
@@ -68,3 +65,4 @@ const DetalleUsuarios=()=>{
 }
 
 export default DetalleUsuarios ;
+

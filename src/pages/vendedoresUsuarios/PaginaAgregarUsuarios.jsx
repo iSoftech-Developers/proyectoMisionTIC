@@ -1,10 +1,18 @@
 import Sidebar from '../../modules/sidebar/Sidebar';
 import Navbar from '../../modules/navbar/Navbar';
 import DetalleUsuarios from '../../modules/detalleUsuarios/DetalleUsuarios';
-import EditarUsuario from '../../modules/editarUsuario/EditarUsuario';
+import Form from '../../modules/Formularios/Form'
 
+const PaginaDetalleUsuarios =()=>{
 
-const PaginaAgregarUsuarios =()=>{
+    const formLabelTitle = {
+        label1:"ID",
+        label2:"Nombres y apellidos",
+        label3:"Fecha de Ingreso",
+        label4:"Numero de celular",
+        label5:"Especialidad",
+        label6:"Rol",
+    }
 
     return(
         <>
@@ -13,7 +21,8 @@ const PaginaAgregarUsuarios =()=>{
               <Navbar/>
                 <section className="container-cards">
                     <section className="contenido">
-                        <EditarUsuario/>
+                        <DetalleUsuarios/>
+                        <Form formLabelTitle = {formLabelTitle} />
                     </section>
                 </section>         
         </main>
@@ -21,4 +30,4 @@ const PaginaAgregarUsuarios =()=>{
     );
 }
 
-export default PaginaAgregarUsuarios;
+export default PaginaDetalleUsuarios;

@@ -14,7 +14,7 @@ const PaginaDetalleProducto =()=>{
           <Navbar/>
             <section className="container-cards">
                 <section className="contenido">
-                    <NoButtonUpperBarSection/>
+                    <NoButtonUpperBarSection title="Detalle Producto"/>
                     <DetalleProducto/>
                 </section>
             </section>
