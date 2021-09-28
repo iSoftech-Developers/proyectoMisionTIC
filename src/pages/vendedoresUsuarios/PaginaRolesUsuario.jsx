@@ -16,6 +16,7 @@ const PaginaRolesUsuario =()=>{
       
             <section className="contenido">
               <UpperBarSection titlePage="Administrar Usuarios" nameButton="NUEVO USUARIO"/>         
+      
             </section>
           </section>
           </main>

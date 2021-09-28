@@ -2,7 +2,6 @@ import Sidebar from '../../modules/sidebar/Sidebar';
 import Navbar from '../../modules/navbar/Navbar';
 import DetalleUsuarios from '../../modules/detalleUsuarios/DetalleUsuarios';
 import Form from '../../modules/Formularios/Form';
-import UpperBarSection from '../../modules/upperBarSection/UpperBarSection';
 
 const PaginaEditarUsuarios =()=>{
 
