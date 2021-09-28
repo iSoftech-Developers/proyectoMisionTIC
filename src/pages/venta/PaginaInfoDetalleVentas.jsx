@@ -21,7 +21,7 @@ const PaginaInfoDetalleVentas =()=>{
                 </section>
             </section>
         </main>
-       </> 
+       </>
     );
 }
 
