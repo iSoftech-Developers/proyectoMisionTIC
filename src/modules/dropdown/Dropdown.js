@@ -1,6 +1,6 @@
 import React from 'react'
 
-const EditarUsuarios = () => {
+const EditarUsuarios = (props) => {
     return (
         <div className="w-1/5">
             <label for="productstatus">{props.formLabelTitle.label5}</label>
@@ -9,7 +9,7 @@ const EditarUsuarios = () => {
                 <option value="notavailable">No disponible</option>
             </select>
         </div>
-    )
+    );
 }
 
-export default EditarUsuarios
+export default EditarUsuarios;
