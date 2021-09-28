@@ -40,7 +40,7 @@ const App =()=> {
         <Route path="/nuevoProducto" component={PaginaNuevoProducto}/>
         <Route path="/actualizarProducto" component={PaginaActulizarProducto}/>
         <Route path="/gestionRoles" component={PaginaGestorRoles}/>
-        <Route path="/gestionRoles1" component={PaginaRolesUsuario}/>
+        <Route path="/gestionRoles1" component={PaginaRolesUsuario}/> /* heder fuera de lugar */
         <Route path="/ok" component={PaginaOk}/>
         <Route path="/" component={Login} />
 
