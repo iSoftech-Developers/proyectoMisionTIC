@@ -44,7 +44,7 @@ const NuevoCliente = (props) => {
                 <div className=" w-full flex justify-center">
                     <input className="w-1/5 cursor-pointe bg-green-400 h-7 text-white font-bold my-16" type="submit" value="Guardar"/>
                 </div>
-            </form>
+            </form> 
         </div>
     )
 }

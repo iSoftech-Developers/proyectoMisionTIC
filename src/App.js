@@ -17,6 +17,7 @@ import PaginaNuevoProducto from './pages/productos/PaginaNuevoProducto'
 import PaginaActulizarProducto from'./pages/productos/PaginaActualizarProducto'
 import PaginaOk from './pages/PaginaOk';
 import PaginaDetalleClientes from  './pages/clientes/PaginaDetalleClientes';
+import PaginaRolesUsuario from './pages/vendedoresUsuarios/PaginaRolesUsuario'
 
 
 const App =()=> {
@@ -37,6 +38,7 @@ const App =()=> {
         <Route path="/detalleProducto" component={PaginaDetalleProducto}/>
         <Route path="/nuevoProducto" component={PaginaNuevoProducto}/>
         <Route path="/actualizarProducto" component={PaginaActulizarProducto}/>
+        <Route path="/rolesUsuarios" component={PaginaRolesUsuario}/>  
         <Route path="/ok" component={PaginaOk}/>
         <Route path="/" component={Login} />
 
