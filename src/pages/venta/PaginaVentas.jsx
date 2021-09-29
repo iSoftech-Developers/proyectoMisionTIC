@@ -8,7 +8,7 @@ const PaginaVentas =()=> {
 
   const variableCards = {
     cardTo:"/detalleVenta",
-    linkIcon:"/actualizarProducto",
+    linkIcon:"/editarVenta",
     titleCard:"Id Venta",
     field1:"Documento",
     field2:"Nombres y apellidos",

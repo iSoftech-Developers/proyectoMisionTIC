@@ -19,6 +19,7 @@ import PaginaOk from './pages/PaginaOk';
 import PaginaDetalleClientes from  './pages/clientes/PaginaDetalleClientes';
 import PaginaRolesUsuario from './pages/vendedoresUsuarios/PaginaRolesUsuario';
 import PaginaEditarUsuarios from './pages/vendedoresUsuarios/PaginaEditarUsuarios';
+import PaginaEditarVenta from './pages/venta/PaginaEditarVenta';
 
 const App =()=> {
   return (
@@ -29,6 +30,7 @@ const App =()=> {
         <Route path="/moduloVentas" component={PaginaVentas}/>
         <Route path="/nuevaVenta" component={PaginaNuevaVenta}/>
         <Route path="/detalleVenta" component={PaginaInfoDetalleVentas}/>
+        <Route path="/editarVenta" component={PaginaEditarVenta}/>
         <Route path="/agregarUsuarios" component={PaginaDetalleUsuarios}/> 
         <Route path="/perfilUsuario" component={PaginaVistaPerfilUsuario}/>
         <Route path="/editarUsuarios" component={PaginaEditarUsuarios}/>
