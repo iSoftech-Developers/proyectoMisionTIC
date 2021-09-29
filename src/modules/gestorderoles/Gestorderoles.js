@@ -11,46 +11,107 @@ const Gestorderoles = () => {
           <option value="Usuarios">Administrador</option>
         </select>
       </div>
-      <div className=" flex justify-between mt-32 w-80">
-        <div className="card m-3 w-60 ml-3  bg-white rounded-lg cursor-pointer transition duration-250 ease-in-out transform hover:-translate-y-1 hover:scale-110 shadow-md  ">
-            <div className="content_imageuser flex w-20rem ">
-                <img src={img_avatar} alt="Avatar" className="m-0.1 object-fill border rounded-md m-2 w-25 h-15" />
+      <br/>
+      <br/>
+      <br/>
+      <div className="  flex  flex-wrap -full h-49">
+        <div className="card m-3 w-1/6 h-80 mr-6  bg-white  cursor-pointer transition duration-250 ease-in-out transform hover:-translate-y-1 hover:scale-110 shadow-md  ">
+            <div className="content_imageuser   justify-center flex">
+                <img src={img_avatar} alt="Avatar" className="w-30 h-48 mr-1 ml-1 mt-3" />
             </div>
             <div className="container " >
                 <div className="container_Idusername ml-3 font-black">
                     <h4>ID 0023455968</h4>
                 </div>
-                <div className="container_username ml-3  ">
+                <div className="container_username ml-3  flex-wrap">
                     <p>Architect & Engineer </p>
                 </div>
-                <div className="container_rol ml-3 bg-black rounded-lg m-3 mr-21 ">
+                <div className="container_rol  bg-black rounded-lg m-3 mr-8 flex-wrap mt-9">
                     <p className="text_rol text-white ml-2 " >Administrador</p>
                 </div>
             </div>
         </div>
-        <div className="card m-3 w-60 ml-3  bg-white rounded-lg cursor-pointer transition duration-250 ease-in-out transform hover:-translate-y-1 hover:scale-110 shadow-lg">
-            <div className="content_imageuser flex w-20rem ">
-                <img src={img_avatar} alt="Avatar" className="m-0.1 object-fill border rounded-md m-2 w-25 h-15" />
+        <div className="card m-3 w-1/6 h-80 mr-6  bg-white  cursor-pointer transition duration-250 ease-in-out transform hover:-translate-y-1 hover:scale-110 shadow-md  ">
+            <div className="content_imageuser   justify-center flex">
+                <img src={img_avatar} alt="Avatar" className="w-30 h-48 mr-1 ml-1 mt-3" />
             </div>
-            <div className="container static">
+            <div className="container " >
                 <div className="container_Idusername ml-3 font-black">
                     <h4>ID 0023455968</h4>
                 </div>
-                <div className="container_username ml-3 ">
-                    <p>Architect & Engineer</p>
+                <div className="container_username ml-3  flex-wrap">
+                    <p>Architect & Engineer </p>
                 </div>
-                <div className="container_rol ml-3 bg-black rounded-lg m-3 mr-21">
+                <div className="container_rol  bg-black rounded-lg m-3 mr-8 flex-wrap mt-9">
                     <p className="text_rol text-white ml-2 " >Administrador</p>
                 </div>
             </div>
         </div>
-       
-        
-        
-        
-      
+        <div className="card m-3 w-1/6 h-80 mr-6  bg-white  cursor-pointer transition duration-250 ease-in-out transform hover:-translate-y-1 hover:scale-110 shadow-md  ">
+            <div className="content_imageuser   justify-center flex">
+                <img src={img_avatar} alt="Avatar" className="w-30 h-48 mr-1 ml-1 mt-3" />
+            </div>
+            <div className="container " >
+                <div className="container_Idusername ml-3 font-black">
+                    <h4>ID 0023455968</h4>
+                </div>
+                <div className="container_username ml-3  flex-wrap">
+                    <p>Architect & Engineer </p>
+                </div>
+                <div className="container_rol  bg-black rounded-lg m-3 mr-8 flex-wrap mt-9">
+                    <p className="text_rol text-white ml-2 " >Administrador</p>
+                </div>
+            </div>
+        </div>
+        <div className="card m-3 w-1/6 h-80 mr-6  bg-white  cursor-pointer transition duration-250 ease-in-out transform hover:-translate-y-1 hover:scale-110 shadow-md  ">
+            <div className="content_imageuser   justify-center flex">
+                <img src={img_avatar} alt="Avatar" className="w-30 h-48 mr-1 ml-1 mt-3" />
+            </div>
+            <div className="container " >
+                <div className="container_Idusername ml-3 font-black">
+                    <h4>ID 0023455968</h4>
+                </div>
+                <div className="container_username ml-3  flex-wrap">
+                    <p>Architect & Engineer </p>
+                </div>
+                <div className="container_rol  bg-black rounded-lg m-3 mr-8 flex-wrap mt-9">
+                    <p className="text_rol text-white ml-2 " >Administrador</p>
+                </div>
+            </div>
+        </div>
+        <div className="card m-3 w-1/6 h-80 mr-6  bg-white  cursor-pointer transition duration-250 ease-in-out transform hover:-translate-y-1 hover:scale-110 shadow-md  ">
+            <div className="content_imageuser   justify-center flex">
+                <img src={img_avatar} alt="Avatar" className="w-30 h-48 mr-1 ml-1 mt-3" />
+            </div>
+            <div className="container " >
+                <div className="container_Idusername ml-3 font-black">
+                    <h4>ID 0023455968</h4>
+                </div>
+                <div className="container_username ml-3  flex-wrap">
+                    <p>Architect & Engineer </p>
+                </div>
+                <div className="container_rol  bg-black rounded-lg m-3 mr-8 flex-wrap mt-9">
+                    <p className="text_rol text-white ml-2 " >Administrador</p>
+                </div>
+            </div>
+        </div>
+        <div className="card m-3 w-1/6 h-80 mr-6  bg-white  cursor-pointer transition duration-250 ease-in-out transform hover:-translate-y-1 hover:scale-110 shadow-md  ">
+            <div className="content_imageuser   justify-center flex">
+                <img src={img_avatar} alt="Avatar" className="w-30 h-48 mr-1 ml-1 mt-3" />
+            </div>
+            <div className="container " >
+                <div className="container_Idusername ml-3 font-black">
+                    <h4>ID 0023455968</h4>
+                </div>
+                <div className="container_username ml-3  flex-wrap">
+                    <p>Architect & Engineer </p>
+                </div>
+                <div className="container_rol  bg-black rounded-lg m-3 mr-8 flex-wrap mt-9">
+                    <p className="text_rol text-white ml-2 " >Administrador</p>
+                </div>
+            </div>
+        </div>
     </div>
-      
     </>
   );
 };
