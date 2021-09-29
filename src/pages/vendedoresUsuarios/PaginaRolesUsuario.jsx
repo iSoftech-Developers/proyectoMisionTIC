@@ -1,3 +1,4 @@
+import Gestorderoles from "../../modules/gestorderoles/Gestorderoles";
 import Navbar from "../../modules/navbar/Navbar";
 import Sidebar from "../../modules/sidebar/Sidebar";
 import UpperBarSection from "../../modules/upperBarSection/UpperBarSection";
@@ -15,7 +16,8 @@ const PaginaRolesUsuario =()=>{
           <section className="container-cards">
       
             <section className="contenido">
-              <UpperBarSection titlePage="Administrar Usuarios" nameButton="NUEVO USUARIO"/>         
+              <UpperBarSection titlePage="Administrar Usuarios" nameButton="NUEVO USUARIO"/>
+              <Gestorderoles/>         
             </section>
           </section>
           </main>
