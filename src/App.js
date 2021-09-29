@@ -21,6 +21,8 @@ import PaginaDetalleClientes from  './pages/clientes/PaginaDetalleClientes';
 import PaginaRolesUsuario from './pages/vendedoresUsuarios/PaginaRolesUsuario';
 import PaginaEstadoVenta from './pages/venta/PaginaEstadoVenta';
 import PaginaClientesCris from './pages/clientes/PaginaClientesCris';
+import Private from './layouts/Private';
+import Dashboard from './pages/Dashboard';
 
 
 const App =()=> {
@@ -28,32 +30,43 @@ const App =()=> {
     <div className="template">
     <Router>
       <Switch>
-        <Route path="/moduloVendedores" component={PaginaVendedores}/>
-        <Route path="/moduloVentas" component={PaginaVentas}/>
-        <Route path="/nuevaVenta" component={PaginaNuevaVenta}/>
-        <Route path="/estadoVenta" component={PaginaEstadoVenta}/>
-        <Route path="/detalleVenta" component={PaginaInfoDetalleVentas}/>
-        <Route path="/agregarUsuarios" component={PaginaAgregarUsuarios}/> 
-        <Route path="/perfilUsuario" component={PaginaVistaPerfilUsuario}/>
-        <Route path="/editarUsuario" component={PaginaEditarUsuarios}/>
-        <Route path="/nuevoCliente" component={PaginaNuevoCliente}/>
-        <Route path="/moduloClientes" component={PaginaClientes}/> 
-        <Route path="/detalleCliente" component={PaginaDetalleClientes}/>
-        <Route path="/productos" component={PaginaProductos}/>
-        <Route path="/detalleProducto" component={PaginaDetalleProducto}/>
-        <Route path="/nuevoProducto" component={PaginaNuevoProducto}/>
-        <Route path="/actualizarProducto" component={PaginaActualizarProducto}/>
-        <Route path="/rolesUsuarios" component={PaginaRolesUsuario}/>
-        <Route path="/crearClienteCris" component={PaginaClientesCris}/>   
-        <Route path="/ok" component={PaginaOk}/>
-        <Route path="/" component={Login} />
-
+        <Route path ={['/dashboard']}>
+          <Private>
+            <Switch>
+              <Route path='/dashboard'>
+                <Dashboard/>
+              </Route>
+            </Switch>
+          </Private>
+        </Route>
       </Switch>
     </Router>
-   </div> 
+    </div> 
   );
 }
 
 export default App;
+
+
+          /*  <Route path="/moduloVendedores" component={PaginaVendedores}/>
+              <Route path="/moduloVentas" component={PaginaVentas}/>
+              <Route path="/nuevaVenta" component={PaginaNuevaVenta}/>
+              <Route path="/estadoVenta" component={PaginaEstadoVenta}/>
+              <Route path="/detalleVenta" component={PaginaInfoDetalleVentas}/>
+              <Route path="/agregarUsuarios" component={PaginaAgregarUsuarios}/> 
+              <Route path="/perfilUsuario" component={PaginaVistaPerfilUsuario}/>
+              <Route path="/editarUsuario" component={PaginaEditarUsuarios}/>
+              <Route path="/nuevoCliente" component={PaginaNuevoCliente}/>
+              <Route path="/moduloClientes" component={PaginaClientes}/> 
+              <Route path="/detalleCliente" component={PaginaDetalleClientes}/>
+              <Route path="/productos" component={PaginaProductos}/>
+              <Route path="/detalleProducto" component={PaginaDetalleProducto}/>
+              <Route path="/nuevoProducto" component={PaginaNuevoProducto}/>
+              <Route path="/actualizarProducto" component={PaginaActualizarProducto}/>
+              <Route path="/rolesUsuarios" component={PaginaRolesUsuario}/>
+              <Route path="/crearClienteCris" component={PaginaClientesCris}/>   
+              <Route path="/ok" component={PaginaOk}/>
+              <Route path="/" component={Login} />
+          </Switch>*/
 
 

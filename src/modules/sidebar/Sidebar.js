@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const Siderbar =()=>{
 
     return(
-    <div className=" flex h-full fixed w-72 flex-col bg-gray-900">
+    <div className=" flex h-screen fixed w-72 flex-col bg-gray-900">
         <div className="justify-center flex ">
             <img className="w-4/5 mt-4" src={logoSporty} alt="logo Sporty"/>
         </div>

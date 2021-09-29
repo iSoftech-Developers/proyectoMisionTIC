@@ -3,7 +3,7 @@ import Navbar from "../../modules/navbar/Navbar";
 import CrearClienteCris from "../../modules/crearClienteCris/CrearClienteCris";
 
 
-const PaginaDetalleClientes = () => {
+const PaginaClienteCris = () => {
     return (
         <>
       <Sidebar />
@@ -19,4 +19,4 @@ const PaginaDetalleClientes = () => {
     )
 }
 
-export default PaginaDetalleClientes
+export default PaginaClienteCris

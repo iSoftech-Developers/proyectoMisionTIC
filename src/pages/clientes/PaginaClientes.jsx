@@ -22,12 +22,10 @@ const PaginaClientes =()=> {
 
     return (
      <>
-  
       <Sidebar />
       <main>
         <Navbar/>
         <section className="container-cards">
-      
           <section className="contenido">
             <UpperBarSection titlePage="Clientes" nameButton="AGREGAR CLIENTE" selectorButton="/nuevoCliente"/>
             <Cards cardIcon={cardIcon} variableCards={variableCards}/>
