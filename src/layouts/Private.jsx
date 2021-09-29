@@ -5,13 +5,18 @@ import Sidebar from '../modules/sidebar/Sidebar';
 
 const Private = ({children}) => {
     return (
-        <div className="overflow-y-scroll">
-           <Sidebar/>
-           <main className="w-screen">
-               <Navbar/>
-                {children}
-           </main>
-        </div>
+        <>
+            <Sidebar/>
+            <main>
+                    <Navbar/>
+                    <section className="container-cards">
+                        <section className="contenido">
+                            {children}
+                        </section>
+                    </section>   
+            </main>
+        </>
+        
     )
 }
 
