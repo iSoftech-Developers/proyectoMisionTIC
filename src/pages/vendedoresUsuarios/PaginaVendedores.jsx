@@ -2,9 +2,22 @@ import Sidebar from '../../modules/sidebar/Sidebar';
 import Navbar from '../../modules/navbar/Navbar';
 import Cards from '../../modules/cards/Cards';
 import NoButtonUpperBarSection from '../../modules/noButtonUpperBarSection/NoButtonUpperBarSection'
+import { useEffect, useState } from 'react';
 
 
 const PaginaVendedores =()=> {
+
+
+  const [cardsinfomation,setCardsinfomation] =useState([]);
+  useEffect(()=>{
+    setCardsinfomation(VENTAS);
+  },[]); 
+  const VENTAS = [
+    { id: 0, title: "Dark Orchid", color: "DarkOrchid" },
+    { id: 1, title: "Lime Green", color: "LimeGreen" },
+
+  ];
+
   const variableCards = {
     cardTo:"/perfilUsuario",
     linkIcon:"/actualizarProducto",
@@ -30,7 +43,7 @@ const PaginaVendedores =()=> {
       
           <section className="contenido ">
             <NoButtonUpperBarSection title="Vendedores"/>
-            <Cards cardIcon={cardIcon} variableCards={variableCards}/>
+            <Cards cardIcon={cardIcon} variableCards={variableCards} cardsInfo={cardsinfomation}/>
           </section>
         </section>
       </main>

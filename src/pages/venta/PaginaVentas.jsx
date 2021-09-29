@@ -2,10 +2,23 @@ import Sidebar from '../../modules/sidebar/Sidebar';
 import Navbar from '../../modules/navbar/Navbar';
 import Cards from '../../modules/cards/Cards';
 import UpperBarSection from '../../modules/upperBarSection/UpperBarSection';
+import {useEffect, useState} from 'react';
 
 
 const PaginaVentas =()=> {
 
+
+  const [cardsinfomation,setCardsinfomation] =useState([]);
+  useEffect(()=>{
+    setCardsinfomation(VENTAS);
+  },[]);
+  const VENTAS = [
+    { id: 0, title: "Dark Orchid", color: "DarkOrchid" },
+    { id: 1, title: "Lime Green", color: "LimeGreen" },
+    { id: 2, title: "Tomato", color: "Tomato" },
+
+  ];
+  
   const variableCards = {
     cardTo:"/detalleVenta",
     linkIcon:"/actualizarProducto",
@@ -16,6 +29,8 @@ const PaginaVentas =()=> {
     field4:"Fecha de pago",
     field5:"Estado",
 }
+
+
 
 const cardIcon = {
     iconProperties:"fas fa-tag text-white bg-gray-800 mr-4 pt-4 px-3 pb-2"
@@ -31,7 +46,7 @@ const cardIcon = {
       
             <section className="contenido">
               <UpperBarSection titlePage="Listado de ventas" nameButton="Nueva Venta" selectorButton="/nuevaVenta"/>
-              <Cards cardIcon={cardIcon} variableCards={variableCards}/>
+              <Cards cardIcon={cardIcon} variableCards={variableCards} cardsInfo={cardsinfomation}/>
             </section>  
           </section>
       </main>

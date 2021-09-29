@@ -2,9 +2,32 @@ import Sidebar from '../../modules/sidebar/Sidebar';
 import Navbar from '../../modules/navbar/Navbar';
 import Cards from '../../modules/cards/Cards';
 import UpperBarSection from '../../modules/upperBarSection/UpperBarSection';
+import { useEffect, useState } from 'react';
 
 
 const PaginaProductos =()=> {
+
+  const [cardsinfomation,setCardsinfomation] =useState([]);
+  useEffect(()=>{
+    setCardsinfomation(VENTAS);
+  },[]);
+  const VENTAS = [
+    { id: 0, title: "Dark Orchid", color: "DarkOrchid" },
+    { id: 1, title: "Lime Green", color: "LimeGreen" },
+    { id: 2, title: "Tomato", color: "Tomato" },
+    { id: 3, title: "Seven Ate Nine", color: "#789" },
+    { id: 4, title: "Crimson", color: "carlitos" }, 
+    { id: 0, title: "Dark Orchid", color: "DarkOrchid" },
+    { id: 1, title: "Lime Green", color: "LimeGreen" },
+    { id: 2, title: "Tomato", color: "Tomato" },
+    { id: 3, title: "Seven Ate Nine", color: "#789" },
+    { id: 4, title: "Crimson", color: "carlitos" }, 
+    { id: 0, title: "Dark Orchid", color: "DarkOrchid" },
+    { id: 1, title: "Lime Green", color: "LimeGreen" },
+    { id: 2, title: "Tomato", color: "Tomato" },
+    { id: 3, title: "Seven Ate Nine", color: "#789" },
+    { id: 4, title: "Crimson", color: "carlitos" }, 
+  ];
 
 const variableCards = {
     cardTo:"/detalleProducto",
@@ -30,7 +53,7 @@ const cardIcon = {
           <section className="container-cards">   
             <section className="contenido">
               <UpperBarSection titlePage="Productos" nameButton="Nuevo Producto" selectorButton="/nuevoProducto"/>
-              <Cards cardIcon={cardIcon} variableCards={variableCards}/>
+              <Cards cardIcon={cardIcon} variableCards={variableCards} cardsInfo={cardsinfomation}/>
             </section>  
           </section>
       </main>

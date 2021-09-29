@@ -1,79 +1,55 @@
-import './NuevaVenta.css';
-
-
-
-const NuevaVenta=()=>{
+const NuevaVenta=(props)=>{
 
 
     return(
-        <>
-                <form className="flex justify-between">
-                    <div className="flex flex-col">
-                        
-                        <div>
-                            <label className="font-bold">ID Responsable</label>
-                        </div>
-                        <div className="mb-8">
-                            <input required type="text" />
-                        </div>
-                        <div>
-                            <label className="font-bold ">Razón Social</label>
-                        </div>
-                        <div className="mb-8">
-                            <input required type="text" />
-                        </div>
-                        <div>
-                            <label className="font-bold ">Departamento</label>
-                        </div>
-                        <div >
-                            <input required type="text" className=""/>
-                        </div>
+    
+        <div>
+            <form className=" space-y-8 my-16">
+                <div className="form-upper-section flex justify-between font-bold label-color">
+                    <div className="w-1/6">
+                        <label for="userid">Id Vendedor Responsable</label>
+                        <input required class=" w-full h-8 p-2" type="text" name="userid" id="userid"/>
                     </div>
-                    <div className="flex flex-col">
-                        <div>
-                            <label className="font-bold ">NIT/C.C</label>
-                        </div>
-                        <div className="mb-8">
-                            <input required type="text" />
-                        </div>
-                        <div>
-                            <label className="font-bold ">Dirección</label>
-                        </div>
-                        <div>
-                            <input required type="text"/>
-                        </div>
+                    <div className="w-1/6">
+                        <label for="username">NIT/C.C.</label>
+                        <input required class=" w-full h-8 p-2" type="text" name="username" id="username"/>
                     </div>
-                    <div className="flex flex-col">
-                        <div>
-                            <label className="font-bold ">Fecha de pago</label>
-                        </div>
-                        <div className="mb-8">
-                            <input required type="text"/>
-                        </div>
-                        <div>
-                            <label className="font-bold ">Celular</label>
-                        </div>
-                        <div>
-                            <input required type="text"/>
-                        </div>
+                    <div className="w-1/6">
+                        <label for="userole">Razon Social</label>
+                        <input required class=" w-full h-8 p-2" type="text" name="userole" id="userole"/>
+                    </div> 
+                    <div className="w-1/6">
+                        <label for="userole">Fecha de pago</label>
+                        <input required class=" w-full h-8 p-2" type="text" name="userole" id="userole"/>
+                    </div> 
+                </div>
+                <div className="form-lower-section flex justify-between font-bold label-color">
+                    <div className="w-1/6">
+                        <label for="usercel">Telefono</label>
+                        <input required class=" w-full h-8 p-2" type="text" name="usercel" id="usercel"/>
                     </div>
-                    <div className="flex flex-col">
-                        <div>
-                            <label className="font-bold ">Estado de venta</label>
-                        </div>
-                        <div className="mb-8">
-                            <input required type="text"/>
-                        </div>
-                        <div>
-                            <label className="font-bold ">Email</label> 
-                        </div>
-                        <div>
-                            <input required type="text"/>
-                        </div>
+                    <div className="w-1/6">
+                        <label for="userspecial">Email</label>
+                        <input required class=" w-full h-8 p-2" type="text" name="userspecial" id="userspecial"/>
                     </div>
-                </form>  
-
-        </>
+                    <div className="w-1/6">
+                        <label for="userole">Direccion</label>
+                        <input required class=" w-full h-8 p-2" type="text" name="userspecial" id="userspecial"/>
+                    </div>
+                    <div className="w-1/6">
+                        <label for="userole">Municipio</label>
+                        <input required class=" w-full h-8 p-2" type="text" name="userspecial" id="userspecial"/>
+                    </div>
+                </div>
+                <div className="w-1/6  font-semibold ">
+                        <label for="userole">Departamento</label>
+                        <input required class=" w-full h-8 p-2" type="text" name="userspecial" id="userspecial"/>
+                    </div>
+                <div className=" w-full flex justify-center">
+                    <input className="w-1/6 cursor-pointe bg-green-400 h-7 text-white font-bold my-16" type="submit" value="Guardar"/>
+                </div>
+            </form> 
+    </div>
 
     );
 }
