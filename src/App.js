@@ -17,8 +17,7 @@ import PaginaNuevoProducto from './pages/productos/PaginaNuevoProducto'
 import PaginaActulizarProducto from'./pages/productos/PaginaActualizarProducto'
 import PaginaOk from './pages/PaginaOk';
 import PaginaDetalleClientes from  './pages/clientes/PaginaDetalleClientes';
-import PaginaGestorRoles from './pages/PaginaGestorRoles';
-import PaginaRolesUsuario from './pages/vendedoresUsuarios/PaginaRolesUsuario';
+import PaginaRolesUsuario from './pages/vendedoresUsuarios/PaginaRolesUsuario'
 
 
 const App =()=> {
@@ -39,8 +38,7 @@ const App =()=> {
         <Route path="/detalleProducto" component={PaginaDetalleProducto}/>
         <Route path="/nuevoProducto" component={PaginaNuevoProducto}/>
         <Route path="/actualizarProducto" component={PaginaActulizarProducto}/>
-        <Route path="/gestionRoles" component={PaginaGestorRoles}/>
-        <Route path="/gestionRoles1" component={PaginaRolesUsuario}/> /* heder fuera de lugar */
+        <Route path="/rolesUsuarios" component={PaginaRolesUsuario}/>  
         <Route path="/ok" component={PaginaOk}/>
         <Route path="/" component={Login} />
 
