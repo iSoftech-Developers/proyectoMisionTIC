@@ -10,33 +10,26 @@ const PaginaClientes =()=> {
 
   const [cardsinfomation,setCardsinfomation] =useState([]);
   useEffect(()=>{
-    setCardsinfomation(VENTAS);
+    setCardsinfomation(clientes);
   },[]); 
-  const VENTAS = [
-    { id: 0, title: "Dark Orchid", color: "DarkOrchid" },
-    { id: 1, title: "Lime Green", color: "LimeGreen" },
-    { id: 2, title: "Tomato", color: "Tomato" },
-    { id: 3, title: "Seven Ate Nine", color: "#789" },
-    { id: 4, title: "Crimson", color: "carlitos" }, 
-    { id: 3, title: "Seven Ate Nine", color: "#789" },
-    { id: 4, title: "Crimson", color: "carlitos" }, 
-    { id: 3, title: "Seven Ate Nine", color: "#789" },
-    { id: 4, title: "Crimson", color: "carlitos" }, 
+  const clientes = [
+    { id: 1, field1:"Liliana Romero", field2: "123456789",field3:"liliana@gmail.com",field4:"Bogota DC",field5:"bogota",field6:"cra 1 # 1-1",field7:"3135635569"},
+    { id: 2, field1:"Anna Blanco", field2: "987654321",field3:"anna@gmail.com",field4:"Medellin",field5:"313333333",field6:"antioquia",field7:"cra 2 # 2-2" },
+ 
   ];
   const variableCards = {
+    icon:" fas fa-users",
     cardTo:"/detalleCliente",
     linkIcon:"/actualizarProducto",
     titleCard:"Cliente ID",
     field1:"Razon Social*",
     field2:"NIT/CC*",
     field3:"Email",
-    field4:"Dirección",
+    field4:"Ciudad",
     field5:"Teléfono",
 }
 
-  const cardIcon = {
-    iconProperties:" fas fa-users text-white bg-gray-800 mr-4 pt-4 px-3 pb-2"
-}
+ 
 
     return (
      <>
@@ -48,7 +41,7 @@ const PaginaClientes =()=> {
       
           <section className="contenido">
             <UpperBarSection titlePage="Clientes" nameButton="AGREGAR CLIENTE" selectorButton="/nuevoCliente"/>
-            <Cards cardIcon={cardIcon} variableCards={variableCards} cardsInfo={cardsinfomation}/>
+            <Cards variableCards={variableCards} cardsInfo={cardsinfomation}/>
           </section>
         </section>
       </main>

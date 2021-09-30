@@ -13,13 +13,12 @@ const PaginaVentas =()=> {
     setCardsinfomation(VENTAS);
   },[]);
   const VENTAS = [
-    { id: 0, title: "Dark Orchid", color: "DarkOrchid" },
-    { id: 1, title: "Lime Green", color: "LimeGreen" },
-    { id: 2, title: "Tomato", color: "Tomato" },
+  
 
   ];
   
   const variableCards = {
+    icon:"fas fa-tag",
     cardTo:"/detalleVenta",
     linkIcon:"/actualizarProducto",
     titleCard:"Id Venta",
@@ -32,9 +31,7 @@ const PaginaVentas =()=> {
 
 
 
-const cardIcon = {
-    iconProperties:"fas fa-tag text-white bg-gray-800 mr-4 pt-4 px-3 pb-2"
-}
+
 
     return (
      <>
@@ -46,7 +43,7 @@ const cardIcon = {
       
             <section className="contenido">
               <UpperBarSection titlePage="Listado de ventas" nameButton="Nueva Venta" selectorButton="/nuevaVenta"/>
-              <Cards cardIcon={cardIcon} variableCards={variableCards} cardsInfo={cardsinfomation}/>
+              <Cards variableCards={variableCards} cardsInfo={cardsinfomation}/>
             </section>  
           </section>
       </main>

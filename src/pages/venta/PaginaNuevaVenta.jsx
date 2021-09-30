@@ -6,9 +6,11 @@ import NoButtonUpperBarSection from '../../modules/noButtonUpperBarSection/NoBut
 
 
 const PaginaNuevaVenta =()=>{
-  
 
 
+
+
+ 
 
     return(
         <>

@@ -10,18 +10,17 @@ const PaginaVendedores =()=> {
 
   const [cardsinfomation,setCardsinfomation] =useState([]);
   useEffect(()=>{
-    setCardsinfomation(VENTAS);
+    setCardsinfomation(vendedores);
   },[]); 
-  const VENTAS = [
-    { id: 0, title: "Dark Orchid", color: "DarkOrchid" },
-    { id: 1, title: "Lime Green", color: "LimeGreen" },
+  const vendedores = [
+    { id:0,field1: 1037645234, field2: "Juan Sebastian Cabrera Rojas", field3: "Online", field4: "313248789", field5: "29/09/2021" },
 
   ];
 
   const variableCards = {
+    icon:"fas fa-user-tag",
     cardTo:"/perfilUsuario",
     linkIcon:"/actualizarProducto",
-    titleCard:"Vendedor Id",
     field1:"Documento",
     field2:"Nombre y Apellidos",
     field3:"Especialidad",
@@ -29,9 +28,7 @@ const PaginaVendedores =()=> {
     field5:"Fecha de ingreso",
 }
 
-  const cardIcon = {
-    iconProperties:" fas fa-user-tag text-white bg-gray-800 mr-4 pt-4 px-3 pb-2"
-} 
+
 
     return (
      <>
@@ -43,7 +40,7 @@ const PaginaVendedores =()=> {
       
           <section className="contenido ">
             <NoButtonUpperBarSection title="Vendedores"/>
-            <Cards cardIcon={cardIcon} variableCards={variableCards} cardsInfo={cardsinfomation}/>
+            <Cards variableCards={variableCards} cardsInfo={cardsinfomation}/>
           </section>
         </section>
       </main>
