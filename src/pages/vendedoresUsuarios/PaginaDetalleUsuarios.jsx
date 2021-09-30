@@ -1,5 +1,4 @@
 import DetalleUsuarios from '../../modules/detalleUsuarios/DetalleUsuarios';
-import Form from '../../modules/Formularios/Form';
 
 const PaginaDetalleUsuarios =()=>{
 
@@ -15,7 +14,6 @@ const PaginaDetalleUsuarios =()=>{
     return(
         <>
             <DetalleUsuarios/>
-            <Form formLabelTitle = {formLabelTitle} />
        </>
     );
 }

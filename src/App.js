@@ -19,10 +19,12 @@ import PaginaOk from './pages/PaginaOk';
 import PaginaDetalleClientes from  './pages/clientes/PaginaDetalleClientes';
 import PaginaRolesUsuario from './pages/vendedoresUsuarios/PaginaRolesUsuario';
 import PaginaEstadoVenta from './pages/venta/PaginaEstadoVenta';
-import PaginaClientesCris from './pages/clientes/PaginaClientesCris';
 import Private from './layouts/Private';
 import Dashboard from './pages/Dashboard';
 import PaginaEditarCliente from './pages/clientes/PaginaEditarCliente';
+import PaginaAgregarUsuarios from './pages/vendedoresUsuarios/PaginaAgregarUsuarios';
+
+
 
 
 /*linea 37 va a la pagina de modificar venta*/
@@ -32,9 +34,18 @@ const App =()=> {
     <div className="template">
     <Router>
       <Switch>
-        <Route path ={['/dashboard','/nuevaVenta','/moduloVentas','/moduloVentas/detalleVenta', '/moduloVentas/detalleVentas/','/moduloClientes', 'moduloClientes/nuevoCliente','/moduloClientes/detalleCliente',' /moduloClientes/paginaEditarCliente', '/productos', '/productos/detalleProducto', '/productos/nuevoProducto','/productos/actualizarProducto']}>
+        <Route path ={['/dashboard','/nuevaVenta','/moduloVentas','/moduloVentas/detalleVenta', '/moduloVentas/detalleVentas/','/moduloClientes', 'moduloClientes/nuevoCliente','/moduloClientes/detalleCliente',' /moduloClientes/paginaEditarCliente', '/productos', '/productos/detalleProducto', '/productos/nuevoProducto','/productos/actualizarProducto','/rolesUsuarios', '/rolesUsuarios/detalleUsuario','/rolesUsuarios/nuevoUsuario','/moduloVendedores', '/moduloVendedores/detalleUsuario','/moduloVendedores/paginaEditarUsuarios']}>
           <Private>
             <Switch>
+              <Route path='/rolesUsuarios/nuevoUsuario'>
+                <PaginaAgregarUsuarios/>
+              </Route>
+              <Route path='/rolesUsuarios/detalleUsuario'>
+                <PaginaDetalleUsuarios/>
+              </Route>
+              <Route path='/rolesUsuarios'>
+                <PaginaRolesUsuario/>
+              </Route>
               <Route path='/productos/actualizarProducto'>
                 <PaginaActualizarProducto/>
               </Route>
@@ -55,6 +66,15 @@ const App =()=> {
               </Route>
               <Route path='/moduloVentas'>
                 <PaginaVentas/>
+              </Route>
+              <Route path='/moduloVendedores/paginaEditarUsuarios'>
+                <PaginaEditarUsuarios/>
+              </Route>
+              <Route path='/moduloVendedores/detalleUsuario'>
+                <PaginaDetalleUsuarios/>
+              </Route>
+              <Route path='/moduloVendedores'>
+                <PaginaVendedores/>
               </Route>
               <Route path='/moduloClientes/detalleCliente'>
                 <PaginaDetalleClientes/>

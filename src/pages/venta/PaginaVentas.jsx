@@ -18,7 +18,7 @@ const PaginaVentas =()=> {
   const variableCards = {
     icon:"fas fa-tag",
     cardTo:"/moduloVentas/detalleVenta",
-    linkIcon:"/actualizarProducto",
+    linkIcon:"/moduloVentas/detalleVentas/",
     titleCard:"Id Venta",
     field1:"Documento",
     field2:"Nombres y apellidos",

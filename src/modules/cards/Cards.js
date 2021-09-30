@@ -25,11 +25,11 @@ useEffect(()=>{
                         <div className="flex">
                             <i className={`${variableCards.icon} text-white bg-gray-800 mr-4 pt-4 px-3 pb-2`}></i>
                             <div className="card-info w-full align-center flex justify-between">
-                                <span className="font-semibold self-center">ID {i.id}</span>
-                                <Link to={variableCards.linkIcon} className="edit-card border-0"><i className="fas fa-pen text-gray-400"></i></Link>
+                                <span className="font-semibold pt-3">ID {i.id}</span>
+                                <Link to={variableCards.linkIcon} className="edit-card pt-4"><i className="fas fa-pen text-gray-400"></i></Link>
                             </div>
                         </div>
-                        <table className="text-sm w-full bg-white border-gray-400 border mt-4">
+                        <table className="table-fixed text-sm w-full bg-white border-gray-400 border mt-4">
                         <tr>
                             <th >{variableCards.field1}</th>
                             <th >{variableCards.field2}</th>
