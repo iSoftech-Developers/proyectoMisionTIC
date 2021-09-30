@@ -1,14 +1,24 @@
-import Sidebar from '../../modules/sidebar/Sidebar';
-import Navbar from '../../modules/navbar/Navbar';
 import Cards from '../../modules/cards/Cards';
 import NoButtonUpperBarSection from '../../modules/noButtonUpperBarSection/NoButtonUpperBarSection'
+import { useEffect, useState } from 'react';
 
 
 const PaginaVendedores =()=> {
+
+
+  const [cardsinfomation,setCardsinfomation] =useState([]);
+  useEffect(()=>{
+    setCardsinfomation(vendedores);
+  },[]); 
+  const vendedores = [
+    { id:0,field1: 1037645234, field2: "Juan Sebastian Cabrera Rojas", field3: "Online", field4: "313248789", field5: "29/09/2021" },
+
+  ];
+
   const variableCards = {
-    cardTo:"/perfilUsuario",
+    icon:"fas fa-user-tag",
+    cardTo:"/rolesUsuarios/perfilUsuario",
     linkIcon:"/actualizarProducto",
-    titleCard:"Vendedor Id",
     field1:"Documento",
     field2:"Nombre y Apellidos",
     field3:"Especialidad",
@@ -16,24 +26,14 @@ const PaginaVendedores =()=> {
     field5:"Fecha de ingreso",
 }
 
-  const cardIcon = {
-    iconProperties:" fas fa-user-tag text-white bg-gray-800 mr-4 pt-4 px-3 pb-2"
-} 
+
 
     return (
      <>
   
-      <Sidebar />
-      <main>
-        <Navbar/>
-        <section className="container-cards  overflow-y-scroll ">
-      
-          <section className="contenido ">
             <NoButtonUpperBarSection title="Vendedores"/>
-            <Cards cardIcon={cardIcon} variableCards={variableCards}/>
-          </section>
-        </section>
-      </main>
+            <Cards variableCards={variableCards} cardsInfo={cardsinfomation}/>
+     
      </> 
       
     );

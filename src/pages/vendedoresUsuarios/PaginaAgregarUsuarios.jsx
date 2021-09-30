@@ -1,7 +1,7 @@
 import DetalleUsuarios from '../../modules/detalleUsuarios/DetalleUsuarios';
 import Form from '../../modules/Formularios/Form';
 
-const PaginaDetalleUsuarios =()=>{
+const PaginaAgregarUsuarios =()=>{
 
     const formLabelTitle = {
         label1:"ID",
@@ -16,8 +16,8 @@ const PaginaDetalleUsuarios =()=>{
         <>
             <DetalleUsuarios/>
             <Form formLabelTitle = {formLabelTitle} />
-       </>
+       </> 
     );
 }
 
-export default PaginaDetalleUsuarios;
+export default PaginaAgregarUsuarios;

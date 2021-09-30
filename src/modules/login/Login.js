@@ -22,7 +22,7 @@ const Login=()=>{
             </div>
         </div>
         <div className="link-button">
-            <Link className=" loginButton-login w-44 h-12 text-white  bg-black py-3.5 px-16 font-bold text-base  "  to="/moduloVendedores">LOGIN</Link>
+            <Link className=" loginButton-login w-44 h-12 text-white  bg-black py-3.5 px-16 font-bold text-base  "  to="/dashboard">LOGIN</Link>
         
         </div>
     </form>

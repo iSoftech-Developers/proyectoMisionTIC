@@ -1,13 +1,23 @@
-import Sidebar from '../../modules/sidebar/Sidebar';
-import Navbar from '../../modules/navbar/Navbar';
 import Cards from '../../modules/cards/Cards';
 import UpperBarSection from '../../modules/upperBarSection/UpperBarSection';
+import {useEffect, useState} from 'react';
 
 
 const PaginaVentas =()=> {
 
+
+  const [cardsinfomation,setCardsinfomation] =useState([]);
+  useEffect(()=>{
+    setCardsinfomation(VENTAS);
+  },[]);
+  const VENTAS = [
+  
+
+  ];
+  
   const variableCards = {
-    cardTo:"/detalleVenta",
+    icon:"fas fa-tag",
+    cardTo:"/moduloVentas/detalleVenta",
     linkIcon:"/actualizarProducto",
     titleCard:"Id Venta",
     field1:"Documento",
@@ -17,24 +27,17 @@ const PaginaVentas =()=> {
     field5:"Estado",
 }
 
-const cardIcon = {
-    iconProperties:"fas fa-tag text-white bg-gray-800 mr-4 pt-4 px-3 pb-2"
-}
+
+
+
 
     return (
      <>
   
-      <Sidebar />
-      <main>
-        <Navbar/>
-          <section className="container-cards">
-      
-            <section className="contenido">
+  
               <UpperBarSection titlePage="Listado de ventas" nameButton="Nueva Venta" selectorButton="/nuevaVenta"/>
-              <Cards cardIcon={cardIcon} variableCards={variableCards}/>
-            </section>  
-          </section>
-      </main>
+              <Cards variableCards={variableCards} cardsInfo={cardsinfomation}/>
+
      </> 
       
     );
