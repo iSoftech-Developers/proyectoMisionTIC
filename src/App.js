@@ -8,6 +8,7 @@ import Login from './modules/login/Login';
 import PaginaClientes from './pages/clientes/PaginaClientes';
 import PaginaVentas from './pages/venta/PaginaVentas';
 import PaginaNuevaVenta from './pages/venta/PaginaNuevaVenta';
+import PaginaAgregarUsuarios from './pages/vendedoresUsuarios/PaginaEditarUsuarios';
 import PaginaEditarUsuarios from './pages/vendedoresUsuarios/PaginaEditarUsuarios';
 import PaginaDetalleUsuarios from './pages/vendedoresUsuarios/PaginaDetalleUsuarios';
 import PaginaProductos from './pages/productos/PaginaProductos';
@@ -25,6 +26,7 @@ import Dashboard from './pages/Dashboard';
 import PaginaEditarCliente from './pages/clientes/PaginaEditarCliente';
 
 
+
 /*linea 37 va a la pagina de modificar venta*/
 /*linea 5 */
 const App =()=> {
@@ -32,9 +34,18 @@ const App =()=> {
     <div className="template">
     <Router>
       <Switch>
-        <Route path ={['/dashboard','/nuevaVenta','/moduloVentas','/moduloVentas/detalleVenta', '/moduloVentas/detalleVentas/','/moduloClientes', 'moduloClientes/nuevoCliente','/moduloClientes/detalleCliente',' /moduloClientes/paginaEditarCliente', '/productos', '/productos/detalleProducto', '/productos/nuevoProducto','/productos/actualizarProducto']}>
+        <Route path ={['/dashboard','/nuevaVenta','/moduloVentas','/moduloVentas/detalleVenta', '/moduloVentas/detalleVentas/','/moduloClientes', 'moduloClientes/nuevoCliente','/moduloClientes/detalleCliente',' /moduloClientes/paginaEditarCliente', '/productos', '/productos/detalleProducto', '/productos/nuevoProducto','/productos/actualizarProducto','/rolesUsuarios', '/rolesUsuarios/perfilUsuario','/rolesUsuarios/nuevoUsuario']}>
           <Private>
             <Switch>
+              <Route path='/rolesUsuarios/nuevoUsuario'>
+                <PaginaAgregarUsuarios/>
+              </Route>
+              <Route path='/rolesUsuarios/perfilUsuario'>
+                <PaginaDetalleUsuarios/>
+              </Route>
+              <Route path='/rolesUsuarios'>
+                <PaginaRolesUsuario/>
+              </Route>
               <Route path='/productos/actualizarProducto'>
                 <PaginaActualizarProducto/>
               </Route>
