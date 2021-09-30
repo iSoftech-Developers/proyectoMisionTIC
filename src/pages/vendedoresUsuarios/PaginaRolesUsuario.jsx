@@ -1,6 +1,5 @@
-import Navbar from "../../modules/navbar/Navbar";
-import Sidebar from "../../modules/sidebar/Sidebar";
 import UpperBarSection from "../../modules/upperBarSection/UpperBarSection";
+import GestordeRoles from "../../modules/gestorderoles/Gestorderoles"
 
 
 const PaginaRolesUsuario =()=>{
@@ -10,17 +9,8 @@ const PaginaRolesUsuario =()=>{
     
     return(
         <>
-      <Sidebar />
-      <main>
-        <Navbar/>
-          <section className="container-cards">
-      
-            <section className="contenido">
-              <UpperBarSection titlePage="Administrar Usuarios" nameButton="NUEVO USUARIO"/>         
-      
-            </section>
-          </section>
-          </main>
+          <UpperBarSection titlePage="Administrar Usuarios" nameButton="NUEVO USUARIO" selectorButton="/rolesUsuarios/nuevoUsuario"/>
+          <GestordeRoles/>       
         </>
 
 

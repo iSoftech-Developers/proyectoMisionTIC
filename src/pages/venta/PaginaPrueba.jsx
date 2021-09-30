@@ -3,24 +3,8 @@ import Navbar from '../../modules/navbar/Navbar';
 import React from "react";
 import UpperBarSection from '../../modules/upperBarSection/UpperBarSection';
 
-
-/*const PaginaPrueba=()=>{
+const PaginaPrueba=()=>{
     
-    return(
-        <>
-        <Sidebar />
-        <main>
-          <Navbar/>
-            <section className="container-cards">
-                <section className="contenido">
-                    
-                </section>
-            </section>
-        </main>
-       </> 
-    );
-}
-
 /*export default PaginaPrueba;*/
 const people = [
     {
@@ -34,14 +18,12 @@ const people = [
     },
     // More people...
   ]
-  export default function Example() {
+
     return (
         <>
-        <Sidebar />
+      
         <main>
-          <Navbar/>
-            <section className="container-cards">
-                <section className="contenido">
+
                 <div className="flex flex-col">
                 <UpperBarSection titlePage="Listado de ventas" nameButton="GUARDAR" selectorButton="/nuevaVenta"/>
         <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -101,15 +83,6 @@ const people = [
                         </div>
                       </div>
                     </td>
-                    <td>
-                    <form>
-                        <div>
-                            <input type="text" value="" />
-                        </div>
-                    </form>
-                    </td>
-                    
-                            
                     <td className="px-6 py-4 whitespace-nowrap">
                       <div className="text-sm text-gray-500">{person.descripcion}</div>
                       
@@ -131,11 +104,18 @@ const people = [
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{person.estado}</td>
                     
                     <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                      <a href="#" className="text-indigo-600 hover:text-indigo-900">
-                        Agregar
-                      </a>
+                    <form action="ejemplo" method="get">
+                        <button
+                            data-modal-toggle="example2"
+                            data-modal-action="open"
+                            class="bg-purple-600 font-semibold text-white p-2 w-32 rounded-full hover:bg-purple-700 focus:outline-none focus:ring shadow-lg hover:shadow-none transition-all duration-300 m-2"
+                            >
+                        Click here
+                        </button> 
+                        </form> 
+                        
                     </td>
-
+                    
                   </tr>
                 ))}
               </tbody>
@@ -143,12 +123,11 @@ const people = [
           </div>
         </div>
       </div>
-    </div> 
-                </section>
-            </section>
+    </div>  
             </main>
             
       
     </>
   )
 }
+export default PaginaPrueba;

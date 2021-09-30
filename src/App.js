@@ -8,52 +8,129 @@ import Login from './modules/login/Login';
 import PaginaClientes from './pages/clientes/PaginaClientes';
 import PaginaVentas from './pages/venta/PaginaVentas';
 import PaginaNuevaVenta from './pages/venta/PaginaNuevaVenta';
+import PaginaEditarUsuarios from './pages/vendedoresUsuarios/PaginaEditarUsuarios';
 import PaginaDetalleUsuarios from './pages/vendedoresUsuarios/PaginaDetalleUsuarios';
-import PaginaVistaPerfilUsuario from './pages/vendedoresUsuarios/PaginaVistaPerfilUsuario';
 import PaginaProductos from './pages/productos/PaginaProductos';
 import PaginaDetalleProducto from './pages/productos/PaginaDetalleProducto';
 import PaginaNuevoCliente from './pages/clientes/PaginaNuevoCliente';
-import PaginaNuevoProducto from './pages/productos/PaginaNuevoProducto';
-import PaginaActulizarProducto from'./pages/productos/PaginaActualizarProducto';
+import PaginaNuevoProducto from './pages/productos/PaginaNuevoProducto'
+import PaginaActualizarProducto from'./pages/productos/PaginaActualizarProducto'
 import PaginaOk from './pages/PaginaOk';
 import PaginaDetalleClientes from  './pages/clientes/PaginaDetalleClientes';
 import PaginaRolesUsuario from './pages/vendedoresUsuarios/PaginaRolesUsuario';
-import PaginaEditarUsuarios from './pages/vendedoresUsuarios/PaginaEditarUsuarios';
-import PaginaEditarVenta from './pages/venta/PaginaEditarVenta';
+import PaginaEstadoVenta from './pages/venta/PaginaEstadoVenta';
+import Private from './layouts/Private';
+import Dashboard from './pages/Dashboard';
+import PaginaEditarCliente from './pages/clientes/PaginaEditarCliente';
+import PaginaAgregarUsuarios from './pages/vendedoresUsuarios/PaginaAgregarUsuarios';
 import PaginaPrueba from './pages/venta/PaginaPrueba';
 
+
+
+/*linea 37 va a la pagina de modificar venta*/
+/*linea 5 */
 const App =()=> {
   return (
     <div className="template">
     <Router>
       <Switch>
-        <Route path="/moduloVendedores" component={PaginaVendedores}/>
-        <Route path="/moduloVentas" component={PaginaVentas}/>
-        <Route path="/nuevaVenta" component={PaginaNuevaVenta}/>
-        <Route path="/detalleVenta" component={PaginaInfoDetalleVentas}/>
-        <Route path="/editarVenta" component={PaginaEditarVenta}/>
-        <Route path="/paginaPrueba" component={PaginaPrueba}/>
-        <Route path="/agregarUsuarios" component={PaginaDetalleUsuarios}/> 
-        <Route path="/perfilUsuario" component={PaginaVistaPerfilUsuario}/>
-        <Route path="/editarUsuarios" component={PaginaEditarUsuarios}/>
-        <Route path="/nuevoCliente" component={PaginaNuevoCliente}/>
-        <Route path="/moduloClientes" component={PaginaClientes}/> 
-        <Route path="/detalleCliente" component={PaginaDetalleClientes}/>
-        <Route path="/productos" component={PaginaProductos}/>
-        <Route path="/detalleProducto" component={PaginaDetalleProducto}/>
-        <Route path="/nuevoProducto" component={PaginaNuevoProducto}/>
-        <Route path="/actualizarProducto" component={PaginaActulizarProducto}/>
-        <Route path="/rolesUsuarios" component={PaginaRolesUsuario}/>  
-        <Route path="/ok" component={PaginaOk}/>
-        <Route path="/" component={Login} />
-        
-
+        <Route path ={['/dashboard','/nuevaVenta','/moduloVentas','/moduloVentas/detalleVenta', '/moduloVentas/detalleVentas/','/moduloClientes', 'moduloClientes/nuevoCliente','/moduloClientes/detalleCliente',' /moduloClientes/paginaEditarCliente', '/productos', '/productos/detalleProducto', '/productos/nuevoProducto','/productos/actualizarProducto','/rolesUsuarios', '/rolesUsuarios/detalleUsuario','/rolesUsuarios/nuevoUsuario','/moduloVendedores', '/moduloVendedores/detalleUsuario','/moduloVendedores/paginaEditarUsuarios','/paginaPrueba']}>
+          <Private>
+            <Switch>
+              <Route path='/rolesUsuarios/nuevoUsuario'>
+                <PaginaAgregarUsuarios/>
+              </Route>
+              <Route path='/rolesUsuarios/detalleUsuario'>
+                <PaginaDetalleUsuarios/>
+              </Route>
+              <Route path='/rolesUsuarios'>
+                <PaginaRolesUsuario/>
+              </Route>
+              <Route path='/productos/actualizarProducto'>
+                <PaginaActualizarProducto/>
+              </Route>
+              <Route path='/productos/nuevoProducto'>
+                <PaginaNuevoProducto/>
+              </Route>
+              <Route path='/productos/detalleProducto'>
+                <PaginaDetalleProducto/>
+              </Route>
+              <Route path='/productos'>
+                <PaginaProductos/>
+              </Route>
+              <Route path='/moduloVentas/detalleVentas/'>
+                <PaginaNuevaVenta/>
+              </Route>
+              <Route path='/moduloVentas/detalleVenta'>
+                <PaginaInfoDetalleVentas/>
+              </Route>
+              <Route path='/moduloVentas'>
+                <PaginaVentas/>
+              </Route>
+              <Route path='/moduloVendedores/paginaEditarUsuarios'>
+                <PaginaEditarUsuarios/>
+              </Route>
+              <Route path='/moduloVendedores/detalleUsuario'>
+                <PaginaDetalleUsuarios/>
+              </Route>
+              <Route path='/moduloVendedores'>
+                <PaginaVendedores/>
+              </Route>
+              <Route path='/moduloClientes/detalleCliente'>
+                <PaginaDetalleClientes/>
+              </Route>
+              <Route path='/moduloClientes/paginaEditarCliente'>
+                <PaginaEditarCliente/>
+              </Route>
+              <Route path='/moduloClientes/nuevoCliente'>
+                <PaginaNuevoCliente/>
+              </Route>
+              <Route path='/moduloClientes'>
+                <PaginaClientes/>
+              </Route>
+              <Route path='/nuevaVenta'>
+                <PaginaNuevaVenta/>
+              </Route>
+              <Route path='/paginaPrueba'>
+                <PaginaPrueba/>
+              </Route>
+              <Route path='/dashboard'>
+                <Dashboard/>
+              </Route>
+            </Switch>
+          </Private>
+        </Route>
+        <Route path={['/']}>
+          <Login/>
+        </Route>
       </Switch>
     </Router>
-   </div> 
+    </div> 
   );
 }
 
 export default App;
+
+
+          /*  <Route path="/moduloVendedores" component={PaginaVendedores}/>
+              <Route path="/moduloVentas" component={PaginaVentas}/>
+              <Route path="/nuevaVenta" component={PaginaNuevaVenta}/>
+              <Route path="/estadoVenta" component={PaginaEstadoVenta}/>
+              <Route path="/detalleVenta" component={PaginaInfoDetalleVentas}/>
+              <Route path="/agregarUsuarios" component={PaginaAgregarUsuarios}/> 
+              <Route path="/perfilUsuario" component={PaginaVistaPerfilUsuario}/>
+              <Route path="/editarUsuario" component={PaginaEditarUsuarios}/>
+              <Route path="/nuevoCliente" component={PaginaNuevoCliente}/>
+              <Route path="/moduloClientes" component={PaginaClientes}/> 
+              <Route path="/detalleCliente" component={PaginaDetalleClientes}/>
+              <Route path="/productos" component={PaginaProductos}/>
+              <Route path="/detalleProducto" component={PaginaDetalleProducto}/>
+              <Route path="/nuevoProducto" component={PaginaNuevoProducto}/>
+              <Route path="/actualizarProducto" component={PaginaActualizarProducto}/>
+              <Route path="/rolesUsuarios" component={PaginaRolesUsuario}/>
+              <Route path="/crearClienteCris" component={PaginaClientesCris}/>   
+              <Route path="/ok" component={PaginaOk}/>
+              <Route path="/" component={Login} />
+          </Switch>*/
 
 

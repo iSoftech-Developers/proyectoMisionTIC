@@ -1,6 +1,9 @@
 import DetalleUsuarios from '../../modules/detalleUsuarios/DetalleUsuarios';
+import Form from '../../modules/Formularios/Form';
+import NoButtonUpperBarSection from '../../modules/noButtonUpperBarSection/NoButtonUpperBarSection';
 
-const PaginaDetalleUsuarios =()=>{
+
+const PaginaAgregarUsuarios =()=>{
 
     const formLabelTitle = {
         label1:"ID",
@@ -13,9 +16,11 @@ const PaginaDetalleUsuarios =()=>{
 
     return(
         <>
+            <NoButtonUpperBarSection title="Agregar Usuario"/>
             <DetalleUsuarios/>
-       </>
+            <Form formLabelTitle = {formLabelTitle} />
+        </> 
     );
 }
 
-export default PaginaDetalleUsuarios;
+export default PaginaAgregarUsuarios;

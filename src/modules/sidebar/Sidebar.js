@@ -13,7 +13,7 @@ const Siderbar =()=>{
         <div className="h-full mt-24 text-base justify-between flex flex-col">
             <div>
                 <ul className="flex flex-col">
-                <Link className="active  hover:bg-gray-500 w-full py-2 text-gray-300" to="/productos"><i className="fas fa-home far fa-lg text-gray-300 ml-5 w-9 "></i>Dashboard</Link> 
+                <Link className="active  hover:bg-gray-500 w-full py-2 text-gray-300" to="/dashboard"><i className="fas fa-home far fa-lg text-gray-300 ml-5 w-9 "></i>Dashboard</Link> 
                     <Link className="active  hover:bg-gray-500 w-full py-2 text-gray-300" to="/nuevaVenta"><i className="fas fa-plus-circle fa-lg text-gray-300 ml-5 w-9  "></i>Nueva venta</Link>  
                     <Link className="active  hover:bg-gray-500 w-full py-2 text-gray-300" to="/moduloClientes"><i className="fas fa-users fa-lg  text-gray-300 ml-5 w-9 "></i>Clientes</Link> 
                     <Link className="active  hover:bg-gray-500 w-full py-2 text-gray-300" to="/moduloVendedores"><i className="fas fa-user-tag  fa-lg text-gray-300 w-9  ml-5"></i>Vendedores</Link>
