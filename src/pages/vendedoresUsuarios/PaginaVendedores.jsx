@@ -18,7 +18,7 @@ const PaginaVendedores =()=> {
   const variableCards = {
     icon:"fas fa-user-tag",
     cardTo:"/rolesUsuarios/perfilUsuario",
-    linkIcon:"/moduloClientes/paginaEditarUsuarios",
+    linkIcon:"/moduloVendedores/paginaEditarUsuarios",
     field1:"Documento",
     field2:"Nombre y Apellidos",
     field3:"Especialidad",
@@ -30,10 +30,8 @@ const PaginaVendedores =()=> {
 
     return (
      <>
-  
             <NoButtonUpperBarSection title="Vendedores"/>
             <Cards variableCards={variableCards} cardsInfo={cardsinfomation}/>
-     
      </> 
       
     );

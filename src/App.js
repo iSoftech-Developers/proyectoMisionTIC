@@ -8,7 +8,6 @@ import Login from './modules/login/Login';
 import PaginaClientes from './pages/clientes/PaginaClientes';
 import PaginaVentas from './pages/venta/PaginaVentas';
 import PaginaNuevaVenta from './pages/venta/PaginaNuevaVenta';
-import PaginaAgregarUsuarios from './pages/vendedoresUsuarios/PaginaEditarUsuarios';
 import PaginaEditarUsuarios from './pages/vendedoresUsuarios/PaginaEditarUsuarios';
 import PaginaDetalleUsuarios from './pages/vendedoresUsuarios/PaginaDetalleUsuarios';
 import PaginaProductos from './pages/productos/PaginaProductos';
@@ -23,6 +22,8 @@ import PaginaEstadoVenta from './pages/venta/PaginaEstadoVenta';
 import Private from './layouts/Private';
 import Dashboard from './pages/Dashboard';
 import PaginaEditarCliente from './pages/clientes/PaginaEditarCliente';
+import PaginaAgregarUsuarios from './pages/vendedoresUsuarios/PaginaAgregarUsuarios';
+
 
 
 
@@ -33,13 +34,13 @@ const App =()=> {
     <div className="template">
     <Router>
       <Switch>
-        <Route path ={['/dashboard','/nuevaVenta','/moduloVentas','/moduloVentas/detalleVenta', '/moduloVentas/detalleVentas/','/moduloClientes', 'moduloClientes/nuevoCliente','/moduloClientes/detalleCliente',' /moduloClientes/paginaEditarCliente', '/productos', '/productos/detalleProducto', '/productos/nuevoProducto','/productos/actualizarProducto','/rolesUsuarios', '/rolesUsuarios/perfilUsuario','/rolesUsuarios/nuevoUsuario','/moduloVendedores', '/moduloVendedores/perfilUsuario','/moduloClientes/paginaEditarUsuarios']}>
+        <Route path ={['/dashboard','/nuevaVenta','/moduloVentas','/moduloVentas/detalleVenta', '/moduloVentas/detalleVentas/','/moduloClientes', 'moduloClientes/nuevoCliente','/moduloClientes/detalleCliente',' /moduloClientes/paginaEditarCliente', '/productos', '/productos/detalleProducto', '/productos/nuevoProducto','/productos/actualizarProducto','/rolesUsuarios', '/rolesUsuarios/detalleUsuario','/rolesUsuarios/nuevoUsuario','/moduloVendedores', '/moduloVendedores/detalleUsuario','/moduloVendedores/paginaEditarUsuarios']}>
           <Private>
             <Switch>
               <Route path='/rolesUsuarios/nuevoUsuario'>
                 <PaginaAgregarUsuarios/>
               </Route>
-              <Route path='/rolesUsuarios/perfilUsuario'>
+              <Route path='/rolesUsuarios/detalleUsuario'>
                 <PaginaDetalleUsuarios/>
               </Route>
               <Route path='/rolesUsuarios'>
@@ -66,11 +67,11 @@ const App =()=> {
               <Route path='/moduloVentas'>
                 <PaginaVentas/>
               </Route>
-              <Route path='/moduloClientes/paginaEditarUsuarios'>
+              <Route path='/moduloVendedores/paginaEditarUsuarios'>
                 <PaginaEditarUsuarios/>
               </Route>
-              <Route path='/moduloVendedores/perfilUsuario'>
-                <PaginaVendedores/>
+              <Route path='/moduloVendedores/detalleUsuario'>
+                <PaginaDetalleUsuarios/>
               </Route>
               <Route path='/moduloVendedores'>
                 <PaginaVendedores/>

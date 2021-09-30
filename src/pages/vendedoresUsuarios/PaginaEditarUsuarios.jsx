@@ -1,13 +1,14 @@
 import EditarUsuario from '../../modules/editarUsuario/EditarUsuario';
 
 
-const PaginaAgregarUsuarios =()=>{
+const PaginaEditarUsuarios =()=>{
 
     return(
         <>
            <EditarUsuario/>
+           
         </>
     );
 }
 
-export default PaginaAgregarUsuarios;
+export default PaginaEditarUsuarios;
