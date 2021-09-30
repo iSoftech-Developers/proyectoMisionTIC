@@ -20,8 +20,7 @@ const BotonesDashboard = () => {
                 </div>
                 <div className="bg-yellow-600 w-full flex items-center rounded-2xl">
                     <Link className="active w-full py-2 flex flex-col items-center text-white" to="/productos"><i className="fas fa-tshirt far fa-lg text-white text-3xl"></i>Productos</Link> 
-                </div>
-                        
+                </div>        
             </div>
         </>
         

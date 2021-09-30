@@ -29,6 +29,7 @@ const Dashboard = () => {
        <>
             <BotonesDashboard/>
             <Cards variableCards={variableCards} cardsInfo={cardsinfomation}/>
+            <Cards variableCards={variableCards} cardsInfo={cardsinfomation}/>
        </>
         
        
