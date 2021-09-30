@@ -20,6 +20,7 @@ import PaginaDetalleClientes from  './pages/clientes/PaginaDetalleClientes';
 import PaginaRolesUsuario from './pages/vendedoresUsuarios/PaginaRolesUsuario';
 import PaginaEditarUsuarios from './pages/vendedoresUsuarios/PaginaEditarUsuarios';
 import PaginaEditarVenta from './pages/venta/PaginaEditarVenta';
+import PaginaPrueba from './pages/venta/PaginaPrueba';
 
 const App =()=> {
   return (
@@ -31,6 +32,7 @@ const App =()=> {
         <Route path="/nuevaVenta" component={PaginaNuevaVenta}/>
         <Route path="/detalleVenta" component={PaginaInfoDetalleVentas}/>
         <Route path="/editarVenta" component={PaginaEditarVenta}/>
+        <Route path="/paginaPrueba" component={PaginaPrueba}/>
         <Route path="/agregarUsuarios" component={PaginaDetalleUsuarios}/> 
         <Route path="/perfilUsuario" component={PaginaVistaPerfilUsuario}/>
         <Route path="/editarUsuarios" component={PaginaEditarUsuarios}/>
@@ -44,6 +46,7 @@ const App =()=> {
         <Route path="/rolesUsuarios" component={PaginaRolesUsuario}/>  
         <Route path="/ok" component={PaginaOk}/>
         <Route path="/" component={Login} />
+        
 
       </Switch>
     </Router>

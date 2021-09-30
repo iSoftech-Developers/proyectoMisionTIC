@@ -3,7 +3,6 @@ import Navbar from '../../modules/navbar/Navbar';
 import NoButtonUpperBarSection from '../../modules/noButtonUpperBarSection/NoButtonUpperBarSection';
 import EditarVenta from '../../modules/editarVenta/EditarVenta';
 
-
 const PaginaEditarVenta =()=>{
 
     return(
