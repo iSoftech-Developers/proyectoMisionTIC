@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import './Cards.css';
 
 
-const Cards=({ variableCards,cardsInfo })=>{
+const Cards=({variableCards,cardsInfo})=>{
 
 
 /*
@@ -20,7 +20,6 @@ useEffect(()=>{
             return(
            <Link to={variableCards.cardTo}>
                 <div className="cards-container mb-4 shadow bg-gray-100 ">
-                    
                     <div className="mx-6 mb-5">
                         <div className="flex">
                             <i className={`${variableCards.icon} text-white bg-gray-800 mr-4 pt-4 px-3 pb-2`}></i>
