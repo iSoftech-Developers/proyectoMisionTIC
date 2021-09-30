@@ -8,7 +8,7 @@ const PaginaRolesUsuario =()=>{
 
     return(
         <>
-          <UpperBarSection titlePage="Administrar Usuarios" nameButton="NUEVO USUARIO"/>
+          <UpperBarSection titlePage="Administrar Usuarios" nameButton="NUEVO USUARIO" selectorButton="/rolesUsuarios/nuevoUsuario"/>
           <GestordeRoles/>       
         </>
 
