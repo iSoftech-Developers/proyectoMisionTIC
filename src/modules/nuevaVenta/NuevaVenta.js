@@ -26,8 +26,8 @@ const NuevaVenta=(props)=>{
         <div>
             <form className=" space-y-8 my-16">
                 <div className="form-upper-section flex justify-between font-bold label-color">
-                    <div className="w-1/6">
-                        <label htmlFor="userid">Id Vendedor Responsable</label>
+                    <div className="w-1/6 ">
+                        <label htmlFor="userid">ID Responsable</label>
                         <input required class=" w-full h-8 p-2" type="text" name="userid" id="userid"/>
                     </div>
                     <div className="w-1/6">
@@ -53,24 +53,19 @@ const NuevaVenta=(props)=>{
                         <input required disabled class=" w-full h-8 p-2" type="tel" name="usercel" id="usercel"/>
                     </div>
                     <div className="w-1/6">
-                        <label htmlFor="userspecial">Email</label>
+                        <label htmlFor="userspecial">Precio unitario</label>
                         <input required disabled class=" w-full h-8 p-2" type="email" name="userspecial" id="userspecial"/>
                     </div>
                     <div className="w-1/6">
-                        <label htmlFor="userole">Direccion</label>
-                        <input required disabled class=" w-full h-8 p-2" type="text" name="userspecial" id="userspecial"/>
+                        <input required class="cursor-pointer w-full h-8 p-2 bg-gray-300" type="button" name="userspecial" id="userspecial" value="Elegir producto"/>
                     </div>
                     <div className="w-1/6">
-                        <label htmlFor="userole">Municipio</label>
+                        <label htmlFor="userole"></label>
                         <input required disabled class=" w-full h-8 p-2" type="text" name="userspecial" id="userspecial"/>
                     </div>
                 </div>
-                <div className="w-1/6  font-semibold ">
-                        <label htmlFor="userole">Departamento</label>
-                        <input required  disabled class=" w-full h-8 p-2" type="text" name="userspecial" id="userspecial"/>
-                    </div>
                 <div className=" w-full flex justify-center">
-                    <input className="w-1/6 cursor-pointe bg-green-400 h-7 text-white font-bold my-16" type="submit" value="Guardar"/>
+                    <input className="w-1/6 cursor-pointer bg-green-400 h-7 text-white font-bold my-16" type="submit" value="Guardar"/>
                 </div>
             </form> 
     </div>
