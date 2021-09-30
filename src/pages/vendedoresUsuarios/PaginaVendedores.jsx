@@ -18,7 +18,7 @@ const PaginaVendedores =()=> {
   const variableCards = {
     icon:"fas fa-user-tag",
     cardTo:"/rolesUsuarios/perfilUsuario",
-    linkIcon:"/actualizarProducto",
+    linkIcon:"/moduloClientes/paginaEditarUsuarios",
     field1:"Documento",
     field2:"Nombre y Apellidos",
     field3:"Especialidad",
