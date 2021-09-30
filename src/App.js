@@ -20,7 +20,6 @@ import PaginaOk from './pages/PaginaOk';
 import PaginaDetalleClientes from  './pages/clientes/PaginaDetalleClientes';
 import PaginaRolesUsuario from './pages/vendedoresUsuarios/PaginaRolesUsuario';
 import PaginaEstadoVenta from './pages/venta/PaginaEstadoVenta';
-import PaginaClientesCris from './pages/clientes/PaginaClientesCris';
 import Private from './layouts/Private';
 import Dashboard from './pages/Dashboard';
 import PaginaEditarCliente from './pages/clientes/PaginaEditarCliente';
@@ -34,7 +33,7 @@ const App =()=> {
     <div className="template">
     <Router>
       <Switch>
-        <Route path ={['/dashboard','/nuevaVenta','/moduloVentas','/moduloVentas/detalleVenta', '/moduloVentas/detalleVentas/','/moduloClientes', 'moduloClientes/nuevoCliente','/moduloClientes/detalleCliente',' /moduloClientes/paginaEditarCliente', '/productos', '/productos/detalleProducto', '/productos/nuevoProducto','/productos/actualizarProducto','/rolesUsuarios', '/rolesUsuarios/perfilUsuario','/rolesUsuarios/nuevoUsuario', '/moduloVendedores']}>
+        <Route path ={['/dashboard','/nuevaVenta','/moduloVentas','/moduloVentas/detalleVenta', '/moduloVentas/detalleVentas/','/moduloClientes', 'moduloClientes/nuevoCliente','/moduloClientes/detalleCliente',' /moduloClientes/paginaEditarCliente', '/productos', '/productos/detalleProducto', '/productos/nuevoProducto','/productos/actualizarProducto','/rolesUsuarios', '/rolesUsuarios/perfilUsuario','/rolesUsuarios/nuevoUsuario','/moduloVendedores', '/moduloVendedores/perfilUsuario','/moduloClientes/paginaEditarUsuarios']}>
           <Private>
             <Switch>
               <Route path='/moduloVendedores'>
@@ -69,6 +68,15 @@ const App =()=> {
               </Route>
               <Route path='/moduloVentas'>
                 <PaginaVentas/>
+              </Route>
+              <Route path='/moduloClientes/paginaEditarUsuarios'>
+                <PaginaEditarUsuarios/>
+              </Route>
+              <Route path='/moduloVendedores/perfilUsuario'>
+                <PaginaVendedores/>
+              </Route>
+              <Route path='/moduloVendedores'>
+                <PaginaVendedores/>
               </Route>
               <Route path='/moduloClientes/detalleCliente'>
                 <PaginaDetalleClientes/>

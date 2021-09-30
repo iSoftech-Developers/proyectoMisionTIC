@@ -13,7 +13,7 @@ const Tablas=(props)=>{
                         </div>
                     </div>
                 </div>                      
-                <table className="table-auto w-full bg-white border-solid border-gray-400 border my-5">
+                <table className="table-fixed w-full bg-white border-solid border-gray-400 border my-5">
                     <tr>
                         <th>{props.field1}</th>
                         <th>{props.field2}</th>
