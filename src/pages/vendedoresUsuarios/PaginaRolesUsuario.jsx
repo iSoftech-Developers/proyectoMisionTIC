@@ -1,4 +1,5 @@
 import UpperBarSection from "../../modules/upperBarSection/UpperBarSection";
+import GestordeRoles from "../../modules/gestorderoles/Gestorderoles"
 
 
 const PaginaRolesUsuario =()=>{
@@ -7,7 +8,8 @@ const PaginaRolesUsuario =()=>{
 
     return(
         <>
-          <UpperBarSection titlePage="Administrar Usuarios" nameButton="NUEVO USUARIO"/>         
+          <UpperBarSection titlePage="Administrar Usuarios" nameButton="NUEVO USUARIO"/>
+          <GestordeRoles/>       
         </>
 
 

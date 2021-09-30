@@ -33,7 +33,7 @@ const variableCards = {
     return (
      <>
   
-        <UpperBarSection field1Pge="Productos" nameButton="Nuevo Producto" selectorButton="/productos/nuevoProducto"/>
+        <UpperBarSection titlePage="Productos" nameButton="Nuevo Producto" selectorButton="/productos/nuevoProducto"/>
         <Cards variableCards={variableCards} cardsInfo={cardsinfomation}/>
        
      </> 
