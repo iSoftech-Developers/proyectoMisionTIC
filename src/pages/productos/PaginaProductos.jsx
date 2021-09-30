@@ -1,5 +1,3 @@
-import Sidebar from '../../modules/sidebar/Sidebar';
-import Navbar from '../../modules/navbar/Navbar';
 import Cards from '../../modules/cards/Cards';
 import UpperBarSection from '../../modules/upperBarSection/UpperBarSection';
 
@@ -7,8 +5,8 @@ import UpperBarSection from '../../modules/upperBarSection/UpperBarSection';
 const PaginaProductos =()=> {
 
 const variableCards = {
-    cardTo:"/detalleProducto",
-    linkIcon:"/actualizarProducto",
+    cardTo:"/productos/detalleProducto",
+    linkIcon:"/productos/actualizarProducto",
     titleCard:"Id Producto",
     field1:"Descripción",
     field2:"Valor unitario",
@@ -23,17 +21,8 @@ const cardIcon = {
 
     return (
      <>
-  
-      <Sidebar />
-      <main>
-        <Navbar/>
-          <section className="container-cards">   
-            <section className="contenido">
-              <UpperBarSection titlePage="Productos" nameButton="Nuevo Producto" selectorButton="/nuevoProducto"/>
-              <Cards cardIcon={cardIcon} variableCards={variableCards}/>
-            </section>  
-          </section>
-      </main>
+          <UpperBarSection titlePage="Productos" nameButton="Nuevo Producto" selectorButton="/productos/nuevoProducto"/>
+          <Cards cardIcon={cardIcon} variableCards={variableCards}/>
      </> 
       
     );

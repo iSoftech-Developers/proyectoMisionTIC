@@ -8,9 +8,8 @@ import Login from './modules/login/Login';
 import PaginaClientes from './pages/clientes/PaginaClientes';
 import PaginaVentas from './pages/venta/PaginaVentas';
 import PaginaNuevaVenta from './pages/venta/PaginaNuevaVenta';
-import PaginaAgregarUsuarios from './pages/vendedoresUsuarios/PaginaDetalleUsuarios';
-import PaginaVistaPerfilUsuario from './pages/vendedoresUsuarios/PaginaVistaPerfilUsuario';
 import PaginaEditarUsuarios from './pages/vendedoresUsuarios/PaginaEditarUsuarios';
+import PaginaDetalleUsuarios from './pages/vendedoresUsuarios/PaginaDetalleUsuarios';
 import PaginaProductos from './pages/productos/PaginaProductos';
 import PaginaDetalleProducto from './pages/productos/PaginaDetalleProducto';
 import PaginaNuevoCliente from './pages/clientes/PaginaNuevoCliente';
@@ -23,21 +22,63 @@ import PaginaEstadoVenta from './pages/venta/PaginaEstadoVenta';
 import PaginaClientesCris from './pages/clientes/PaginaClientesCris';
 import Private from './layouts/Private';
 import Dashboard from './pages/Dashboard';
+import PaginaEditarCliente from './pages/clientes/PaginaEditarCliente';
 
 
+/*linea 37 va a la pagina de modificar venta*/
+/*linea 5 */
 const App =()=> {
   return (
     <div className="template">
     <Router>
       <Switch>
-        <Route path ={['/dashboard']}>
+        <Route path ={['/dashboard','/nuevaVenta','/moduloVentas','/moduloVentas/detalleVenta', '/moduloVentas/detalleVentas/','/moduloClientes', 'moduloClientes/nuevoCliente','/moduloClientes/detalleCliente',' /moduloClientes/paginaEditarCliente', '/productos', '/productos/detalleProducto', '/productos/nuevoProducto','/productos/actualizarProducto']}>
           <Private>
             <Switch>
+              <Route path='/productos/actualizarProducto'>
+                <PaginaActualizarProducto/>
+              </Route>
+              <Route path='/productos/nuevoProducto'>
+                <PaginaNuevoProducto/>
+              </Route>
+              <Route path='/productos/detalleProducto'>
+                <PaginaDetalleProducto/>
+              </Route>
+              <Route path='/productos'>
+                <PaginaProductos/>
+              </Route>
+              <Route path='/moduloVentas/detalleVentas/'>
+                <PaginaNuevaVenta/>
+              </Route>
+              <Route path='/moduloVentas/detalleVenta'>
+                <PaginaInfoDetalleVentas/>
+              </Route>
+              <Route path='/moduloVentas'>
+                <PaginaVentas/>
+              </Route>
+              <Route path='/moduloClientes/detalleCliente'>
+                <PaginaDetalleClientes/>
+              </Route>
+              <Route path='/moduloClientes/paginaEditarCliente'>
+                <PaginaEditarCliente/>
+              </Route>
+              <Route path='/moduloClientes/nuevoCliente'>
+                <PaginaNuevoCliente/>
+              </Route>
+              <Route path='/moduloClientes'>
+                <PaginaClientes/>
+              </Route>
+              <Route path='/nuevaVenta'>
+                <PaginaNuevaVenta/>
+              </Route>
               <Route path='/dashboard'>
                 <Dashboard/>
               </Route>
             </Switch>
           </Private>
+        </Route>
+        <Route path={['/']}>
+          <Login/>
         </Route>
       </Switch>
     </Router>

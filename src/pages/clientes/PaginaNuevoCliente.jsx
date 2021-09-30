@@ -1,5 +1,3 @@
-import Sidebar from "../../modules/sidebar/Sidebar";
-import Navbar from "../../modules/navbar/Navbar";
 import NuevoCliente from "../../modules/nuevoCliente/NuevoCliente";
 
 
@@ -16,20 +14,9 @@ const PaginaNuevoCliente =()=>{
     label8:"Telefono*",
 }
 
-
-
     return(
       <>
-      <Sidebar />
-      <main>
-        <Navbar/>
-          <section className="container-cards">
-        
-            <section className="contenido">            
-              <NuevoCliente formLabelTitle = {formLabelTitle}/>       
-            </section>
-          </section>
-      </main>
+        <NuevoCliente formLabelTitle = {formLabelTitle}/>
       </>
 
 

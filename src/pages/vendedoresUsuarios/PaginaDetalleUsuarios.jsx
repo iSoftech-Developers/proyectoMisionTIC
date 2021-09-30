@@ -1,7 +1,5 @@
-import Sidebar from '../../modules/sidebar/Sidebar';
-import Navbar from '../../modules/navbar/Navbar';
 import DetalleUsuarios from '../../modules/detalleUsuarios/DetalleUsuarios';
-import Form from '../../modules/Formularios/Form'
+import Form from '../../modules/Formularios/Form';
 
 const PaginaDetalleUsuarios =()=>{
 
@@ -16,17 +14,9 @@ const PaginaDetalleUsuarios =()=>{
 
     return(
         <>
-        <Sidebar />
-        <main>
-              <Navbar/>
-                <section className="container-cards">
-                    <section className="contenido">
-                        <DetalleUsuarios/>
-                        <Form formLabelTitle = {formLabelTitle} />
-                    </section>
-                </section>         
-        </main>
-       </> 
+            <DetalleUsuarios/>
+            <Form formLabelTitle = {formLabelTitle} />
+       </>
     );
 }
 

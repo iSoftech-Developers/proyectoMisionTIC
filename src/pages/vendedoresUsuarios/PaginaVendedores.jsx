@@ -1,12 +1,10 @@
-import Sidebar from '../../modules/sidebar/Sidebar';
-import Navbar from '../../modules/navbar/Navbar';
 import Cards from '../../modules/cards/Cards';
 import NoButtonUpperBarSection from '../../modules/noButtonUpperBarSection/NoButtonUpperBarSection'
 
 
 const PaginaVendedores =()=> {
   const variableCards = {
-    cardTo:"/perfilUsuario",
+    cardTo:"/rolesUsuarios/perfilUsuario",
     linkIcon:"/actualizarProducto",
     titleCard:"Vendedor Id",
     field1:"Documento",
@@ -22,18 +20,8 @@ const PaginaVendedores =()=> {
 
     return (
      <>
-  
-      <Sidebar />
-      <main>
-        <Navbar/>
-        <section className="container-cards  overflow-y-scroll ">
-      
-          <section className="contenido ">
-            <NoButtonUpperBarSection title="Vendedores"/>
-            <Cards cardIcon={cardIcon} variableCards={variableCards}/>
-          </section>
-        </section>
-      </main>
+          <NoButtonUpperBarSection title="Vendedores"/>
+          <Cards cardIcon={cardIcon} variableCards={variableCards}/>
      </> 
       
     );

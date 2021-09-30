@@ -10,10 +10,10 @@ const Private = ({children}) => {
             <main>
                     <Navbar/>
                     <section className="container-cards">
-                        <section className="contenido">
+                         <section className="contenido">
                             {children}
                         </section>
-                    </section>   
+                    </section>
             </main>
         </>
         

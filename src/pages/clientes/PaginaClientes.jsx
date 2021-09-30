@@ -1,13 +1,11 @@
-import Sidebar from '../../modules/sidebar/Sidebar';
-import Navbar from '../../modules/navbar/Navbar';
 import Cards from '../../modules/cards/Cards';
 import UpperBarSection from '../../modules/upperBarSection/UpperBarSection';
 
 
 const PaginaClientes =()=> {
   const variableCards = {
-    cardTo:"/detalleCliente",
-    linkIcon:"/actualizarProducto",
+    cardTo:"/moduloClientes/detalleCliente",
+    linkIcon:"/moduloClientes/paginaEditarCliente",
     titleCard:"Cliente ID",
     field1:"Razon Social*",
     field2:"NIT/CC*",
@@ -22,16 +20,8 @@ const PaginaClientes =()=> {
 
     return (
      <>
-      <Sidebar />
-      <main>
-        <Navbar/>
-        <section className="container-cards">
-          <section className="contenido">
-            <UpperBarSection titlePage="Clientes" nameButton="AGREGAR CLIENTE" selectorButton="/nuevoCliente"/>
-            <Cards cardIcon={cardIcon} variableCards={variableCards}/>
-          </section>
-        </section>
-      </main>
+        <UpperBarSection titlePage="Clientes" nameButton="AGREGAR CLIENTE" selectorButton="/moduloClientes/nuevoCliente"/>
+        <Cards cardIcon={cardIcon} variableCards={variableCards}/>
      </> 
       
     );
