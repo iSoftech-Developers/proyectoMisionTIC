@@ -29,7 +29,7 @@ useEffect(()=>{
                                 <Link to={variableCards.linkIcon} className="edit-card border-0"><i className="fas fa-pen text-gray-400"></i></Link>
                             </div>
                         </div>
-                        <table className="text-sm w-full bg-white border-gray-400 border mt-4">
+                        <table className="table-fixed text-sm w-full bg-white border-gray-400 border mt-4">
                         <tr>
                             <th >{variableCards.field1}</th>
                             <th >{variableCards.field2}</th>
