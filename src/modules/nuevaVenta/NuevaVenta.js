@@ -57,11 +57,11 @@ const NuevaVenta=(props)=>{
                         <input required disabled class=" w-full h-8 p-2" type="email" name="userspecial" id="userspecial"/>
                     </div>
                     <div className="w-1/6">
-                        <input required class="cursor-pointer w-full h-8 p-2 bg-gray-300" type="button" name="userspecial" id="userspecial" value="Elegir producto"/>
-                    </div>
-                    <div className="w-1/6">
                         <label htmlFor="userole"></label>
                         <input required disabled class=" w-full h-8 p-2" type="text" name="userspecial" id="userspecial"/>
+                    </div>
+                    <div className="w-1/6">
+                        <input required class="cursor-pointer w-full py-2 bg-gray-300" type="button" name="userspecial" id="userspecial" value="Productos"/>
                     </div>
                 </div>
                 <div className=" w-full flex justify-center">
