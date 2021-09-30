@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import './Cards.css';
 
 
-const Cards=({ variableCards,cardsInfo })=>{
+const Cards=({variableCards,cardsInfo})=>{
 
 
 /*
