@@ -1,5 +1,3 @@
-import Sidebar from '../../modules/sidebar/Sidebar';
-import Navbar from '../../modules/navbar/Navbar';
 import Cards from '../../modules/cards/Cards';
 import NoButtonUpperBarSection from '../../modules/noButtonUpperBarSection/NoButtonUpperBarSection'
 import { useEffect, useState } from 'react';
@@ -19,7 +17,7 @@ const PaginaVendedores =()=> {
 
   const variableCards = {
     icon:"fas fa-user-tag",
-    cardTo:"/perfilUsuario",
+    cardTo:"/rolesUsuarios/perfilUsuario",
     linkIcon:"/actualizarProducto",
     field1:"Documento",
     field2:"Nombre y Apellidos",
@@ -33,17 +31,9 @@ const PaginaVendedores =()=> {
     return (
      <>
   
-      <Sidebar />
-      <main>
-        <Navbar/>
-        <section className="container-cards  overflow-y-scroll ">
-      
-          <section className="contenido ">
             <NoButtonUpperBarSection title="Vendedores"/>
             <Cards variableCards={variableCards} cardsInfo={cardsinfomation}/>
-          </section>
-        </section>
-      </main>
+     
      </> 
       
     );

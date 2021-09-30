@@ -1,5 +1,3 @@
-import Sidebar from '../../modules/sidebar/Sidebar';
-import Navbar from '../../modules/navbar/Navbar';
 import Cards from '../../modules/cards/Cards';
 import UpperBarSection from '../../modules/upperBarSection/UpperBarSection';
 import { useEffect, useState } from 'react';
@@ -19,8 +17,8 @@ const PaginaClientes =()=> {
   ];
   const variableCards = {
     icon:" fas fa-users",
-    cardTo:"/detalleCliente",
-    linkIcon:"/actualizarProducto",
+    cardTo:"/moduloClientes/detalleCliente",
+    linkIcon:"/moduloClientes/paginaEditarCliente",
     titleCard:"Cliente ID",
     field1:"Razon Social*",
     field2:"NIT/CC*",
@@ -34,17 +32,9 @@ const PaginaClientes =()=> {
     return (
      <>
   
-      <Sidebar />
-      <main>
-        <Navbar/>
-        <section className="container-cards">
-      
-          <section className="contenido">
-            <UpperBarSection titlePage="Clientes" nameButton="AGREGAR CLIENTE" selectorButton="/nuevoCliente"/>
-            <Cards variableCards={variableCards} cardsInfo={cardsinfomation}/>
-          </section>
-        </section>
-      </main>
+        <UpperBarSection titlePage="Clientes" nameButton="AGREGAR CLIENTE" selectorButton="/moduloClientes/nuevoCliente"/>
+        <Cards variableCards={variableCards} cardsInfo={cardsinfomation}/>
+       
      </> 
       
     );

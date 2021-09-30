@@ -1,5 +1,3 @@
-import Sidebar from '../../modules/sidebar/Sidebar';
-import Navbar from '../../modules/navbar/Navbar';
 import Cards from '../../modules/cards/Cards';
 import UpperBarSection from '../../modules/upperBarSection/UpperBarSection';
 import { useEffect, useState } from 'react';
@@ -20,9 +18,9 @@ const PaginaProductos =()=> {
 
 const variableCards = {
     icon:"fas fa-tshirt",
-    cardTo:"/detalleProducto",
-    linkIcon:"/actualizarProducto",
-    field1Crd:"Id Producto",
+    cardTo:"/productos/detalleProducto",
+    linkIcon:"/productos/actualizarProducto",
+    titleCard:"Id Producto",
     field1:"Descripción",
     field2:"Valor unitario",
     field3:"Unidades disponibles",
@@ -35,16 +33,9 @@ const variableCards = {
     return (
      <>
   
-      <Sidebar />
-      <main>
-        <Navbar/>
-          <section className="container-cards">   
-            <section className="contenido">
-              <UpperBarSection field1Pge="Productos" nameButton="Nuevo Producto" selectorButton="/nuevoProducto"/>
-              <Cards variableCards={variableCards} cardsInfo={cardsinfomation}/>
-            </section>  
-          </section>
-      </main>
+        <UpperBarSection field1Pge="Productos" nameButton="Nuevo Producto" selectorButton="/productos/nuevoProducto"/>
+        <Cards variableCards={variableCards} cardsInfo={cardsinfomation}/>
+       
      </> 
       
     );
