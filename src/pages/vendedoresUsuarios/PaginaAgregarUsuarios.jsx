@@ -1,5 +1,7 @@
 import DetalleUsuarios from '../../modules/detalleUsuarios/DetalleUsuarios';
 import Form from '../../modules/Formularios/Form';
+import NoButtonUpperBarSection from '../../modules/noButtonUpperBarSection/NoButtonUpperBarSection';
+
 
 const PaginaAgregarUsuarios =()=>{
 
@@ -14,9 +16,10 @@ const PaginaAgregarUsuarios =()=>{
 
     return(
         <>
+            <NoButtonUpperBarSection title="Agregar Usuario"/>
             <DetalleUsuarios/>
             <Form formLabelTitle = {formLabelTitle} />
-       </> 
+        </> 
     );
 }
 
