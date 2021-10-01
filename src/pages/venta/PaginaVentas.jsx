@@ -11,6 +11,8 @@ const PaginaVentas =()=> {
     setCardsinfomation(VENTAS);
   },[]);
   const VENTAS = [
+    { id:0,field1: "ID1234556", field2: "Juan Sebastian Cabrera Rojas", field3: "Administrador", field4: "Administrador",field5: "Administrador", field6: "Administrador"},
+
   
 
   ];
@@ -25,6 +27,7 @@ const PaginaVentas =()=> {
     field3:"Valor total",
     field4:"Fecha de pago",
     field5:"Estado",
+    field6:"Id producto"
 }
 
 
