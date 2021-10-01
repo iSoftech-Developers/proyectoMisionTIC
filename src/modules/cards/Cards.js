@@ -1,9 +1,38 @@
-import { Link} from 'react-router-dom';
-import { useEffect } from 'react';
+import { Link ,Route , useLocation} from 'react-router-dom';
+import { useEffect,useState } from 'react';
 import './Cards.css';
+import DetalleCliente from '../detalleCliente/DetalleCliente';
+import DetalleProducto from '../detalleProducto/DetalleProducto'
 
 
-const Cards=({variableCards,cardsInfo})=>{
+
+const Cards=({variableCards,cardsInfo,value})=>{
+
+let location = useLocation();
+let background = location.state && location.state.background;
+
+const [openModal,setOpenModal]=useState(false);
+
+
+
+
+const handleClick= () =>{
+    setOpenModal(true)}
+    
+
+
+const modalSelector=(value) =>{
+
+    switch (value){
+        case "1" :
+            return <DetalleCliente/>
+        case "2" :
+            return <DetalleProducto />
+        default:
+            return null;
+
+    }
+};
 
 
 /*
@@ -11,14 +40,16 @@ useEffect(()=>{
   console.log("este es el listado" ,cardsInfo)
 
 },[cardsInfo]);
+to={variableCards.cardTo}
 
 */
 
     return(
-      <>
+      <><button onClick={handleClick}>
+      {openModal&&modalSelector(value)}
           {cardsInfo.map((i)=>{
             return(
-           <Link to={variableCards.cardTo}>
+                
                 <div className="cards-container mb-4 shadow bg-gray-100 ">
                     
                     <div className="mx-6 mb-5">
@@ -51,10 +82,11 @@ useEffect(()=>{
                 </div>
                
            
-           </Link>
+               
             );
             })}
-  
+        </button>
+        {background && <Route path="/img/:id" children={<DetalleCliente />} />}
         </>
         
 

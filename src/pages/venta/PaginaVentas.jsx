@@ -11,8 +11,7 @@ const PaginaVentas =()=> {
     setCardsinfomation(VENTAS);
   },[]);
   const VENTAS = [
-  
-
+    { id:0,field1: 1037645234, field2: "Juan Sebastian Cabrera Rojas", field3: "Online", field4: "313248789", field5: "29/09/2021" },
   ];
   
   const variableCards = {
@@ -36,7 +35,7 @@ const PaginaVentas =()=> {
   
   
               <UpperBarSection titlePage="Listado de ventas" nameButton="Nueva Venta" selectorButton="/nuevaVenta"/>
-              <Cards variableCards={variableCards} cardsInfo={cardsinfomation}/>
+              <Cards variableCards={variableCards} cardsInfo={cardsinfomation} />
 
      </> 
       
