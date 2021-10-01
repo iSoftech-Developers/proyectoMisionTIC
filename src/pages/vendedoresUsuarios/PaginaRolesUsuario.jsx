@@ -5,27 +5,27 @@ import { useEffect, useState } from 'react';
 
 const PaginaRolesUsuario =()=>{
 
-const [usercardinfo,setUserCardInfo] =useState([]);
+const [userCardInfo,setUserCardInfo] =useState([]);
     useEffect(()=>{
     setUserCardInfo(USUARIOS);
 },[]); 
 
 const USUARIOS = [
   { id:0,field1: "ID1234556", field2: "Juan Sebastian Cabrera Rojas", field3: "Administrador"},
+  { id:0,field1: "ID456787", field2: "Juan Pablo Gomez Perez", field3: "Vendedor"},
   { id:0,field1: "ID1234556", field2: "Juan Sebastian Cabrera Rojas", field3: "Administrador"},
+  { id:0,field1: "ID456787", field2: "Juan Pablo Gomez Perez", field3: "Vendedor"},
+  { id:0,field1: "ID1234556", field2: "Juan Sebastian Cabrera Rojas", field3: "Administrador"},
+  { id:0,field1: "ID456787", field2: "Lisa Luna Gomez", field3: "Vendedor"},
+  { id:0,field1: "ID1234556", field2: "Juan Sebastian Cabrera Rojas", field3: "Administrador"},
+  { id:0,field1: "ID456787", field2: "Juan Pablo Gomez Perez", field3: "Vendedor"},
 ];
 
-const variableUserCard = {
-  cardTo:"/rolesUsuarios/detalleUsuarios",
-  field1:"ID",
-  field2:"Nombre y Apellidos",
-  field3:"Cargo"
-}
 
     return(
         <>
           <UpperBarSection titlePage="Administrar Usuarios" nameButton="NUEVO USUARIO" selectorButton="/rolesUsuarios/nuevoUsuario"/>
-          <TarjetasUsuarios variableUserCard={variableUserCard} userCardInfo={usercardinfo}/>
+          <TarjetasUsuarios userCardInfo={userCardInfo}/>
         </>
     );
 
