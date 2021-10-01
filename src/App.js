@@ -27,6 +27,7 @@ import PaginaAgregarUsuarios from './pages/vendedoresUsuarios/PaginaAgregarUsuar
 
 
 
+
 /*linea 37 va a la pagina de modificar venta*/
 /*linea 5 */
 const App =()=> {
@@ -34,13 +35,13 @@ const App =()=> {
     <div className="template">
     <Router>
       <Switch>
-        <Route path ={['/dashboard','/nuevaVenta','/moduloVentas','/moduloVentas/detalleVenta', '/moduloVentas/detalleVentas/','/moduloClientes', 'moduloClientes/nuevoCliente','/moduloClientes/detalleCliente',' /moduloClientes/paginaEditarCliente', '/productos', '/productos/detalleProducto', '/productos/nuevoProducto','/productos/actualizarProducto','/rolesUsuarios', '/rolesUsuarios/detalleUsuario','/rolesUsuarios/nuevoUsuario','/moduloVendedores', '/moduloVendedores/detalleUsuario','/moduloVendedores/paginaEditarUsuarios']}>
+        <Route path ={['/dashboard','/nuevaVenta','/moduloVentas','/moduloVentas/detalleVenta', '/moduloVentas/detalleVentas/','/moduloClientes', 'moduloClientes/nuevoCliente','/moduloClientes/detalleCliente',' /moduloClientes/paginaEditarCliente', '/productos', '/productos/detalleProducto', '/productos/nuevoProducto','/productos/actualizarProducto','/rolesUsuarios', '/rolesUsuarios/detalleUsuario','/rolesUsuarios/nuevoUsuario','/moduloVendedores', '/moduloVendedores/detalleUsuario','/moduloVendedores/paginaEditarUsuarios','/rolesUsuarios/detalleUsuarios']}>
           <Private>
             <Switch>
               <Route path='/rolesUsuarios/nuevoUsuario'>
                 <PaginaAgregarUsuarios/>
               </Route>
-              <Route path='/rolesUsuarios/detalleUsuario'>
+              <Route path='/rolesUsuarios/detalleUsuarios'>
                 <PaginaDetalleUsuarios/>
               </Route>
               <Route path='/rolesUsuarios'>
