@@ -76,7 +76,7 @@ const App =()=> {
               <Route path='/moduloVendedores'>
                 <PaginaVendedores/>
               </Route>
-              <Route path='/moduloClientes/detalleCliente'>
+              <Route path='/moduloClientes/detalleCliente/:id'>
                 <PaginaDetalleClientes/>
               </Route>
               <Route path='/moduloClientes/paginaEditarCliente'>
