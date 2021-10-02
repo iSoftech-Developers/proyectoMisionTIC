@@ -25,7 +25,7 @@ const DetalleCliente = (props) => {
     return (
         
         <>
-        <div className="bg-gray-300">
+        <div className="" onClick={back}>
             <div className="flex justify-between">
                     <div className="">
                         <div>

@@ -7,7 +7,7 @@ const Modals = ({children}) => {
     return (
         <>
             <main>
-                    <section className="container-cards h-full overflow-scroll">
+                    <section className="container-cards h-full">
                          <section className="contenido">
                             {children}
                         </section>

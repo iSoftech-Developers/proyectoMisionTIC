@@ -64,8 +64,8 @@ const NuevaVenta=(props)=>{
                         <input required class="cursor-pointer w-full py-2 bg-gray-300" type="button" name="userspecial" id="userspecial" value="Productos"/>
                     </div>
                 </div>
-                <div className=" w-full flex justify-center">
-                    <input className="w-1/6 cursor-pointer bg-green-400 h-7 text-white font-bold my-16" type="submit" value="Guardar"/>
+                <div className="flex justify-center">
+                    <input className="w-1/6 cursor-pointer bg-green-400 h-7 text-white font-bold " type="submit" value="Guardar"/>
                 </div>
             </form> 
     </div>
