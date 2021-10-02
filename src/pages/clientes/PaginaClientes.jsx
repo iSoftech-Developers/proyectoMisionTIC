@@ -30,7 +30,7 @@ const PaginaClientes =()=> {
     return (
      <>
   
-        <UpperBarSection titlePage="Clientes" nameButton="AGREGAR CLIENTE" selectorButton="/moduloClientes/nuevoCliente"/>
+        <UpperBarSection titlePage="Clientes" nameButton="Agregar cliente" selectorButton="/moduloClientes/nuevoCliente"/>
         <Cards variableCards={variableCards} cardsInfo={cardsinfomation}/>
        
      </> 
