@@ -3,10 +3,11 @@ import logoSporty from '../../media/logoSporty.png';
 import './Sidebar.css';
 import { Link } from 'react-router-dom';
 
+
 const Siderbar =()=>{
 
     return(
-    <div className=" flex h-full fixed w-72 flex-col bg-gray-900">
+    <div className="hidden bg-blue-800 sm:bg-yellow-400 sm:flex sm:w-72 md:bg-green-900 lg:bg-gray-900 md:flex h-full fixed w-72 flex-col ">
         <div className="justify-center flex ">
             <img className="w-4/5 mt-4" src={logoSporty} alt="logo Sporty"/>
         </div>

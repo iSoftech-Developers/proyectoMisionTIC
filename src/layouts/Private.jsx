@@ -8,9 +8,9 @@ const Private = ({children}) => {
         <>
             <Sidebar/>
             <main>
-                    <Navbar/>
-                    <section className="container-cards h-full overflow-scroll">
-                         <section className="contenido">
+                <Navbar/>
+                    <section className="container-cards h-full overflow-scroll md: ml-80 lg:ml-80">
+                        <section className="contenido lg">
                             {children}
                         </section>
                     </section>

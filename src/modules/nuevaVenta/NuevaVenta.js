@@ -26,7 +26,7 @@ const NuevaVenta=(props)=>{
     
         <div>
             <form className=" space-y-8 my-16">
-                <div className="form-upper-section flex justify-between font-bold label-color">
+                <div className="flex justify-between font-bold label-color">
                     <div className="w-1/6 ">
                         <label htmlFor="userid">ID Responsable</label>
                         <input required class=" w-full h-8 p-2" type="text" name="userid" id="userid"/>
@@ -62,7 +62,7 @@ const NuevaVenta=(props)=>{
                         <input required disabled class=" w-full h-8 p-2" type="text" name="userspecial" id="userspecial"/>
                     </div>
                     <div className="w-1/6">
-                        <input required class="cursor-pointer w-full py-2 bg-gray-300" type="button" name="userspecial" id="userspecial" value="Productos"/>
+                        <input required class="cursor-pointer w-full py-2 bg-yellow-300 text-white font-bold" type="button" name="userspecial" id="userspecial" value="Productos"/>
                     </div>
                 </div>
                 <div className=" w-full flex justify-center">

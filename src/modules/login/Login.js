@@ -23,8 +23,8 @@ const Login=()=>{
             </div>
         </div>
         <div>
-            <button className="cursor-pointer bg-gray-200 border-1 h-14 py-18 px-1 mt-7 mb-20 w-96">
-                <div className='h-full flex justify-center space-x-2'>
+            <button className="cursor-pointer bg-gray-200 h-14 py-18 px-1 mt-7 mb-20 w-96">
+                <div className='flex justify-center space-x-2'>
                     <img className="h-8 self-center" src={image}/>
                     <span className="text-gray-500 font-semibold self-center">Registrate con tu cuenta Google</span>
                 </div>

@@ -27,7 +27,7 @@ const Dashboard = () => {
 
     return (
        <>
-            <BotonesDashboard/>
+            <BotonesDashboard className="md:flex md:flex-wrap"/>
             <Cards variableCards={variableCards} cardsInfo={cardsinfomation}/>
             <Cards variableCards={variableCards} cardsInfo={cardsinfomation}/>
        </>
