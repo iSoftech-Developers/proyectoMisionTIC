@@ -23,7 +23,8 @@ import Private from './layouts/Private';
 import Dashboard from './pages/Dashboard';
 import PaginaEditarCliente from './pages/clientes/PaginaEditarCliente';
 import PaginaAgregarUsuarios from './pages/vendedoresUsuarios/PaginaAgregarUsuarios';
-
+import PaginaTarjetasUsuarios from './pages/vendedoresUsuarios/PaginaTarjetasUsuarios';
+import PaginaEditarVenta from './pages/venta/PaginaEditarVenta';
 
 
 
@@ -35,7 +36,7 @@ const App =()=> {
     <div className="template">
     <Router>
       <Switch>
-        <Route path ={['/dashboard','/nuevaVenta','/moduloVentas','/moduloVentas/detalleVenta', '/moduloVentas/detalleVentas/','/moduloClientes', 'moduloClientes/nuevoCliente','/moduloClientes/detalleCliente',' /moduloClientes/paginaEditarCliente', '/productos', '/productos/detalleProducto', '/productos/nuevoProducto','/productos/actualizarProducto','/rolesUsuarios', '/rolesUsuarios/detalleUsuario','/rolesUsuarios/nuevoUsuario','/moduloVendedores', '/moduloVendedores/detalleUsuario','/moduloVendedores/paginaEditarUsuarios','/rolesUsuarios/detalleUsuarios']}>
+        <Route path ={['/dashboard','/nuevaVenta','/moduloVentas','/moduloVentas/detalleVenta', '/moduloVentas/editarVenta','/moduloClientes', 'moduloClientes/nuevoCliente','/moduloClientes/detalleCliente',' /moduloClientes/paginaEditarCliente', '/productos', '/productos/detalleProducto', '/productos/nuevoProducto','/productos/actualizarProducto','/rolesUsuarios', '/rolesUsuarios/detalleUsuario','/rolesUsuarios/nuevoUsuario','/moduloVendedores', '/moduloVendedores/detalleUsuario','/moduloVendedores/paginaEditarUsuarios','/rolesUsuarios/detalleUsuarios']}> 
           <Private>
             <Switch>
               <Route path='/rolesUsuarios/nuevoUsuario'>
@@ -59,8 +60,8 @@ const App =()=> {
               <Route path='/productos'>
                 <PaginaProductos/>
               </Route>
-              <Route path='/moduloVentas/detalleVentas/'>
-                <PaginaNuevaVenta/>
+              <Route path='/moduloVentas/editarVenta'>
+                <PaginaEditarVenta/>
               </Route>
               <Route path='/moduloVentas/detalleVenta'>
                 <PaginaInfoDetalleVentas/>

@@ -27,8 +27,6 @@ const PaginaClientes =()=> {
     field5:"Teléfono",
 }
 
- 
-
     return (
      <>
   

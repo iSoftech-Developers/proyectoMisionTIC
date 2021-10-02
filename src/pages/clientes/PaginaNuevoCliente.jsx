@@ -1,4 +1,6 @@
+import NoButtonUpperBarSection from "../../modules/noButtonUpperBarSection/NoButtonUpperBarSection";
 import NuevoCliente from "../../modules/nuevoCliente/NuevoCliente";
+import UpperBarSection from "../../modules/upperBarSection/UpperBarSection";
 
 
 const PaginaNuevoCliente =()=>{
@@ -16,6 +18,7 @@ const PaginaNuevoCliente =()=>{
 
     return(
       <>
+        <NoButtonUpperBarSection title="Agregar Cliente"/>
         <NuevoCliente formLabelTitle = {formLabelTitle}/>
       </>
 
