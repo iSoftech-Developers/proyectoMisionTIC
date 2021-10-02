@@ -42,7 +42,7 @@ const App =()=> {
               <Route path='/rolesUsuarios/nuevoUsuario'>
                 <PaginaAgregarUsuarios/>
               </Route>
-              <Route path='/rolesUsuarios/detalleUsuarios'>
+              <Route path='/rolesUsuarios/detalleUsuarios/:id'>
                 <PaginaDetalleUsuarios/>
               </Route>
               <Route path='/rolesUsuarios'>
