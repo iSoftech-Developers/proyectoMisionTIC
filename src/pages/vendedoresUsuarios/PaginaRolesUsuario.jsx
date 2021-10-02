@@ -24,7 +24,7 @@ const USUARIOS = [
 
     return(
         <>
-          <UpperBarSection titlePage="Administrar Usuarios" nameButton="NUEVO USUARIO" selectorButton="/rolesUsuarios/nuevoUsuario"/>
+          <UpperBarSection titlePage="Administrar Usuarios" nameButton="Nuevo Usuario" selectorButton="/rolesUsuarios/nuevoUsuario"/>
           <TarjetasUsuarios userCardInfo={userCardInfo}/>
         </>
     );

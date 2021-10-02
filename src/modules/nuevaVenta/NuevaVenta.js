@@ -49,20 +49,28 @@ const NuevaVenta=(props)=>{
                     </div> 
                 </div>
                 <div className="form-lower-section flex justify-between font-bold label-color">
+                    <div className="w-1/6 ">
+                            <label htmlFor="userid">Teléfono</label>
+                            <input required class=" w-full h-8 p-2" type="text" name="userid" id="userid"/>
+                        </div>
+                        <div className="w-1/6">
+                            <label htmlFor="username">Ciudad</label>
+                            <input required class=" w-full h-8 p-2" type="text" name="username" id="username"
+                                value={detect} 
+                                onChange={(e)=>{
+                                    setDetect(e.target.value);
+                            }}/>
+                        </div>
+                        <div className="w-1/6">
+                            <label htmlFor="userole">Estado de venta</label>
+                            <select required class=" w-full h-8" name="roleoptions">
+                                <option value="Usuarios">En proceso</option>
+                                <option value="Usuarios">Entregada</option>
+                                <option value="Usuarios">Cancelada</option>
+                            </select>
+                        </div> 
                     <div className="w-1/6">
-                        <label htmlFor="usercel">Telefono</label>
-                        <input required disabled class=" w-full h-8 p-2" type="tel" name="usercel" id="usercel"/>
-                    </div>
-                    <div className="w-1/6">
-                        <label htmlFor="userspecial">Precio unitario</label>
-                        <input required disabled class=" w-full h-8 p-2" type="email" name="userspecial" id="userspecial"/>
-                    </div>
-                    <div className="w-1/6">
-                        <label htmlFor="userole"></label>
-                        <input required disabled class=" w-full h-8 p-2" type="text" name="userspecial" id="userspecial"/>
-                    </div>
-                    <div className="w-1/6">
-                        <input required class="cursor-pointer w-full rounded text-gray-600 bg-gray-300" type="button" name="userspecial" id="userspecial" value="Productos"/>
+                        <input required class="cursor-pointer w-full mt-4 h-10 rounded text-gray-600 bg-gray-300" type="button" name="userspecial" id="userspecial" value="Productos"/>
                     </div>
                 </div>
                 <div className=" w-full flex justify-center">
