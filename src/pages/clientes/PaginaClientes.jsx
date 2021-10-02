@@ -28,13 +28,11 @@ const PaginaClientes =()=> {
     field5:"Teléfono",
 }
 
- 
-
     return (
      <>
   
-        <UpperBarSection titlePage="Clientes" nameButton="AGREGAR CLIENTE" selectorButton="/moduloClientes/nuevoCliente"/>
-        <Cards variableCards={variableCards} cardsInfo={cardsinfomation}value="1"/>
+        <UpperBarSection titlePage="Clientes" nameButton="Agregar cliente" selectorButton="/moduloClientes/nuevoCliente"/>
+        <Cards variableCards={variableCards} cardsInfo={cardsinfomation}/>
        
      </> 
       

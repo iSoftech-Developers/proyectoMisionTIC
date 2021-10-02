@@ -10,6 +10,7 @@ const PaginaVentas =()=> {
   useEffect(()=>{
     setCardsinfomation(VENTAS);
   },[]);
+
   const VENTAS = [
     { id:0,field1: 1037645234, field2: "Juan Sebastian Cabrera Rojas", field3: "Online", field4: "313248789", field5: "29/09/2021" },
   ];
@@ -17,7 +18,7 @@ const PaginaVentas =()=> {
   const variableCards = {
     icon:"fas fa-tag",
     cardTo:"/moduloVentas/detalleVenta",
-    linkIcon:"/moduloVentas/detalleVentas/",
+    linkIcon:"/moduloVentas/editarVenta",
     titleCard:"Id Venta",
     field1:"Documento",
     field2:"Nombres y apellidos",
@@ -25,10 +26,6 @@ const PaginaVentas =()=> {
     field4:"Fecha de pago",
     field5:"Estado",
 }
-
-
-
-
 
     return (
      <>

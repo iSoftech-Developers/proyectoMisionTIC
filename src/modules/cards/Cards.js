@@ -6,49 +6,8 @@ import DetalleProducto from '../detalleProducto/DetalleProducto'
 
 
 
-const Cards=({variableCards,cardsInfo,value})=>{
+const Cards=({variableCards,cardsInfo})=>{
 
-
-
-
-   
-
-
-
-
-
-/*
-const [openModal,setOpenModal]=useState(false);
-
-
-
-
-const handleClick= () =>{
-    setOpenModal(true)}
-    
-
-const modalSelector=(value) =>{
-
-    switch (value){
-        case "1" :
-            return <DetalleCliente/>
-        case "2" :
-            return <DetalleProducto />
-        default:
-            return null;
-
-    }
-};
-
-
-
-useEffect(()=>{
-  console.log("este es el listado" ,cardsInfo)
-
-},[cardsInfo]);
-to={variableCards.cardTo}
-
-*/
 
     return(
       <>
@@ -56,10 +15,10 @@ to={variableCards.cardTo}
           {cardsInfo.map((i)=>{
             return(
                 <Link key={i.id} to={{
-                    pathname: `moduloClientes/detalleCliente/${i.id}`, 
+                    pathname: `${variableCards.cardTo}/${i.id}`, 
                   }}>
                     
-                    <div className="cards-container mb-4 shadow bg-gray-100 ">
+                    <div className="cards-container mb-6 shadow-sm bg-gray-100 ">
                         
                         <div className="mx-6 mb-5">
                             <div className="flex">

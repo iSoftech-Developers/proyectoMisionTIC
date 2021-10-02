@@ -34,7 +34,7 @@ const variableCards = {
      <>
   
         <UpperBarSection titlePage="Productos" nameButton="Nuevo Producto" selectorButton="/productos/nuevoProducto"/>
-        <Cards variableCards={variableCards} cardsInfo={cardsinfomation}value="2"/>
+        <Cards variableCards={variableCards} cardsInfo={cardsinfomation}/>
        
      </> 
       

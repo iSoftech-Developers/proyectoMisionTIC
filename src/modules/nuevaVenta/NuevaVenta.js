@@ -14,6 +14,7 @@ const NuevaVenta=(props)=>{
         { id: 222222, field1:"Tomato", field2: 40000 , field3: 500000, field4: "M", field5: "DISPONIBLE"},
         { id: 333333, field1:"Seven Ate Nine", field2: 50000 , field3: 600000, field4: "L", field5: "DISPONIBLE"},
       ];
+      
       const clientes = [
         { id: 1, field1:"Liliana Romero", field2: "123456789",field3:"liliana@gmail.com",field4:"Bogota DC",field5:"bogota",field6:"cra 1 # 1-1",field7:"3135635569"},
         { id: 2, field1:"Anna Blanco", field2: "987654321",field3:"anna@gmail.com",field4:"Medellin",field5:"313333333",field6:"antioquia",field7:"cra 2 # 2-2" },
@@ -61,11 +62,11 @@ const NuevaVenta=(props)=>{
                         <input required disabled class=" w-full h-8 p-2" type="text" name="userspecial" id="userspecial"/>
                     </div>
                     <div className="w-1/6">
-                        <input required class="cursor-pointer w-full py-2 bg-gray-300" type="button" name="userspecial" id="userspecial" value="Productos"/>
+                        <input required class="cursor-pointer w-full rounded text-gray-600 bg-gray-300" type="button" name="userspecial" id="userspecial" value="Productos"/>
                     </div>
                 </div>
-                <div className="flex justify-center">
-                    <input className="w-1/6 cursor-pointer bg-green-400 h-7 text-white font-bold " type="submit" value="Guardar"/>
+                <div className=" w-full flex justify-center">
+                    <input className="w-1/6 cursor-pointer bg-green-400 h-8 rounded text-white font-bold my-16" type="submit" value="Guardar"/>
                 </div>
             </form> 
     </div>

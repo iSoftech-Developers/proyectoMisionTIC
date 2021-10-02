@@ -10,10 +10,10 @@ const BotonesDashboard = () => {
                     <Link className="active w-full py-2 flex flex-col items-center text-white font-normal" to="/nuevaVenta"><i className="fas fa-plus-circle fa-lg text-white text-3xl"></i>Nueva venta</Link>  
                 </div>
                 <div className="bg-yellow-600 w-full flex items-center rounded-lg">
-                    <Link className="active w-full py-2 flex flex-col items-center text-white" to="/moduloClientes"><i className="fas fa-users fa-lg  text-white text-3xl"></i>Clientes</Link> 
+                    <Link className="active w-full py-2 flex flex-col items-center text-white" to="/moduloClientes"><i className="fas fa-users fa-lg text-white text-3xl"></i>Clientes</Link> 
                 </div>
                 <div className=" bg-yellow-400 w-full flex items-center rounded-lg">
-                    <Link className="active w-full py-2 flex flex-col items-center text-white" to="/moduloVendedores"><i className="fas fa-user-tag  fa-lg text-white text-3xl"></i>Vendedores</Link>
+                    <Link className="active w-full py-2 flex flex-col items-center text-white" to="/moduloVendedores"><i className="fas fa-user-tag fa-lg text-white text-3xl"></i>Vendedores</Link>
                 </div>
                 <div className="bg-blue-700 w-full flex items-center rounded-lg">
                     <Link className="active w-full py-2 flex flex-col items-center text-white" to="/moduloVentas"><i className="far fa-list-alt fa-lg text-white text-3xl"></i>Ventas</Link>
