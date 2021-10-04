@@ -12,7 +12,7 @@ const Gestorderoles = () => {
         </select>
       </div>
 
-    <Link to="/rolesUsuarios/perfilUsuario">
+    <Link to="/rolesUsuarios/detalleUsuario">
         <div className="flex justify-between w-full h-full mt-6">
             <div className="h-full w-full flex">
                 <div className="w-1/6 h-80 mr-6 bg-white cursor-pointer transition duration-250 ease-in-out transform hover:-translate-y-1 hover:scale-110 shadow-md  ">
@@ -26,7 +26,7 @@ const Gestorderoles = () => {
                         <div className="ml-3">
                             <p>Architect & Engineer </p>
                         </div>
-                        <div className="bg-black mr-8 mt-9">
+                        <div className="bg-black">
                             <p className="text-white ml-2 " >Administrador</p>
                         </div>
                     </div>

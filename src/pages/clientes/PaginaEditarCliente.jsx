@@ -1,8 +1,26 @@
 import React from 'react'
+import NoButtonUpperBarSection from '../../modules/noButtonUpperBarSection/NoButtonUpperBarSection'
+import NuevoCliente from '../../modules/nuevoCliente/NuevoCliente'
 
 const PaginaEditarCliente = () => {
+
+    const formLabelTitle = {
+        label1:"Razon Social*",
+        label2:"NIT/C.C.*",
+        label3:"Persona Contacto*",
+        label4:"Email*",
+        label5:"Direccion*",
+        label6:"Departamento*",
+        label7:"Ciudad*",
+        label8:"Telefono*",
+    }
+
     return (
-            <h1>editar cliente</h1>
+
+           <>
+             <NoButtonUpperBarSection title="Editar Cliente"/>
+             <NuevoCliente formLabelTitle={formLabelTitle}/>
+           </>
     )
 }
 

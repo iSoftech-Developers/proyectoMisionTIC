@@ -10,15 +10,16 @@ const PaginaVentas =()=> {
   useEffect(()=>{
     setCardsinfomation(VENTAS);
   },[]);
+
   const VENTAS = [
-  
+    { id:0,field1: "ID1234556", field2: "Juan Sebastian Cabrera Rojas", field3: "Administrador", field4:"Fecha de pago", field5:"Estado"},
 
   ];
   
   const variableCards = {
     icon:"fas fa-tag",
     cardTo:"/moduloVentas/detalleVenta",
-    linkIcon:"/moduloVentas/detalleVentas/",
+    linkIcon:"/moduloVentas/editarVenta",
     titleCard:"Id Venta",
     field1:"Documento",
     field2:"Nombres y apellidos",
@@ -27,17 +28,10 @@ const PaginaVentas =()=> {
     field5:"Estado",
 }
 
-
-
-
-
     return (
      <>
-  
-  
-    <UpperBarSection titlePage="Listado de ventas" nameButton="Nueva Venta" selectorButton="/nuevaVenta"/>
-    <Cards variableCards={variableCards} cardsInfo={cardsinfomation}/>
-
+        <UpperBarSection titlePage="Listado de ventas" nameButton="Nueva Venta" selectorButton="/nuevaVenta"/>
+        <Cards variableCards={variableCards} cardsInfo={cardsinfomation}/>
      </> 
       
     );

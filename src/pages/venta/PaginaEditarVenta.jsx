@@ -1,26 +1,16 @@
-import Sidebar from '../../modules/sidebar/Sidebar';
-import Navbar from '../../modules/navbar/Navbar';
-import NoButtonUpperBarSection from '../../modules/noButtonUpperBarSection/NoButtonUpperBarSection';
-import EditarVenta from '../../modules/editarVenta/EditarVenta';
+import React from 'react'
+import NoButtonUpperBarSection from '../../modules/noButtonUpperBarSection/NoButtonUpperBarSection'
+import NuevaVenta from '../../modules/nuevaVenta/NuevaVenta'
+import Tablas from '../../modules/tablas/tablas';
 
-const PaginaEditarVenta =()=>{
-
-    return(
+const PaginaEditarVenta = () => {
+    return (
         <>
-        <Sidebar />
-        <main>
-          <Navbar/>
-            <section className="container-cards">
-                <section className="contenido">
-                    <NoButtonUpperBarSection title="Editar Información de Venta"/>
-                    <EditarVenta formlabel1="ID Venta" formlabel2="Fecha Incial de Pago*" formlabel3="Producto*" formlabel4="Fecha Final de Pago*" formlabel5="Cantidad*" formlabel6="Estado de la Venta*" formlabel7="Valor Total Venta*" formlabel8="Responsable" nameButton="GUARDAR" selectorButton="/modules/ok/Ok"/>
-                    
-                </section>
-
-            </section>
-        </main>
-       </> 
-    );
+            <NoButtonUpperBarSection title="Editar Venta"/>
+            <NuevaVenta/>
+            <Tablas field1="ID Producto" field2="Producto" field3="Precio" field4="Talla" field5="Cantidad" field6="Total"/>
+        </>
+    )
 }
 
-export default PaginaEditarVenta;
+export default PaginaEditarVenta
