@@ -1,4 +1,8 @@
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
+
+    
 const NuevoCliente = (props) => {
     return (
     
@@ -43,6 +47,7 @@ const NuevoCliente = (props) => {
                 </div>
                 <div className=" w-full flex justify-center">
                     <input className="w-1/5 cursor-pointe bg-green-400 h-7 text-white font-bold my-16" type="submit" value="Guardar"/>
+                    <ToastContainer position='bottom-center' autoClose={5000} />
                 </div>
             </form> 
         </div>

@@ -6,17 +6,17 @@ const DetalleUsuarios=()=>{
         { id:0,field1: 1037645234, field2: "Juan Sebastian Cabrera Rojas", field3: "Online", field4: "313248789", field5: "29/09/2021" },
     
       ];
-    const [cardsinfomation,setCardsinfomation] =useState([]);
+    const [cardsInfo,setCardsInfo] =useState([]);
+    
     useEffect(()=>{
-      setCardsinfomation(vendedores);
-    },[]); 
+        setCardsInfo(vendedores);
+    },[vendedores]); 
 
     
     let history = useHistory();
     let { id } = useParams();
-    let user = cardsinfomation[parseInt(id, 10)];
-    console.log(user);
-
+    let user= vendedores[parseInt(id, 10)];
+   
     let back = e => {
         e.stopPropagation();
         history.goBack();

@@ -1,8 +1,7 @@
 import { Link} from 'react-router-dom';
 import { useEffect,useState } from 'react';
 import './Cards.css';
-import PaginaDetalleClientes from '../../pages/clientes/PaginaDetalleClientes';
-import DetalleProducto from '../detalleProducto/DetalleProducto'
+
 
 
 
@@ -29,21 +28,20 @@ const Cards=({variableCards,cardsInfo})=>{
                                 </div>
                             </div>
                             <table className="table-fixed text-sm w-full bg-white border-gray-400 border mt-4">
-                            <tr>
-                                <th >{variableCards.field1}</th>
-                                <th >{variableCards.field2}</th>
-                                <th >{variableCards.field3}</th>
-                                <th >{variableCards.field4}</th>
-                                <th >{variableCards.field5}</th>
-                            </tr>
-                            <tr>
-                                <td align="center">{i.field1}</td>
-                                <td align="center">{i.field2}</td>
-                                <td align="center">{i.field3}</td>
-                                <td align="center">{i.field4}</td>
-                                <td align="center">{i.field5}</td>
-                            </tr>
-
+                                <tr>
+                                    <th >{variableCards.field1}</th>
+                                    <th >{variableCards.field2}</th>
+                                    <th >{variableCards.field3}</th>
+                                    <th >{variableCards.field4}</th>
+                                    <th >{variableCards.field5}</th>
+                                </tr>
+                                <tr>
+                                    <td align="center">{i.field1}</td>
+                                    <td align="center">{i.field2}</td>
+                                    <td align="center">{i.field3}</td>
+                                    <td align="center">{i.field4}</td>
+                                    <td align="center">{i.field5}</td>
+                                </tr>
                             </table>
                         </div>
                     </div>

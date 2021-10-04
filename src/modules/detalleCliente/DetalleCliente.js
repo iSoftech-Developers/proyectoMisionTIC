@@ -16,11 +16,12 @@ const DetalleCliente = (props) => {
       const [cardsinfomation,setCardsinfomation] =useState([]);
       useEffect(()=>{
         setCardsinfomation(clientes);
-      },[]); 
+      },[clientes]); 
     
     let history = useHistory();
     let { id } = useParams();
-    let cliente = cardsinfomation[parseInt(id, 10)];
+    let cliente = clientes[parseInt(id, 10)];
+    console.log(cliente)
   
     
   
