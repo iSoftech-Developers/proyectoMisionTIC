@@ -12,8 +12,7 @@ const PaginaVentas =()=> {
   },[]);
 
   const VENTAS = [
-    { id:0,field1: "ID1234556", field2: "Juan Sebastian Cabrera Rojas", field3: "Administrador", field4:"Fecha de pago", field5:"Estado"},
-
+    { id:0,field1: 1037645234, field2: "Juan Sebastian Cabrera Rojas", field3: "Online", field4: "313248789", field5: "29/09/2021" },
   ];
   
   const variableCards = {

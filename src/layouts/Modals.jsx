@@ -3,12 +3,10 @@ import Navbar from '../modules/navbar/Navbar';
 import Sidebar from '../modules/sidebar/Sidebar';
 
 
-const Private = ({children}) => {
+const Modals = ({children}) => {
     return (
         <>
-            <Sidebar/>
             <main>
-                    <Navbar/>
                     <section className="container-cards h-full">
                          <section className="contenido">
                             {children}
@@ -20,5 +18,4 @@ const Private = ({children}) => {
     )
 }
 
-export default Private;
-
+export default Modals

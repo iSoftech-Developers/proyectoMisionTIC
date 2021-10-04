@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react';
 
 
 const PaginaVendedores =()=> {
+ 
+ 
 
   const [cardsinfomation,setCardsinfomation] =useState([]);
   useEffect(()=>{
@@ -25,11 +27,10 @@ const PaginaVendedores =()=> {
     field4:"Numero de celular",
     field5:"Fecha de ingreso",
 }
-
     return (
      <>
-        <NoButtonUpperBarSection title="Vendedores"/>
-        <Cards variableCards={variableCards} cardsInfo={cardsinfomation}/>
+            <NoButtonUpperBarSection title="Vendedores"/>
+            <Cards variableCards={variableCards} cardsInfo={cardsinfomation} />
      </> 
       
     );

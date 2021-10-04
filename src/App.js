@@ -42,7 +42,7 @@ const App =()=> {
               <Route path='/rolesUsuarios/nuevoUsuario'>
                 <PaginaAgregarUsuarios/>
               </Route>
-              <Route path='/rolesUsuarios/detalleUsuarios'>
+              <Route path='/rolesUsuarios/detalleUsuarios/:id'>
                 <PaginaDetalleUsuarios/>
               </Route>
               <Route path='/rolesUsuarios'>
@@ -54,7 +54,7 @@ const App =()=> {
               <Route path='/productos/nuevoProducto'>
                 <PaginaNuevoProducto/>
               </Route>
-              <Route path='/productos/detalleProducto'>
+              <Route path='/productos/detalleProducto/:id'>
                 <PaginaDetalleProducto/>
               </Route>
               <Route path='/productos'>
@@ -63,7 +63,7 @@ const App =()=> {
               <Route path='/moduloVentas/editarVenta'>
                 <PaginaEditarVenta/>
               </Route>
-              <Route path='/moduloVentas/detalleVenta'>
+              <Route path='/moduloVentas/detalleVenta/:id'>
                 <PaginaInfoDetalleVentas/>
               </Route>
               <Route path='/moduloVentas'>
@@ -72,13 +72,13 @@ const App =()=> {
               <Route path='/moduloVendedores/paginaEditarUsuarios'>
                 <PaginaEditarUsuarios/>
               </Route>
-              <Route path='/moduloVendedores/detalleUsuario'>
+              <Route path='/moduloVendedores/detalleUsuario/:id'>
                 <PaginaDetalleUsuarios/>
               </Route>
               <Route path='/moduloVendedores'>
                 <PaginaVendedores/>
               </Route>
-              <Route path='/moduloClientes/detalleCliente'>
+              <Route path='/moduloClientes/detalleCliente/:id'>
                 <PaginaDetalleClientes/>
               </Route>
               <Route path='/moduloClientes/paginaEditarCliente'>
