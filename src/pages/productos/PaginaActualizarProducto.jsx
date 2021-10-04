@@ -18,7 +18,7 @@ const PaginaActualizarProducto =()=> {
      <>
         <UpperBarSection titlePage="Actualizar producto" nameButton="Guardar" />
         <ActualizarProducto formLabelTitle = {formLabelTitle} />
-        <Tablas field1="ID Producto" field2="Descripción" field3="Talla" field4="Valor unitario" field6="Estado"/>
+        <Tablas field1="ID Producto" field2="Descripción" field3="Talla" field4="Valor unitario" field5= "Cantidad" field6="Estado"/>
      </> 
       
     );

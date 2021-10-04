@@ -29,9 +29,11 @@ const ActualizarProducto = (props) => {
                         </select>
                     </div>
                 </div>
-                <div className=" w-full flex justify-center">
-                    <input className="w-1/5 cursor-pointer bg-green-400 h-10 text-white font-bold m-10" type="submit" value="Guardar"/>
+                <div className=" w-full flex justify-center space-x-1">
+                    <input className="w-1/5 cursor-pointer bg-green-400 h-10 text-white font-bold m-10 " type="submit" value="Guardar"/>
+                    
                 </div>
+                
                
             </form>
     )

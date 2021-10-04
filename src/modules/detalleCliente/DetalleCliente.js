@@ -1,11 +1,12 @@
-
+import { Link } from 'react-router-dom';
 
 const DetalleCliente = (props) => {
     return (
         
         <>
-        <div className="flex justify-between">
+        <div className="flex justify-between overflow-y-hidden">
                 <div className="">
+                    
                     <div>
                         <span className="block font-bold">Razon social</span>
                         <span>XXX.XXX.XXX - Y</span>
