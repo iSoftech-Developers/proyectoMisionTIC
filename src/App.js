@@ -15,7 +15,6 @@ import PaginaDetalleProducto from './pages/productos/PaginaDetalleProducto';
 import PaginaNuevoCliente from './pages/clientes/PaginaNuevoCliente';
 import PaginaNuevoProducto from './pages/productos/PaginaNuevoProducto'
 import PaginaActualizarProducto from'./pages/productos/PaginaActualizarProducto'
-import PaginaOk from './pages/PaginaOk';
 import PaginaDetalleClientes from  './pages/clientes/PaginaDetalleClientes';
 import PaginaRolesUsuario from './pages/vendedoresUsuarios/PaginaRolesUsuario';
 import PaginaEstadoVenta from './pages/venta/PaginaEstadoVenta';
@@ -23,7 +22,6 @@ import Private from './layouts/Private';
 import Dashboard from './pages/Dashboard';
 import PaginaEditarCliente from './pages/clientes/PaginaEditarCliente';
 import PaginaAgregarUsuarios from './pages/vendedoresUsuarios/PaginaAgregarUsuarios';
-import PaginaTarjetasUsuarios from './pages/vendedoresUsuarios/PaginaTarjetasUsuarios';
 import PaginaEditarVenta from './pages/venta/PaginaEditarVenta';
 
 
@@ -42,7 +40,7 @@ const App =()=> {
               <Route path='/rolesUsuarios/nuevoUsuario'>
                 <PaginaAgregarUsuarios/>
               </Route>
-              <Route path='/rolesUsuarios/detalleUsuarios'>
+              <Route path='/rolesUsuarios/detalleUsuarios/:id'>
                 <PaginaDetalleUsuarios/>
               </Route>
               <Route path='/rolesUsuarios'>

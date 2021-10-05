@@ -1,8 +1,30 @@
+import { useParams,useHistory } from "react-router";
+import {useEffect,useState} from "react";
+
 const DetalleUsuarios=()=>{
+    const vendedores = [
+        { id:0,field1: 1037645234, field2: "Juan Sebastian Cabrera Rojas", field3: "Online", field4: "313248789", field5: "29/09/2021" },
+        
+      ];
+    const [cardsInfo,setCardsInfo] =useState([]);
+    
+    useEffect(()=>{
+        setCardsInfo(vendedores);
+    },[vendedores]); 
+
+    
+    let history = useHistory();
+    let { id } = useParams();
+    let user= vendedores[parseInt(id, 10)];
+   
+    let back = e => {
+        e.stopPropagation();
+        history.goBack();
+      };
 
     return(
         <>
-            <div className="flex mt-14">
+            <div className="flex mt-14"onClick={back}>
                 <div className="p-8 border-solid border-2 border-gray-400">
                     <i className="fas fa-user fa-10x text-gray-300"></i>
                 </div>
@@ -13,7 +35,7 @@ const DetalleUsuarios=()=>{
                                 <span className="bg-black text-white text-xs">Administrador</span>
                             </div>
                             <div>
-                                <span className="text-lg">ID 023466</span>
+                                <span className="text-lg">ID {user.id}</span>
                             </div>  
                         </div>
                     </div>
@@ -26,7 +48,7 @@ const DetalleUsuarios=()=>{
                                     <span className="font-bold">Fecha de ingreso</span>
                                 </div>
                                 <div>
-                                    <span>11/04/2021</span>
+                                    <span>{user.field5}</span>
                                 </div>
                             </div>
                             <div className="flex flex-col">
@@ -34,7 +56,7 @@ const DetalleUsuarios=()=>{
                                     <span className="font-bold">Nombres y apellidos</span>
                                 </div>
                                 <div>
-                                    <span>Juan Camilo Gómez</span>
+                                    <span>{user.field2}</span>
                                 </div>
                             </div>
                             <div className="flex flex-col">
@@ -42,7 +64,7 @@ const DetalleUsuarios=()=>{
                                     <span className="font-bold">Especialidad</span>
                                 </div>
                                 <div>
-                                    <span>Sección Gym</span>
+                                    <span>{user.field3}</span>
                                 </div>
                             </div>
                             <div className="flex flex-col">
@@ -50,7 +72,7 @@ const DetalleUsuarios=()=>{
                                     <span className="font-bold">Celular</span> 
                                 </div>
                                 <div>
-                                    <span>310234567</span>
+                                    <span>{user.field4}</span>
                                 </div>
                             </div>
                         </div>
