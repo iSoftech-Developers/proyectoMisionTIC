@@ -2,6 +2,9 @@ import Cards from '../../modules/cards/Cards';
 import UpperBarSection from '../../modules/upperBarSection/UpperBarSection';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useLocation } from 'react-router-dom';
+
+
 
 
 const PaginaProductos =()=> {
@@ -10,6 +13,7 @@ const PaginaProductos =()=> {
   const [cardsProductosInfomation,setCardsProductosInfomation] =useState([]);
 
   useEffect(() => {
+      
      
       const options = { method: 'GET', url: 'http://localhost:3001/productos' };
       axios.request(options).then(function (response){
@@ -40,6 +44,7 @@ const variableCards = {
 
     return (
      <>
+  
   
         <UpperBarSection titlePage="Productos" nameButton="Nuevo Producto" selectorButton="/productos/nuevoProducto"/>
         <Cards variableCards={variableCards} cardsInfo={cardsProductosInfomation}/>
