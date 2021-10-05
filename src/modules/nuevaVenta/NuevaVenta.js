@@ -29,11 +29,11 @@ const NuevaVenta=(props)=>{
                 <div className="form-upper-section flex justify-between font-bold label-color">
                     <div className="w-1/6 ">
                         <label htmlFor="userid">ID Responsable</label>
-                        <input required class=" w-full h-8 p-2" type="text" name="userid" id="userid"/>
+                        <input required class=" w-full h-8 p-2 rounded-md border border-gray-300" type="text" name="userid" id="userid"/>
                     </div>
                     <div className="w-1/6">
                         <label htmlFor="username">NIT/C.C.</label>
-                        <input required class=" w-full h-8 p-2" type="text" name="username" id="username"
+                        <input required class=" w-full h-8 p-2 rounded-md border border-gray-300" type="text" name="username" id="username"
                             value={detect} 
                             onChange={(e)=>{
                                 setDetect(e.target.value);
@@ -41,29 +41,29 @@ const NuevaVenta=(props)=>{
                     </div>
                     <div className="w-1/6">
                         <label htmlFor="userole">Razon Social</label>
-                        <input required  disabled class=" w-full h-8 p-2" type="text" name="userole" id="userole" value="hola"/>
+                        <input required  disabled class=" w-full h-8 p-2 rounded-md " type="text" name="userole" id="userole" value="hola"/>
                     </div> 
                     <div className="w-1/6">
                         <label htmlFor="userole">Fecha de pago</label>
-                        <input required class=" w-full h-8 p-2" type="text" name="userole" id="userole"/>
+                        <input required class=" w-full h-8 p-2 rounded-md border border-gray-300" type="text" name="userole" id="userole"/>
                     </div> 
                 </div>
                 <div className="form-lower-section flex justify-between font-bold label-color">
                     <div className="w-1/6 ">
                             <label htmlFor="userid">Teléfono</label>
-                            <input required class=" w-full h-8 p-2" type="text" name="userid" id="userid"/>
+                            <input required class=" w-full h-8 p-2 rounded-md border border-gray-300" type="text" name="userid" id="userid"/>
                         </div>
                         <div className="w-1/6">
                             <label htmlFor="username">Ciudad</label>
-                            <input required class=" w-full h-8 p-2" type="text" name="username" id="username"
+                            <input required class=" w-full h-8 p-2 rounded-md border border-gray-300" type="text" name="username" id="username"
                                 value={detect} 
                                 onChange={(e)=>{
                                     setDetect(e.target.value);
                             }}/>
                         </div>
-                        <div className="w-1/6">
+                        <div className="w-1/6 ">
                             <label htmlFor="userole">Estado de venta</label>
-                            <select required class=" w-full h-8" name="roleoptions">
+                            <select required class=" w-full h-8 border rounded-md border-gray-300" name="roleoptions">
                                 <option value="Usuarios">En proceso</option>
                                 <option value="Usuarios">Entregada</option>
                                 <option value="Usuarios">Cancelada</option>

@@ -18,7 +18,7 @@ const Cards=({variableCards,cardsInfo})=>{
                     pathname: `${variableCards.cardTo}/${i.ids}`, 
                   }}>
                     
-                    <div className="cards-container mb-6 shadow-sm bg-gray-100 ">
+                    <div className="cards-container mb-6 shadow-sm bg-white transition duration-250 ease-in-out transform hover:-translate-y-1 hover:scale-100">
                         
                         <div className="mx-6 mb-5">
                             <div className="flex">
@@ -28,12 +28,12 @@ const Cards=({variableCards,cardsInfo})=>{
                                     <div className="edit-card pt-4 space-x-5">
                                         <Link to={variableCards.linkIcon}>
                                             <Tooltip title="editar">
-                                                <i className="fas fa-pen text-gray-400"></i>
+                                                <i className="fas fa-pen text-gray-500"></i>
                                             </Tooltip>
                                         </Link>
                                         <Link to={variableCards.linkIcon}>
                                             <Tooltip title="Eliminar">
-                                                <i className="fas fa-trash text-gray-400"></i>
+                                                <i className="fas fa-trash text-red-700"></i>
                                             </Tooltip>
                                         </Link>
                                     </div>
