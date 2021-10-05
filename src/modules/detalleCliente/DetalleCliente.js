@@ -1,26 +1,28 @@
 import { useParams,useHistory } from "react-router";
 import {useEffect,useState} from "react";
-
+import axios from 'axios';
 
 
 const DetalleCliente = (props) => {
+    const [clienteInformation,setClinteInformation] =useState([]);
+    useEffect(() => {
+     
+        const options = { method: 'GET', url: 'http://localhost:3001/clientes' };
+        axios.request(options).then(function (response){
+            console.log(response.data);
+            setClinteInformation(response.data);
+          })
+          .catch(function (error) {
+            console.error(error);
+          });
+        },[]);
 
 
 
-    const clientes = [
-        { id: 0, field1:"Liliana Romero", field2: "123456789",field3:"liliana@gmail.com",field4:"Bogota DC",field5:"3135635569",field6:"Bogota",field7:"cra 1 # 1-1"},
-        { id: 1, field1:"Anna Blanco", field2: "987654321",field3:"anna@gmail.com",field4:"Medellin",field5:"313333333",field6:"antioquia",field7:"cra 2 # 2-2" },
-        { id: 2, field1:"Anna Blanco", field2: "987654321",field3:"anna@gmail.com",field4:"Medellin",field5:"313333333",field6:"antioquia",field7:"cra 2 # 2-2" },
-        { id: 3, field1:"Anna Blanco", field2: "987654321",field3:"anna@gmail.com",field4:"Medellin",field5:"313333333",field6:"antioquia",field7:"cra 2 # 2-2" },
-      ];
-      const [cardsinfomation,setCardsinfomation] =useState([]);
-      useEffect(()=>{
-        setCardsinfomation(clientes);
-      },[clientes]); 
-    
     let history = useHistory();
     let { id } = useParams();
-    let cliente = clientes[parseInt(id, 10)];
+    console.log(id)
+    let cliente = clienteInformation[parseInt(id, 10)];
     console.log(cliente)
   
     
