@@ -13,8 +13,8 @@ const Cards=({variableCards,cardsInfo})=>{
       
           {cardsInfo.map((i)=>{
             return(
-                <Link key={i.id} to={{
-                    pathname: `${variableCards.cardTo}/${i.id}`, 
+                <Link key={i.ids} to={{
+                    pathname: `${variableCards.cardTo}/${i.ids}`, 
                   }}>
                     
                     <div className="cards-container mb-6 shadow-sm bg-gray-100 ">
@@ -23,7 +23,7 @@ const Cards=({variableCards,cardsInfo})=>{
                             <div className="flex">
                                 <i className={`${variableCards.icon} text-white bg-gray-800 mr-4 pt-4 px-3 pb-2`}></i>
                                 <div className="card-info w-full align-center flex justify-between">
-                                    <span className="font-semibold pt-3">ID {i.id}</span>
+                                    <span className="font-semibold pt-3">ID {i.ids}</span>
                                     <Link to={variableCards.linkIcon} className="edit-card pt-4"><i className="fas fa-pen text-gray-400"></i></Link>
                                 </div>
                             </div>
