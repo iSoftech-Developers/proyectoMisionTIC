@@ -10,6 +10,7 @@ const NuevaVenta=()=>{
         { id:0,field1: 1037645234, field2: "Juan Sebastian Cabrera Rojas", field3: "Online", field4: "313248789", field5: "29/09/2021" },
     
       ];
+      
       const productos = [
         { id: 555555, field1:"Camiseta nike verde", field2: 20000 , field3: 1000, field4: "XS", field5: "DISPONIBLE"},
         { id: 111111, field1:"Lime Green", field2: 10000, field3: 300000, field4: "S", field5: "DISPONIBLE" },
@@ -23,10 +24,10 @@ const NuevaVenta=()=>{
      
       ];
 
-      const form = useRef(null);
+    const form = useRef(null);
 
-      const submitForm = (e) => {
-          e.preventDefault();
+    const submitForm = (e) => {
+        e.preventDefault();
 
           const fd = new FormData(form.current);
 

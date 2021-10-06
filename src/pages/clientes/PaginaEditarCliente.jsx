@@ -5,15 +5,15 @@ import EditarCliente from '../../modules/editarCliente/EditarCliente'
 const PaginaEditarCliente = ({cardsClientes}) => {
 
     const formLabelTitle = {
-        label1:"Razon Social*",
-        label2:"NIT/C.C.*",
-        label3:"Persona Contacto*",
-        label4:"Email*",
-        label5:"Direccion*",
-        label6:"Departamento*",
-        label7:"Ciudad*",
-        label8:"Telefono*",
-    }
+      label1:"Razón Social",
+      label2:"NIT/C.C.",
+      label3:"Correo electrónico",
+      label4:"Ciudad",
+      label5:"Teléfono",
+      label6:"Departamento",
+      label7:"Dirección",
+      label8:"Persona de contacto",
+  }
 
     return (
 
