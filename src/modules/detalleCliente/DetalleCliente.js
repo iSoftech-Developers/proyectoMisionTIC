@@ -1,24 +1,19 @@
-import { useParams,useHistory } from "react-router";
+import { useParams } from "react-router";
 
 
 
 const DetalleCliente = ({cardsinformation}) => {
 
-    let history = useHistory();
     let { id } = useParams();
     
   
-    let back = e => {
-      e.stopPropagation();
-      history.goBack();
-    };
+
     return (
         
         <>
         {cardsinformation.map((key)=>{
         if(key._id===id){
             return(
-                <div className="" onClick={back}>
                 <div className="flex justify-between">
                     <div className="">
                         <div>
@@ -57,7 +52,6 @@ const DetalleCliente = ({cardsinformation}) => {
                         </div>
                     </div>
                 </div> 
-            </div>
             );
         }
     }

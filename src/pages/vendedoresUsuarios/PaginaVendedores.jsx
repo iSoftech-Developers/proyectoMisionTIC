@@ -29,8 +29,10 @@ const PaginaVendedores =()=> {
 }
     return (
      <>
-            <NoButtonUpperBarSection title="Vendedores"/>
-            <Cards variableCards={variableCards} cardsinformation={cardsVendedores} />
+            <div className=" my-9 flex justify-between">
+              <span className="font-bold text-2xl">Lista vendedores</span>
+            </div>
+              <Cards variableCards={variableCards} cardsinformation={cardsVendedores} />
      </> 
       
     );

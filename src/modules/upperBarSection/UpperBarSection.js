@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import {useState } from 'react';
 
 
 const UpperBarSection =(props)=>{
@@ -7,7 +6,7 @@ const UpperBarSection =(props)=>{
 
     return(
         <div className=" my-9 flex justify-between">
-            <span className="text-2xl font-semibold">{props.titlePage}</span>
+            <span className="text-2xl font-bold">{props.titlePage}</span>
             <Link className="w-1/6 cursor-pointer bg-green-500 rounded h-10 text-white font-semibold flex items-center justify-center" to={props.selectorButton}> {props.nameButton}<button  data-bs-toggle="modal" data-bs-target="#modal-edit-user-info"></button ></Link>
         </div>
     )

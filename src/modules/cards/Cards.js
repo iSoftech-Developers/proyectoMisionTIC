@@ -1,6 +1,5 @@
 import { Tooltip } from '@material-ui/core';
 import { Link} from 'react-router-dom';
-import { useEffect,useState } from 'react';
 import './Cards.css';
 
 const Cards=({variableCards,cardsinformation})=>{
@@ -24,12 +23,12 @@ const Cards=({variableCards,cardsinformation})=>{
                                     <div className="edit-card pt-4 space-x-5">
                                         <Link to={`${variableCards.linkIcon}/${i._id}`}>
                                             <Tooltip title="editar">
-                                                <i className="fas fa-pen text-green-600"></i>
+                                                <i className="fas fa-pen text-blue-500"></i>
                                             </Tooltip>
                                         </Link>
                                         <Link to={variableCards.linkIcon}>
                                             <Tooltip title="Eliminar">
-                                                <i className="fas fa-trash text-gray-500"></i>
+                                                <i className="fas fa-trash text-red-500"></i>
                                             </Tooltip>
                                         </Link>
                                     </div>

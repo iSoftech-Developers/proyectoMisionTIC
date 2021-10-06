@@ -19,7 +19,6 @@ import PaginaNuevoProducto from './pages/productos/PaginaNuevoProducto'
 import PaginaActualizarProducto from'./pages/productos/PaginaActualizarProducto'
 import PaginaDetalleClientes from  './pages/clientes/PaginaDetalleClientes';
 import PaginaRolesUsuario from './pages/vendedoresUsuarios/PaginaRolesUsuario';
-import PaginaEstadoVenta from './pages/venta/PaginaEstadoVenta';
 import Private from './layouts/Private';
 import Dashboard from './pages/Dashboard';
 import PaginaEditarCliente from './pages/clientes/PaginaEditarCliente';
