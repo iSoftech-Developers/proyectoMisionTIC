@@ -1,10 +1,28 @@
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { useParams,useHistory } from "react-router";
+import { useParams,useHistory} from "react-router";
+import { useRef } from "react";
 
 
     
 const EditarCliente = ({cardsClientes,formLabelTitle}) => {
+
+    const form = useRef(null);
+
+    const submitForm = (e) => {
+        e.preventDefault();
+
+        const fd = new FormData(form.current);
+
+        const editarCliente = {};
+        fd.forEach((value,key) => {
+          editarCliente[key] = value;
+        });
+
+        console.log('Datos del form enviados', editarCliente);
+        toast.success('Cliente actualizado');
+    };
+
 
     let { id } = useParams();
 
@@ -17,45 +35,45 @@ const EditarCliente = ({cardsClientes,formLabelTitle}) => {
             return(
                 <div>
             
-                <form className=" space-y-8 my-16">
+                <form ref={form} onSubmit={submitForm} className=" space-y-8 my-16">
                     <div className="form-upper-section flex justify-between font-bold label-color">
                         <div className="w-1/5">
-                            <label for="userid">{formLabelTitle.label1}</label>
-                            <input  disabled value={cliente.field1} required class=" w-full h-8 p-2 input-border" type="text" name="userid" id="userid"/>
+                            <label for="nombrecliente">{formLabelTitle.label1}</label>
+                            <input  disabled value={cliente.field1} required class=" w-full h-8 p-2 input-border" type="String" name="nombrecliente"/>
                         </div>
                         <div className="w-1/5">
-                            <label for="username">{formLabelTitle.label2}</label>
-                            <input  disabled  value={cliente.field2} required class=" w-full h-8 p-2 input-border" type="text" name="username" id="username"/>
+                            <label for="idcliente">{formLabelTitle.label2}</label>
+                            <input disabled  value={cliente.field2} required class=" w-full h-8 p-2 input-border" type="Number" min={0} name="idcliente"/>
                         </div>
                         <div className="w-1/5">
-                            <label for="userole">{formLabelTitle.label3}</label>
-                            <input required class=" w-full h-8 p-2 input-border" type="text" name="userole" id="userole"/>
+                            <label for="email">{formLabelTitle.label3}</label>
+                            <input required class=" w-full h-8 p-2 input-border" type="email" name="email"/>
                         </div> 
                         <div className="w-1/5">
-                            <label for="userole">{formLabelTitle.label4}</label>
-                            <input required class=" w-full h-8 p-2 input-border" type="text" name="userole" id="userole"/>
+                            <label for="ciudad">{formLabelTitle.label4}</label>
+                            <input required class=" w-full h-8 p-2 input-border" type="String" name="ciudad"/>
                         </div> 
                     </div>
                     <div className="form-lower-section flex justify-between font-bold label-color">
                         <div className="w-1/5">
-                            <label for="usercel">{formLabelTitle.label5}</label>
-                            <input required class=" w-full h-8 p-2 input-border" type="text" name="usercel" id="usercel"/>
+                            <label for="telefono">{formLabelTitle.label5}</label>
+                            <input required class=" w-full h-8 p-2 input-border" type="String" name="telefono"/>
                         </div>
                         <div className="w-1/5">
-                            <label for="userspecial">{formLabelTitle.label6}</label>
-                            <input required class=" w-full h-8 p-2 input-border" type="text" name="userspecial" id="userspecial"/>
+                            <label for="departamento">{formLabelTitle.label6}</label>
+                            <input required class=" w-full h-8 p-2 input-border" type="String" name="departamento"/>
                         </div>
                         <div className="w-1/5">
-                            <label for="userole">{formLabelTitle.label7}</label>
-                            <input required class=" w-full h-8 p-2 input-border" type="text" name="userspecial" id="userspecial"/>
+                            <label for="direccion">{formLabelTitle.label7}</label>
+                            <input required class=" w-full h-8 p-2 input-border" type="String" name="direccion"/>
                         </div>
                         <div className="w-1/5">
-                            <label for="userole">{formLabelTitle.label8}</label>
-                            <input required class=" w-full h-8 p-2 input-border" type="text" name="userspecial" id="userspecial"/>
+                            <label for="personacontacto">{formLabelTitle.label8}</label>
+                            <input required class=" w-full h-8 p-2 input-border" type="String" name="personacontacto"/>
                         </div>
                     </div>
                     <div className=" w-full flex justify-center">
-                        <input className="w-1/6 cursor-pointer bg-green-400 h-10 rounded text-white font-bold my-16" type="submit" value="Guardar"/>
+                        <input className="w-1/6 cursor-pointer bg-green-400 h-10 rounded String-white font-bold my-16 text-white" type="submit" value="Guardar"/>
                         <ToastContainer position='bottom-center' autoClose={5000} />
                     </div>
                 </form> 
