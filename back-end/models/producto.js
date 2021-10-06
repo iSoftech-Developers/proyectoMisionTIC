@@ -1,13 +1,14 @@
 const mongoose= require('mongoose');
 
 const productoSchema = new mongoose.Schema({
-    ids:Number,
-    field1:String,
-    field2:String,
-    field3:Number,
-    field4:String,
-    field5:Boolean,
-    field6:Number,
+    ids:String, // id
+    field1:String, // descripcion
+    field2:Number, // valor unitario
+    field3:Number, // stock
+    field4:String, // talla
+    field5:Boolean, // estado
+    field6:String, // genero
+    field7:String, // color
     
   });
 
