@@ -1,8 +1,8 @@
-import { Tooltip } from '@material-ui/core';
+import { Dialog, Tooltip } from '@material-ui/core';
 import { Link} from 'react-router-dom';
 import { useEffect,useState } from 'react';
 import './Cards.css';
-import Dialog from '@mui/material/Dialog';
+
 
 const Cards=({variableCards,cardsinformation})=>{
     const[openDialog,setOpenDialog]=useState(false)
@@ -31,16 +31,24 @@ const Cards=({variableCards,cardsinformation})=>{
                                         <Link to> 
                                             <Tooltip title="Eliminar">
                                                 <i 
-                                                onClick={()=>setOpenDialog}
-                                                className="fas fa-trash text-gray-500"></i>
+                                                onClick={()=>setOpenDialog(true)}
+                                                className="fas fa-trash text-red-500 hover:text-red-900 shadow-md"></i>
                                             </Tooltip>
                                         </Link>
                                     </div>
                                     
                                 </div>
                             </div>
-                            
-                            <Dialog open={openDialog} soy un dialogo></Dialog>
+                            <Dialog open={openDialog}>
+                                <div className ='p-8 flex flex-col'>
+                                    <h1 className= 'text gray-800 text-xl font-bold'> ¿Esta seguro de querer eliminarlo? </h1>
+                                    <div className='flex w-full items-center justify-center'> 
+                                    <button onClick className= 'mx-2 my-4 px-4 py-2 bg-green-500 text-white hover:bg-green-700 rounded-md shadow-md'> Si </button>
+                                    <button onClick={()=>setOpenDialog(false)} className= 'mx-2 my-4 px-4 py-2 bg-red-500 text-white hover:bg-red-700 rounded-md shadow-md'> No </button>
+                                    </div>
+                                </div>
+                                </Dialog> 
+                           
                             <table className="table-fixed text-sm w-full bg-white border-gray-400 border mt-4">
                                 <tr>
                                     <th >{variableCards.field1}</th>
