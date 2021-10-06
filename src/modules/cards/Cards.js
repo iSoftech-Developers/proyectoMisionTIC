@@ -1,8 +1,7 @@
 import { Link} from 'react-router-dom';
 import { useEffect,useState } from 'react';
 import './Cards.css';
-
-
+import { Tooltip } from '@material-ui/core';
 
 
 const Cards=({variableCards,cardsInfo})=>{
@@ -24,7 +23,10 @@ const Cards=({variableCards,cardsInfo})=>{
                                 <i className={`${variableCards.icon} text-white bg-gray-800 mr-4 pt-4 px-3 pb-2`}></i>
                                 <div className="card-info w-full align-center flex justify-between">
                                     <span className="font-semibold pt-3">ID {i.ids}</span>
+                                    <Tooltip title="Editar" arrow>
+
                                     <Link to={variableCards.linkIcon} className="edit-card pt-4"><i className="fas fa-pen text-gray-400"></i></Link>
+                                    </Tooltip>
                                 </div>
                             </div>
                             <table className="table-fixed text-sm w-full bg-white border-gray-400 border mt-4">
