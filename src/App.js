@@ -24,21 +24,22 @@ import Dashboard from './pages/Dashboard';
 import PaginaEditarCliente from './pages/clientes/PaginaEditarCliente';
 import PaginaAgregarUsuarios from './pages/vendedoresUsuarios/PaginaAgregarUsuarios';
 import PaginaEditarVenta from './pages/venta/PaginaEditarVenta';
+import {BuscadorContext} from './context/BuscadorContext'
 
 
 
 
-/*linea 37 va a la pagina de modificar venta*/
-/*linea 5 */
+
 const App =()=> {
 
+  const [busqueda, setBusqueda] = useState('');
   const [cardsClientes,setCardsClientes] =useState([]);
   const [cardsProductosInformation,setCardsProductosInformation] =useState([]);
+  
 
   useEffect(() => {   
     const options = { method: 'GET', url: 'http://localhost:3001/clientes' };
     axios.request(options).then(function (response){
-        console.log(response.data);
         setCardsClientes(response.data);
       })
       .catch(function (error) {
@@ -48,7 +49,6 @@ const App =()=> {
     useEffect(() => {   
         const options = { method: 'GET', url: 'http://localhost:3001/productos' };
         axios.request(options).then(function (response){
-            console.log(response.data);
             setCardsProductosInformation(response.data);
           })
           .catch(function (error) {
@@ -57,81 +57,87 @@ const App =()=> {
         },[]);
 
 
+  useEffect(()=>{
+      console.log(busqueda)
+    },[busqueda])
+
+
 
   
-
   return (
     <div className="template">
-    <Router>
-      <Switch>
-        <Route path ={['/dashboard','/nuevaVenta','/moduloVentas','/moduloVentas/detalleVenta', '/moduloVentas/editarVenta','/moduloClientes', 'moduloClientes/nuevoCliente','/moduloClientes/detalleCliente',' /moduloClientes/paginaEditarCliente', '/productos', '/productos/detalleProducto', '/productos/nuevoProducto','/productos/actualizarProducto','/rolesUsuarios', '/rolesUsuarios/detalleUsuario','/rolesUsuarios/nuevoUsuario','/moduloVendedores', '/moduloVendedores/detalleUsuario','/moduloVendedores/paginaEditarUsuarios','/rolesUsuarios/detalleUsuarios']}> 
-          <Private>
-            <Switch>
-              <Route path='/rolesUsuarios/nuevoUsuario'>
-                <PaginaAgregarUsuarios/>
-              </Route>
-              <Route path='/rolesUsuarios/detalleUsuarios/:id'>
-                <PaginaDetalleUsuarios/>
-              </Route>
-              <Route path='/rolesUsuarios'>
-                <PaginaRolesUsuario/>
-              </Route>
-              <Route path='/productos/actualizarProducto'>
-                <PaginaActualizarProducto/>
-              </Route>
-              <Route path='/productos/nuevoProducto'>
-                <PaginaNuevoProducto/>
-              </Route>
-              <Route path='/productos/detalleProducto/:id'>
-                <PaginaDetalleProducto cardsProductosInformation={cardsProductosInformation}/>
-              </Route>
-              <Route path='/productos'>
-                <PaginaProductos cardsProductosInformation={cardsProductosInformation}/>
-              </Route>
-              <Route path='/moduloVentas/editarVenta'>
-                <PaginaEditarVenta/>
-              </Route>
-              <Route path='/moduloVentas/detalleVenta/:id'>
-                <PaginaInfoDetalleVentas/>
-              </Route>
-              <Route path='/moduloVentas'>
-                <PaginaVentas/>
-              </Route>
-              <Route path='/moduloVendedores/paginaEditarUsuarios'>
-                <PaginaEditarUsuarios/>
-              </Route>
-              <Route path='/moduloVendedores/detalleUsuario/:id'>
-                <PaginaDetalleUsuarios/>
-              </Route>
-              <Route path='/moduloVendedores'>
-                <PaginaVendedores/>
-              </Route>
-              <Route path='/moduloClientes/detalleCliente/:id'>
-                <PaginaDetalleClientes cardsClientes={cardsClientes}/>
-              </Route>
-              <Route path='/moduloClientes/paginaEditarCliente/:id'>
-                <PaginaEditarCliente cardsClientes={cardsClientes}/>
-              </Route>
-              <Route path='/moduloClientes/nuevoCliente'>
-                <PaginaNuevoCliente />
-              </Route>
-              <Route path='/moduloClientes'>
-                <PaginaClientes  cardsClientes={cardsClientes}/>
-              </Route>
-              <Route path='/nuevaVenta'>
-                <PaginaNuevaVenta/>
-              </Route>
-              <Route path='/dashboard'>
-                <Dashboard/>
-              </Route>
-            </Switch>
-          </Private>
-        </Route>
-        <Route path={['/']}>
-          <Login/>
-        </Route>
-      </Switch>
-    </Router>
+    <BuscadorContext.Provider value={{busqueda, setBusqueda}}>
+      <Router>
+        <Switch>
+          <Route path ={['/dashboard','/nuevaVenta','/moduloVentas','/moduloVentas/detalleVenta', '/moduloVentas/editarVenta','/moduloClientes', 'moduloClientes/nuevoCliente','/moduloClientes/detalleCliente',' /moduloClientes/paginaEditarCliente', '/productos', '/productos/detalleProducto', '/productos/nuevoProducto','/productos/actualizarProducto','/rolesUsuarios', '/rolesUsuarios/detalleUsuario','/rolesUsuarios/nuevoUsuario','/moduloVendedores', '/moduloVendedores/detalleUsuario','/moduloVendedores/paginaEditarUsuarios','/rolesUsuarios/detalleUsuarios']}> 
+            <Private>
+              <Switch>
+                <Route path='/rolesUsuarios/nuevoUsuario'>
+                  <PaginaAgregarUsuarios/>
+                </Route>
+                <Route path='/rolesUsuarios/detalleUsuarios/:id'>
+                  <PaginaDetalleUsuarios/>
+                </Route>
+                <Route path='/rolesUsuarios'>
+                  <PaginaRolesUsuario/>
+                </Route>
+                <Route path='/productos/actualizarProducto'>
+                  <PaginaActualizarProducto/>
+                </Route>
+                <Route path='/productos/nuevoProducto'>
+                  <PaginaNuevoProducto/>
+                </Route>
+                <Route path='/productos/detalleProducto/:id'>
+                  <PaginaDetalleProducto cardsProductosInformation={cardsProductosInformation}/>
+                </Route>
+                <Route path='/productos'>
+                  <PaginaProductos cardsProductosInformation={cardsProductosInformation}/>
+                </Route>
+                <Route path='/moduloVentas/editarVenta'>
+                  <PaginaEditarVenta/>
+                </Route>
+                <Route path='/moduloVentas/detalleVenta/:id'>
+                  <PaginaInfoDetalleVentas/>
+                </Route>
+                <Route path='/moduloVentas'>
+                  <PaginaVentas/>
+                </Route>
+                <Route path='/moduloVendedores/paginaEditarUsuarios'>
+                  <PaginaEditarUsuarios/>
+                </Route>
+                <Route path='/moduloVendedores/detalleUsuario/:id'>
+                  <PaginaDetalleUsuarios/>
+                </Route>
+                <Route path='/moduloVendedores'>
+                  <PaginaVendedores/>
+                </Route>
+                <Route path='/moduloClientes/detalleCliente/:id'>
+                  <PaginaDetalleClientes cardsClientes={cardsClientes}/>
+                </Route>
+                <Route path='/moduloClientes/paginaEditarCliente/:id'>
+                  <PaginaEditarCliente cardsClientes={cardsClientes}/>
+                </Route>
+                <Route path='/moduloClientes/nuevoCliente'>
+                  <PaginaNuevoCliente />
+                </Route>
+                <Route path='/moduloClientes'>
+                  <PaginaClientes  cardsClientes={cardsClientes}/>
+                </Route>
+                <Route path='/nuevaVenta'>
+                  <PaginaNuevaVenta/>
+                </Route>
+                <Route path='/dashboard'>
+                  <Dashboard/>
+                </Route>
+              </Switch>
+            </Private>
+          </Route>
+          <Route path={['/']}>
+            <Login/>
+          </Route>
+        </Switch>
+      </Router>
+    </BuscadorContext.Provider>
     </div> 
   );
 }

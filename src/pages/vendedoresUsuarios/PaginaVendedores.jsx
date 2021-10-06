@@ -13,7 +13,7 @@ const PaginaVendedores =()=> {
   },[]); 
 
   const vendedores = [
-    { id:0,field1: 1037645234, field2: "Juan Sebastian Cabrera Rojas", field3: "Online", field4: "313248789", field5: "29/09/2021" },
+    { _id:"1",field1: 1037645234, ids: "Juan Sebastian Cabrera Rojas", field3: "Online", field4: "313248789", field5: "29/09/2021" },
 
   ];
 
