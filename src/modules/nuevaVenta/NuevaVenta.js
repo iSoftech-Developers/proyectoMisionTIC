@@ -29,11 +29,11 @@ const NuevaVenta=(props)=>{
                 <div className="form-upper-section flex justify-between font-bold label-color">
                     <div className="w-1/6 ">
                         <label htmlFor="userid">ID Responsable</label>
-                        <input required class=" w-full h-8 p-2 rounded-md border border-gray-300" type="text" name="userid" id="userid"/>
+                        <input required class=" w-full h-8 p-2 input-border" type="text" name="userid" id="userid"/>
                     </div>
                     <div className="w-1/6">
                         <label htmlFor="username">NIT/C.C.</label>
-                        <input required class=" w-full h-8 p-2 rounded-md border border-gray-300" type="text" name="username" id="username"
+                        <input required class=" w-full h-8 p-2 input-border" type="text" name="username" id="username"
                             value={detect} 
                             onChange={(e)=>{
                                 setDetect(e.target.value);
@@ -45,17 +45,17 @@ const NuevaVenta=(props)=>{
                     </div> 
                     <div className="w-1/6">
                         <label htmlFor="userole">Fecha de pago</label>
-                        <input required class=" w-full h-8 p-2 rounded-md border border-gray-300" type="text" name="userole" id="userole"/>
+                        <input required class=" w-full h-8 p-2 input-border" type="text" name="userole" id="userole"/>
                     </div> 
                 </div>
                 <div className="form-lower-section flex justify-between font-bold label-color">
                     <div className="w-1/6 ">
                             <label htmlFor="userid">Teléfono</label>
-                            <input required class=" w-full h-8 p-2 rounded-md border border-gray-300" type="text" name="userid" id="userid"/>
+                            <input required class=" w-full h-8 p-2 input-border" type="text" name="userid" id="userid"/>
                         </div>
                         <div className="w-1/6">
                             <label htmlFor="username">Ciudad</label>
-                            <input required class=" w-full h-8 p-2 rounded-md border border-gray-300" type="text" name="username" id="username"
+                            <input required class=" w-full h-8 p-2 input-border" type="text" name="username" id="username"
                                 value={detect} 
                                 onChange={(e)=>{
                                     setDetect(e.target.value);
@@ -63,18 +63,18 @@ const NuevaVenta=(props)=>{
                         </div>
                         <div className="w-1/6 ">
                             <label htmlFor="userole">Estado de venta</label>
-                            <select required class=" w-full h-8 border rounded-md border-gray-300" name="roleoptions">
+                            <select required class=" w-full h-8 input-border text-gray-500 " name="roleoptions">
                                 <option value="Usuarios">En proceso</option>
                                 <option value="Usuarios">Entregada</option>
                                 <option value="Usuarios">Cancelada</option>
                             </select>
                         </div> 
                     <div className="w-1/6">
-                        <input required class="cursor-pointer w-full mt-4 h-10 rounded text-gray-600 bg-gray-300" type="button" name="userspecial" id="userspecial" value="Productos"/>
+                        <input required class="cursor-pointer w-full mt-4 h-10 rounded text-white bg-gray-400" type="button" name="userspecial" id="userspecial" value="Productos"/>
                     </div>
                 </div>
                 <div className=" w-full flex justify-center">
-                    <input className="w-1/6 cursor-pointer bg-green-400 h-8 rounded text-white font-bold my-16" type="submit" value="Guardar"/>
+                    <input className="w-1/6 cursor-pointer bg-green-400 h-10 rounded text-white font-bold my-16" type="submit" value="Guardar"/>
                 </div>
             </form> 
     </div>

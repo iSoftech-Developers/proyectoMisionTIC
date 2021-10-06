@@ -28,12 +28,12 @@ const Cards=({variableCards,cardsInfo})=>{
                                     <div className="edit-card pt-4 space-x-5">
                                         <Link to={variableCards.linkIcon}>
                                             <Tooltip title="editar">
-                                                <i className="fas fa-pen text-gray-500"></i>
+                                                <i className="fas fa-pen text-green-600"></i>
                                             </Tooltip>
                                         </Link>
                                         <Link to={variableCards.linkIcon}>
                                             <Tooltip title="Eliminar">
-                                                <i className="fas fa-trash text-red-700"></i>
+                                                <i className="fas fa-trash text-gray-500"></i>
                                             </Tooltip>
                                         </Link>
                                     </div>
