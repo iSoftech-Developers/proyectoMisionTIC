@@ -10,6 +10,9 @@ const Navbar=()=>{
       if (location.pathname==="/productos"){
         setRender({placeholder:"Buscar por nombre producto o ID",hidden:"",justify:"justify-between"})
       }
+      if (location.pathname.includes("/productos/")){
+        setRender({placeholder:"",hidden:"hidden",justify:"justify-end"})
+      }
       if (location.pathname==="/nuevaVenta"){
         setRender({placeholder:"",hidden:"hidden",justify:"justify-end"})
       }
@@ -19,13 +22,19 @@ const Navbar=()=>{
       if (location.pathname==="/moduloClientes"){
         setRender({placeholder:"Buscar por nombre Cliente o ID",hidden:"",justify:"justify-between"})
       }
+      if (location.pathname.includes("/moduloClientes/")){
+        setRender({placeholder:"",hidden:"hidden",justify:"justify-end"})
+      }
       if (location.pathname==="/moduloVentas"){
         setRender({placeholder:"Buscar por ID de la venta",hidden:"",justify:"justify-between"})
+      }
+      if (location.pathname.includes("/moduloVentas/")){
+        setRender({placeholder:"",hidden:"hidden",justify:"justify-end"})
       }
       if (location.pathname==="/moduloVendedores"){
         setRender({placeholder:"Buscar por nombre vendedor o ID",hidden:"",justify:"justify-between"})
       }
-      if (location.pathname.includes("/moduloClientes/paginaEditarCliente/")){
+      if (location.pathname.includes("/moduloVendedores/")){
         setRender({placeholder:"",hidden:"hidden",justify:"justify-end"})
       }
     }, [location]);
