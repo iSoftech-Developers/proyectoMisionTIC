@@ -2,9 +2,10 @@ import { Tooltip } from '@material-ui/core';
 import { Link} from 'react-router-dom';
 import { useEffect,useState } from 'react';
 import './Cards.css';
+import Dialog from '@mui/material/Dialog';
 
 const Cards=({variableCards,cardsinformation})=>{
-
+    const[openDialog,setOpenDialog]=useState(false)
 
     return(
       <>   
@@ -27,14 +28,19 @@ const Cards=({variableCards,cardsinformation})=>{
                                                 <i className="fas fa-pen text-green-600"></i>
                                             </Tooltip>
                                         </Link>
-                                        <Link to={variableCards.linkIcon}>
+                                        <Link to> 
                                             <Tooltip title="Eliminar">
-                                                <i className="fas fa-trash text-gray-500"></i>
+                                                <i 
+                                                onClick={()=>setOpenDialog}
+                                                className="fas fa-trash text-gray-500"></i>
                                             </Tooltip>
                                         </Link>
                                     </div>
+                                    
                                 </div>
                             </div>
+                            
+                            <Dialog open={openDialog} soy un dialogo></Dialog>
                             <table className="table-fixed text-sm w-full bg-white border-gray-400 border mt-4">
                                 <tr>
                                     <th >{variableCards.field1}</th>
@@ -54,6 +60,7 @@ const Cards=({variableCards,cardsinformation})=>{
                         </div>
                     </div>
                </Link>
+               
             );
             })}
        
