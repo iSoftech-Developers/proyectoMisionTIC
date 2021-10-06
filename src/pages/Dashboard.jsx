@@ -4,9 +4,9 @@ import Cards from '../modules/cards/Cards';
 import { useEffect, useState } from 'react';
 
 const Dashboard = () => {
-    const [cardsinfomation,setCardsinfomation] =useState([]);
+    const [cardsDashboard,setCardDashboard] =useState([]);
   useEffect(()=>{
-    setCardsinfomation(clientes);
+    setCardDashboard(clientes);
   },[]); 
 
   const clientes = [
@@ -47,8 +47,8 @@ const variableCardsVendedor = {
     return (
        <>
             <BotonesDashboard/>
-            <Cards variableCards={variableCardsCliente} cardsInfo={clientes}/>
-            <Cards variableCards={variableCardsVendedor} cardsInfo={VENTAS}/>
+            <Cards variableCards={variableCardsCliente} cardsinformation={cardsDashboard}/>
+            <Cards variableCards={variableCardsVendedor} cardsinformation={cardsDashboard}/>
        </>
         
        

@@ -1,32 +1,8 @@
 import Cards from '../../modules/cards/Cards';
 import UpperBarSection from '../../modules/upperBarSection/UpperBarSection';
-import { useEffect, useState } from 'react';
-import axios from 'axios';
-import { useLocation } from 'react-router-dom';
 
 
-
-
-const PaginaProductos =()=> {
-
-
-  const [cardsProductosInfomation,setCardsProductosInfomation] =useState([]);
-
-  useEffect(() => {
-      
-     
-      const options = { method: 'GET', url: 'http://localhost:3001/productos' };
-      axios.request(options).then(function (response){
-          console.log(response.data);
-          setCardsProductosInfomation(response.data);
-        })
-        .catch(function (error) {
-          console.error(error);
-        });
-      },[]);
-
-
-  
+const PaginaProductos =({cardsProductosInformation})=> {
 
 const variableCards = {
     icon:"fas fa-tshirt",
@@ -47,7 +23,7 @@ const variableCards = {
   
   
         <UpperBarSection titlePage="Productos" nameButton="Nuevo Producto" selectorButton="/productos/nuevoProducto"/>
-        <Cards variableCards={variableCards} cardsInfo={cardsProductosInfomation}/>
+        <Cards variableCards={variableCards} cardsinformation={cardsProductosInformation}/>
        
      </> 
       

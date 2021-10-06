@@ -6,9 +6,9 @@ import {useEffect, useState} from 'react';
 const PaginaVentas =()=> {
 
 
-  const [cardsinfomation,setCardsinfomation] =useState([]);
+  const [cardsVentas,setCardsVentas] =useState([]);
   useEffect(()=>{
-    setCardsinfomation(VENTAS);
+    setCardsVentas(VENTAS);
   },[]);
 
   const VENTAS = [
@@ -30,7 +30,7 @@ const PaginaVentas =()=> {
     return (
      <>
         <UpperBarSection titlePage="Listado de ventas" nameButton="Nueva Venta" selectorButton="/nuevaVenta"/>
-        <Cards variableCards={variableCards} cardsInfo={cardsinfomation}/>
+        <Cards variableCards={variableCards} cardsinformation={cardsVentas}/>
      </> 
       
     );

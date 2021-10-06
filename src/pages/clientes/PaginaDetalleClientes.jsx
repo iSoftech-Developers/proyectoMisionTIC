@@ -3,11 +3,11 @@ import NobuttonUpperBarSection from'../../modules/noButtonUpperBarSection/NoButt
 import Tablas from '../../modules/tablas/tablas'
 
 
-const PaginaDetalleClientes = () => {
+const PaginaDetalleClientes = ({cardsClientes}) => {
     return (
         <>
             <NobuttonUpperBarSection title="Detalle Id cliente"/>           
-            <DetalleCliente />
+            <DetalleCliente cardsinformation={cardsClientes} />
             <Tablas field1="ID Producto" field2="Producto" field3="Precio" field4="Talla" field5="Cantidad" field6="Total" />
         </>
     )
