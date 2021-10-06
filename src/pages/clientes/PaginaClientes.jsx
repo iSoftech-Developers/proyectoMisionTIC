@@ -1,24 +1,12 @@
 import Cards from '../../modules/cards/Cards';
 import UpperBarSection from '../../modules/upperBarSection/UpperBarSection';
-import { useEffect, useState } from 'react';
-import axios from 'axios';
 
 
-const PaginaClientes =()=> {
-  const [cardsinfomation,setCardsinfomation] =useState([]);
 
-  useEffect(() => {
-     
-      const options = { method: 'GET', url: 'http://localhost:3001/clientes' };
-      axios.request(options).then(function (response){
-          console.log(response.data);
-          setCardsinfomation(response.data);
-        })
-        .catch(function (error) {
-          console.error(error);
-        });
-      },[]);
 
+
+const PaginaClientes =({cardsClientes})=> {
+  
 
   const variableCards = {
     icon:" fas fa-users",
@@ -31,15 +19,10 @@ const PaginaClientes =()=> {
     field4:"Ciudad",
     field5:"Teléfono",
 }
-
-
-
-
     return (
      <>
-        
         <UpperBarSection titlePage="Clientes" nameButton="Agregar Cliente" selectorButton="/moduloClientes/nuevoCliente"/>
-        <Cards variableCards={variableCards} cardsInfo={cardsinfomation}/>
+        <Cards variableCards={variableCards} cardsinformation={cardsClientes}/>
        
      </> 
       

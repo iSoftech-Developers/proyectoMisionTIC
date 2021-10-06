@@ -8,10 +8,12 @@ const PaginaNuevoProducto =()=> {
 
   const formLabelTitle = {
     label1:"Descripción",
-    label2:"Talla",
-    label3:"Cantidad",
-    label4:"Valor unitario",
-    label5:"Estado",
+    label2:"Género",
+    label3:"Color",
+    label4:"Talla",
+    label5:"Cantidad",
+    label6:"Valor unitario",
+    label7:"Estado"
 }
 
 

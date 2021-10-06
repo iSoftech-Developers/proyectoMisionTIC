@@ -4,9 +4,9 @@ import Cards from '../modules/cards/Cards';
 import { useEffect, useState } from 'react';
 
 const Dashboard = () => {
-    const [cardsinfomation,setCardsinfomation] =useState([]);
+    const [cardsDashboard,setCardDashboard] =useState([]);
   useEffect(()=>{
-    setCardsinfomation(clientes);
+    setCardDashboard(clientes);
   },[]); 
 
   const clientes = [
@@ -15,9 +15,9 @@ const Dashboard = () => {
   ];
   const VENTAS = [
     { id:1,field1: 1037645234, field2: "Juan Sebastian Cabrera Rojas", field3: "Online", field4: "313248789", field5: "29/09/2021" },
-  
-
   ];
+
+  
   const variableCardsCliente = {
     icon:" fas fa-users",
     cardTo:"/moduloClientes/detalleCliente",
@@ -47,8 +47,8 @@ const variableCardsVendedor = {
     return (
        <>
             <BotonesDashboard/>
-            <Cards variableCards={variableCardsCliente} cardsInfo={clientes}/>
-            <Cards variableCards={variableCardsVendedor} cardsInfo={VENTAS}/>
+            <Cards variableCards={variableCardsCliente} cardsinformation={cardsDashboard}/>
+            <Cards variableCards={variableCardsVendedor} cardsinformation={cardsDashboard}/>
        </>
         
        

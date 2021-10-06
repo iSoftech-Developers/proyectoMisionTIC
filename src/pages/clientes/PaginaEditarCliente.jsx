@@ -1,8 +1,8 @@
 import React from 'react'
 import NoButtonUpperBarSection from '../../modules/noButtonUpperBarSection/NoButtonUpperBarSection'
-import NuevoCliente from '../../modules/nuevoCliente/NuevoCliente'
+import EditarCliente from '../../modules/editarCliente/EditarCliente'
 
-const PaginaEditarCliente = () => {
+const PaginaEditarCliente = ({cardsClientes}) => {
 
     const formLabelTitle = {
         label1:"Razon Social*",
@@ -19,7 +19,7 @@ const PaginaEditarCliente = () => {
 
            <>
              <NoButtonUpperBarSection title="Editar Cliente"/>
-             <NuevoCliente formLabelTitle={formLabelTitle}/>
+             <EditarCliente formLabelTitle={formLabelTitle} cardsClientes={cardsClientes}/>
            </>
     )
 }

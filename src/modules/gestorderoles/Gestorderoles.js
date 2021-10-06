@@ -6,7 +6,7 @@ const Gestorderoles = () => {
     <>
       <div className="w-1/4">
         <label for="userole"></label>
-        <select required className="w-full h-8" name="roleoptions">
+        <select required className="w-full h-10" name="roleoptions">
           <option value="Usuarios">Vendedor</option>
           <option value="Usuarios">Administrador</option>
         </select>

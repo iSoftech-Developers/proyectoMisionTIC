@@ -3,12 +3,12 @@ import NoButtonUpperBarSection from '../../modules/noButtonUpperBarSection/NoBut
 
 
 
-const PaginaDetalleProducto =()=>{
+const PaginaDetalleProducto =( {cardsProductosInformation})=>{
 
     return(
         <>
             <NoButtonUpperBarSection title="Detalle Producto"/>
-            <DetalleProducto/>
+            <DetalleProducto cardsinformation={cardsProductosInformation}/>
        </> 
     );
 }
