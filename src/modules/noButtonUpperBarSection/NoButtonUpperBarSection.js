@@ -1,10 +1,14 @@
+import { Tooltip } from "@material-ui/core";
 
 const NoButtonUpperBarSection =(props)=>{
 
     return(
-        <div className=" my-9 flex  items-start">
+        <Tooltip title="Guardar">
+            <div className=" my-9 flex  items-start">
             <span className="font-bold text-2xl">{props.title}</span>
-        </div >
+            </div >
+        </Tooltip>
+        
     )
   }
 

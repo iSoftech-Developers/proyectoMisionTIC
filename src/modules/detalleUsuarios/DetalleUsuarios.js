@@ -1,21 +1,35 @@
 import { useParams,useHistory } from "react-router";
 import {useEffect,useState} from "react";
+import axios from 'axios';
 
 const DetalleUsuarios=()=>{
-    const vendedores = [
-        { id:0,field1: 1037645234, field2: "Juan Sebastian Cabrera Rojas", field3: "Online", field4: "313248789", field5: "29/09/2021" },
-        
-      ];
-    const [cardsInfo,setCardsInfo] =useState([]);
-    
+    const [vendedoresInformation, setVendedoresInformation] = useState([]);
     useEffect(()=>{
+
+       /* { id:0,field1: 1037645234, field2: "Juan Sebastian Cabrera Rojas", field3: "Online", field4: "313248789", field5: "29/09/2021" },
+        
+      ];*/
+    /*const [cardsInfo,setCardsInfo] =useState([]);*/
+        const options = { method: 'GET', url: 'http://localhost:3001/usuarios' };
+        axios.request(options).then(function (response){
+            console.log(response.data);
+            setVendedoresInformation(response.data);
+            })
+            .catch(function (error) {
+            console.error(error);
+            });
+        },[]);
+    
+    /*useEffect(()=>{
         setCardsInfo(vendedores);
-    },[vendedores]); 
+    },[vendedores]);*/ 
 
     
     let history = useHistory();
     let { id } = useParams();
-    let user= vendedores[parseInt(id, 10)];
+    console.log(id)
+    let user= vendedoresInformation[parseInt(id, 10)];
+    console.log(user)
    
     let back = e => {
         e.stopPropagation();
@@ -39,8 +53,6 @@ const DetalleUsuarios=()=>{
                             </div>  
                         </div>
                     </div>
-                                
-
                     <div className="flex">
                         <div className="flex w-full justify-between mt-12">
                             <div className="flex flex-col ">

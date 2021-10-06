@@ -1,6 +1,7 @@
 require ('./mongo')
 const Cliente = require('./models/cliente')
 const Producto = require('./models/producto')
+const Usuario = require('./models/usuario')
 const express = require('express');
 const cors = require('cors');
 const app = express();
@@ -43,6 +44,13 @@ app.get('/productos/',(request,response)=>{
 
   Producto.find({}).then((productos)=>{
     response.json(productos)
+  })
+})
+
+app.get('/usuarios/',(request,response)=>{
+ 
+  Usuario.find({}).then((usuarios)=>{
+    response.json(usuarios)
   })
 })
 
