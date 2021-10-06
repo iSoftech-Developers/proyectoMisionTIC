@@ -1,9 +1,11 @@
-import { useState,useEffect } from "react";
+import { useState,useEffect, useRef } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 
-const NuevaVenta=(props)=>{
-    const [detect,setDetect]=useState("");
 
+
+const NuevaVenta=()=>{
     const vendedores = [
         { id:0,field1: 1037645234, field2: "Juan Sebastian Cabrera Rojas", field3: "Online", field4: "313248789", field5: "29/09/2021" },
     
@@ -21,62 +23,72 @@ const NuevaVenta=(props)=>{
      
       ];
 
+      const form = useRef(null);
 
+      const submitForm = (e) => {
+          e.preventDefault();
+
+          const fd = new FormData(form.current);
+
+          const nuevaVenta = {};
+          fd.forEach((value,key) => {
+              nuevaVenta[key] = value;
+          });
+
+          console.log('Datos del form enviados', nuevaVenta);
+          toast.success('Venta guardada');
+      };
+
+   
     return(
     
         <div>
-            <form className=" space-y-8 my-16">
+            <form ref={form} onSubmit={submitForm} className=" space-y-8 my-16">
                 <div className="form-upper-section flex justify-between font-bold label-color">
                     <div className="w-1/6 ">
                         <label htmlFor="userid">ID Responsable</label>
-                        <input required class=" w-full h-8 p-2 rounded-md border border-gray-300" type="text" name="userid" id="userid"/>
+                        <input required class=" w-full h-8 p-2 input-border" type="text" name="userid" id="userid"/>
                     </div>
                     <div className="w-1/6">
-                        <label htmlFor="username">NIT/C.C.</label>
-                        <input required class=" w-full h-8 p-2 rounded-md border border-gray-300" type="text" name="username" id="username"
-                            value={detect} 
-                            onChange={(e)=>{
-                                setDetect(e.target.value);
-                        }}/>
+                        <label htmlFor="usernit">NIT/C.C.</label>
+                        <input required class=" w-full h-8 p-2 input-border" type="text" name="usernit" id="usernit"/>
                     </div>
                     <div className="w-1/6">
-                        <label htmlFor="userole">Razon Social</label>
-                        <input required  disabled class=" w-full h-8 p-2 rounded-md " type="text" name="userole" id="userole" value="hola"/>
-                    </div> 
+                        <label htmlFor="username">Nombre cliente</label>
+                        <input required disabled class=" w-full h-8 p-2 rounded-md input-border" type="text" name="username" id="username" value="Crear fields en back"/>
+                    </div>
                     <div className="w-1/6">
-                        <label htmlFor="userole">Fecha de pago</label>
-                        <input required class=" w-full h-8 p-2 rounded-md border border-gray-300" type="text" name="userole" id="userole"/>
-                    </div> 
+                        <label htmlFor="paydate">Fecha de pago</label>
+                        <input required class=" w-full h-8 p-2 input-border" type="text" name="paydate" id="paydate"/>
+                    </div>
                 </div>
                 <div className="form-lower-section flex justify-between font-bold label-color">
                     <div className="w-1/6 ">
-                            <label htmlFor="userid">Teléfono</label>
-                            <input required class=" w-full h-8 p-2 rounded-md border border-gray-300" type="text" name="userid" id="userid"/>
+                            <label htmlFor="celnumber">Teléfono</label>
+                            <input required class=" w-full h-8 p-2 input-border" type="text" name="celnumber" id="celnumber"/>
                         </div>
                         <div className="w-1/6">
-                            <label htmlFor="username">Ciudad</label>
-                            <input required class=" w-full h-8 p-2 rounded-md border border-gray-300" type="text" name="username" id="username"
-                                value={detect} 
-                                onChange={(e)=>{
-                                    setDetect(e.target.value);
-                            }}/>
+                            <label htmlFor="usercity">Ciudad</label>
+                            <input required class=" w-full h-8 p-2 input-border" type="text" name="usercity" id="usercity"/>
                         </div>
                         <div className="w-1/6 ">
-                            <label htmlFor="userole">Estado de venta</label>
-                            <select required class=" w-full h-8 border rounded-md border-gray-300" name="roleoptions">
+                            <label htmlFor="salestatus">Estado de venta</label>
+                            <select required class=" w-full h-8 input-border text-gray-500 " name="salestatus">
                                 <option value="Usuarios">En proceso</option>
                                 <option value="Usuarios">Entregada</option>
                                 <option value="Usuarios">Cancelada</option>
                             </select>
                         </div> 
                     <div className="w-1/6">
-                        <input required class="cursor-pointer w-full mt-4 h-10 rounded text-gray-600 bg-gray-300" type="button" name="userspecial" id="userspecial" value="Productos"/>
+                        <input required class="cursor-pointer w-full mt-4 h-10 rounded text-white bg-gray-400" type="button" name="userspecial" id="userspecial" value="Productos"/>
                     </div>
                 </div>
                 <div className=" w-full flex justify-center">
-                    <input className="w-1/6 cursor-pointer bg-green-400 h-8 rounded text-white font-bold my-16" type="submit" value="Guardar"/>
+                    <input className="w-1/6 cursor-pointer bg-green-400 h-10 rounded text-white font-bold my-16" type="submit" value="Guardar"/>
+                    <ToastContainer position="top-right" autoClose={5000}/>
                 </div>
-            </form> 
+            </form>
+           
     </div>
 
     );

@@ -7,9 +7,9 @@ const PaginaVendedores =()=> {
  
  
 
-  const [cardsinfomation,setCardsinfomation] =useState([]);
+  const [cardsVendedores,setCardsVendedores] =useState([]);
   useEffect(()=>{
-    setCardsinfomation(vendedores);
+    setCardsVendedores(vendedores);
   },[]); 
 
   const vendedores = [
@@ -30,7 +30,7 @@ const PaginaVendedores =()=> {
     return (
      <>
             <NoButtonUpperBarSection title="Vendedores"/>
-            <Cards variableCards={variableCards} cardsInfo={cardsinfomation} />
+            <Cards variableCards={variableCards} cardsinformation={cardsVendedores} />
      </> 
       
     );

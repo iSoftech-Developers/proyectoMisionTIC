@@ -3,19 +3,15 @@ import { Link} from 'react-router-dom';
 import { useEffect,useState } from 'react';
 import './Cards.css';
 
-
-
-
-const Cards=({variableCards,cardsInfo})=>{
+const Cards=({variableCards,cardsinformation})=>{
 
 
     return(
-      <>
-      
-          {cardsInfo.map((i)=>{
+      <>   
+          {cardsinformation.map((i)=>{
             return(
                 <Link key={i.ids} to={{
-                    pathname: `${variableCards.cardTo}/${i.ids}`, 
+                    pathname: `${variableCards.cardTo}/${i._id}`, 
                   }}>
                     
                     <div className="cards-container mb-6 shadow-sm bg-white transition duration-250 ease-in-out transform hover:-translate-y-1 hover:scale-100">
@@ -26,14 +22,14 @@ const Cards=({variableCards,cardsInfo})=>{
                                 <div className="card-info w-full align-center flex justify-between">
                                     <span className="font-semibold pt-3">ID {i.ids}</span>
                                     <div className="edit-card pt-4 space-x-5">
-                                        <Link to={variableCards.linkIcon}>
+                                        <Link to={`${variableCards.linkIcon}/${i._id}`}>
                                             <Tooltip title="editar">
-                                                <i className="fas fa-pen text-gray-500"></i>
+                                                <i className="fas fa-pen text-green-600"></i>
                                             </Tooltip>
                                         </Link>
                                         <Link to={variableCards.linkIcon}>
                                             <Tooltip title="Eliminar">
-                                                <i className="fas fa-trash text-red-700"></i>
+                                                <i className="fas fa-trash text-gray-500"></i>
                                             </Tooltip>
                                         </Link>
                                     </div>

@@ -2,6 +2,8 @@
 import './App.css';
 import './index.css';
 import { BrowserRouter as Router,Route ,Switch } from 'react-router-dom';
+import {useEffect,useState} from "react";
+import axios from 'axios';
 import PaginaVendedores from './pages/vendedoresUsuarios/PaginaVendedores';
 import PaginaInfoDetalleVentas from './pages/venta/PaginaInfoDetalleVentas';
 import Login from './modules/login/Login';
@@ -30,6 +32,35 @@ import PaginaEditarVenta from './pages/venta/PaginaEditarVenta';
 /*linea 37 va a la pagina de modificar venta*/
 /*linea 5 */
 const App =()=> {
+
+  const [cardsClientes,setCardsClientes] =useState([]);
+  const [cardsProductosInformation,setCardsProductosInformation] =useState([]);
+
+  useEffect(() => {   
+    const options = { method: 'GET', url: 'http://localhost:3001/clientes' };
+    axios.request(options).then(function (response){
+        console.log(response.data);
+        setCardsClientes(response.data);
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
+    },[]);
+    useEffect(() => {   
+        const options = { method: 'GET', url: 'http://localhost:3001/productos' };
+        axios.request(options).then(function (response){
+            console.log(response.data);
+            setCardsProductosInformation(response.data);
+          })
+          .catch(function (error) {
+            console.error(error);
+          });
+        },[]);
+
+
+
+  
+
   return (
     <div className="template">
     <Router>
@@ -53,10 +84,10 @@ const App =()=> {
                 <PaginaNuevoProducto/>
               </Route>
               <Route path='/productos/detalleProducto/:id'>
-                <PaginaDetalleProducto/>
+                <PaginaDetalleProducto cardsProductosInformation={cardsProductosInformation}/>
               </Route>
               <Route path='/productos'>
-                <PaginaProductos/>
+                <PaginaProductos cardsProductosInformation={cardsProductosInformation}/>
               </Route>
               <Route path='/moduloVentas/editarVenta'>
                 <PaginaEditarVenta/>
@@ -77,16 +108,16 @@ const App =()=> {
                 <PaginaVendedores/>
               </Route>
               <Route path='/moduloClientes/detalleCliente/:id'>
-                <PaginaDetalleClientes/>
+                <PaginaDetalleClientes cardsClientes={cardsClientes}/>
               </Route>
-              <Route path='/moduloClientes/paginaEditarCliente'>
-                <PaginaEditarCliente/>
+              <Route path='/moduloClientes/paginaEditarCliente/:id'>
+                <PaginaEditarCliente cardsClientes={cardsClientes}/>
               </Route>
               <Route path='/moduloClientes/nuevoCliente'>
-                <PaginaNuevoCliente/>
+                <PaginaNuevoCliente />
               </Route>
               <Route path='/moduloClientes'>
-                <PaginaClientes/>
+                <PaginaClientes  cardsClientes={cardsClientes}/>
               </Route>
               <Route path='/nuevaVenta'>
                 <PaginaNuevaVenta/>

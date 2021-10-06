@@ -36,7 +36,7 @@ const TarjetasUsuarios = ({userCardInfo}) => {
                 </div>
                 <div className="w-1/4 mt-6">
                     <label for="userole"></label>
-                    <select required className="w-full h-8" name="roleoptions">
+                    <select required className="w-full h-8 input-border text-gray-500" name="roleoptions">
                         <option class="text-bold" value="Usuarios">Vendedor</option>
                         <option class="text-bold" value="Usuarios">Administrador</option>
                     </select>
