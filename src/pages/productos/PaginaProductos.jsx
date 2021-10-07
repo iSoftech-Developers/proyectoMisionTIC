@@ -2,6 +2,7 @@ import Cards from '../../modules/cards/Cards';
 import UpperBarSection from '../../modules/upperBarSection/UpperBarSection';
 
 
+
 const PaginaProductos =({cardsProductosInformation})=> {
 
 const variableCards = {

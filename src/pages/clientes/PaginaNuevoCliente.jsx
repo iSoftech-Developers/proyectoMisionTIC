@@ -1,6 +1,5 @@
 import NoButtonUpperBarSection from "../../modules/noButtonUpperBarSection/NoButtonUpperBarSection";
 import NuevoCliente from "../../modules/nuevoCliente/NuevoCliente";
-import UpperBarSection from "../../modules/upperBarSection/UpperBarSection";
 
 
 const PaginaNuevoCliente =()=>{

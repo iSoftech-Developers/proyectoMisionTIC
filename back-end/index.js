@@ -8,6 +8,7 @@ const app = express();
 
 
 app.use(cors())
+app.use(express.json())
 
 
 
@@ -41,7 +42,7 @@ app.get('/clientes/',(request,response)=>{
 
 app.get('/productos/',(request,response)=>{
 
-  Producto.find({}).then((productos)=>{
+    Producto.find({}).then((productos)=>{
     response.json(productos)
   })
 })

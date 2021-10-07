@@ -1,4 +1,3 @@
-import UpperBarTabs from "../../modules/upperBarTabs/UpperBarTabs";
 import TarjetasUsuarios from "../../modules/tarjetasUsuarios/TarjetasUsuarios";
 import { useEffect, useState } from 'react';
 

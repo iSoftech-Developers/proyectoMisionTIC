@@ -1,6 +1,7 @@
-import UpperBarSection from '../../modules/upperBarSection/UpperBarSection';
+
 import Tablas from '../../modules/tablas/tablas';
 import ActualizarProducto from '../../modules/actualizarProducto/ActualizarProducto';
+import NoButtonUpperBarSection from '../../modules/noButtonUpperBarSection/NoButtonUpperBarSection';
 
 
 const PaginaActualizarProducto =()=> {
@@ -18,7 +19,7 @@ const PaginaActualizarProducto =()=> {
 
     return (
      <>
-        <UpperBarSection titlePage="Actualizar producto" nameButton="Guardar" />
+        <NoButtonUpperBarSection title="Actualizar producto"/>
         <ActualizarProducto formLabelTitle = {formLabelTitle} />
         <Tablas field1="ID Producto" field2="Descripción" field3="Talla" field4="Valor unitario" field5= "Cantidad" field6="Estado"/>
      </> 
