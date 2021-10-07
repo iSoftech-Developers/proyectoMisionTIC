@@ -10,6 +10,12 @@ const Navbar=()=>{
   const location =useLocation()
   
   useEffect(() => {
+      if (location.pathname==="/rolesUsuarios"){
+        setRender({placeholder:"Buscar por nombre usuario o ID",hidden:"",justify:"justify-between"})
+      }
+      if (location.pathname==="/rolesUsuarios/"){
+        setRender({placeholder:"",hidden:"hidden",justify:"justify-end"})
+      }
       if (location.pathname==="/productos"){
         setRender({placeholder:"Buscar por nombre producto o ID",hidden:"",justify:"justify-between"})
       }
