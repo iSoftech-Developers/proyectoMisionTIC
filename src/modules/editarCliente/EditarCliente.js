@@ -39,37 +39,37 @@ const EditarCliente = ({cardsClientes,formLabelTitle}) => {
                     <div className="form-upper-section flex justify-between font-bold label-color">
                         <div className="w-1/5">
                             <label for="nombrecliente">{formLabelTitle.label1}</label>
-                            <input  disabled value={cliente.field1} required class=" w-full h-8 p-2 input-border" type="String" name="nombrecliente"/>
+                            <input  value={cliente.field1} required class=" w-full h-8 p-2 input-border" type="String" name="nombrecliente"/>
                         </div>
                         <div className="w-1/5">
                             <label for="idcliente">{formLabelTitle.label2}</label>
-                            <input disabled  value={cliente.field2} required class=" w-full h-8 p-2 input-border" type="Number" min={0} name="idcliente"/>
+                            <input   value={cliente.field2} required class=" w-full h-8 p-2 input-border" type="Number" min={0} name="idcliente"/>
                         </div>
                         <div className="w-1/5">
                             <label for="email">{formLabelTitle.label3}</label>
-                            <input required class=" w-full h-8 p-2 input-border" type="email" name="email"/>
+                            <input required placeholder={cliente.field3} class=" w-full h-8 p-2 input-border" type="email" name="email"/>
                         </div> 
                         <div className="w-1/5">
                             <label for="ciudad">{formLabelTitle.label4}</label>
-                            <input required class=" w-full h-8 p-2 input-border" type="String" name="ciudad"/>
+                            <input required placeholder={cliente.field4} class=" w-full h-8 p-2 input-border" type="String" name="ciudad"/>
                         </div> 
                     </div>
                     <div className="form-lower-section flex justify-between font-bold label-color">
                         <div className="w-1/5">
                             <label for="telefono">{formLabelTitle.label5}</label>
-                            <input required class=" w-full h-8 p-2 input-border" type="String" name="telefono"/>
+                            <input required placeholder={cliente.field5} class=" w-full h-8 p-2 input-border" type="String" name="telefono"/>
                         </div>
                         <div className="w-1/5">
                             <label for="departamento">{formLabelTitle.label6}</label>
-                            <input required class=" w-full h-8 p-2 input-border" type="String" name="departamento"/>
+                            <input required placeholder={cliente.field6} class=" w-full h-8 p-2 input-border" type="String" name="departamento"/>
                         </div>
                         <div className="w-1/5">
                             <label for="direccion">{formLabelTitle.label7}</label>
-                            <input required class=" w-full h-8 p-2 input-border" type="String" name="direccion"/>
+                            <input required placeholder={cliente.field7}  class=" w-full h-8 p-2 input-border" type="String" name="direccion"/>
                         </div>
                         <div className="w-1/5">
                             <label for="personacontacto">{formLabelTitle.label8}</label>
-                            <input required class=" w-full h-8 p-2 input-border" type="String" name="personacontacto"/>
+                            <input required placeholder={cliente.field8} class=" w-full h-8 p-2 input-border" type="String" name="personacontacto"/>
                         </div>
                     </div>
                     <div className=" w-full flex justify-center">
