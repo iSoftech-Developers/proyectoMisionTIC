@@ -24,8 +24,8 @@ const Cards=({variableCards,cardsinformation})=>{
                                     <span className="font-semibold pt-3">ID {i.ids}</span>
                                     <div className="edit-card pt-4 space-x-5">
                                         <Link to={`${variableCards.linkIcon}/${i._id}`}>
-                                            <Tooltip title="editar">
-                                                <i className="fas fa-pen text-green-600"></i>
+                                            <Tooltip title="Editar">
+                                                <i className="fas fa-pen text-green-500 hover:text-green-900 shadow-md"></i>
                                             </Tooltip>
                                         </Link>
                                         <Link to> 
@@ -39,7 +39,7 @@ const Cards=({variableCards,cardsinformation})=>{
                                     
                                 </div>
                             </div>
-                            <Dialog open={openDialog}>
+                            <Dialog open={openDialog} className='justify-center ml-80'>
                                 <div className ='p-8 flex flex-col'>
                                     <h1 className= 'text gray-800 text-xl font-bold'> ¿Esta seguro de querer eliminarlo? </h1>
                                     <div className='flex w-full items-center justify-center'> 
