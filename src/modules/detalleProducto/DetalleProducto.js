@@ -4,11 +4,9 @@ import { useParams } from "react-router";
 
 const DetalleProducto = ({cardsinformation}) => {
     let { id } = useParams();
-    
 
+return (
 
-    return (
-        
         <>
         {cardsinformation.map((key)=>{
         if(key._id===id){
@@ -34,7 +32,7 @@ const DetalleProducto = ({cardsinformation}) => {
                             <span className="block font-bold">Talla</span>
                             <span>{key.field4}</span>
                         </div>
-                    </div>
+                    </div> 
                     <div className="">
                         <div>
                             <span className="block font-bold">Estado</span>
@@ -57,10 +55,10 @@ const DetalleProducto = ({cardsinformation}) => {
         }
     }
     )}
-        
+
         </>
-      
-      
+
+
     );
 
 };

@@ -45,7 +45,7 @@ const App =()=> {
       .catch(function (error) {
         console.error(error);
       });
-    },[]);
+    },[cardsClientes]);
     useEffect(() => {   
         const options = { method: 'GET', url: 'http://localhost:3001/productos' };
         axios.request(options).then(function (response){
@@ -54,7 +54,7 @@ const App =()=> {
           .catch(function (error) {
             console.error(error);
           });
-        },[]);
+        },[cardsProductosInformation]);
 
 
   useEffect(()=>{

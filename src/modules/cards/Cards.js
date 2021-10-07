@@ -9,7 +9,7 @@ const Cards=({variableCards,cardsinformation})=>{
     return(
       <>
       {cardsinformation.map((i)=>{
-          if (i._id.includes(busqueda)||i.ids.toLowerCase().includes(busqueda.toLowerCase())){
+          if (i._id.includes(busqueda)||i.field1.toLowerCase().includes(busqueda.toLowerCase())){
               return(
                   <Link to={{
                       pathname: `${variableCards.cardTo}/${i._id}`, 
