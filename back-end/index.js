@@ -48,6 +48,23 @@ app.get('/productos/',(request,response)=>{
 })
 
 app.post('/clientes/nuevo',(request,response)=>{
+    const cliente = new Cliente({
+    field1:request.body.nombrecliente,
+    field2:request.body.idcliente,
+    field3:request.body.email,
+    field4:request.body.ciudad,
+    field5:request.body.telefono,
+    field6:request.body.departamento,
+    field7:request.body.direccion,
+    field8:request.body.personacontacto,
+    ids:request.body.idcliente,
+  })
+  cliente.save()
+  .then(() => {
+    response.send(201)
+  }).catch(err => {
+    console.error(err)
+  })
 })
 
 const PORT=3001
