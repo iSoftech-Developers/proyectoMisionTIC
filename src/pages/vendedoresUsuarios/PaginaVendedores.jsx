@@ -1,5 +1,5 @@
 import Cards from '../../modules/cards/Cards';
-import NoButtonUpperBarSection from '../../modules/noButtonUpperBarSection/NoButtonUpperBarSection'
+import UpperBarSection from '../../modules/upperBarSection/UpperBarSection'
 import { useEffect, useState } from 'react';
 
 
@@ -29,9 +29,8 @@ const PaginaVendedores =()=> {
 }
     return (
      <>
-            <div className=" my-9 flex justify-between">
-              <span className="font-bold text-2xl">Lista vendedores</span>
-            </div>
+          
+              <UpperBarSection titlePage="Lista de vendedores" selectorButton="/rolesUsuarios/nuevoUsuario" nameButton="Agregar Vendedor"/>
               <Cards variableCards={variableCards} cardsinformation={cardsVendedores} />
      </> 
       

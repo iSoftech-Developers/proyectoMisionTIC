@@ -39,8 +39,7 @@ const Cards=({variableCards,cardsinformation})=>{
                                           </Link>
                                           <Link to={variableCards.cardTo} onClick={()=>setOpenDialog(true)}>
                                               <Tooltip title="Eliminar">
-                                              <i 
-                                                className="fas fa-trash text-red-500 hover:text-red-900 shadow-md fa-lg"></i>
+                                              <i className="fas fa-trash text-red-500 hover:text-red-900 shadow-md fa-lg"></i>
                                               </Tooltip>
                                           </Link>
                                       </div>

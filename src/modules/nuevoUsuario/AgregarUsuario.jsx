@@ -3,7 +3,7 @@ import { useRef } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
-const EditarUsuario = ({formLabelTitle}) => {
+const AgregarUsuario = ({formLabelTitle}) => {
 
     const form = useRef(null);
 
@@ -40,12 +40,12 @@ const EditarUsuario = ({formLabelTitle}) => {
                                     <div className="flex justify-between space-x-7">
                                         <div>
                                             <label for="idusuario" className="font-bold">{formLabelTitle.label1}</label>
-                                            <input required disabled class="text-lg w-full h-8 p-2 rounded-md input-border" type="String" name="idusuario"/>
+                                            <input required class="text-lg w-full h-8 p-2 rounded-md input-border" type="String" name="idusuario"/>
                                         </div>
                                         <div className="w-1/3">
                                         <label for="rol" className="font-bold">{formLabelTitle.label2}</label>
                                             <select required class=" w-full h-8 font-bold pl-2 rounded-md input-border" name="rol" defaultValue={0}>
-                                                <option disabled type="String" value={0}>Selecciona una opción</option>
+                                                <option type="String" value={0}>Selecciona una opción</option>
                                                 <option type="String">Vendedor</option>
                                                 <option type="String">Administrador</option>
                                             </select>
@@ -65,19 +65,19 @@ const EditarUsuario = ({formLabelTitle}) => {
                         <div className="flex w-full justify-between mt-12">
                             <div className="flex flex-col ">
                                 <label for="fechaingreso" className="font-bold">{formLabelTitle.label4}</label>
-                                <input required  class=" w-full h-8 p-2 rounded-md input-border" type="text" name="fechaingreso" />
+                                <input required class=" w-full h-8 p-2 rounded-md input-border" type="text" name="fechaingreso" />
                             </div>
                             <div className="flex flex-col ">
                                 <label for="nombre" className="font-bold">{formLabelTitle.label5}</label>
-                                <input required disabled class=" w-full h-8 p-2 rounded-md input-border" type="String" name="nombre" />
+                                <input required class=" w-full h-8 p-2 rounded-md input-border" type="String" name="nombre" />
                             </div>
                             <div className="flex flex-col ">
                                 <label for="especialidad" className="font-bold">{formLabelTitle.label6}</label>
-                                <input required disabled class=" w-full h-8 p-2 rounded-md input-border" type="String" name="especialidad" />
+                                <input required class=" w-full h-8 p-2 rounded-md input-border" type="String" name="especialidad" />
                             </div>
                             <div className="flex flex-col ">
                                 <label for="celular" className="font-bold">{formLabelTitle.label7}</label>
-                                <input required disabled class=" w-full h-8 p-2 rounded-md input-border" type="String" name="celular" />
+                                <input required class=" w-full h-8 p-2 rounded-md input-border" type="String" name="celular" />
                             </div>
                         </div>
                         </div>
@@ -100,4 +100,4 @@ const EditarUsuario = ({formLabelTitle}) => {
     )
 }
 
-export default EditarUsuario;
+export default AgregarUsuario;
