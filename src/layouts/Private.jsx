@@ -19,5 +19,5 @@ const Private = ({children}) => {
     )
 }
 
-export default Private
+export default Private;
 

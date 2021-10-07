@@ -6,7 +6,7 @@ const productoSchema = new mongoose.Schema({
     field2:Number, // valor unitario
     field3:Number, // stock
     field4:String, // talla
-    field5:Boolean, // estado
+    field5:String, // estado
     field6:String, // genero
     field7:String, // color
     

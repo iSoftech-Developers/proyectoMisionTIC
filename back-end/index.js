@@ -67,6 +67,25 @@ app.post('/clientes/nuevo',(request,response)=>{
   })
 })
 
+app.post('/productos/nuevo',(request,response)=>{
+  const producto = new Producto({
+  field1:request.body.descripcion,
+  field2:request.body.valorunitario,
+  field3:request.body.cantidad,
+  field4:request.body.talla,
+  field5:request.body.estado,
+  field6:request.body.genero,
+  field7:request.body.color,
+  ids:request.body.descripcion,
+})
+producto.save()
+.then(() => {
+  response.send(201)
+}).catch(err => {
+  console.error(err)
+})
+})
+
 const PORT=3001
 app.listen(PORT)
 console.log(`Server running on port ${PORT}`)
