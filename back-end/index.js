@@ -40,7 +40,7 @@ app.get('/usuarios/',(request,response)=>{
   })
 })
 
-app.post('/clientes/nuevo',(request,response)=>{
+app.post('/clientes/',(request,response)=>{
     const cliente = new Cliente({
     field1:request.body.nombrecliente,
     field2:request.body.idcliente,
@@ -60,7 +60,7 @@ app.post('/clientes/nuevo',(request,response)=>{
   })
 })
 
-app.post('/productos/nuevo',(request,response)=>{
+app.post('/productos/',(request,response)=>{
   const producto = new Producto({
   field1:request.body.descripcion,
   field2:request.body.valorunitario,
@@ -79,7 +79,7 @@ app.post('/productos/nuevo',(request,response)=>{
     })
 })
 
-app.post('/usuarios/nuevo',(request,response)=>{
+app.post('/usuarios/',(request,response)=>{
   const usuario = new Usuario({
   field1:request.body.nombre,
   field2:request.body.idusuario,
@@ -100,8 +100,8 @@ usuario.save()
 })
 
 
-app.patch('/clientes/actualizar',(request,response)=>{
-  const id = request.body.id
+app.patch('/clientes/:id/',(request,response)=>{
+  const id = request.params.id
   Cliente.findByIdAndUpdate(id, {
     field3:request.body.email,
     field4:request.body.ciudad,
@@ -117,9 +117,26 @@ app.patch('/clientes/actualizar',(request,response)=>{
   })
   })
 
+app.patch('/usuarios/:id/',(request,response)=>{
+  const id = request.params.id
+  Usuario.findByIdAndUpdate(id, {
+    field3:request.body.email,
+    field4:request.body.ciudad,
+    field5:request.body.telefono,
+    field6:request.body.departamento,
+    field7:request.body.direccion,
+    field8:request.body.personacontacto,
+})
+  .then(() => {
+    response.send(202)
+  }).catch(err => {
+    console.error(err)
+  })
+  })
 
-  app.patch('/productos/actualizar',(request,response)=>{
-    const id = request.body.id
+
+  app.patch('/productos/:id/',(request,response)=>{
+    const id = request.params.id
     Producto.findByIdAndUpdate(id, {
       field2:request.body.valorunitario,
       field3:request.body.cantidad,
@@ -133,9 +150,8 @@ app.patch('/clientes/actualizar',(request,response)=>{
     })
 
 
-
-app.delete('/producto/borrar/',(request,response)=>{
-  const id = request.body.id
+app.delete('/producto/:id/',(request,response)=>{
+  const id = request.params.id
   Producto.findByIdAndRemove(id)
   .then(() => {
     response.send(200)
@@ -144,8 +160,8 @@ app.delete('/producto/borrar/',(request,response)=>{
   })
 })
 
-app.delete('/cliente/borrar/',(request,response)=>{
-  const id = request.body.id
+app.delete('/cliente/:id/',(request,response)=>{
+  const id = request.params.id
   Cliente.findByIdAndRemove(id)
   .then(() => {
     response.send(200)
@@ -154,8 +170,8 @@ app.delete('/cliente/borrar/',(request,response)=>{
   })
 })
 
-app.delete('/vendedor/borrar/',(request,response)=>{
-  const id = request.body.id
+app.delete('/vendedor/:id/',(request,response)=>{
+  const id = request.params.id
   Usuario.findByIdAndRemove(id)
   .then(() => {
     response.send(200)

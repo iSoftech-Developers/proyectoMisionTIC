@@ -1,61 +1,53 @@
-import { useParams } from "react-router";
+
+import { useSeleccionado } from "../../context/Seleccionado";
 
 
+const DetalleCliente = () => {
 
-const DetalleCliente = ({cardsinformation}) => {
-
-    let { id } = useParams();
-    
+    const {seleccionado}=useSeleccionado()
   
 
     return (
         
         <>
-        {cardsinformation.map((cliente)=>{
-        if(cliente._id===id){
-            return(
-                <div className="flex justify-between">
-                    <div className="">
-                        <div>
-                            <span className="block font-bold">Razon social</span>
-                            <span>{cliente.field1}</span>
-                        </div>
-                        <div className="my-8">
-                            <span className="block font-bold">Direccion</span>
-                            <span>{cliente.field7}</span>
-                        </div>
-                    </div>
+            <div className="flex justify-between">
+                <div className="">
                     <div>
-                        <div>
-                            <span className="block font-bold">NIT/C.C.</span>
-                            <span>{cliente.field2}</span>
-                        </div>
-                        <div className="my-8">
-                            <span className="block font-bold">Departamento</span>
-                            <span>{cliente.field6}</span>
-                        </div>
+                        <span className="block font-bold">Razon social</span>
+                        <span>{seleccionado.field1}</span>
                     </div>
-                    <div className="">
-                        <div>
-                            <span className="block font-bold">Telefono</span>
-                            <span>{cliente.field5}</span>
-                        </div>
-                        <div className="my-8">
-                            <span className="block font-bold">Municipio</span>
-                            <span>{cliente.field4}</span>
-                        </div>
+                    <div className="my-8">
+                        <span className="block font-bold">Direccion</span>
+                        <span>{seleccionado.field7}</span>
                     </div>
-                    <div className="">
-                        <div>
-                            <span className="block font-bold">Email</span>
-                            <span>{cliente.field3}</span>
-                        </div>
+                </div>
+                <div>
+                    <div>
+                        <span className="block font-bold">NIT/C.C.</span>
+                        <span>{seleccionado.field2}</span>
                     </div>
-                </div> 
-            );
-        }
-    }
-    )}
+                    <div className="my-8">
+                        <span className="block font-bold">Departamento</span>
+                        <span>{seleccionado.field6}</span>
+                    </div>
+                </div>
+                <div className="">
+                    <div>
+                        <span className="block font-bold">Telefono</span>
+                        <span>{seleccionado.field5}</span>
+                    </div>
+                    <div className="my-8">
+                        <span className="block font-bold">Municipio</span>
+                        <span>{seleccionado.field4}</span>
+                    </div>
+                </div>
+                <div className="">
+                    <div>
+                        <span className="block font-bold">Email</span>
+                        <span>{seleccionado.field3}</span>
+                    </div>
+                </div>
+            </div> 
         
         </>
       

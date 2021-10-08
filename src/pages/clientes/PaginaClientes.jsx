@@ -12,7 +12,7 @@ const PaginaClientes =({cardsClientes})=> {
     icon:" fas fa-users",
     cardTo:"/moduloClientes/detalleCliente",
     linkIcon:"/moduloClientes/paginaEditarCliente",
-    deleteRoute:"http://localhost:3001/cliente/borrar/",
+    deleteRoute:"http://localhost:3001/cliente",
     page:"/moduloClientes",
     titleCard:"Cliente ID",
     field1:"Razon Social*",

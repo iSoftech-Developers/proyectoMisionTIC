@@ -25,7 +25,7 @@ const NuevoCliente = ({formLabelTitle}) => {
         const options = {
             
             method: 'POST',
-            url: 'http://localhost:3001/clientes/nuevo',
+            url: 'http://localhost:3001/clientes/',
             headers: {'Content-Type': 'application/json'},
             data: {
               nombrecliente:nuevoCliente.nombrecliente,

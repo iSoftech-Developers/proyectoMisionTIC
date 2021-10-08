@@ -1,23 +1,13 @@
-import { useParams,useHistory } from "react-router";
-import {useEffect,useState} from "react";
+import { useSeleccionado } from "../../context/Seleccionado";
 
-const DetalleUsuarios=({cardsUsuarios})=>{
+const DetalleUsuarios=()=>{
 
-    let history = useHistory();
-    let { id } = useParams();
-   
-    let back = e => {
-        e.stopPropagation();
-        history.goBack();
-      };
-    console.log(cardsUsuarios)
+    const {seleccionado}=useSeleccionado()
+
 
     return(
         <>
-        {cardsUsuarios.map((usuarios)=>{
-            if(usuarios._id===id){
-                return(
-                    <div className="flex mt-14"onClick={back}>
+            <div className="flex mt-14">
                 <div className="p-8 border-solid border-2 border-gray-400">
                     <i className="fas fa-user fa-10x text-gray-300"></i>
                 </div>
@@ -28,7 +18,7 @@ const DetalleUsuarios=({cardsUsuarios})=>{
                                 <span className="bg-black text-white text-xs">Administrador</span>
                             </div>
                             <div>
-                                <span className="text-lg">{usuarios._id}</span>
+                                <span className="text-lg">{seleccionado._id}</span>
                             </div>  
                         </div>
                     </div>
@@ -41,7 +31,7 @@ const DetalleUsuarios=({cardsUsuarios})=>{
                                     <span className="font-bold">Fecha de ingreso</span>
                                 </div>
                                 <div>
-                                    <span>{usuarios.field5}</span>
+                                    <span>{seleccionado.field5}</span>
                                 </div>
                             </div>
                             <div className="flex flex-col">
@@ -49,7 +39,7 @@ const DetalleUsuarios=({cardsUsuarios})=>{
                                     <span className="font-bold">Nombres y apellidos</span>
                                 </div>
                                 <div>
-                                    <span>{usuarios.field2}</span>
+                                    <span>{seleccionado.field2}</span>
                                 </div>
                             </div>
                             <div className="flex flex-col">
@@ -57,7 +47,7 @@ const DetalleUsuarios=({cardsUsuarios})=>{
                                     <span className="font-bold">Especialidad</span>
                                 </div>
                                 <div>
-                                    <span>{usuarios.field3}</span>
+                                    <span>{seleccionado.field3}</span>
                                 </div>
                             </div>
                             <div className="flex flex-col">
@@ -65,7 +55,7 @@ const DetalleUsuarios=({cardsUsuarios})=>{
                                     <span className="font-bold">Celular</span> 
                                 </div>
                                 <div>
-                                    <span>{usuarios.field4}</span>
+                                    <span>{seleccionado.field4}</span>
                                 </div>
                             </div>
                         </div>
@@ -73,14 +63,6 @@ const DetalleUsuarios=({cardsUsuarios})=>{
                 </div>
             </div>          
 
-
-
-                );
-            }
-            
-
-        })}
-                  
         </>
     );
 }

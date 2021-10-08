@@ -25,6 +25,7 @@ import PaginaEditarCliente from './pages/clientes/PaginaEditarCliente';
 import PaginaAgregarUsuarios from './pages/vendedoresUsuarios/PaginaAgregarUsuarios';
 import PaginaEditarVenta from './pages/venta/PaginaEditarVenta';
 import {BuscadorContext} from './context/BuscadorContext'
+import {SeleccionadoContext} from './context/Seleccionado';
 
 
 
@@ -33,6 +34,7 @@ import {BuscadorContext} from './context/BuscadorContext'
 const App =()=> {
 
   const [busqueda, setBusqueda] = useState('');
+  const [seleccionado,setSeleccionado] = useState('');
   const [cardsClientes,setCardsClientes] =useState([]);
   const [cardsProductosInformation,setCardsProductosInformation] =useState([]);
   const [cardsUsuarios,setCardsUsuarios] =useState([]);
@@ -79,6 +81,7 @@ const App =()=> {
   
   return (
     <div className="template">
+    <SeleccionadoContext.Provider value={{seleccionado, setSeleccionado}}>
     <BuscadorContext.Provider value={{busqueda, setBusqueda}}>
       <Router>
         <Switch>
@@ -148,6 +151,7 @@ const App =()=> {
         </Switch>
       </Router>
     </BuscadorContext.Provider>
+    </SeleccionadoContext.Provider>
     </div> 
   );
 }

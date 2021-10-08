@@ -2,15 +2,16 @@ import React from 'react'
 import { useRef } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import { useSeleccionado } from '../../context/Seleccionado';
 
 const EditarUsuario = ({formLabelTitle}) => {
-
+    const {seleccionado}=useSeleccionado()
     const form = useRef(null);
 
     const submitForm = (e) => {
         e.preventDefault();
 
-          const fd = new FormData(form.current);
+    const fd = new FormData(form.current);
 
           const editarUsuario = {};
           fd.forEach((value,key) => {
@@ -40,7 +41,7 @@ const EditarUsuario = ({formLabelTitle}) => {
                                     <div className="flex justify-between space-x-7">
                                         <div>
                                             <label for="idusuario" className="font-bold">{formLabelTitle.label1}</label>
-                                            <input required disabled class="text-lg w-full h-8 p-2 rounded-md input-border" type="String" name="idusuario"/>
+                                            <input required class="text-lg w-full h-8 p-2 rounded-md input-border" type="String" name="idusuario" value={seleccionado.field2}/>
                                         </div>
                                         <div className="w-1/3">
                                         <label for="rol" className="font-bold">{formLabelTitle.label2}</label>
@@ -53,7 +54,7 @@ const EditarUsuario = ({formLabelTitle}) => {
                                         <div className="w-1/3">
                                             <label for="estado" className="font-bold">{formLabelTitle.label3}</label>
                                             <select required class="w-full h-8 font-bold pl-2 rounded-md input-border" name="estado" defaultValue={0} placeholder="Selecciona una opción" >
-                                                
+                                                <option disabled type="String" value={0}>Selecciona una opción</option>
                                                 <option required type="String">Pendiente</option>
                                                 <option required type="String">Autorizado</option>
                                                 <option required type="String">Rechazado</option>
@@ -65,19 +66,19 @@ const EditarUsuario = ({formLabelTitle}) => {
                         <div className="flex w-full justify-between mt-12">
                             <div className="flex flex-col ">
                                 <label for="fechaingreso" className="font-bold">{formLabelTitle.label4}</label>
-                                <input required  class=" w-full h-8 p-2 rounded-md input-border" type="text" name="fechaingreso" />
+                                <input required  class=" w-full h-8 p-2 rounded-md input-border" type="text" name="fechaingreso" value={seleccionado.field5}/>
                             </div>
                             <div className="flex flex-col ">
                                 <label for="nombre" className="font-bold">{formLabelTitle.label5}</label>
-                                <input required disabled class=" w-full h-8 p-2 rounded-md input-border" type="String" name="nombre" />
+                                <input required class=" w-full h-8 p-2 rounded-md input-border" type="String" name="nombre" value={seleccionado.field1}/>
                             </div>
                             <div className="flex flex-col ">
                                 <label for="especialidad" className="font-bold">{formLabelTitle.label6}</label>
-                                <input required disabled class=" w-full h-8 p-2 rounded-md input-border" type="String" name="especialidad" />
+                                <input required class=" w-full h-8 p-2 rounded-md input-border" type="String" name="especialidad"/>
                             </div>
                             <div className="flex flex-col ">
                                 <label for="celular" className="font-bold">{formLabelTitle.label7}</label>
-                                <input required disabled class=" w-full h-8 p-2 rounded-md input-border" type="String" name="celular" />
+                                <input required class=" w-full h-8 p-2 rounded-md input-border" type="String" name="celular"/>
                             </div>
                         </div>
                         </div>

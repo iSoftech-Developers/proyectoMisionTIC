@@ -29,7 +29,7 @@ const NuevoProducto = ({formLabelTitle}) => {
         const options = {
             
             method: 'POST',
-            url: 'http://localhost:3001/productos/nuevo',
+            url: 'http://localhost:3001/productos/',
             headers: {'Content-Type': 'application/json'},
             data: {
               descripcion:nuevoProducto.descripcion,

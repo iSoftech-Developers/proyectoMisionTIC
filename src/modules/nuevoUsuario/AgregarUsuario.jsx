@@ -21,7 +21,7 @@ const AgregarUsuario = ({formLabelTitle}) => {
           const options = {
             
             method: 'POST',
-            url: 'http://localhost:3001/usuarios/nuevo',
+            url: 'http://localhost:3001/usuarios/',
             headers: {'Content-Type': 'application/json'},
             data: {
               idusuario:nuevoUsuario.idusuario,

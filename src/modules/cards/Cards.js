@@ -5,22 +5,21 @@ import './Cards.css';
 import { useBuscado } from '../../context/BuscadorContext';
 import { useState } from 'react';
 import axios from 'axios'
+import { useSeleccionado } from '../../context/Seleccionado';
 
 const Cards=({variableCards,cardsinformation})=>{
-    const [idBorrar, setIdBorrar]=useState('')
+    const {seleccionado, setSeleccionado}=useSeleccionado()
     const {busqueda}=useBuscado()
     const[openDialog,setOpenDialog]=useState(false)
 
 
 
-      const Eliminar =  ({idBorrar,variableCards}) => {
-        console.log(idBorrar)
-        console.log(variableCards)
+      const Eliminar =  ({seleccionado,variableCards}) => {
+        console.log(seleccionado);
         const options = {
           method: 'DELETE',
-          url: variableCards.deleteRoute,
+          url: `${variableCards.deleteRoute}/${seleccionado._id}/`,
           headers: { 'Content-Type': 'application/json' },
-          data: { id: idBorrar },
         };
     
         axios
@@ -45,7 +44,7 @@ const Cards=({variableCards,cardsinformation})=>{
               return(    
                   <Link to={{
                       pathname: `${variableCards.cardTo}/${i._id}`, 
-                    }}>
+                    }} onClick={() => setSeleccionado(i)}> 
                       <div className="cards-container mb-6 shadow-sm bg-white transition duration-250 ease-in-out transform hover:-translate-y-1 hover:scale-100">
                           <div className="mx-6 mb-5">
                               <div className="flex">
@@ -53,13 +52,13 @@ const Cards=({variableCards,cardsinformation})=>{
                                   <div className="card-info w-full align-center flex justify-between">
                                       <span className="font-semibold pt-3">ID {i.ids}</span>
                                       <div className="edit-card pt-4 space-x-5">
-                                          <Link to={`${variableCards.linkIcon}/${i._id}`}>
+                                          <Link to={`${variableCards.linkIcon}/${i._id}`} onClick={() =>setSeleccionado(i)}>
                                               <Tooltip title="editar">
                                                   <i className="fas fa-pen hover:text-blue-900 text-blue-500 fa-lg"></i>
                                               </Tooltip>
                                           </Link>
                                           <Link to={variableCards.page} onClick={()=>{
-                                              setIdBorrar(i._id)
+                                              setSeleccionado(i)
                                               setOpenDialog(true)}}>
                                              <Tooltip title="Eliminar">
                                               <i className="fas fa-trash text-red-500 hover:text-red-900 shadow-md fa-lg"></i>
@@ -72,7 +71,7 @@ const Cards=({variableCards,cardsinformation})=>{
                                 <div className ='p-8 flex flex-col'>
                                   <h1 className= 'text gray-800 text-xl font-bold'> ¿Esta seguro de querer eliminarlo? </h1>
                                   <div className='flex w-full items-center justify-center'> 
-                                    <Link to={variableCards.page} onClick={()=>{Eliminar({variableCards,idBorrar})}} className= 'mx-2 my-4 px-4 py-2 bg-green-500 text-white hover:bg-green-700 rounded-md shadow-md'> Si </Link>
+                                    <Link to={variableCards.page} onClick={()=>{Eliminar({variableCards,seleccionado})}} className= 'mx-2 my-4 px-4 py-2 bg-green-500 text-white hover:bg-green-700 rounded-md shadow-md'> Si </Link>
                                     <Link onClick={()=>setOpenDialog(false)} className= 'mx-2 my-4 px-4 py-2 bg-red-500 text-white hover:bg-red-700 rounded-md shadow-md' to={variableCards.page}> No </Link>
                                   </div>
                                 </div>
