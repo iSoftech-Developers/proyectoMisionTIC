@@ -45,7 +45,7 @@ const Siderbar =()=>{
 
      return(
      <>
-      <Link to={ruta} className={`hover:bg-gray-500 w-full font-bold py-2 text-gray-${isActive?'900':'300'} bg-gray-${isActive?'600':'900'}`}><i className={`${icono} fa-lg text-${isActive?'900':'300'} ml-5 w-9`}></i>{title}</Link>
+      <Link to={ruta} className={`hover:bg-gray-500 w-full py-2 text-gray-${isActive?'800':'300'} bg-gray-${isActive?'600':'900'}`}><i className={`${icono} fa-lg text-${isActive?'900':'300'} ml-5 w-9`}></i>{title}</Link>
       </>
      );
 

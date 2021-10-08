@@ -33,7 +33,7 @@ const DetalleUsuarios=()=>{
                                 <span className="bg-black text-white text-xs">Administrador</span>
                             </div>
                             <div>
-                                <span className="text-lg">ID {user.id}</span>
+                                <span className="text-lg">{user.id}</span>
                             </div>  
                         </div>
                     </div>

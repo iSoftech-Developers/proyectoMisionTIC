@@ -35,6 +35,7 @@ const App =()=> {
   const [busqueda, setBusqueda] = useState('');
   const [cardsClientes,setCardsClientes] =useState([]);
   const [cardsProductosInformation,setCardsProductosInformation] =useState([]);
+  const [cardsUsuarios,setCardsUsuarios] =useState([]);
   
 
   useEffect(() => {   
@@ -46,15 +47,27 @@ const App =()=> {
         console.error(error);
       });
     },[cardsClientes]);
-    useEffect(() => {   
-        const options = { method: 'GET', url: 'http://localhost:3001/productos' };
-        axios.request(options).then(function (response){
-            setCardsProductosInformation(response.data);
-          })
-          .catch(function (error) {
-            console.error(error);
-          });
-        },[cardsProductosInformation]);
+
+    useEffect(() => {
+      const options = { method: 'GET', url: 'http://localhost:3001/productos' };
+      axios.request(options).then(function (response){
+          setCardsProductosInformation(response.data);
+        })
+        .catch(function (error) {
+          console.error(error);
+        });
+      },[cardsProductosInformation]);
+
+    useEffect(() => {
+      const options = { method: 'GET', url: 'http://localhost:3001/usuarios' };
+      axios.request(options).then(function (response){
+          setCardsUsuarios(response.data);
+        })
+        .catch(function (error) {
+          console.error(error);
+        });
+      },[cardsUsuarios]);
+
 
 
   useEffect(()=>{
@@ -109,7 +122,7 @@ const App =()=> {
                   <PaginaDetalleUsuarios/>
                 </Route>
                 <Route path='/moduloVendedores'>
-                  <PaginaVendedores/>
+                  <PaginaVendedores cardsUsuarios={cardsUsuarios}/>
                 </Route>
                 <Route path='/moduloClientes/detalleCliente/:id'>
                   <PaginaDetalleClientes cardsClientes={cardsClientes}/>
@@ -118,10 +131,10 @@ const App =()=> {
                   <PaginaEditarCliente cardsClientes={cardsClientes}/>
                 </Route>
                 <Route path='/moduloClientes/nuevoCliente'>
-                  <PaginaNuevoCliente />
+                  <PaginaNuevoCliente/>
                 </Route>
                 <Route path='/moduloClientes'>
-                  <PaginaClientes  cardsClientes={cardsClientes}/>
+                  <PaginaClientes cardsClientes={cardsClientes}/>
                 </Route>
                 <Route path='/nuevaVenta'>
                   <PaginaNuevaVenta/>
