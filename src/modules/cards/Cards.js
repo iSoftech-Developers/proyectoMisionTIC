@@ -34,11 +34,11 @@ const Cards=({variableCards,cardsinformation})=>{
           .request(options)
           .then(function (response) {
             console.log(response.data);
-            toast.success('vehículo eliminado con éxito');
+            toast.success('Eliminado con éxito');
           })
           .catch(function (error) {
             console.error(error);
-            toast.error('Error eliminando el vehículo');
+            toast.error('Error al eliminar');
           });
         setOpenDialog(false);
       };

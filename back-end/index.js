@@ -4,6 +4,7 @@ const Producto = require('./models/producto')
 const Usuario = require('./models/usuario')
 const express = require('express');
 const cors = require('cors');
+const { findByIdAndUpdate } = require('./models/cliente');
 const app = express();
 
 
@@ -116,17 +117,15 @@ usuario.save()
 
 
 app.patch('/clientes/actualizar',(request,response)=>{
-  const producto = new Producto({
-  field1:request.body.descripcion,
-  field2:request.body.valorunitario,
-  field3:request.body.cantidad,
-  field4:request.body.talla,
-  field5:request.body.estado,
-  field6:request.body.genero,
-  field7:request.body.color,
-  ids:request.body.descripcion,
-  })
-  producto.save()
+  const id = request.body.id
+  Cliente.findByIdAndUpdate(id, {
+    field3:request.body.email,
+    field4:request.body.ciudad,
+    field5:request.body.telefono,
+    field6:request.body.departamento,
+    field7:request.body.direccion,
+    field8:request.body.personacontacto,
+   })
   .then(() => {
     response.send(201)
   }).catch(err => {

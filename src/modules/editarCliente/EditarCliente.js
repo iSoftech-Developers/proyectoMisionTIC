@@ -2,14 +2,16 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useParams,useHistory} from "react-router";
 import { useRef } from "react";
+import axios from 'axios'
 
 
     
 const EditarCliente = ({cardsClientes,formLabelTitle}) => {
+    const { id } = useParams();
 
     const form = useRef(null);
 
-    const submitForm = (e) => {
+    const submitForm = async (e) => {
         e.preventDefault();
 
         const fd = new FormData(form.current);
@@ -20,11 +22,41 @@ const EditarCliente = ({cardsClientes,formLabelTitle}) => {
         });
 
         console.log('Datos del form enviados', editarCliente);
-        toast.success('Cliente actualizado');
-    };
 
 
-    let { id } = useParams();
+            const options = {
+              method: 'PATCH',
+              url:"http://localhost:3001/clientes/actualizar",
+              headers: { 'Content-Type': 'application/json' },
+              data: { 
+                  id: id,
+                  email:editarCliente.email,
+                  ciudad:editarCliente.ciudad,
+                  telefono:editarCliente.telefono,
+                  departamento:editarCliente.departamento,
+                  direccion:editarCliente.direccion,
+                  personacontacto:editarCliente.personacontacto,
+                },
+
+            };
+        
+            await axios
+              .request(options)
+              .then(function (response) {
+                console.log(response.data);
+                toast.success('Cliente actualizado');
+              })
+              .catch(function (error) {
+                console.error(error);
+                toast.error('Error al actualizar');
+              });
+          };
+    
+    
+
+
+
+  
 
 
     return (
