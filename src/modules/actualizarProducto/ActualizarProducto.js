@@ -2,99 +2,108 @@
 import { useRef } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import { useParams } from "react-router-dom";
+import axios from 'axios'
 
-const ActualizarProducto = ({formLabelTitle}) => {
+const ActualizarProducto = ({formLabelTitle,cardsProductosInformation}) => {
+    const {id}=useParams();
 
     const form = useRef(null);
 
-    const submitForm = (e) => {
+    const submitForm = async (e) => {
         e.preventDefault();
 
-          const fd = new FormData(form.current);
+    const fd = new FormData(form.current);
 
-          const editarProducto = {};
-          fd.forEach((value,key) => {
-            editarProducto[key] = value;
-          });
+        const editarProducto = {};
+        fd.forEach((value,key) => {
+        editarProducto[key] = value;
+        });
 
-          console.log('Datos del form enviados', editarProducto);
-          toast.success('Producto actualizado');
-      };
+        const options = {
+            method: 'PATCH',
+            url:"http://localhost:3001/productos/actualizar",
+            headers: { 'Content-Type': 'application/json' },
+            data: { 
+            id: id,
+            valorunitario:editarProducto.valorunitario,
+            cantidad:editarProducto.cantidad,
+            estado:editarProducto.estado,
+              },
+  
+          };
+          
+          await axios
+            .request(options)
+            .then(function (response) {
+              console.log(response.data);
+              toast.success('Producto actualizado');
+            })
+            .catch(function (error) {
+              console.error(error);
+              toast.error('Error al actualizar');
+            });
+    };
     
     return (
-        <form ref={form} onSubmit={submitForm} className="space-y-8">
-            <div>
-                <div className="form-upper-section flex justify-between font-bold label-color space-x-4">
-                        <div className="w-1/5">
-                            <label for="descripcion">{formLabelTitle.label1}</label>
-                            <select required class=" w-full h-8 text-gray-500 input-border" type="String" name="descripcion" defaultValue={0}>
-                                <option disabled type="String" value={0}>Selecciona una opción</option>
-                                <option type="String">Camiseta</option>
-                                <option type="String">Vestido de baño</option>
-                                <option type="String">Medias</option>
-                                <option type="String">Tops</option>
-                                <option type="String">Zapato</option>
-                            </select>
+
+        <>
+        
+        {cardsProductosInformation.map((productos) =>{
+            if(productos._id === id){
+                return(
+                    <form ref={form} onSubmit={submitForm} className="space-y-8">
+                    <div>
+                        <div className="form-upper-section flex justify-between font-bold label-color space-x-4">
+                                <div className="w-1/5">
+                                    <label for="descripcion">{formLabelTitle.label1}</label>
+                                    <input class=" w-full h-8 text-gray-500 input-border" type="String" name="descripcion" value={productos.field1}></input>
+                                </div>
+                                <div className="w-1/5">
+                                    <label for="genero">{formLabelTitle.label2}</label>
+                                    <input class=" w-full h-8 text-gray-500 input-border" type="String" name="genero" value={productos.field6}></input>
+                                </div>
+                                <div className="w-1/5">
+                                    <label for="color">{formLabelTitle.label3}</label>
+                                    <input class=" w-full h-8 text-gray-500 input-border" type="String" name="color" value={productos.field7}></input>
+                                </div>
+                                <div className="w-1/5">
+                                    <label for="talla">{formLabelTitle.label4}</label>
+                                    <input class=" w-full h-8 text-gray-500 input-border" type="String" name="talla" value={productos.field4}></input>
+                                </div>
+                            </div>
                         </div>
-                        <div className="w-1/5">
-                            <label for="genero">{formLabelTitle.label2}</label>
-                            <select required class=" w-full h-8 text-gray-500 input-border" type="String" name="genero" defaultValue={0}>
-                                <option disabled type="String" value={0}>Selecciona una opción</option>
-                                <option type="String">Masculino</option>
-                                <option type="String">Femenino</option>
-                            </select>
+                        <div className="flex justify-between font-bold ">
+                            <div className="w-1/5">
+                                    <label for="cantidad">{formLabelTitle.label5}</label>
+                                    <input required class=" w-full h-8 p-2 input-border" type="Number" min={0} name="cantidad"/>
+                                </div> 
+                                <div className="w-1/5">
+                                    <label for="valorunitario">{formLabelTitle.label6}</label>
+                                    <input required class=" w-full h-8 p-2 input-border" type="Number" min={0} name="valorunitario"/>
+                                </div>
+                                <div className="w-1/5">
+                                    <label for="estado">{formLabelTitle.label7}</label>
+                                    <select required class=" w-full h-8 text-gray-500 input-border" type="Boolean" name="estado" defaultValue={0}>
+                                        <option disabled type="String" value={0}>Selecciona una opción</option>
+                                        <option type="Boolean">Disponible</option>
+                                        <option type="Boolean">No disponible</option>
+                                    </select>
+                                </div>
+                                <div className="w-1/5"></div>
+                            </div>
+                        <div>
+                            <div className=" w-full flex justify-center">
+                                <input className="w-1/6 cursor-pointer bg-green-400 h-10 rounded text-white font-bold my-16" type="submit" value="Guardar"/>
+                                <ToastContainer position="top-right" autoClose={5000}/>
+                            </div>
                         </div>
-                        <div className="w-1/5">
-                            <label for="color">{formLabelTitle.label3}</label>
-                            <select required class=" w-full h-8 text-gray-500 input-border" type="String" name="color" defaultValue={0}>
-                                <option disabled type="String" value={0}>Selecciona una opción</option>
-                                <option type="String">Amarillo</option>
-                                <option type="String">Azul</option>
-                                <option type="String">Blanco</option>
-                                <option type="String">Negro</option>
-                                <option type="String">Rojo</option>
-                                <option type="String">Verde</option>
-                            </select>
-                        </div>
-                        <div className="w-1/5">
-                            <label for="talla">{formLabelTitle.label4}</label>
-                            <select required class=" w-full h-8 text-gray-500 input-border" type="String" name="talla" defaultValue={0}>
-                            <option disabled type="String" value={0}>Selecciona una opción</option>
-                                <option type="String">XS</option>
-                                <option type="String">S</option>
-                                <option type="String">M</option>
-                                <option type="String">L</option>
-                                <option type="String">XL</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div className="flex justify-between font-bold ">
-                    <div className="w-1/5">
-                            <label for="cantidad">{formLabelTitle.label5}</label>
-                            <input required class=" w-full h-8 p-2 input-border" type="Number" min={0} name="cantidad"/>
-                        </div> 
-                        <div className="w-1/5">
-                            <label for="valorunitario">{formLabelTitle.label6}</label>
-                            <input required class=" w-full h-8 p-2 input-border" type="Number" min={0} name="valorunitario"/>
-                        </div>
-                        <div className="w-1/5">
-                            <label for="estado">{formLabelTitle.label7}</label>
-                            <select required class=" w-full h-8 text-gray-500 input-border" type="Boolean" name="estado" defaultValue={0}>
-                                <option disabled type="String" value={0}>Selecciona una opción</option>
-                                <option type="Boolean">Disponible</option>
-                                <option type="Boolean">No disponible</option>
-                            </select>
-                        </div>
-                        <div className="w-1/5"></div>
-                    </div>
-                <div>
-                    <div className=" w-full flex justify-center">
-                        <input className="w-1/6 cursor-pointer bg-green-400 h-10 rounded text-white font-bold my-16" type="submit" value="Guardar"/>
-                        <ToastContainer position="top-right" autoClose={5000}/>
-                    </div>
-                </div>
-            </form>
+                    </form>
+
+                );
+            }
+        })}
+    </>   
     )
 }
 

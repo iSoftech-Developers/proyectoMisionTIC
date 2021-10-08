@@ -13,22 +13,6 @@ app.use(cors())
 app.use(express.json())
 
 
-
-  // Cliente.find({}).then((result)=>{
-  //   console.log(result)
-  //   mongoose.connection.close();
-  // }).catch(err => {
-  //   console.error(err)
-  // })
-  
-// const app= http.createServer((request,response)=>{
-
-//     response.writeHead(200,{'Content-Type': 'application/json'})
-//     response.end(JSON.stringify(clientes))
-
-// })
-
-
 app.get('/',(request,response)=>{
 
     response.send("Hello World")
@@ -125,13 +109,30 @@ app.patch('/clientes/actualizar',(request,response)=>{
     field6:request.body.departamento,
     field7:request.body.direccion,
     field8:request.body.personacontacto,
-   })
+})
   .then(() => {
-    response.send(201)
+    response.send(202)
   }).catch(err => {
     console.error(err)
   })
   })
+
+
+  app.patch('/productos/actualizar',(request,response)=>{
+    const id = request.body.id
+    Producto.findByIdAndUpdate(id, {
+      field2:request.body.valorunitario,
+      field3:request.body.cantidad,
+      field5:request.body.estado,
+})
+    .then(() => {
+      response.send(202)
+    }).catch(err => {
+      console.error(err)
+    })
+    })
+
+
 
 app.delete('/producto/borrar/',(request,response)=>{
   const id = request.body.id

@@ -4,7 +4,7 @@ import ActualizarProducto from '../../modules/actualizarProducto/ActualizarProdu
 import NoButtonUpperBarSection from '../../modules/noButtonUpperBarSection/NoButtonUpperBarSection';
 
 
-const PaginaActualizarProducto =()=> {
+const PaginaActualizarProducto =({cardsProductosInformation})=> {
 
   const formLabelTitle = {
     label1:"Descripción",
@@ -20,7 +20,7 @@ const PaginaActualizarProducto =()=> {
     return (
      <>
         <NoButtonUpperBarSection title="Actualizar producto"/>
-        <ActualizarProducto formLabelTitle = {formLabelTitle} />
+        <ActualizarProducto formLabelTitle = {formLabelTitle} cardsProductosInformation={cardsProductosInformation}/>
         <Tablas field1="ID Producto" field2="Descripción" field3="Talla" field4="Valor unitario" field5= "Cantidad" field6="Estado"/>
      </> 
       

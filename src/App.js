@@ -94,8 +94,8 @@ const App =()=> {
                 <Route path='/rolesUsuarios'>
                   <PaginaRolesUsuario/>
                 </Route>
-                <Route path='/productos/actualizarProducto'>
-                  <PaginaActualizarProducto/>
+                <Route path='/productos/actualizarProducto/:id'>
+                  <PaginaActualizarProducto cardsProductosInformation={cardsProductosInformation}/>
                 </Route>
                 <Route path='/productos/nuevoProducto'>
                   <PaginaNuevoProducto/>
