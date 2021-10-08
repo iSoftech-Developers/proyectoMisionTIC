@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 const Cards=({variableCards,cardsinformation})=>{
+    
     let history = useHistory();
     const {busqueda}=useBuscado()
     const[openDialog,setOpenDialog]=useState(false)
@@ -39,8 +40,7 @@ const Cards=({variableCards,cardsinformation})=>{
                                           </Link>
                                           <Link to={variableCards.cardTo} onClick={()=>setOpenDialog(true)}>
                                               <Tooltip title="Eliminar">
-                                              <i 
-                                                className="fas fa-trash text-red-500 hover:text-red-900 shadow-md fa-lg"></i>
+                                              <i className="fas fa-trash text-red-500 hover:text-red-900 shadow-md fa-lg"></i>
                                               </Tooltip>
                                           </Link>
                                       </div>

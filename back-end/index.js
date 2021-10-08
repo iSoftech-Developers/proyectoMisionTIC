@@ -1,6 +1,7 @@
 require ('./mongo')
 const Cliente = require('./models/cliente')
 const Producto = require('./models/producto')
+const Usuario = require('./models/usuario')
 const express = require('express');
 const cors = require('cors');
 const app = express();
@@ -47,6 +48,13 @@ app.get('/productos/',(request,response)=>{
   })
 })
 
+app.get('/usuarios/',(request,response)=>{
+
+  Usuario.find({}).then((usuarios)=>{
+    response.json(usuarios)
+  })
+})
+
 app.post('/clientes/nuevo',(request,response)=>{
     const cliente = new Cliente({
     field1:request.body.nombrecliente,
@@ -86,6 +94,25 @@ producto.save()
 })
 })
 
+app.post('/usuarios/nuevo',(request,response)=>{
+  const usuario = new Usuario({
+  field1:request.body.nombre,
+  field2:request.body.idusuario,
+  field3:request.body.especialidad,
+  field4:request.body.celular,
+  field5:request.body.fechaingreso,
+  field6:request.body.rol,
+  field7:request.body.estado,
+  ids:request.body.idusuario,
+})
+usuario.save()
+.then(() => {
+  response.send(201)
+}).catch(err => {
+  console.log("hola")
+  console.error(err)
+})
+})
 
 
 app.patch('/clientes/actualizar',(request,response)=>{

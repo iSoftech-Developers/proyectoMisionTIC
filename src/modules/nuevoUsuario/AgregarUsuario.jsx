@@ -2,23 +2,47 @@ import React from 'react'
 import { useRef } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import axios from 'axios';
 
-const EditarUsuario = ({formLabelTitle}) => {
+const AgregarUsuario = ({formLabelTitle}) => {
 
     const form = useRef(null);
 
-    const submitForm = (e) => {
+    const submitForm = async (e) => {
         e.preventDefault();
 
           const fd = new FormData(form.current);
 
-          const editarUsuario = {};
+          const nuevoUsuario = {};
           fd.forEach((value,key) => {
-              editarUsuario[key] = value;
+              nuevoUsuario[key] = value;
           });
-
-          console.log('Datos del form enviados', editarUsuario);
-          toast.success('Usuario actualizado');
+          console.log(nuevoUsuario)
+          const options = {
+            
+            method: 'POST',
+            url: 'http://localhost:3001/usuarios/nuevo',
+            headers: {'Content-Type': 'application/json'},
+            data: {
+              idusuario:nuevoUsuario.idusuario,
+              rol: nuevoUsuario.rol,
+              estado: nuevoUsuario.estado,
+              fechaingreso: nuevoUsuario.fechaingreso,
+              nombre: nuevoUsuario.nombre,
+              especialidad: nuevoUsuario.especialidad,
+              celular: nuevoUsuario.celular,
+            },
+          };    
+          await axios
+          .request(options)
+          .then(function (response) {
+            console.log(response.data);
+            toast.success('Usuario agregado con éxito');
+          })
+          .catch(function (error) {
+            console.error(error);
+            toast.error('Error creando un Usuario');
+          });
       };
 
     return (
@@ -40,20 +64,20 @@ const EditarUsuario = ({formLabelTitle}) => {
                                     <div className="flex justify-between space-x-7">
                                         <div>
                                             <label for="idusuario" className="font-bold">{formLabelTitle.label1}</label>
-                                            <input required disabled class="text-lg w-full h-8 p-2 rounded-md input-border" type="String" name="idusuario"/>
+                                            <input required className="text-lg w-full h-8 p-2 rounded-md input-border" type="String" name="idusuario"/>
                                         </div>
                                         <div className="w-1/3">
                                         <label for="rol" className="font-bold">{formLabelTitle.label2}</label>
-                                            <select required class=" w-full h-8 font-bold pl-2 rounded-md input-border" name="rol" defaultValue={0}>
-                                                <option disabled type="String" value={0}>Selecciona una opción</option>
+                                            <select required className=" w-full h-8 font-bold pl-2 rounded-md input-border" name="rol" defaultValue={0}>
+                                                <option type="String" value={0}>Selecciona una opción</option>
                                                 <option type="String">Vendedor</option>
                                                 <option type="String">Administrador</option>
                                             </select>
                                         </div>
                                         <div className="w-1/3">
                                             <label for="estado" className="font-bold">{formLabelTitle.label3}</label>
-                                            <select required class="w-full h-8 font-bold pl-2 rounded-md input-border" name="estado" defaultValue={0} placeholder="Selecciona una opción" >
-                                                
+                                            <select required className="w-full h-8 font-bold pl-2 rounded-md input-border" name="estado" defaultValue={0} placeholder="Selecciona una opción" >
+                                                <option type="String" value={0}>Selecciona una opción</option>
                                                 <option required type="String">Pendiente</option>
                                                 <option required type="String">Autorizado</option>
                                                 <option required type="String">Rechazado</option>
@@ -65,27 +89,27 @@ const EditarUsuario = ({formLabelTitle}) => {
                         <div className="flex w-full justify-between mt-12">
                             <div className="flex flex-col ">
                                 <label for="fechaingreso" className="font-bold">{formLabelTitle.label4}</label>
-                                <input required  class=" w-full h-8 p-2 rounded-md input-border" type="text" name="fechaingreso" />
+                                <input required className=" w-full h-8 p-2 rounded-md input-border" type="Date" name="fechaingreso" />
                             </div>
                             <div className="flex flex-col ">
                                 <label for="nombre" className="font-bold">{formLabelTitle.label5}</label>
-                                <input required disabled class=" w-full h-8 p-2 rounded-md input-border" type="String" name="nombre" />
+                                <input required className=" w-full h-8 p-2 rounded-md input-border" type="String" name="nombre" />
                             </div>
                             <div className="flex flex-col ">
                                 <label for="especialidad" className="font-bold">{formLabelTitle.label6}</label>
-                                <input required disabled class=" w-full h-8 p-2 rounded-md input-border" type="String" name="especialidad" />
+                                <input required className=" w-full h-8 p-2 rounded-md input-border" type="String" name="especialidad"/>
                             </div>
                             <div className="flex flex-col ">
                                 <label for="celular" className="font-bold">{formLabelTitle.label7}</label>
-                                <input required disabled class=" w-full h-8 p-2 rounded-md input-border" type="String" name="celular" />
+                                <input required className=" w-full h-8 p-2 rounded-md input-border" type="String" name="celular"/>
                             </div>
                         </div>
                         </div>
                     </div>
                     <div>
                         <div className=" w-full text-center">
-                                <input className="w-1/6 cursor-pointer bg-green-400 h-10 rounded text-white font-bold my-16" type="submit" value="Guardar"/>
-                                <ToastContainer position="top-right" autoClose={5000}/>
+                            <input className="w-1/6 cursor-pointer bg-green-400 h-10 rounded text-white font-bold my-16" type="submit" value="Guardar"/>
+                            <ToastContainer position="top-right" autoClose={5000}/>
                         </div>
                     </div>
                    
@@ -100,4 +124,4 @@ const EditarUsuario = ({formLabelTitle}) => {
     )
 }
 
-export default EditarUsuario;
+export default AgregarUsuario;
