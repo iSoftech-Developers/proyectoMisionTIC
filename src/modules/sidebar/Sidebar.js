@@ -2,33 +2,13 @@
 import logoSporty from '../../media/logoSporty.png';
 import './Sidebar.css';
 import { Link } from 'react-router-dom';
-import { useLocation } from 'react-router-dom';
-import { useEffect , useState} from 'react';
+
+import UseActiveRoute from '../../hooks/UseActiveRoute';
 
 const Siderbar =()=>{
 
-    const [,set]=useState();
-    const location =useLocation()
-    useEffect(() => {
-        if (location.pathname.includes("/productos")){
-          set({})
-        }
-        if (location.pathname.includes("/nuevaVenta")){
-          set()
-        }
-        if (location.pathname.includes("/dashboard")){
-              set({bg:"bg-gray-600"})
-        }
-        if (location.pathname.includes("/moduloClientes")){
-          set({})
-        }
-        if (location.pathname.includes("/moduloVentas")){
-          set({})
-        }
-        if (location.pathname.includes("/moduloVendedores")){
-          set({})
-        }
-      }, [location]);
+  
+    
 
 
 
@@ -51,7 +31,7 @@ const Siderbar =()=>{
             <div className=" mb-10">   
                 <ul className="flex flex-col">
                     <Ruta ruta="/rolesUsuarios"icono="fas fa-users-cog"title="Administrar Usuarios"/>
-                    <Ruta ruta="/" icono="fas fa-sign-out-alt"title="Cerrar Sesión"/>
+                    <Ruta ruta="/login" icono="fas fa-sign-out-alt"title="Cerrar Sesión"/>
                 </ul>
             </div>
         </div>
@@ -61,10 +41,11 @@ const Siderbar =()=>{
 
 
  const Ruta = ({ruta,icono,title})=>{
+  const isActive = UseActiveRoute(ruta);
 
      return(
      <>
-      <Link to={ruta} className="hover:bg-gray-500 w-full py-2 text-gray-300"><i className={`${icono} fa-lg text-gray-300 ml-5 w-9`}></i>{title}</Link>
+      <Link to={ruta} className={`hover:bg-gray-500 w-full font-bold py-2 text-gray-${isActive?'900':'300'} bg-gray-${isActive?'600':'900'}`}><i className={`${icono} fa-lg text-${isActive?'900':'300'} ml-5 w-9`}></i>{title}</Link>
       </>
      );
 
