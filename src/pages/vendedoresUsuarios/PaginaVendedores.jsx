@@ -1,7 +1,5 @@
 import Cards from '../../modules/cards/Cards';
 import UpperBarSection from '../../modules/upperBarSection/UpperBarSection'
-import { useEffect, useState } from 'react';
-
 
 const PaginaVendedores =({cardsUsuarios})=> {
 

@@ -4,20 +4,13 @@ import { ToastContainer, toast } from "react-toastify";
 import './Cards.css';
 import { useBuscado } from '../../context/BuscadorContext';
 import { useState } from 'react';
-import { useHistory} from 'react-router-dom';
 import axios from 'axios'
 
 const Cards=({variableCards,cardsinformation})=>{
-    const[idBorrar, setIdBorrar]=useState('')
-    let history = useHistory();
-    const{busqueda}=useBuscado()
+    const [idBorrar, setIdBorrar]=useState('')
+    const {busqueda}=useBuscado()
     const[openDialog,setOpenDialog]=useState(false)
 
-
-    let back = e => {
-        e.stopPropagation();
-        history.goBack();
-      };
 
 
       const Eliminar =  ({idBorrar,variableCards}) => {
@@ -102,10 +95,11 @@ const Cards=({variableCards,cardsinformation})=>{
                               </table>
                           </div>
                       </div>
+                      
                  </Link>
               );}
-              })}
-       
+              })}   
+          <ToastContainer position="top-right" autoClose={5000}/>
         </>
         
 
