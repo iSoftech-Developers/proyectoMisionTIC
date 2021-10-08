@@ -116,6 +116,15 @@ app.delete('/producto/borrar/',(request,response)=>{
     console.error(err)
   })
 })
+app.delete('/cliente/borrar/',(request,response)=>{
+  const id = request.body.id
+  Cliente.findByIdAndRemove(id)
+  .then(() => {
+    response.send(200)
+  }).catch(err => {
+    console.error(err)
+  })
+})
 
 const PORT=3001
 app.listen(PORT)
