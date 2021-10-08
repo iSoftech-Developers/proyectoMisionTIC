@@ -86,20 +86,20 @@ const AgregarUsuario = ({formLabelTitle}) => {
                                     </div>
                                 </div>
                             </div>
-                        <div className="flex w-full justify-between mt-12">
-                            <div className="flex flex-col ">
+                        <div className="flex w-full justify-between mt-12 space-x-7">
+                            <div className="flex flex-col w-1/3">
                                 <label for="fechaingreso" className="font-bold">{formLabelTitle.label4}</label>
                                 <input required className=" w-full h-8 p-2 rounded-md input-border" type="Date" name="fechaingreso" />
                             </div>
-                            <div className="flex flex-col ">
+                            <div className="flex flex-col w-1/3">
                                 <label for="nombre" className="font-bold">{formLabelTitle.label5}</label>
                                 <input required className=" w-full h-8 p-2 rounded-md input-border" type="String" name="nombre" />
                             </div>
-                            <div className="flex flex-col ">
+                            <div className="flex flex-col w-1/3">
                                 <label for="especialidad" className="font-bold">{formLabelTitle.label6}</label>
                                 <input required className=" w-full h-8 p-2 rounded-md input-border" type="String" name="especialidad"/>
                             </div>
-                            <div className="flex flex-col ">
+                            <div className="flex flex-col w-1/3">
                                 <label for="celular" className="font-bold">{formLabelTitle.label7}</label>
                                 <input required className=" w-full h-8 p-2 rounded-md input-border" type="String" name="celular"/>
                             </div>

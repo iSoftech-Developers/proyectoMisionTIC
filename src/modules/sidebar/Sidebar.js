@@ -7,10 +7,6 @@ import UseActiveRoute from '../../hooks/UseActiveRoute';
 
 const Siderbar =()=>{
 
-  
-    
-
-
 
     return(
     <div className=" flex h-full fixed w-72 flex-col bg-gray-900">

@@ -8,9 +8,9 @@ import { useHistory} from 'react-router-dom';
 import axios from 'axios'
 
 const Cards=({variableCards,cardsinformation})=>{
-    const [idBorrar, setIdBorrar]=useState('')
+    const[idBorrar, setIdBorrar]=useState('')
     let history = useHistory();
-    const {busqueda}=useBuscado()
+    const{busqueda}=useBuscado()
     const[openDialog,setOpenDialog]=useState(false)
 
 
@@ -18,8 +18,6 @@ const Cards=({variableCards,cardsinformation})=>{
         e.stopPropagation();
         history.goBack();
       };
-
-
 
 
       const Eliminar =  ({idBorrar,variableCards}) => {
@@ -55,14 +53,12 @@ const Cards=({variableCards,cardsinformation})=>{
                   <Link to={{
                       pathname: `${variableCards.cardTo}/${i._id}`, 
                     }}>
-                      
                       <div className="cards-container mb-6 shadow-sm bg-white transition duration-250 ease-in-out transform hover:-translate-y-1 hover:scale-100">
-                          
                           <div className="mx-6 mb-5">
                               <div className="flex">
                                       <i className={`${variableCards.icon} text-white bg-gray-800 mr-4 pt-4 px-3 pb-2`}></i>
                                   <div className="card-info w-full align-center flex justify-between">
-                                      <span className="font-semibold pt-3">ID  {i.ids}</span>
+                                      <span className="font-semibold pt-3">ID {i.ids}</span>
                                       <div className="edit-card pt-4 space-x-5">
                                           <Link to={`${variableCards.linkIcon}/${i._id}`}>
                                               <Tooltip title="editar">
@@ -74,7 +70,7 @@ const Cards=({variableCards,cardsinformation})=>{
                                               setOpenDialog(true)}}>
                                              <Tooltip title="Eliminar">
                                               <i className="fas fa-trash text-red-500 hover:text-red-900 shadow-md fa-lg"></i>
-                                              </Tooltip>                                         
+                                              </Tooltip>
                                           </Link>
                                       </div>
                                   </div>
@@ -87,7 +83,7 @@ const Cards=({variableCards,cardsinformation})=>{
                                     <Link onClick={()=>setOpenDialog(false)} className= 'mx-2 my-4 px-4 py-2 bg-red-500 text-white hover:bg-red-700 rounded-md shadow-md' to={variableCards.page}> No </Link>
                                   </div>
                                 </div>
-                                </Dialog>  
+                                </Dialog>
                               <table className="table-fixed text-sm w-full bg-white border-gray-400 border mt-4">
                                   <tr>
                                       <th >{variableCards.field1}</th>
@@ -108,7 +104,7 @@ const Cards=({variableCards,cardsinformation})=>{
                       </div>
                  </Link>
               );}
-              })}   
+              })}
        
         </>
         

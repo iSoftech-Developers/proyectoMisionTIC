@@ -143,6 +143,7 @@ app.delete('/producto/borrar/',(request,response)=>{
     console.error(err)
   })
 })
+
 app.delete('/cliente/borrar/',(request,response)=>{
   const id = request.body.id
   Cliente.findByIdAndRemove(id)
@@ -152,6 +153,7 @@ app.delete('/cliente/borrar/',(request,response)=>{
     console.error(err)
   })
 })
+
 app.delete('/vendedor/borrar/',(request,response)=>{
   const id = request.body.id
   Usuario.findByIdAndRemove(id)
