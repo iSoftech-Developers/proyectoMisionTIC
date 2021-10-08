@@ -9,6 +9,8 @@ const PaginaVendedores =({cardsUsuarios})=> {
     icon:"fas fa-user-tag",
     cardTo:"/rolesUsuarios/detalleUsuarios",
     linkIcon:"/moduloVendedores/paginaEditarUsuarios",
+    deleteRoute:"http://localhost:3001/vendedor/borrar/",
+    page:"/moduloVendedores",
     field1:"Nombre y Apellidos",
     field2:"Documento",
     field3:"Especialidad",
