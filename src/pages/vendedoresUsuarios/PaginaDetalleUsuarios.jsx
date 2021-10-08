@@ -1,12 +1,12 @@
 import DetalleUsuarios from '../../modules/detalleUsuarios/DetalleUsuarios';
 
-const PaginaDetalleUsuarios =()=>{
+const PaginaDetalleUsuarios =({cardsUsuarios})=>{
 
  
 
     return(
         <>
-            <DetalleUsuarios/>
+            <DetalleUsuarios cardsUsuarios={cardsUsuarios}/>
        </>
     );
 }

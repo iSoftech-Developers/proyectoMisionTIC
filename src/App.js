@@ -58,6 +58,7 @@ const App =()=> {
         });
       },[cardsProductosInformation]);
 
+
     useEffect(() => {
       const options = { method: 'GET', url: 'http://localhost:3001/usuarios' };
       axios.request(options).then(function (response){
@@ -67,7 +68,6 @@ const App =()=> {
           console.error(error);
         });
       },[cardsUsuarios]);
-
 
 
   useEffect(()=>{
@@ -89,7 +89,7 @@ const App =()=> {
                   <PaginaAgregarUsuarios/>
                 </Route>
                 <Route path='/rolesUsuarios/detalleUsuarios/:id'>
-                  <PaginaDetalleUsuarios/>
+                  <PaginaDetalleUsuarios cardsUsuarios={cardsUsuarios}/>
                 </Route>
                 <Route path='/rolesUsuarios'>
                   <PaginaRolesUsuario/>
@@ -117,9 +117,6 @@ const App =()=> {
                 </Route>
                 <Route path='/moduloVendedores/paginaEditarUsuarios'>
                   <PaginaEditarUsuarios/>
-                </Route>
-                <Route path='/moduloVendedores/detalleUsuario/:id'>
-                  <PaginaDetalleUsuarios/>
                 </Route>
                 <Route path='/moduloVendedores'>
                   <PaginaVendedores cardsUsuarios={cardsUsuarios}/>

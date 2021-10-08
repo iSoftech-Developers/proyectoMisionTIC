@@ -2,8 +2,14 @@ import { useRef } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
+import { Link ,useHistory } from "react-router-dom";
 
 const NuevoProducto = ({formLabelTitle}) => {
+    let history = useHistory();
+    let back = () => {
+        history.goBack();
+       
+      };
 
     const form = useRef(null);
 
@@ -43,12 +49,13 @@ const NuevoProducto = ({formLabelTitle}) => {
           .then(function (response) {
             console.log(response.data);
             toast.success('Cliente agregado con éxito');
+           
           })
           .catch(function (error) {
             console.error(error);
             toast.error('Error creando un Cliente');
           });
-          
+      
       };
     
     return (
@@ -121,11 +128,13 @@ const NuevoProducto = ({formLabelTitle}) => {
                     </div>
                 <div>
                     <div className=" w-full flex justify-center">
-                        <input className="w-1/6 cursor-pointer bg-green-400 h-10 rounded text-white font-bold my-16" type="submit" value="Guardar"/>
                         <ToastContainer position="top-right" autoClose={5000}/>
+                        <input className="w-1/6 cursor-pointer bg-green-400 h-10 rounded text-white font-bold my-16" type="submit" value="Guardar"/>
+                        
                     </div>
                 </div>
             </form>
+           
     )
 }
 
