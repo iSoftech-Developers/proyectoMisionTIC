@@ -34,7 +34,7 @@ app.get('/',(request,response)=>{
 })
 
 app.get('/clientes/',(request,response)=>{
-
+//con el modelo anterior para q nos devuelva un resultado
   Cliente.find({}).then((clientes)=>{
     response.json(clientes)
   })

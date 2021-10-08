@@ -57,7 +57,7 @@ const NuevoProducto = ({formLabelTitle}) => {
                             <label for="descripcion">{formLabelTitle.label1}</label>
                             <select required class=" w-full h-8 text-gray-500 input-border" type="String" name="descripcion" defaultValue={0}>
                                 <option disabled type="String" value={0}>Selecciona una opción</option>
-                                <option type="String">Camiseta</option>
+                                <option  type="String">Camiseta</option>
                                 <option type="String">Vestido de baño</option>
                                 <option type="String">Medias</option>
                                 <option type="String">Tops</option>
@@ -108,7 +108,8 @@ const NuevoProducto = ({formLabelTitle}) => {
                         </div>
                         <div className="w-1/5">
                             <label for="estado">{formLabelTitle.label7}</label>
-                            <select required class=" w-full h-8 text-gray-500 input-border" type="Boolean" name="estado">
+                            <select required class=" w-full h-8 text-gray-500 input-border" type="Boolean" name="estado" defaultValue={0}>
+                                <option disabled type="String" value={0}>Selecciona una opción</option>
                                 <option type="Boolean">Disponible</option>
                                 <option type="Boolean">No disponible</option>
                             </select>

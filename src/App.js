@@ -46,6 +46,7 @@ const App =()=> {
         console.error(error);
       });
     },[cardsClientes]);
+    
     useEffect(() => {   
         const options = { method: 'GET', url: 'http://localhost:3001/productos' };
         axios.request(options).then(function (response){
