@@ -76,14 +76,14 @@ app.post('/productos/nuevo',(request,response)=>{
   field5:request.body.estado,
   field6:request.body.genero,
   field7:request.body.color,
-  ids:request.body.descripcion,
+  ids:request.body.ids,
 })
-producto.save()
-.then(() => {
-  response.send(201)
-}).catch(err => {
-  console.error(err)
-})
+    producto.save()
+    .then(() => {
+      response.send(201)
+    }).catch(err => {
+      console.error(err)
+    })
 })
 
 
@@ -98,16 +98,24 @@ app.patch('/clientes/actualizar',(request,response)=>{
   field6:request.body.genero,
   field7:request.body.color,
   ids:request.body.descripcion,
-})
-producto.save()
-.then(() => {
-  response.send(201)
-}).catch(err => {
-  console.error(err)
-})
-})
+  })
+  producto.save()
+  .then(() => {
+    response.send(201)
+  }).catch(err => {
+    console.error(err)
+  })
+  })
 
-
+app.delete('/producto/borrar/',(request,response)=>{
+  const id = request.body.id
+  Producto.findByIdAndRemove(id)
+  .then(() => {
+    response.send(200)
+  }).catch(err => {
+    console.error(err)
+  })
+})
 
 const PORT=3001
 app.listen(PORT)

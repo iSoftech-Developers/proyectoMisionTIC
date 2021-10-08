@@ -90,7 +90,7 @@ const App =()=> {
                 <Route path='/productos/detalleProducto/:id'>
                   <PaginaDetalleProducto cardsProductosInformation={cardsProductosInformation}/>
                 </Route>
-                <Route path='/productos'>
+                <Route path='/productos/'>
                   <PaginaProductos cardsProductosInformation={cardsProductosInformation}/>
                 </Route>
                 <Route path='/moduloVentas/editarVenta'>

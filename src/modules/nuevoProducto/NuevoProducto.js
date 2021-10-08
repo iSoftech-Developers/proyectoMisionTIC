@@ -16,6 +16,8 @@ const NuevoProducto = ({formLabelTitle}) => {
           fd.forEach((value,key) => {
             nuevoProducto[key] = value;
           });
+          console.log(nuevoProducto)
+          let ids = nuevoProducto.genero.slice(0,2).toUpperCase()+nuevoProducto.descripcion.slice(0,2).toUpperCase()+nuevoProducto.color.slice(0,3).toUpperCase()+nuevoProducto.talla.slice(0,2).toUpperCase()
           
           
         const options = {
@@ -31,6 +33,7 @@ const NuevoProducto = ({formLabelTitle}) => {
               cantidad: nuevoProducto.cantidad,
               valorunitario: nuevoProducto.valorunitario,
               estado: nuevoProducto.estado,
+              ids:ids
             
              
             },
@@ -68,8 +71,8 @@ const NuevoProducto = ({formLabelTitle}) => {
                             <label for="genero">{formLabelTitle.label2}</label>
                             <select required class=" w-full h-8 text-gray-500 input-border" type="String" name="genero" defaultValue={0}>
                                 <option disabled type="String" value={0}>Selecciona una opción</option>
-                                <option type="String">Masculino</option>
-                                <option type="String">Femenino</option>
+                                <option type="String">Hombre</option>
+                                <option type="String">Mujer</option>
                             </select>
                         </div>
                         <div className="w-1/5">
@@ -109,8 +112,8 @@ const NuevoProducto = ({formLabelTitle}) => {
                         <div className="w-1/5">
                             <label for="estado">{formLabelTitle.label7}</label>
                             <select required class=" w-full h-8 text-gray-500 input-border" type="Boolean" name="estado">
-                                <option type="Boolean">Disponible</option>
-                                <option type="Boolean">No disponible</option>
+                                <option required type="Boolean">Disponible</option>
+                                <option  required type="Boolean">No disponible</option>
                             </select>
                         </div>
                         <div className="w-1/5"></div>

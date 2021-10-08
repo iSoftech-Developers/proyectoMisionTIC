@@ -8,6 +8,8 @@ const PaginaProductos =({cardsProductosInformation})=> {
 const variableCards = {
     icon:"fas fa-tshirt",
     cardTo:"/productos/detalleProducto",
+    deleteRoute:"http://localhost:3001/producto/borrar/",
+    page:"/productos",
     linkIcon:"/productos/actualizarProducto",
     titleCard:"Id Producto",
     field1:"Descripción",

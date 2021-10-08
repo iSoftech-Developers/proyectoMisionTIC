@@ -13,7 +13,8 @@ const PaginaNuevoProducto =()=> {
     label4:"Talla",
     label5:"Cantidad",
     label6:"Valor unitario",
-    label7:"Estado"
+    label7:"Estado",
+    label8:"ID automatico"
 }
 
 
