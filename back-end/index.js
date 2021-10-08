@@ -120,19 +120,17 @@ app.patch('/clientes/:id/',(request,response)=>{
 app.patch('/usuarios/:id/',(request,response)=>{
   const id = request.params.id
   Usuario.findByIdAndUpdate(id, {
-    field3:request.body.email,
-    field4:request.body.ciudad,
-    field5:request.body.telefono,
-    field6:request.body.departamento,
-    field7:request.body.direccion,
-    field8:request.body.personacontacto,
+    field3:request.body.especialidad,
+    field4:request.body.celular,
+    field6:request.body.rol,
+    field7:request.body.estado,
 })
   .then(() => {
     response.send(202)
   }).catch(err => {
     console.error(err)
   })
-  })
+})
 
 
   app.patch('/productos/:id/',(request,response)=>{

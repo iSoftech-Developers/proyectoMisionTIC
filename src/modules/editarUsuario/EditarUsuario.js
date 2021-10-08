@@ -3,24 +3,47 @@ import { useRef } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import { useSeleccionado } from '../../context/Seleccionado';
+import axios from 'axios'
 
 const EditarUsuario = ({formLabelTitle}) => {
     const {seleccionado}=useSeleccionado()
     const form = useRef(null);
 
-    const submitForm = (e) => {
+    const submitForm = async (e) => {
         e.preventDefault();
 
     const fd = new FormData(form.current);
 
-          const editarUsuario = {};
-          fd.forEach((value,key) => {
-              editarUsuario[key] = value;
-          });
+        const editarUsuario = {};
+        fd.forEach((value,key) => {
+        editarUsuario[key] = value;
+        });
 
-          console.log('Datos del form enviados', editarUsuario);
-          toast.success('Usuario actualizado');
-      };
+        const options = {
+            method: 'PATCH',
+            url:`http://localhost:3001/usuarios/${seleccionado._id}`,
+            headers: { 'Content-Type': 'application/json' },
+            data: { 
+            rol:editarUsuario.rol,
+            estado:editarUsuario.estado,
+            especialidad:editarUsuario.especialidad,
+            celular:editarUsuario.celular,
+            
+            },
+
+            };
+        
+            await axios
+            .request(options)
+            .then(function (response) {
+            console.log(response.data);
+            toast.success('Usuario actualizado');
+            })
+            .catch(function (error) {
+            console.error(error);
+            toast.error('Error al actualizar');
+            });
+    };
 
     return (
         <>
@@ -89,15 +112,14 @@ const EditarUsuario = ({formLabelTitle}) => {
                                 <ToastContainer position="top-right" autoClose={5000}/>
                         </div>
                     </div>
-                   
+
                     </form>
 
                 </div>
-     
+
         </>
         
-       
-         
+
     )
 }
 

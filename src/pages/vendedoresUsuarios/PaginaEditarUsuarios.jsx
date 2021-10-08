@@ -1,4 +1,5 @@
 import EditarUsuario from '../../modules/editarUsuario/EditarUsuario';
+import NoButtonUpperBarSection from '../../modules/noButtonUpperBarSection/NoButtonUpperBarSection';
 
 
 const PaginaEditarUsuarios =({})=>{
@@ -15,7 +16,8 @@ const PaginaEditarUsuarios =({})=>{
 
     return(
         <>
-           <EditarUsuario formLabelTitle={formLabelTitle}/>
+            <NoButtonUpperBarSection title="Editar Usuarios"/>
+            <EditarUsuario formLabelTitle={formLabelTitle}/>
         </>
     );
 }

@@ -53,19 +53,19 @@ const ActualizarProducto = ({formLabelTitle}) => {
                 <div className="form-upper-section flex justify-between font-bold label-color space-x-4">
                         <div className="w-1/5">
                             <label for="descripcion">{formLabelTitle.label1}</label>
-                            <input class=" w-full h-8 text-gray-500 input-border" type="String" name="descripcion" value={seleccionado.field1}></input>
+                            <input class=" w-full h-8 p-2 text-gray-500 input-border" type="String" name="descripcion" value={seleccionado.field1}></input>
                         </div>
                         <div className="w-1/5">
                             <label for="genero">{formLabelTitle.label2}</label>
-                            <input class=" w-full h-8 text-gray-500 input-border" type="String" name="genero" value={seleccionado.field6}></input>
+                            <input class=" w-full h-8 p-2 text-gray-500 input-border" type="String" name="genero" value={seleccionado.field6}></input>
                         </div>
                         <div className="w-1/5">
                             <label for="color">{formLabelTitle.label3}</label>
-                            <input class=" w-full h-8 text-gray-500 input-border" type="String" name="color" value={seleccionado.field7}></input>
+                            <input class=" w-full h-8 p-2 text-gray-500 input-border" type="String" name="color" value={seleccionado.field7}></input>
                         </div>
                         <div className="w-1/5">
                             <label for="talla">{formLabelTitle.label4}</label>
-                            <input class=" w-full h-8 text-gray-500 input-border" type="String" name="talla" value={seleccionado.field4}></input>
+                            <input class=" w-full h-8 p-2 text-gray-500 input-border" type="String" name="talla" value={seleccionado.field4}></input>
                         </div>
                     </div>
                 </div>
