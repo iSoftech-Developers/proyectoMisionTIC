@@ -20,7 +20,7 @@ const PaginaAgregarUsuarios =()=>{
 
     return(
         <>
-            <NoButtonUpperBarSection title="Agregar Cliente"/>
+            <NoButtonUpperBarSection title="Agregar Vendedor"/>
             <AgregarUsuario formLabelTitle = {formLabelTitle}/>
            
         </> 

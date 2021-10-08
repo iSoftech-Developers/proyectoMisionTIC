@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 const Cards=({variableCards,cardsinformation})=>{
+    
     let history = useHistory();
     const {busqueda}=useBuscado()
     const[openDialog,setOpenDialog]=useState(false)
