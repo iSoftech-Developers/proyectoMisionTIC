@@ -148,7 +148,7 @@ app.patch('/usuarios/:id/',(request,response)=>{
     })
 
 
-app.delete('/producto/:id/',(request,response)=>{
+app.delete('/productos/:id/',(request,response)=>{
   const id = request.params.id
   Producto.findByIdAndRemove(id)
   .then(() => {
@@ -158,7 +158,7 @@ app.delete('/producto/:id/',(request,response)=>{
   })
 })
 
-app.delete('/cliente/:id/',(request,response)=>{
+app.delete('/clientes/:id/',(request,response)=>{
   const id = request.params.id
   Cliente.findByIdAndRemove(id)
   .then(() => {
@@ -168,7 +168,7 @@ app.delete('/cliente/:id/',(request,response)=>{
   })
 })
 
-app.delete('/vendedor/:id/',(request,response)=>{
+app.delete('/usuarios/:id/',(request,response)=>{
   const id = request.params.id
   Usuario.findByIdAndRemove(id)
   .then(() => {
