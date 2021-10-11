@@ -1,12 +1,14 @@
 
 import { useRef } from "react";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import { useSeleccionado } from '../../context/Seleccionado';
-import axios from 'axios'
+import PatchDB from "../../utils/PatchDB";
 
 const ActualizarProducto = ({formLabelTitle}) => {
 
+
+    const urlEdit= 'http://localhost:3001/productos'
     const {seleccionado}=useSeleccionado()
 
     const form = useRef(null);
@@ -20,29 +22,11 @@ const ActualizarProducto = ({formLabelTitle}) => {
         fd.forEach((value,key) => {
         editarProducto[key] = value;
         });
-
-        const options = {
-            method: 'PATCH',
-            url:`http://localhost:3001/productos/${seleccionado._id}`,
-            headers: { 'Content-Type': 'application/json' },
-            data: { 
-            valorunitario:editarProducto.valorunitario,
+        const cambios={valorunitario:editarProducto.valorunitario,
             cantidad:editarProducto.cantidad,
-            estado:editarProducto.estado,
-              },
-  
-          };
-          
-          await axios
-            .request(options)
-            .then(function (response) {
-              console.log(response.data);
-              toast.success('Producto actualizado');
-            })
-            .catch(function (error) {
-              console.error(error);
-              toast.error('Error al actualizar');
-            });
+            estado:editarProducto.estado}
+
+        PatchDB(cambios,seleccionado,urlEdit)
     };
     
     return (

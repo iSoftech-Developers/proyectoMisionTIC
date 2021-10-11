@@ -1,11 +1,15 @@
 import React from 'react'
 import { useRef } from "react";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import { useSeleccionado } from '../../context/Seleccionado';
-import axios from 'axios'
+import PatchDB from "../../utils/PatchDB";
 
 const EditarUsuario = ({formLabelTitle}) => {
+
+
+
+    const urlEdit= 'http://localhost:3001/usuarios'
     const {seleccionado}=useSeleccionado()
     const form = useRef(null);
 
@@ -19,32 +23,18 @@ const EditarUsuario = ({formLabelTitle}) => {
         editarUsuario[key] = value;
         });
 
-        const options = {
-            method: 'PATCH',
-            url:`http://localhost:3001/usuarios/${seleccionado._id}`,
-            headers: { 'Content-Type': 'application/json' },
-            data: { 
+        const cambios={ 
             rol:editarUsuario.rol,
             estado:editarUsuario.estado,
             especialidad:editarUsuario.especialidad,
             celular:editarUsuario.celular,
-            
-            },
+        }
 
-            };
-        
-            await axios
-            .request(options)
-            .then(function (response) {
-            console.log(response.data);
-            toast.success('Usuario actualizado');
-            })
-            .catch(function (error) {
-            console.error(error);
-            toast.error('Error al actualizar');
-            });
+        PatchDB(cambios,seleccionado,urlEdit)
     };
 
+
+    
     return (
         <>
             <div className="flex mt-14">
