@@ -29,18 +29,17 @@ const NuevaVenta=()=>{
     const submitForm = (e) => {
         e.preventDefault();
 
-          const fd = new FormData(form.current);
+    const fd = new FormData(form.current);
 
-          const nuevaVenta = {};
-          fd.forEach((value,key) => {
-              nuevaVenta[key] = value;
-          });
+    const nuevaVenta = {};
+    fd.forEach((value,key) => {
+        nuevaVenta[key] = value;
+    });
 
-          console.log('Datos del form enviados', nuevaVenta);
-          toast.success('Venta guardada');
-      };
+    console.log('Datos del form enviados', nuevaVenta);
+    toast.success('Venta guardada');
+};
 
-   
     return(
     
         <div>
