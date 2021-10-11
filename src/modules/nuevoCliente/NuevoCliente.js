@@ -1,14 +1,13 @@
-import { ToastContainer, toast} from 'react-toastify';
+import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useRef } from "react";
-import axios from 'axios';
-import { useHistory } from 'react-router-dom';
+import PostDB from '../../utils/PostDB';
 
 const NuevoCliente = ({formLabelTitle}) => {
-    let history = useHistory();
 
+    const urlPost = 'http://localhost:3001/clientes/'
     const form = useRef(null);
- 
+
     const submitForm =  async (e) => {
         e.preventDefault();
 
@@ -16,45 +15,28 @@ const NuevoCliente = ({formLabelTitle}) => {
 
         const nuevoCliente = {};
         fd.forEach((value,key) => {
-          nuevoCliente[key] = value;
+        nuevoCliente[key] = value;
         });
 
         console.log('Datos del form enviados', nuevoCliente);
 
+        const cambios = {
+            nombrecliente:nuevoCliente.nombrecliente,
+            idcliente: nuevoCliente.idcliente,
+            email: nuevoCliente.email,
+            ciudad: nuevoCliente.ciudad,
+            telefono: nuevoCliente.telefono,
+            departamento: nuevoCliente.departamento,
+            direccion: nuevoCliente.direccion,
+            personacontacto: nuevoCliente.personacontacto,
+        }
 
-        const options = {
-            
-            method: 'POST',
-            url: 'http://localhost:3001/clientes/',
-            headers: {'Content-Type': 'application/json'},
-            data: {
-              nombrecliente:nuevoCliente.nombrecliente,
-              idcliente: nuevoCliente.idcliente,
-              email: nuevoCliente.email,
-              ciudad: nuevoCliente.ciudad,
-              telefono: nuevoCliente.telefono,
-              departamento: nuevoCliente.departamento,
-              direccion: nuevoCliente.direccion,
-              personacontacto: nuevoCliente.personacontacto,
-             
-            },
-          };    
-          await axios
-          .request(options)
-          .then(function (response) {
-            console.log(response.data);
-            toast.success('Cliente agregado con éxito');
-          })
-          .catch(function (error) {
-            console.error(error);
-            toast.error('Error creando un Cliente');
-          });
-          
+        PostDB(cambios, urlPost)
+    
     };
 
 
 
-   
 
     return (
     
