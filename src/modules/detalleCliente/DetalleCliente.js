@@ -5,7 +5,7 @@ import { useSeleccionado } from "../../context/Seleccionado";
 const DetalleCliente = () => {
 
     const {seleccionado}=useSeleccionado()
-  
+
 
     return (
         
@@ -50,8 +50,7 @@ const DetalleCliente = () => {
             </div> 
         
         </>
-      
-      
+
     );
 }
 

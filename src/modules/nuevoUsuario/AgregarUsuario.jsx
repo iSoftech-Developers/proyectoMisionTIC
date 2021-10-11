@@ -18,6 +18,7 @@ const AgregarUsuario = ({formLabelTitle}) => {
     fd.forEach((value,key) => {
     nuevoUsuario[key] = value;
     });
+    
     console.log(nuevoUsuario)
 
     const cambios = {

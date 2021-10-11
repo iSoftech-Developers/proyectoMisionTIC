@@ -3,26 +3,24 @@ import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
 
-
-
 const NuevaVenta=()=>{
     const vendedores = [
         { id:0,field1: 1037645234, field2: "Juan Sebastian Cabrera Rojas", field3: "Online", field4: "313248789", field5: "29/09/2021" },
     
-      ];
-      
-      const productos = [
+    ];
+
+    const productos = [
         { id: 555555, field1:"Camiseta nike verde", field2: 20000 , field3: 1000, field4: "XS", field5: "DISPONIBLE"},
         { id: 111111, field1:"Lime Green", field2: 10000, field3: 300000, field4: "S", field5: "DISPONIBLE" },
         { id: 222222, field1:"Tomato", field2: 40000 , field3: 500000, field4: "M", field5: "DISPONIBLE"},
         { id: 333333, field1:"Seven Ate Nine", field2: 50000 , field3: 600000, field4: "L", field5: "DISPONIBLE"},
-      ];
-      
-      const clientes = [
+    ];
+
+    const clientes = [
         { id: 1, field1:"Liliana Romero", field2: "123456789",field3:"liliana@gmail.com",field4:"Bogota DC",field5:"bogota",field6:"cra 1 # 1-1",field7:"3135635569"},
         { id: 2, field1:"Anna Blanco", field2: "987654321",field3:"anna@gmail.com",field4:"Medellin",field5:"313333333",field6:"antioquia",field7:"cra 2 # 2-2" },
-     
-      ];
+
+    ];
 
     const form = useRef(null);
 

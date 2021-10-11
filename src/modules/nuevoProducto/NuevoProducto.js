@@ -6,7 +6,7 @@ import PostDB from '../../utils/PostDB';
 
 const NuevoProducto = ({formLabelTitle}) => {
 
- 
+
     const urlPost = 'http://localhost:3001/productos/'
     const form = useRef(null);
 
