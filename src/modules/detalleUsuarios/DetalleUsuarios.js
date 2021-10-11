@@ -39,6 +39,14 @@ const DetalleUsuarios=()=>{
                                     <span className="font-bold">Nombres y apellidos</span>
                                 </div>
                                 <div>
+                                    <span>{seleccionado.field1}</span>
+                                </div>
+                            </div>
+                            <div className="flex flex-col">
+                                <div>
+                                    <span className="font-bold">Documento</span>
+                                </div>
+                                <div>
                                     <span>{seleccionado.field2}</span>
                                 </div>
                             </div>
