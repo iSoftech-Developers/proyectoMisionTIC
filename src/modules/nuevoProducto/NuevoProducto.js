@@ -1,62 +1,43 @@
 import { useRef } from "react";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
-import axios from 'axios';
-import { Link ,useHistory } from "react-router-dom";
+import PostDB from '../../utils/PostDB';
+
 
 const NuevoProducto = ({formLabelTitle}) => {
-    let history = useHistory();
-    let back = () => {
-        history.goBack();
-       
-      };
 
+ 
+    const urlPost = 'http://localhost:3001/productos/'
     const form = useRef(null);
 
     const submitForm = async (e)  => {
         e.preventDefault();
 
-          const fd = new FormData(form.current);
+        const fd = new FormData(form.current);
 
-          const nuevoProducto = {};
-          fd.forEach((value,key) => {
-            nuevoProducto[key] = value;
-          });
-          console.log(nuevoProducto)
-          let ids = nuevoProducto.genero.slice(0,2).toUpperCase()+nuevoProducto.descripcion.slice(0,2).toUpperCase()+nuevoProducto.color.slice(0,3).toUpperCase()+nuevoProducto.talla.slice(0,2).toUpperCase()
-          
-          
-        const options = {
+        const nuevoProducto = {};
+        fd.forEach((value,key) => {
+        nuevoProducto[key] = value;
+        });
+        console.log(nuevoProducto)
+        let ids = nuevoProducto.genero.slice(0,2).toUpperCase()+nuevoProducto.descripcion.slice(0,2).toUpperCase()+nuevoProducto.color.slice(0,3).toUpperCase()+nuevoProducto.talla.slice(0,2).toUpperCase()
+        
+    
+        const cambios = {
+            descripcion:nuevoProducto.descripcion,
+            genero: nuevoProducto.genero,
+            color: nuevoProducto.color,
+            talla: nuevoProducto.talla,
+            cantidad: nuevoProducto.cantidad,
+            valorunitario: nuevoProducto.valorunitario,
+            estado: nuevoProducto.estado,
+            ids:ids,
+            }
+
+            PostDB(cambios,urlPost)
             
-            method: 'POST',
-            url: 'http://localhost:3001/productos/',
-            headers: {'Content-Type': 'application/json'},
-            data: {
-              descripcion:nuevoProducto.descripcion,
-              genero: nuevoProducto.genero,
-              color: nuevoProducto.color,
-              talla: nuevoProducto.talla,
-              cantidad: nuevoProducto.cantidad,
-              valorunitario: nuevoProducto.valorunitario,
-              estado: nuevoProducto.estado,
-              ids:ids
-            
-             
-            },
-          };    
-          await axios
-          .request(options)
-          .then(function (response) {
-            console.log(response.data);
-            toast.success('Producto agregado con éxito');
-           
-          })
-          .catch(function (error) {
-            console.error(error);
-            toast.error('Error creando un Producto');
-          });
-      
-      };
+
+};
     
     return (
 

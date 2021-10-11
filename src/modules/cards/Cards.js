@@ -1,12 +1,12 @@
 import { Dialog,Tooltip } from '@material-ui/core';
 import { Link} from 'react-router-dom';
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer} from "react-toastify";
 import './Cards.css';
 import { useBuscado } from '../../context/BuscadorContext';
 import { useState,useEffect } from 'react';
-import axios from 'axios'
 import { useSeleccionado } from '../../context/Seleccionado';
 import { obtenerDB } from '../../utils/GetDB';
+import DeleteDB from '../../utils/DeleteDB';
 
 const Cards=({variableCards})=>{
     const {seleccionado, setSeleccionado}=useSeleccionado()
@@ -24,27 +24,27 @@ const Cards=({variableCards})=>{
 
       
 
-      const Eliminar =  ({seleccionado,variableCards}) => {
-        console.log(seleccionado);
-        const options = {
-          method: 'DELETE',
-          url: `${variableCards.route}/${seleccionado._id}/`,
-          headers: { 'Content-Type': 'application/json' },
-        };
+      // const Eliminar =  ({seleccionado,variableCards}) => {
+      //   console.log(seleccionado);
+      //   const options = {
+      //     method: 'DELETE',
+      //     url: `${variableCards.route}/${seleccionado._id}/`,
+      //     headers: { 'Content-Type': 'application/json' },
+      //   };
     
-        axios
-          .request(options)
-          .then(function (response) {
-            console.log(response.data);
-            toast.success('Eliminado con éxito');
-          })
-          .catch(function (error) {
-            console.error(error);
-            toast.error('Error al eliminar');
-          });
-        setOpenDialog(false);
-        setEjecutarConsulta(true)
-      };
+      //   axios
+      //     .request(options)
+      //     .then(function (response) {
+      //       console.log(response.data);
+      //       toast.success('Eliminado con éxito');
+      //     })
+      //     .catch(function (error) {
+      //       console.error(error);
+      //       toast.error('Error al eliminar');
+      //     });
+      //   setOpenDialog(false);
+      //   setEjecutarConsulta(true)
+      // };
 
 
 
@@ -82,7 +82,10 @@ const Cards=({variableCards})=>{
                                 <div className ='p-8 flex flex-col'>
                                   <h1 className= 'text gray-800 text-xl font-bold'> ¿Esta seguro de querer eliminarlo? </h1>
                                   <div className='flex w-full items-center justify-center'> 
-                                    <Link to={variableCards.page} onClick={()=>{Eliminar({variableCards,seleccionado})}} className= 'mx-2 my-4 px-4 py-2 bg-green-500 text-white hover:bg-green-700 rounded-md shadow-md'> Si </Link>
+                                    <Link to={variableCards.page} onClick={()=>{
+                                      DeleteDB({variableCards,seleccionado})
+                                      setOpenDialog(false)
+                                      setEjecutarConsulta(true)}} className= 'mx-2 my-4 px-4 py-2 bg-green-500 text-white hover:bg-green-700 rounded-md shadow-md'> Si </Link>
                                     <Link onClick={()=>setOpenDialog(false)} className= 'mx-2 my-4 px-4 py-2 bg-red-500 text-white hover:bg-red-700 rounded-md shadow-md' to={variableCards.page}> No </Link>
                                   </div>
                                 </div>
