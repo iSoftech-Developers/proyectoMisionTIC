@@ -48,12 +48,12 @@ const NuevoProducto = ({formLabelTitle}) => {
           .request(options)
           .then(function (response) {
             console.log(response.data);
-            toast.success('Cliente agregado con éxito');
+            toast.success('Producto agregado con éxito');
            
           })
           .catch(function (error) {
             console.error(error);
-            toast.error('Error creando un Cliente');
+            toast.error('Error creando un Producto');
           });
       
       };
