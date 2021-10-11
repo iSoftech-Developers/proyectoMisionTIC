@@ -9,7 +9,7 @@ const PostDB = async (cambios, urlPost) => {
         headers: {'Content-Type': 'application/json'},
         data: cambios,
 
-      };
+};
       await axios
       .request(options)
       .then(function (response) {

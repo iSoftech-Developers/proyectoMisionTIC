@@ -1,49 +1,38 @@
 import React from 'react'
 import { useRef } from "react";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
-import axios from 'axios';
+import PostDB from '../../utils/PostDB';
 
 const AgregarUsuario = ({formLabelTitle}) => {
 
+    const urlPost = 'http://localhost:3001/usuarios/'
     const form = useRef(null);
 
     const submitForm = async (e) => {
         e.preventDefault();
 
-          const fd = new FormData(form.current);
+    const fd = new FormData(form.current);
 
-          const nuevoUsuario = {};
-          fd.forEach((value,key) => {
-              nuevoUsuario[key] = value;
-          });
-          console.log(nuevoUsuario)
-          const options = {
-            
-            method: 'POST',
-            url: 'http://localhost:3001/usuarios/',
-            headers: {'Content-Type': 'application/json'},
-            data: {
-              idusuario:nuevoUsuario.idusuario,
-              rol: nuevoUsuario.rol,
-              estado: nuevoUsuario.estado,
-              fechaingreso: nuevoUsuario.fechaingreso,
-              nombre: nuevoUsuario.nombre,
-              especialidad: nuevoUsuario.especialidad,
-              celular: nuevoUsuario.celular,
-            },
-          };    
-          await axios
-          .request(options)
-          .then(function (response) {
-            console.log(response.data);
-            toast.success('Usuario agregado con éxito');
-          })
-          .catch(function (error) {
-            console.error(error);
-            toast.error('Error creando un Usuario');
-          });
-      };
+    const nuevoUsuario = {};
+    fd.forEach((value,key) => {
+    nuevoUsuario[key] = value;
+    });
+    console.log(nuevoUsuario)
+
+    const cambios = {
+    idusuario:nuevoUsuario.idusuario,
+    rol: nuevoUsuario.rol,
+    estado: nuevoUsuario.estado,
+    fechaingreso: nuevoUsuario.fechaingreso,
+    nombre: nuevoUsuario.nombre,
+    especialidad: nuevoUsuario.especialidad,
+    celular: nuevoUsuario.celular,
+    }
+
+    PostDB(cambios, urlPost)
+
+};
 
     return (
         <>
