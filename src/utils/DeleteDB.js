@@ -1,7 +1,6 @@
 import axios from 'axios'
 import { toast } from "react-toastify";
 
-
       const DeleteDB = async ({seleccionado,variableCards}) => {
         console.log(seleccionado);
         const options = {

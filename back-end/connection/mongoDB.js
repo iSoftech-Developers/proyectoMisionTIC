@@ -1,6 +1,10 @@
 const mongoose= require('mongoose');
+const dotenv=require('dotenv');
 
-const  connectionString= "mongodb+srv://interlude:Carlos15@cluster0.smza0.mongodb.net/Softech?retryWrites=true&w=majority"
+dotenv.config({path:'./.env'});
+
+
+const connectionString= process.env.DATABASE_URL;
 
 // conexión con MongoDB
 mongoose.connect(connectionString)

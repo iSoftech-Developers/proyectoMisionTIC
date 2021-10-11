@@ -1,13 +1,13 @@
-require ('./mongo')
+const dotenv=require('dotenv');
+require ('./connection/mongoDB')
 const Cliente = require('./models/cliente')
 const Producto = require('./models/producto')
 const Usuario = require('./models/usuario')
 const express = require('express');
 const cors = require('cors');
-const { findByIdAndUpdate } = require('./models/cliente');
 const app = express();
 
-
+dotenv.config({ path: './.env' });
 
 app.use(cors())
 app.use(express.json())
@@ -178,7 +178,7 @@ app.delete('/usuarios/:id/',(request,response)=>{
   })
 })
 
-const PORT=3001
+const PORT= process.env.PORT;
 app.listen(PORT)
 console.log(`Server running on port ${PORT}`)
 
