@@ -1,12 +1,13 @@
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useRef } from "react";
-import axios from 'axios'
 import { useSeleccionado } from '../../context/Seleccionado';
+import PatchDB from "../../utils/PatchDB";
 
 
     
-const EditarCliente = ({cardsClientes,formLabelTitle}) => {
+const EditarCliente = ({formLabelTitle}) => {
+    const urlEdit= 'http://localhost:3001/clientes'
 
     const {seleccionado}=useSeleccionado()
 
@@ -22,43 +23,20 @@ const EditarCliente = ({cardsClientes,formLabelTitle}) => {
         editarCliente[key] = value;
         });
 
-        console.log('Datos del form enviados', editarCliente);
-
-
-            const options = {
-            method: 'PATCH',
-            url:`http://localhost:3001/clientes/${seleccionado._id}`,
-            headers: { 'Content-Type': 'application/json' },
-            data: { 
+        const cambios= { 
             email:editarCliente.email,
             ciudad:editarCliente.ciudad,
             telefono:editarCliente.telefono,
             departamento:editarCliente.departamento,
             direccion:editarCliente.direccion,
-            personacontacto:editarCliente.personacontacto,
-                },
+            personacontacto:editarCliente.personacontacto,}
 
-            };
-        
-            await axios
-              .request(options)
-              .then(function (response) {
-                console.log(response.data);
-                toast.success('Cliente actualizado');
-              })
-              .catch(function (error) {
-                console.error(error);
-                toast.error('Error al actualizar');
-              });
+        PatchDB(cambios,seleccionado,urlEdit)
+
+
           };
     
     
-
-
-
-  
-
-
     return (
         <>
             <div>

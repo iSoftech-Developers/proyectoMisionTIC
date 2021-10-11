@@ -2,8 +2,7 @@
 import './App.css';
 import './index.css';
 import { BrowserRouter as Router,Route ,Switch } from 'react-router-dom';
-import {useEffect,useState} from "react";
-import axios from 'axios';
+import {useState} from "react";
 import PaginaVendedores from './pages/vendedoresUsuarios/PaginaVendedores';
 import PaginaInfoDetalleVentas from './pages/venta/PaginaInfoDetalleVentas';
 import Login from './modules/login/Login';
@@ -35,49 +34,7 @@ const App =()=> {
 
   const [busqueda, setBusqueda] = useState('');
   const [seleccionado,setSeleccionado] = useState('');
-  const [cardsClientes,setCardsClientes] =useState([]);
-  const [cardsProductosInformation,setCardsProductosInformation] =useState([]);
-  const [cardsUsuarios,setCardsUsuarios] =useState([]);
-  
-
-  useEffect(() => {   
-    const options = { method: 'GET', url: 'http://localhost:3001/clientes' };
-    axios.request(options).then(function (response){
-        setCardsClientes(response.data);
-      })
-      .catch(function (error) {
-        console.error(error);
-      });
-    },[cardsClientes]);
-
-    useEffect(() => {
-      const options = { method: 'GET', url: 'http://localhost:3001/productos' };
-      axios.request(options).then(function (response){
-          setCardsProductosInformation(response.data);
-        })
-        .catch(function (error) {
-          console.error(error);
-        });
-      },[cardsProductosInformation]);
-
-
-    useEffect(() => {
-      const options = { method: 'GET', url: 'http://localhost:3001/usuarios' };
-      axios.request(options).then(function (response){
-          setCardsUsuarios(response.data);
-        })
-        .catch(function (error) {
-          console.error(error);
-        });
-      },[cardsUsuarios]);
-
-
-  useEffect(()=>{
-      console.log(busqueda)
-    },[busqueda])
-
-
-
+ 
   
   return (
     <div className="template">
@@ -92,22 +49,22 @@ const App =()=> {
                   <PaginaAgregarUsuarios/>
                 </Route>
                 <Route path='/rolesUsuarios/detalleUsuarios/:id'>
-                  <PaginaDetalleUsuarios cardsUsuarios={cardsUsuarios}/>
+                  <PaginaDetalleUsuarios />
                 </Route>
                 <Route path='/rolesUsuarios'>
                   <PaginaRolesUsuario/>
                 </Route>
                 <Route path='/productos/actualizarProducto/:id'>
-                  <PaginaActualizarProducto cardsProductosInformation={cardsProductosInformation}/>
+                  <PaginaActualizarProducto />
                 </Route>
                 <Route path='/productos/nuevoProducto'>
                   <PaginaNuevoProducto/>
                 </Route>
                 <Route path='/productos/detalleProducto/:id'>
-                  <PaginaDetalleProducto cardsProductosInformation={cardsProductosInformation}/>
+                  <PaginaDetalleProducto />
                 </Route>
                 <Route path='/productos/'>
-                  <PaginaProductos cardsProductosInformation={cardsProductosInformation}/>
+                  <PaginaProductos />
                 </Route>
                 <Route path='/moduloVentas/editarVenta'>
                   <PaginaEditarVenta/>
@@ -122,19 +79,19 @@ const App =()=> {
                   <PaginaEditarUsuarios/>
                 </Route>
                 <Route path='/moduloVendedores'>
-                  <PaginaVendedores cardsUsuarios={cardsUsuarios}/>
+                  <PaginaVendedores />
                 </Route>
                 <Route path='/moduloClientes/detalleCliente/:id'>
-                  <PaginaDetalleClientes cardsClientes={cardsClientes}/>
+                  <PaginaDetalleClientes />
                 </Route>
                 <Route path='/moduloClientes/paginaEditarCliente/:id'>
-                  <PaginaEditarCliente cardsClientes={cardsClientes}/>
+                  <PaginaEditarCliente />
                 </Route>
                 <Route path='/moduloClientes/nuevoCliente'>
                   <PaginaNuevoCliente/>
                 </Route>
                 <Route path='/moduloClientes'>
-                  <PaginaClientes cardsClientes={cardsClientes}/>
+                  <PaginaClientes />
                 </Route>
                 <Route path='/nuevaVenta'>
                   <PaginaNuevaVenta/>
@@ -157,27 +114,3 @@ const App =()=> {
 }
 
 export default App;
-
-
-          /*  <Route path="/moduloVendedores" component={PaginaVendedores}/>
-              <Route path="/moduloVentas" component={PaginaVentas}/>
-              <Route path="/nuevaVenta" component={PaginaNuevaVenta}/>
-              <Route path="/estadoVenta" component={PaginaEstadoVenta}/>
-              <Route path="/detalleVenta" component={PaginaInfoDetalleVentas}/>
-              <Route path="/agregarUsuarios" component={PaginaAgregarUsuarios}/> 
-              <Route path="/perfilUsuario" component={PaginaVistaPerfilUsuario}/>
-              <Route path="/editarUsuario" component={PaginaEditarUsuarios}/>
-              <Route path="/nuevoCliente" component={PaginaNuevoCliente}/>
-              <Route path="/moduloClientes" component={PaginaClientes}/> 
-              <Route path="/detalleCliente" component={PaginaDetalleClientes}/>
-              <Route path="/productos" component={PaginaProductos}/>
-              <Route path="/detalleProducto" component={PaginaDetalleProducto}/>
-              <Route path="/nuevoProducto" component={PaginaNuevoProducto}/>
-              <Route path="/actualizarProducto" component={PaginaActualizarProducto}/>
-              <Route path="/rolesUsuarios" component={PaginaRolesUsuario}/>
-              <Route path="/crearClienteCris" component={PaginaClientesCris}/>   
-              <Route path="/ok" component={PaginaOk}/>
-              <Route path="/" component={Login} />
-          </Switch>*/
-
-

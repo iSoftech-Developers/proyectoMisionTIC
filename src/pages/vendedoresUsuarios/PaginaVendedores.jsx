@@ -7,7 +7,7 @@ const PaginaVendedores =({cardsUsuarios})=> {
     icon:"fas fa-user-tag",
     cardTo:"/rolesUsuarios/detalleUsuarios",
     linkIcon:"/moduloVendedores/paginaEditarUsuarios",
-    deleteRoute:"http://localhost:3001/vendedor",
+    route:"http://localhost:3001/usuarios",
     page:"/moduloVendedores",
     field1:"Nombre y Apellidos",
     field2:"Documento",
@@ -19,7 +19,7 @@ const PaginaVendedores =({cardsUsuarios})=> {
      <>
           
               <UpperBarSection titlePage="Lista de vendedores" selectorButton="/rolesUsuarios/nuevoUsuario" nameButton="Agregar Vendedor"/>
-              <Cards variableCards={variableCards} cardsinformation={cardsUsuarios} />
+              <Cards variableCards={variableCards} />
      </> 
       
     );

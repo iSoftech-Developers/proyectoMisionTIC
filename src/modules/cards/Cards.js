@@ -3,22 +3,32 @@ import { Link} from 'react-router-dom';
 import { ToastContainer, toast } from "react-toastify";
 import './Cards.css';
 import { useBuscado } from '../../context/BuscadorContext';
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import axios from 'axios'
 import { useSeleccionado } from '../../context/Seleccionado';
+import { obtenerDB } from '../../utils/GetDB';
 
-const Cards=({variableCards,cardsinformation})=>{
+const Cards=({variableCards})=>{
     const {seleccionado, setSeleccionado}=useSeleccionado()
     const {busqueda}=useBuscado()
     const[openDialog,setOpenDialog]=useState(false)
+    const [consulta, setConsulta] = useState([]); 
+    const [ejecutarConsulta, setEjecutarConsulta] = useState(true);
 
+    useEffect(() => {
+        console.log('consulta', ejecutarConsulta);
+        if (ejecutarConsulta) {
+          obtenerDB(setConsulta, setEjecutarConsulta,variableCards.route);
+        }
+      }, [ejecutarConsulta ,variableCards.route]);
 
+      
 
       const Eliminar =  ({seleccionado,variableCards}) => {
         console.log(seleccionado);
         const options = {
           method: 'DELETE',
-          url: `${variableCards.deleteRoute}/${seleccionado._id}/`,
+          url: `${variableCards.route}/${seleccionado._id}/`,
           headers: { 'Content-Type': 'application/json' },
         };
     
@@ -33,13 +43,14 @@ const Cards=({variableCards,cardsinformation})=>{
             toast.error('Error al eliminar');
           });
         setOpenDialog(false);
+        setEjecutarConsulta(true)
       };
 
 
 
     return(
       <>
-      {cardsinformation.map((i)=>{
+      {consulta.map((i)=>{
           if (i._id.includes(busqueda)||i.ids.toLowerCase().includes(busqueda.toLowerCase())){
               return(    
                   <Link to={{
