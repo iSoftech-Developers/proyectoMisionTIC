@@ -29,7 +29,6 @@ import {BuscadorContext} from './context/BuscadorContext'
 
 
 
-
 const App =()=> {
 
   const [busqueda, setBusqueda] = useState('');
