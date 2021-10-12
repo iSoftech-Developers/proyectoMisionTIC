@@ -23,12 +23,12 @@ const AgregarUsuario = ({formLabelTitle}) => {
 
     const cambios = {
     idusuario:nuevoUsuario.idusuario,
-    rol: nuevoUsuario.rol,
+    celular: nuevoUsuario.celular,
     estado: nuevoUsuario.estado,
     fechaingreso: nuevoUsuario.fechaingreso,
     nombre: nuevoUsuario.nombre,
     email: nuevoUsuario.email,
-    celular: nuevoUsuario.celular,
+    rol: nuevoUsuario.rol,
     }
 
     PostDB(cambios, urlPost)

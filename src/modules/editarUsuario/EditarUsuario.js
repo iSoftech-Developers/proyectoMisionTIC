@@ -24,10 +24,10 @@ const EditarUsuario = ({formLabelTitle}) => {
         });
 
         const cambios={ 
-            rol:editarUsuario.rol,
+            celular:editarUsuario.celular,
             estado:editarUsuario.estado,
             email:editarUsuario.email,
-            celular:editarUsuario.celular,
+            rol:editarUsuario.rol,
         }
 
         PatchDB(cambios,seleccionado,urlEdit)
@@ -49,7 +49,7 @@ const EditarUsuario = ({formLabelTitle}) => {
                             <div className="justify-between mt-6">
                                 <div className="flex flex-col">
                                     <div className="w-1/6">
-                                        <label for="cargo" className="bg-black text-white text-xs">Cargo</label>
+                                        <label for="cargo" className="bg-black text-sm text-white px-2 font-medium">{seleccionado.field4}</label>
                                     </div> 
                                     <div className="flex justify-between space-x-7">
                                         <div>

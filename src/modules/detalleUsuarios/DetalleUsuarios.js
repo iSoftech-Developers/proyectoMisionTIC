@@ -15,7 +15,7 @@ const DetalleUsuarios=()=>{
                     <div className="flex justify-between">
                         <div className="flex flex-col">
                             <div>
-                                <span className="bg-black text-white text-xs">{seleccionado.field6}</span>
+                                <span className="bg-black text-white text-xs">{seleccionado.field4}</span>
                             </div>
                             <div>
                                 <span className="text-lg">{seleccionado._id}</span>

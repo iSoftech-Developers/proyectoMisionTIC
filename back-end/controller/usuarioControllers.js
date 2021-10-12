@@ -12,9 +12,9 @@ const postUsuarios = async(request, response)=>{
         field1:request.nombre,
         field2:request.idusuario,
         field3:request.email,
-        field4:request.celular,
+        field4:request.rol,
         field5:request.fechaingreso,
-        field6:request.rol,
+        field6:request.celular,
         field7:request.estado,
         ids:request.idusuario,
       })
@@ -29,8 +29,8 @@ const postUsuarios = async(request, response)=>{
 const patchUsuarios = async (id ,request,response)=>{
     await Usuario.findByIdAndUpdate(id, {
         field3:request.email,
-        field4:request.celular,
-        field6:request.rol,
+        field4:request.rol,
+        field6:request.celular,
         field7:request.estado,
     })
       .then(() => {

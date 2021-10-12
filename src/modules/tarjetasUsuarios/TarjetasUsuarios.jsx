@@ -46,37 +46,35 @@ const TarjetasUsuarios = ({cardsUsuarios,userCardInfo}) => {
                     <button onClick={()=>{setChangeTab(false)}} class="tablinks p-3 text-gray-400 hover:text-gray-800 hover:border-solid text-2xl font-semibold">Solicitudes Pendientes</button>
                 </div>
             </div>
+            <div className="ml-2 w-1/4 mt-6">
+            <label for="userole"></label>
+                <select required className="pl-2 w-full h-8 input-border text-gray-500" name="roleoptions">
+                    <option class="text-bold" value="Usuarios" name="vendedor">Vendedor</option>
+                    <option class="text-bold" value="Usuarios" name="admin">Administrador</option>
+                </select>
+            </div>
   
         {consulta.map((i)=>{
                     if (i._id.includes(busqueda)||i.ids.toLowerCase().includes(busqueda.toLowerCase())){
-                        return(    
+                        return(
                             <Link key={i._id}
                             to={{
                                 pathname: `${cardsUsuarios.cardTo}/${i._id}`, 
                                 }} onClick={() => setSeleccionado(i)}> 
                                 
-                                {/*  <div className="w-1/4 mt-6">
-                                        <label for="userole"></label>
-                                        <select required className="w-full h-8 input-border text-gray-500" name="roleoptions">
-                                            <option class="text-bold" value="Usuarios">Vendedor</option>
-                                            <option class="text-bold" value="Usuarios">Administrador</option>
-                                        </select>
-                                    </div> */}
                                     {changeTab ? (
-                                            <div className="display: inline-block mt-8 px-2">
-                                                <div className="cards-container w-32 p-1 bg-white shadow-sm cursor-pointer transition duration-250 ease-in-out transform hover:-translate-y-1 hover:scale-105">
-                                                    <img src={image}/>
-                                                    <div className="flex flex-col">
-                                                        <span className="font-bold text-center">ID {i.ids}</span>
-                                                        <span className="text-sm text-center">{i.field1}</span>
-                                                        <span className="text-sm text-center sticky bg-yellow-500 text-white">{i.field6}</span>
-                                                    </div>
+                                        <div className="display: inline-block mt-8 px-2">
+                                            <div className="cards-container w-32 p-1 bg-white shadow-sm cursor-pointer transition duration-250 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+                                                <img src={image}/>
+                                                <div className="flex flex-col">
+                                                    <span className="font-bold text-center">ID {i.ids}</span>
+                                                    <span className="text-sm text-center">{i.field1}</span>
+                                                    <span className="text-sm text-center sticky bg-yellow-500 text-white" >{i.field4}</span>
                                                 </div>
                                             </div>
-
-
+                                        </div>
                                     ):(
-                                       <div className="flex mt-8 cards-container mb-6 shadow-sm bg-gray-100">
+                                    <div className="flex mt-8 cards-container mb-6 shadow-sm bg-gray-100">
                                         <div className="bg-black h-24 w-24 my-4 ml-4"></div>
                                             <div className="w-full">
                                                 <div className= "mx-4 flex flex-col h-full justify-center">

@@ -12,7 +12,7 @@ const PaginaVendedores =({cardsUsuarios})=> {
     field1:"Nombre y Apellidos",
     field2:"Documento",
     field3:"Correo electrónico",
-    field4:"Numero de celular",
+    field4:"Rol",
     field5:"Fecha de ingreso",
 }
     return (
