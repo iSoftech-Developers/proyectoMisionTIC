@@ -45,7 +45,7 @@ const patchProductos = async (id ,request,response)=>{
       }).catch(err => {
         console.error(err)
       })
-    }
+}
 
 const deleteProductos = async (id,response)=>{
 

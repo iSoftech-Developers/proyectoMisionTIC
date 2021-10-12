@@ -53,7 +53,7 @@ const EditarCliente = ({formLabelTitle}) => {
                     </div>
                     <div className="w-1/5">
                         <label for="email">{formLabelTitle.label3}</label>
-                        <input required placeholder={seleccionado.field3} class=" w-full h-8 p-2 input-border" type="email" name="email"/>
+                        <input required placeholder={seleccionado.field3} class=" w-full h-8 p-2 input-border" type="Email" name="email"/>
                     </div> 
                     <div className="w-1/5">
                         <label for="ciudad">{formLabelTitle.label4}</label>
