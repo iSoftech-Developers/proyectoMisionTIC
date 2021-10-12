@@ -4,7 +4,6 @@ import { toast } from "react-toastify";
 
 const PatchDB = async(cambios,seleccionado,urlEdit)=>{
   
-
         const options = {
             method: 'PATCH',
             url:`${urlEdit}/${seleccionado._id}`,

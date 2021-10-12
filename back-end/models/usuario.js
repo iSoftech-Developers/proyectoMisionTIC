@@ -1,6 +1,6 @@
-const mongoose= require('mongoose');
+import Mongoose  from 'mongoose';
 
-const usuarioSchema = new mongoose.Schema({
+const usuarioSchema = new Mongoose.Schema({
     ids:String,
     field1:String,// nombre
     field2:String,// documento
@@ -11,8 +11,8 @@ const usuarioSchema = new mongoose.Schema({
     field7:String,// estado
   });
 
-  const Usuario = mongoose.model('Usuario',usuarioSchema);
+  const Usuario = Mongoose.model('Usuario',usuarioSchema);
 
   
 
-  module.exports = Usuario;
+  export default Usuario;

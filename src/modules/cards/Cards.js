@@ -22,39 +22,15 @@ const Cards=({variableCards})=>{
         }
       }, [ejecutarConsulta ,variableCards.route]);
 
-      
-
-      // const Eliminar =  ({seleccionado,variableCards}) => {
-      //   console.log(seleccionado);
-      //   const options = {
-      //     method: 'DELETE',
-      //     url: `${variableCards.route}/${seleccionado._id}/`,
-      //     headers: { 'Content-Type': 'application/json' },
-      //   };
-    
-      //   axios
-      //     .request(options)
-      //     .then(function (response) {
-      //       console.log(response.data);
-      //       toast.success('Eliminado con éxito');
-      //     })
-      //     .catch(function (error) {
-      //       console.error(error);
-      //       toast.error('Error al eliminar');
-      //     });
-      //   setOpenDialog(false);
-      //   setEjecutarConsulta(true)
-      // };
-
-
-
     return(
       <>
       {consulta.map((i)=>{
           if (i._id.includes(busqueda)||i.ids.toLowerCase().includes(busqueda.toLowerCase())){
               return(    
-                  <Link to={{
+                  <Link key={i._id}
+                  to={{
                       pathname: `${variableCards.cardTo}/${i._id}`, 
+    
                     }} onClick={() => setSeleccionado(i)}> 
                       <div className="cards-container mb-6 shadow-sm bg-white transition duration-250 ease-in-out transform hover:-translate-y-1 hover:scale-100">
                           <div className="mx-6 mb-5">
@@ -112,7 +88,7 @@ const Cards=({variableCards})=>{
                 </Link>
               );}
               })}   
-          <ToastContainer position="top-right" autoClose={5000}/>
+          <ToastContainer position="top-right" autoClose={2000}/>
         </>
         
 

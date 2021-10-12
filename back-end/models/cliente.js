@@ -1,6 +1,6 @@
-const mongoose= require('mongoose');
+import Mongoose  from 'mongoose';
 
-const clienteSchema = new mongoose.Schema({
+const clienteSchema = new Mongoose.Schema({
     ids:String, //id
     field1:String, // razon social
     field2:Number, // nit -cc
@@ -12,6 +12,6 @@ const clienteSchema = new mongoose.Schema({
     field8:String, // persona contacto
   });
 
-  const Cliente = mongoose.model('Cliente',clienteSchema);
+  const Cliente = Mongoose.model('Cliente',clienteSchema);
 
-  module.exports = Cliente; 
+ export default Cliente;
