@@ -58,16 +58,16 @@ const AgregarUsuario = ({formLabelTitle}) => {
                                         </div>
                                         <div className="w-1/3">
                                         <label for="rol" className="font-bold">{formLabelTitle.label2}</label>
-                                            <select required className=" w-full h-8 font-bold pl-2 rounded-md input-border" name="rol" defaultValue={0}>
-                                                <option type="String" value={0}>Selecciona una opción</option>
+                                            <select required className=" w-full h-8 font-bold pl-2 rounded-md input-border" name="rol" required>
+                                                <option type="String" value="">Selecciona una opción</option>
                                                 <option type="String">Vendedor</option>
                                                 <option type="String">Administrador</option>
                                             </select>
                                         </div>
                                         <div className="w-1/3">
                                             <label for="estado" className="font-bold">{formLabelTitle.label3}</label>
-                                            <select required className="w-full h-8 font-bold pl-2 rounded-md input-border" name="estado" defaultValue={0} placeholder="Selecciona una opción" >
-                                                <option type="String" value={0}>Selecciona una opción</option>
+                                            <select required className="w-full h-8 font-bold pl-2 rounded-md input-border" name="estado" placeholder="Selecciona una opción" required>
+                                                <option type="String" value="">Selecciona una opción</option>
                                                 <option required type="String">Pendiente</option>
                                                 <option required type="String">Autorizado</option>
                                                 <option required type="String">Rechazado</option>

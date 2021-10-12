@@ -22,7 +22,6 @@ const PaginaAgregarUsuarios =()=>{
         <>
             <NoButtonUpperBarSection title="Agregar Vendedor"/>
             <AgregarUsuario formLabelTitle = {formLabelTitle}/>
-           
         </> 
     );
 }
