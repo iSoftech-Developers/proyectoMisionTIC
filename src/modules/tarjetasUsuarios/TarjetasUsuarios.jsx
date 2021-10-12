@@ -42,8 +42,8 @@ const TarjetasUsuarios = ({cardsUsuarios,userCardInfo}) => {
  
             <div className="mt-6 ">
                 <div className="flex">
-                    <button onClick={()=>{setChangeTab(true)}}class="tablinks px-3 text-gray-400 hover:text-gray-800 hover:bg-gray-200 text-2xl font-bold">Administrador de Usuarios</button>
-                    <button onClick={()=>{setChangeTab(false)}} class="tablinks px-3 text-gray-400 hover:text-gray-800 hover:bg-gray-200 text-2xl font-bold">Solicitudes Pendientes</button>
+                    <button onClick={()=>{setChangeTab(true)}}class="tablinks p-3 text-gray-400 hover:text-gray-800 text-2xl font-semibold">Administrador de Usuarios</button>
+                    <button onClick={()=>{setChangeTab(false)}} class="tablinks p-3 text-gray-400 hover:text-gray-800 hover:border-solid text-2xl font-semibold">Solicitudes Pendientes</button>
                 </div>
             </div>
   
@@ -63,11 +63,8 @@ const TarjetasUsuarios = ({cardsUsuarios,userCardInfo}) => {
                                         </select>
                                     </div> */}
                                     {changeTab ? (
-
-                                    
-                                        <Link to="/rolesUsuarios/detalleUsuarios">
-                                            <div className="display: inline-block mt-3 px-2">
-                                                <div className="w-32 p-1 bg-white shadow-sm cursor-pointer transition duration-250 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+                                            <div className="display: inline-block mt-8 px-2">
+                                                <div className="cards-container w-32 p-1 bg-white shadow-sm cursor-pointer transition duration-250 ease-in-out transform hover:-translate-y-1 hover:scale-105">
                                                     <img src={image}/>
                                                     <div className="flex flex-col">
                                                         <span className="font-bold text-center">ID {i.ids}</span>
@@ -76,12 +73,8 @@ const TarjetasUsuarios = ({cardsUsuarios,userCardInfo}) => {
                                                     </div>
                                                 </div>
                                             </div>
-                                        </Link>
-                                    
-                                    
 
-                                                    
-                                            
+
                                     ):(
                                        <div className="flex mt-8 cards-container mb-6 shadow-sm bg-gray-100">
                                         <div className="bg-black h-24 w-24 my-4 ml-4"></div>

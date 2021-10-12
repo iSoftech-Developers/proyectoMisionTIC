@@ -11,7 +11,7 @@ const postUsuarios = async(request, response)=>{
     const usuario = new Usuario({
         field1:request.nombre,
         field2:request.idusuario,
-        field3:request.especialidad,
+        field3:request.email,
         field4:request.celular,
         field5:request.fechaingreso,
         field6:request.rol,
@@ -28,7 +28,7 @@ const postUsuarios = async(request, response)=>{
 
 const patchUsuarios = async (id ,request,response)=>{
     await Usuario.findByIdAndUpdate(id, {
-        field3:request.especialidad,
+        field3:request.email,
         field4:request.celular,
         field6:request.rol,
         field7:request.estado,

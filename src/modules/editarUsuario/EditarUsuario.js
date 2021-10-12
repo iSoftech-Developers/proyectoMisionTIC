@@ -26,7 +26,7 @@ const EditarUsuario = ({formLabelTitle}) => {
         const cambios={ 
             rol:editarUsuario.rol,
             estado:editarUsuario.estado,
-            especialidad:editarUsuario.especialidad,
+            email:editarUsuario.email,
             celular:editarUsuario.celular,
         }
 
@@ -58,19 +58,19 @@ const EditarUsuario = ({formLabelTitle}) => {
                                         </div>
                                         <div className="w-1/3">
                                         <label for="rol" className="font-bold">{formLabelTitle.label2}</label>
-                                            <select required class=" w-full h-8 font-bold pl-2 rounded-md input-border" name="rol" defaultValue={0}>
-                                                <option disabled type="String" value={0}>Selecciona una opción</option>
+                                            <select class=" w-full h-8 font-bold pl-2 rounded-md input-border" name="rol" required>
+                                                <option disabled type="String" value="">Selecciona una opción</option>
                                                 <option type="String">Vendedor</option>
                                                 <option type="String">Administrador</option>
                                             </select>
                                         </div>
                                         <div className="w-1/3">
                                             <label for="estado" className="font-bold">{formLabelTitle.label3}</label>
-                                            <select required class="w-full h-8 font-bold pl-2 rounded-md input-border" name="estado" defaultValue={0} placeholder="Selecciona una opción" >
-                                                <option disabled type="String" value={0}>Selecciona una opción</option>
-                                                <option required type="String">Pendiente</option>
-                                                <option required type="String">Autorizado</option>
-                                                <option required type="String">Rechazado</option>
+                                            <select class="w-full h-8 font-bold pl-2 rounded-md input-border" name="estado" placeholder="Selecciona una opción" required>
+                                                <option disabled type="String" value="">Selecciona una opción</option>
+                                                <option type="String">Pendiente</option>
+                                                <option type="String">Autorizado</option>
+                                                <option type="String">Rechazado</option>
                                             </select>
                                         </div>
                                     </div>
@@ -86,8 +86,8 @@ const EditarUsuario = ({formLabelTitle}) => {
                                 <input required class=" w-full h-8 p-2 rounded-md input-border" type="String" name="nombre" value={seleccionado.field1}/>
                             </div>
                             <div className="flex flex-col ">
-                                <label for="especialidad" className="font-bold">{formLabelTitle.label6}</label>
-                                <input required class=" w-full h-8 p-2 rounded-md input-border" type="String" name="especialidad"/>
+                                <label for="email" className="font-bold">{formLabelTitle.label6}</label>
+                                <input required class=" w-full h-8 p-2 rounded-md input-border" type="Email" name="email"/>
                             </div>
                             <div className="flex flex-col ">
                                 <label for="celular" className="font-bold">{formLabelTitle.label7}</label>

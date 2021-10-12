@@ -27,7 +27,7 @@ const AgregarUsuario = ({formLabelTitle}) => {
     estado: nuevoUsuario.estado,
     fechaingreso: nuevoUsuario.fechaingreso,
     nombre: nuevoUsuario.nombre,
-    especialidad: nuevoUsuario.especialidad,
+    email: nuevoUsuario.email,
     celular: nuevoUsuario.celular,
     }
 
@@ -86,8 +86,8 @@ const AgregarUsuario = ({formLabelTitle}) => {
                                 <input required className=" w-full h-8 p-2 rounded-md input-border" type="String" name="nombre" />
                             </div>
                             <div className="flex flex-col w-1/3">
-                                <label for="especialidad" className="font-bold">{formLabelTitle.label6}</label>
-                                <input required className=" w-full h-8 p-2 rounded-md input-border" type="String" name="especialidad"/>
+                                <label for="email" className="font-bold">{formLabelTitle.label6}</label>
+                                <input required className=" w-full h-8 p-2 rounded-md input-border" type="Email" name="email"/>
                             </div>
                             <div className="flex flex-col w-1/3">
                                 <label for="celular" className="font-bold">{formLabelTitle.label7}</label>

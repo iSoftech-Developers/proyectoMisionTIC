@@ -11,7 +11,7 @@ const PaginaVendedores =({cardsUsuarios})=> {
     page:"/moduloVendedores",
     field1:"Nombre y Apellidos",
     field2:"Documento",
-    field3:"Especialidad",
+    field3:"Correo electrónico",
     field4:"Numero de celular",
     field5:"Fecha de ingreso",
 }
