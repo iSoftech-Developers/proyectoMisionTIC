@@ -25,6 +25,7 @@ const Dashboard = () => {
     cardTo:"/moduloClientes/detalleCliente",
     linkIcon:"/moduloClientes/paginaEditarCliente",
     titleCard:"Cliente ID",
+    filtroVendedores:"",
     field1:"Razon Social*",
     field2:"NIT/CC*",
     field3:"Email",

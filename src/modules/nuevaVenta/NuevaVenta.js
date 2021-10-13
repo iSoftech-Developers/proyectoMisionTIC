@@ -190,7 +190,7 @@ const TablaProductos = ({ productos, setProductos, setProductosTabla }) => {
                }
               }
             >
-              <option name="opcion" disabled value=''>
+              <option name="Seleccione un Producto" disabled value=''>
                 Seleccione un Producto
               </option>
               {productos.map((el) => {
