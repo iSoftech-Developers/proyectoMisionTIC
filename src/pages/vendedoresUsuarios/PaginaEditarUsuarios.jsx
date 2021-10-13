@@ -10,7 +10,7 @@ const PaginaEditarUsuarios =({})=>{
         label3:"Estado",
         label4:"Fecha de ingreso",
         label5:"Nombres y apellidos",
-        label6:"Especialidad",
+        label6:"Correo electrónico",
         label7:"Celular",
     }
 

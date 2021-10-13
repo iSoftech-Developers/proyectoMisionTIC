@@ -1,20 +1,31 @@
 import Usuario from "../models/usuario.js";
 
 
-const getUsuarios= async(response)=>{
-   await Usuario.find({}).then((usuarios)=>{
+const getVendedores= async(response)=>{
+   await Usuario.find({field4:"Vendedor"}).then((usuarios)=>{
         response.json(usuarios)
       })
+}
+
+const getAdministradores= async(response)=>{
+  await Usuario.find({field4:"Administrador"}).then((usuarios)=>{
+      response.json(usuarios)
+     })
+}
+const getUsuarios= async(response)=>{
+  await Usuario.find({}).then((usuarios)=>{
+       response.json(usuarios)
+     })
 }
 
 const postUsuarios = async(request, response)=>{
     const usuario = new Usuario({
         field1:request.nombre,
         field2:request.idusuario,
-        field3:request.especialidad,
-        field4:request.celular,
+        field3:request.email,
+        field4:request.rol,
         field5:request.fechaingreso,
-        field6:request.rol,
+        field6:request.celular,
         field7:request.estado,
         ids:request.idusuario,
       })
@@ -28,9 +39,9 @@ const postUsuarios = async(request, response)=>{
 
 const patchUsuarios = async (id ,request,response)=>{
     await Usuario.findByIdAndUpdate(id, {
-        field3:request.especialidad,
-        field4:request.celular,
-        field6:request.rol,
+        field3:request.email,
+        field4:request.rol,
+        field6:request.celular,
         field7:request.estado,
     })
       .then(() => {
@@ -50,4 +61,4 @@ const deleteUsuarios  = async (id,response)=>{
 }
 
 
-export {getUsuarios, postUsuarios, patchUsuarios, deleteUsuarios}
+export {getVendedores, getAdministradores, getUsuarios, postUsuarios, patchUsuarios, deleteUsuarios}

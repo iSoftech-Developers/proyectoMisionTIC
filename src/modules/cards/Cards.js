@@ -41,14 +41,14 @@ const Cards=({variableCards})=>{
                                       <div className="edit-card pt-4 space-x-5">
                                           <Link to={`${variableCards.linkIcon}/${i._id}`} onClick={() =>setSeleccionado(i)}>
                                               <Tooltip title="editar">
-                                                  <i className="fas fa-pen hover:text-blue-900 text-blue-500 fa-lg"></i>
+                                                  <i className="fas fa-pen hover:text-blue-600 text-blue-800 fa-lg"></i>
                                               </Tooltip>
                                           </Link>
                                           <Link to={variableCards.page} onClick={()=>{
                                               setSeleccionado(i)
                                               setOpenDialog(true)}}>
-                                             <Tooltip title="Eliminar">
-                                              <i className="fas fa-trash text-red-500 hover:text-red-900 shadow-md fa-lg"></i>
+                                              <Tooltip title="Eliminar">
+                                              <i className="fas fa-trash text-red-800 hover:text-red-600 shadow-md fa-lg"></i>
                                               </Tooltip>
                                           </Link>
                                       </div>
@@ -65,7 +65,7 @@ const Cards=({variableCards})=>{
                                     <Link onClick={()=>setOpenDialog(false)} className= 'mx-2 my-4 px-4 py-2 bg-red-500 text-white hover:bg-red-700 rounded-md shadow-md' to={variableCards.page}> No </Link>
                                   </div>
                                 </div>
-                                </Dialog>
+                              </Dialog>
                               <table className="table-fixed text-sm w-full bg-white border-gray-400 border mt-4">
                                   <tr>
                                       <th >{variableCards.field1}</th>
@@ -85,7 +85,7 @@ const Cards=({variableCards})=>{
                           </div>
                       </div>
                       
-                 </Link>
+                </Link>
               );}
               })}   
           <ToastContainer position="top-right" autoClose={2000}/>
