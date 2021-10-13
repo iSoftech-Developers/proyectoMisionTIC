@@ -6,7 +6,7 @@ import { useSeleccionado } from '../../context/Seleccionado';
 import { useBuscado } from '../../context/BuscadorContext';
 import { obtenerDB } from '../../utils/GetDB';
 import DeleteDB from '../../utils/DeleteDB';
-
+import DropDown from '../dropDown/DropDown';
 
 
 const TarjetasUsuarios = ({cardsUsuarios,userCardInfo}) => {
@@ -16,6 +16,8 @@ const TarjetasUsuarios = ({cardsUsuarios,userCardInfo}) => {
     const [consulta, setConsulta] = useState([]); 
     const [ejecutarConsulta, setEjecutarConsulta] = useState(true);
     const [changeTab, setChangeTab]= useState(true);
+    /* const [sorting,setSorting] = useState(true); */
+
 
     useEffect(() => {
         console.log('consulta', ejecutarConsulta);
@@ -27,33 +29,50 @@ const TarjetasUsuarios = ({cardsUsuarios,userCardInfo}) => {
 /*
     useEffect(() => {
         if (changeTab) {
-          setTextoBoton('Crear Nuevo Vehículo');
-          setColorBoton('indigo');
+        setTextoBoton('Crear Nuevo Vehículo');
+        setColorBoton('indigo');
         } else {
-          setTextoBoton('Mostrar Todos los vehículos');
-          setColorBoton('green');
+        setTextoBoton('Mostrar Todos los vehículos');
+        setColorBoton('green');
         }
-      }, [changeTab]);
+    }, [changeTab]);
       */
+   /*  sorting = (e) => {
+        const sorting = e.target.value;
+
+        const sortRes = this.state.consulta.sort(()=>{
+            if(sorting === 'Vendedor'){
+                return cardsUsuarios
+            }else (sorting === 'Admnistrador')
+            }
+        )
+    } */
+
 
     return (
 
         <>
- 
-            <div className="mt-6 ">
-                <div className="flex">
-                    <button onClick={()=>{setChangeTab(true)}}class="tablinks p-3 text-gray-400 hover:text-gray-800 text-2xl font-semibold">Administrador de Usuarios</button>
-                    <button onClick={()=>{setChangeTab(false)}} class="tablinks p-3 text-gray-400 hover:text-gray-800 hover:border-solid text-2xl font-semibold">Solicitudes Pendientes</button>
-                </div>
+            
+        <div className="mt-6 ">
+            <div className="flex">
+                <button onClick={()=>{setChangeTab(true)}}class="tablinks p-3 text-gray-400 hover:text-gray-800 text-2xl font-semibold">Administrador de Usuarios</button>
+                <button onClick={()=>{setChangeTab(false)}} class="tablinks p-3 text-gray-400 hover:text-gray-800 hover:border-solid text-2xl font-semibold">Solicitudes Pendientes</button>
             </div>
-            <div className="ml-2 w-1/4 mt-6">
+        </div>
+        <DropDown
+            /* sorting = {this.sorting}
+            sorts = {this.state.sort} */
+        />
+            {/* <div className="ml-2 w-1/4 mt-6">
             <label for="userole"></label>
                 <select required className="pl-2 w-full h-8 input-border text-gray-500" name="roleoptions">
                     <option class="text-bold" value="Usuarios" name="vendedor">Vendedor</option>
                     <option class="text-bold" value="Usuarios" name="admin">Administrador</option>
                 </select>
-            </div>
-  
+                sorting ={this.sorting}
+                sort={this.state.sort}
+            </div> */}
+            
         {consulta.map((i)=>{
                     if (i._id.includes(busqueda)||i.ids.toLowerCase().includes(busqueda.toLowerCase())){
                         return(
@@ -104,6 +123,7 @@ const TarjetasUsuarios = ({cardsUsuarios,userCardInfo}) => {
                             </Link>
                         );}
                         })}
+                        
         </>
             
 
