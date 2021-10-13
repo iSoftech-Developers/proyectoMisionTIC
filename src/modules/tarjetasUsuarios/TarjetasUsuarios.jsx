@@ -17,6 +17,7 @@ const TarjetasUsuarios = ({cardsUsuarios,userCardInfo}) => {
     const [ejecutarConsulta, setEjecutarConsulta] = useState(true);
     const [changeTab, setChangeTab]= useState(true);
 
+
     useEffect(() => {
         console.log('consulta', ejecutarConsulta);
         if (ejecutarConsulta) {
@@ -46,10 +47,12 @@ const TarjetasUsuarios = ({cardsUsuarios,userCardInfo}) => {
                     <button onClick={()=>{setChangeTab(false)}} class="tablinks p-3 text-gray-400 hover:text-gray-800 hover:border-solid text-2xl font-semibold">Solicitudes Pendientes</button>
                 </div>
             </div>
+
+
             <div className="ml-2 w-1/4 mt-6">
             <label for="userole"></label>
                 <select required className="pl-2 w-full h-8 input-border text-gray-500" name="roleoptions">
-                    <option class="text-bold" value="Usuarios" name="vendedor">Vendedor</option>
+                    <option  class="text-bold" value="Usuarios" name="vendedor">Vendedor</option>
                     <option class="text-bold" value="Usuarios" name="admin">Administrador</option>
                 </select>
             </div>
