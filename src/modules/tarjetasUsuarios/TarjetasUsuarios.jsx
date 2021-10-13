@@ -1,4 +1,5 @@
 import React from 'react';
+import { Dialog,Tooltip } from '@material-ui/core';
 import image from '../../media/image.jpeg';
 import {useState,useEffect} from 'react';
 import { Link } from 'react-router-dom';
@@ -6,25 +7,30 @@ import { useSeleccionado } from '../../context/Seleccionado';
 import { useBuscado } from '../../context/BuscadorContext';
 import { obtenerDB } from '../../utils/GetDB';
 import DeleteDB from '../../utils/DeleteDB';
-import DropDown from '../dropDown/DropDown';
+import ReactLoading from 'react-loading';
+import { ToastContainer} from "react-toastify";
 
 
-const TarjetasUsuarios = ({cardsUsuarios,userCardInfo}) => {
+
+const TarjetasUsuarios = ({variableCards,userCardInfo}) => {
     const {seleccionado, setSeleccionado}=useSeleccionado()
     const {busqueda}=useBuscado()
     const[openDialog,setOpenDialog]=useState(false)
     const [consulta, setConsulta] = useState([]); 
     const [ejecutarConsulta, setEjecutarConsulta] = useState(true);
     const [changeTab, setChangeTab]= useState(true);
-    /* const [sorting,setSorting] = useState(true); */
+    const [loading, setLoading] =useState(false)
+
+
 
 
     useEffect(() => {
+        <ReactLoading type={"spin"} color={"#ffffff"} height={667} width={375} />
         console.log('consulta', ejecutarConsulta);
         if (ejecutarConsulta) {
-        obtenerDB(setConsulta, setEjecutarConsulta,cardsUsuarios.route);
+        obtenerDB(setConsulta, setEjecutarConsulta,variableCards.route);
         }
-    }, [ejecutarConsulta ,cardsUsuarios.route]);
+    }, [ejecutarConsulta ,variableCards.route]);
 
 /*
     useEffect(() => {
@@ -42,7 +48,7 @@ const TarjetasUsuarios = ({cardsUsuarios,userCardInfo}) => {
 
         const sortRes = this.state.consulta.sort(()=>{
             if(sorting === 'Vendedor'){
-                return cardsUsuarios
+                return variableCards
             }else (sorting === 'Admnistrador')
             }
         )
@@ -59,31 +65,43 @@ const TarjetasUsuarios = ({cardsUsuarios,userCardInfo}) => {
                 <button onClick={()=>{setChangeTab(false)}} class="tablinks p-3 text-gray-400 hover:text-gray-800 hover:border-solid text-2xl font-semibold">Solicitudes Pendientes</button>
             </div>
         </div>
-        <DropDown
-            /* sorting = {this.sorting}
-            sorts = {this.state.sort} */
-        />
-            {/* <div className="ml-2 w-1/4 mt-6">
-            <label for="userole"></label>
-                <select required className="pl-2 w-full h-8 input-border text-gray-500" name="roleoptions">
-                    <option class="text-bold" value="Usuarios" name="vendedor">Vendedor</option>
-                    <option class="text-bold" value="Usuarios" name="admin">Administrador</option>
-                </select>
-                sorting ={this.sorting}
-                sort={this.state.sort}
-            </div> */}
+
             
         {consulta.map((i)=>{
                     if (i._id.includes(busqueda)||i.ids.toLowerCase().includes(busqueda.toLowerCase())){
                         return(
                             <Link key={i._id}
                             to={{
-                                pathname: `${cardsUsuarios.cardTo}/${i._id}`, 
+                                pathname: `${variableCards.cardTo}/${i._id}`, 
                                 }} onClick={() => setSeleccionado(i)}> 
                                 
                                     {changeTab ? (
                                         <div className="display: inline-block mt-8 px-2">
                                             <div className="cards-container w-32 p-1 bg-white shadow-sm cursor-pointer transition duration-250 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+                                                <Link to={`${variableCards.linkIcon}/${i._id}`} onClick={() =>setSeleccionado(i)}>
+                                                    <Tooltip title="editar">
+                                                        <i className="fas fa-pen  hover:text-blue-600 text-blue-800 fa-lg"></i>
+                                                    </Tooltip>
+                                                </Link>
+                                                <Link to={variableCards.page} onClick={()=>{
+                                                    setSeleccionado(i)
+                                                    setOpenDialog(true)}}>
+                                                    <Tooltip title="Eliminar">
+                                                    <i className="fas fa-trash text-red-800 hover:text-red-600 shadow-md fa-lg"></i>
+                                                    </Tooltip>
+                                                </Link>
+                                                <Dialog open={openDialog}>
+                                                <div className ='p-8 flex flex-col'>
+                                                    <h1 className= 'text gray-800 text-xl font-bold'> ¿Esta seguro de querer eliminarlo? </h1>
+                                                    <div className='flex w-full items-center justify-center'> 
+                                                    <Link to={variableCards.page} onClick={()=>{
+                                                        DeleteDB({variableCards,seleccionado})
+                                                        setOpenDialog(false)
+                                                        setEjecutarConsulta(true)}} className= 'mx-2 my-4 px-4 py-2 bg-green-500 text-white hover:bg-green-700 rounded-md shadow-md'> Si </Link>
+                                                    <Link onClick={()=>setOpenDialog(false)} className= 'mx-2 my-4 px-4 py-2 bg-red-500 text-white hover:bg-red-700 rounded-md shadow-md' to={variableCards.page}> No </Link>
+                                                    </div>
+                                                </div>
+                                                </Dialog>
                                                 <img src={image}/>
                                                 <div className="flex flex-col">
                                                     <span className="font-bold text-center">ID {i.ids}</span>
@@ -116,13 +134,13 @@ const TarjetasUsuarios = ({cardsUsuarios,userCardInfo}) => {
                                                     </table>
 
                                                 </div>
-                                
                                             </div>
                                     </div> 
                                     )}           
                             </Link>
                         );}
                         })}
+                        <ToastContainer position="top-right" autoClose={2000}/>
                         
         </>
             

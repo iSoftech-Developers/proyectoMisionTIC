@@ -63,7 +63,7 @@ const DetalleUsuarios=()=>{
                                     <span className="font-bold">Celular</span> 
                                 </div>
                                 <div>
-                                    <span>{seleccionado.field4}</span>
+                                    <span>{seleccionado.field6}</span>
                                 </div>
                             </div>
                         </div>

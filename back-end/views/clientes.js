@@ -21,9 +21,9 @@ rutasClientes.route('/clientes/:id/').patch((request,response)=>{
         patchClientes(id, request.body, response)
     })
 
-    rutasClientes.route('/clientes/:id/').delete((request,response)=>{
-        const id = request.params.id
-        deleteClientes(id,response)
-      })
+rutasClientes.route('/clientes/:id/').delete((request,response)=>{
+    const id = request.params.id
+    deleteClientes(id,response)
+  })
 
 export default rutasClientes;

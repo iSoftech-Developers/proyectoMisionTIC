@@ -2,10 +2,11 @@ import TarjetasUsuarios from "../../modules/tarjetasUsuarios/TarjetasUsuarios";
 import { useEffect, useState } from 'react';
 
 
-const PaginaRolesUsuario =({cardsUuarios})=>{
+const PaginaRolesUsuario =({})=>{
 
     const variableCards = {
-      cardTo:"/rolesUsuarios/paginaEditarUsuarios",
+      cardTo:"/rolesUsuarios/detalleUsuarios",
+      linkIcon:"/rolesUsuarios/paginaEditarUsuarios",
       route:"http://localhost:3001/usuarios",
       page:"/rolesUsuarios",
   }
@@ -13,7 +14,7 @@ const PaginaRolesUsuario =({cardsUuarios})=>{
 
     return(
         <>
-          <TarjetasUsuarios cardsUsuarios={variableCards}/>
+          <TarjetasUsuarios variableCards={variableCards}/>
         </>
     );
 

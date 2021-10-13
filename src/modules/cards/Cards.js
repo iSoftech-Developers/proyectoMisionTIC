@@ -65,7 +65,7 @@ const Cards=({variableCards})=>{
                                     <Link onClick={()=>setOpenDialog(false)} className= 'mx-2 my-4 px-4 py-2 bg-red-500 text-white hover:bg-red-700 rounded-md shadow-md' to={variableCards.page}> No </Link>
                                   </div>
                                 </div>
-                                </Dialog>
+                              </Dialog>
                               <table className="table-fixed text-sm w-full bg-white border-gray-400 border mt-4">
                                   <tr>
                                       <th >{variableCards.field1}</th>
