@@ -12,6 +12,8 @@ const PaginaClientes =({cardsClientes})=> {
     icon:" fas fa-users",
     cardTo:"/moduloClientes/detalleCliente",
     linkIcon:"/moduloClientes/paginaEditarCliente",
+    route:"http://localhost:3001/clientes",
+    page:"/moduloClientes",
     titleCard:"Cliente ID",
     field1:"Razon Social*",
     field2:"NIT/CC*",

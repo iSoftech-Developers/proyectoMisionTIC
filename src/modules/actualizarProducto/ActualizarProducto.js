@@ -1,71 +1,55 @@
 
 import { useRef } from "react";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import { useSeleccionado } from '../../context/Seleccionado';
+import PatchDB from "../../utils/PatchDB";
 
 const ActualizarProducto = ({formLabelTitle}) => {
 
+
+    const urlEdit= 'http://localhost:3001/productos'
+    const {seleccionado}=useSeleccionado()
+
     const form = useRef(null);
 
-    const submitForm = (e) => {
+    const submitForm = async (e) => {
         e.preventDefault();
 
-          const fd = new FormData(form.current);
+    const fd = new FormData(form.current);
 
-          const editarProducto = {};
-          fd.forEach((value,key) => {
-            editarProducto[key] = value;
-          });
+        const editarProducto = {};
+        fd.forEach((value,key) => {
+        editarProducto[key] = value;
+        });
+        const cambios={valorunitario:editarProducto.valorunitario,
+            cantidad:editarProducto.cantidad,
+            estado:editarProducto.estado}
 
-          console.log('Datos del form enviados', editarProducto);
-          toast.success('Producto actualizado');
-      };
+        PatchDB(cambios,seleccionado,urlEdit)
+    };
     
     return (
-        <form ref={form} onSubmit={submitForm} className="space-y-8">
+
+        <>
+            <form ref={form} onSubmit={submitForm} className="space-y-8">
             <div>
                 <div className="form-upper-section flex justify-between font-bold label-color space-x-4">
                         <div className="w-1/5">
                             <label for="descripcion">{formLabelTitle.label1}</label>
-                            <select required class=" w-full h-8 text-gray-500 input-border" type="String" name="descripcion" defaultValue={0}>
-                                <option disabled type="String" value={0}>Selecciona una opción</option>
-                                <option type="String">Camiseta</option>
-                                <option type="String">Vestido de baño</option>
-                                <option type="String">Medias</option>
-                                <option type="String">Tops</option>
-                                <option type="String">Zapato</option>
-                            </select>
+                            <input class=" w-full h-8 p-2 text-gray-500 input-border" type="String" name="descripcion" value={seleccionado.field1}></input>
                         </div>
                         <div className="w-1/5">
                             <label for="genero">{formLabelTitle.label2}</label>
-                            <select required class=" w-full h-8 text-gray-500 input-border" type="String" name="genero" defaultValue={0}>
-                                <option disabled type="String" value={0}>Selecciona una opción</option>
-                                <option type="String">Masculino</option>
-                                <option type="String">Femenino</option>
-                            </select>
+                            <input class=" w-full h-8 p-2 text-gray-500 input-border" type="String" name="genero" value={seleccionado.field6}></input>
                         </div>
                         <div className="w-1/5">
                             <label for="color">{formLabelTitle.label3}</label>
-                            <select required class=" w-full h-8 text-gray-500 input-border" type="String" name="color" defaultValue={0}>
-                                <option disabled type="String" value={0}>Selecciona una opción</option>
-                                <option type="String">Amarillo</option>
-                                <option type="String">Azul</option>
-                                <option type="String">Blanco</option>
-                                <option type="String">Negro</option>
-                                <option type="String">Rojo</option>
-                                <option type="String">Verde</option>
-                            </select>
+                            <input class=" w-full h-8 p-2 text-gray-500 input-border" type="String" name="color" value={seleccionado.field7}></input>
                         </div>
                         <div className="w-1/5">
                             <label for="talla">{formLabelTitle.label4}</label>
-                            <select required class=" w-full h-8 text-gray-500 input-border" type="String" name="talla" defaultValue={0}>
-                            <option disabled type="String" value={0}>Selecciona una opción</option>
-                                <option type="String">XS</option>
-                                <option type="String">S</option>
-                                <option type="String">M</option>
-                                <option type="String">L</option>
-                                <option type="String">XL</option>
-                            </select>
+                            <input class=" w-full h-8 p-2 text-gray-500 input-border" type="String" name="talla" value={seleccionado.field4}></input>
                         </div>
                     </div>
                 </div>
@@ -80,7 +64,8 @@ const ActualizarProducto = ({formLabelTitle}) => {
                         </div>
                         <div className="w-1/5">
                             <label for="estado">{formLabelTitle.label7}</label>
-                            <select required class=" w-full h-8 text-gray-500 input-border" type="Boolean" name="estado">
+                            <select required class=" w-full h-8 text-gray-500 input-border" type="Boolean" name="estado" defaultValue={0}>
+                                <option disabled type="String" value={0}>Selecciona una opción</option>
                                 <option type="Boolean">Disponible</option>
                                 <option type="Boolean">No disponible</option>
                             </select>
@@ -94,6 +79,7 @@ const ActualizarProducto = ({formLabelTitle}) => {
                     </div>
                 </div>
             </form>
+    </>   
     )
 }
 

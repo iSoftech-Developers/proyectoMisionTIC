@@ -1,31 +1,13 @@
-import { useParams,useHistory } from "react-router";
-import {useEffect,useState} from "react";
-import axios from 'axios';
+import { useSeleccionado } from "../../context/Seleccionado";
 
 const DetalleUsuarios=()=>{
-    const vendedores = [
-        { id:0,field1: 1037645234, field2: "Juan Sebastian Cabrera Rojas", field3: "Online", field4: "313248789", field5: "29/09/2021" }];
-    const [cardsInfo,setCardsInfo] =useState([]);
-    
-    /*useEffect(()=>{
-        setCardsInfo(vendedores);
-    },[vendedores]);*/ 
 
-    
-    let history = useHistory();
-    let { id } = useParams();
-    console.log(id)
-    let user= vendedoresInformation[parseInt(id, 10)];
-    console.log(user)
-   
-    let back = e => {
-        e.stopPropagation();
-        history.goBack();
-      };
+    const {seleccionado}=useSeleccionado()
+
 
     return(
         <>
-            <div className="flex mt-14"onClick={back}>
+            <div className="flex mt-14">
                 <div className="p-8 border-solid border-2 border-gray-400">
                     <i className="fas fa-user fa-10x text-gray-300"></i>
                 </div>
@@ -36,7 +18,7 @@ const DetalleUsuarios=()=>{
                                 <span className="bg-black text-white text-xs">Administrador</span>
                             </div>
                             <div>
-                                <span className="text-lg">ID {user.id}</span>
+                                <span className="text-lg">{seleccionado._id}</span>
                             </div>  
                         </div>
                     </div>
@@ -47,7 +29,7 @@ const DetalleUsuarios=()=>{
                                     <span className="font-bold">Fecha de ingreso</span>
                                 </div>
                                 <div>
-                                    <span>{user.field5}</span>
+                                    <span>{seleccionado.field5}</span>
                                 </div>
                             </div>
                             <div className="flex flex-col">
@@ -55,7 +37,15 @@ const DetalleUsuarios=()=>{
                                     <span className="font-bold">Nombres y apellidos</span>
                                 </div>
                                 <div>
-                                    <span>{user.field2}</span>
+                                    <span>{seleccionado.field1}</span>
+                                </div>
+                            </div>
+                            <div className="flex flex-col">
+                                <div>
+                                    <span className="font-bold">Documento</span>
+                                </div>
+                                <div>
+                                    <span>{seleccionado.field2}</span>
                                 </div>
                             </div>
                             <div className="flex flex-col">
@@ -63,7 +53,7 @@ const DetalleUsuarios=()=>{
                                     <span className="font-bold">Especialidad</span>
                                 </div>
                                 <div>
-                                    <span>{user.field3}</span>
+                                    <span>{seleccionado.field3}</span>
                                 </div>
                             </div>
                             <div className="flex flex-col">
@@ -71,16 +61,14 @@ const DetalleUsuarios=()=>{
                                     <span className="font-bold">Celular</span> 
                                 </div>
                                 <div>
-                                    <span>{user.field4}</span>
+                                    <span>{seleccionado.field4}</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-      
+            </div>          
 
-            
         </>
     );
 }

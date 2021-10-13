@@ -1,4 +1,4 @@
-import { useState,useEffect, useRef } from "react";
+import { useRef } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -29,18 +29,17 @@ const NuevaVenta=()=>{
     const submitForm = (e) => {
         e.preventDefault();
 
-          const fd = new FormData(form.current);
+    const fd = new FormData(form.current);
 
-          const nuevaVenta = {};
-          fd.forEach((value,key) => {
-              nuevaVenta[key] = value;
-          });
+    const nuevaVenta = {};
+    fd.forEach((value,key) => {
+        nuevaVenta[key] = value;
+    });
 
-          console.log('Datos del form enviados', nuevaVenta);
-          toast.success('Venta guardada');
-      };
+    console.log('Datos del form enviados', nuevaVenta);
+    toast.success('Venta guardada');
+};
 
-   
     return(
     
         <div>

@@ -3,11 +3,15 @@ import UpperBarSection from '../../modules/upperBarSection/UpperBarSection';
 
 
 
-const PaginaProductos =({cardsProductosInformation})=> {
+
+const PaginaProductos =()=> {
+
 
 const variableCards = {
     icon:"fas fa-tshirt",
     cardTo:"/productos/detalleProducto",
+    route:"http://localhost:3001/productos",
+    page:"/productos",
     linkIcon:"/productos/actualizarProducto",
     titleCard:"Id Producto",
     field1:"Descripción",
@@ -24,7 +28,7 @@ const variableCards = {
   
   
         <UpperBarSection titlePage="Productos" nameButton="Nuevo Producto" selectorButton="/productos/nuevoProducto"/>
-        <Cards variableCards={variableCards} cardsinformation={cardsProductosInformation}/>
+        <Cards variableCards={variableCards} />
        
      </> 
       

@@ -1,52 +1,43 @@
 import { useRef } from "react";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
-import axios from 'axios';
+import PostDB from '../../utils/PostDB';
+
 
 const NuevoProducto = ({formLabelTitle}) => {
 
+ 
+    const urlPost = 'http://localhost:3001/productos/'
     const form = useRef(null);
 
     const submitForm = async (e)  => {
         e.preventDefault();
 
-          const fd = new FormData(form.current);
+        const fd = new FormData(form.current);
 
-          const nuevoProducto = {};
-          fd.forEach((value,key) => {
-            nuevoProducto[key] = value;
-          });
-          
-          
-        const options = {
+        const nuevoProducto = {};
+        fd.forEach((value,key) => {
+        nuevoProducto[key] = value;
+        });
+        console.log(nuevoProducto)
+        let ids = nuevoProducto.genero.slice(0,2).toUpperCase()+nuevoProducto.descripcion.slice(0,2).toUpperCase()+nuevoProducto.color.slice(0,3).toUpperCase()+nuevoProducto.talla.slice(0,2).toUpperCase()
+        
+    
+        const cambios = {
+            descripcion:nuevoProducto.descripcion,
+            genero: nuevoProducto.genero,
+            color: nuevoProducto.color,
+            talla: nuevoProducto.talla,
+            cantidad: nuevoProducto.cantidad,
+            valorunitario: nuevoProducto.valorunitario,
+            estado: nuevoProducto.estado,
+            ids:ids,
+            }
+
+            PostDB(cambios,urlPost)
             
-            method: 'POST',
-            url: 'http://localhost:3001/productos/nuevo',
-            headers: {'Content-Type': 'application/json'},
-            data: {
-              descripcion:nuevoProducto.descripcion,
-              genero: nuevoProducto.genero,
-              color: nuevoProducto.color,
-              talla: nuevoProducto.talla,
-              cantidad: nuevoProducto.cantidad,
-              valorunitario: nuevoProducto.valorunitario,
-              estado: nuevoProducto.estado,
-            
-             
-            },
-          };    
-          await axios
-          .request(options)
-          .then(function (response) {
-            console.log(response.data);
-            toast.success('Cliente agregado con éxito');
-          })
-          .catch(function (error) {
-            console.error(error);
-            toast.error('Error creando un Cliente');
-          });
-          
-      };
+
+};
     
     return (
 
@@ -57,7 +48,7 @@ const NuevoProducto = ({formLabelTitle}) => {
                             <label for="descripcion">{formLabelTitle.label1}</label>
                             <select required class=" w-full h-8 text-gray-500 input-border" type="String" name="descripcion" defaultValue={0}>
                                 <option disabled type="String" value={0}>Selecciona una opción</option>
-                                <option type="String">Camiseta</option>
+                                <option  type="String">Camiseta</option>
                                 <option type="String">Vestido de baño</option>
                                 <option type="String">Medias</option>
                                 <option type="String">Tops</option>
@@ -68,8 +59,8 @@ const NuevoProducto = ({formLabelTitle}) => {
                             <label for="genero">{formLabelTitle.label2}</label>
                             <select required class=" w-full h-8 text-gray-500 input-border" type="String" name="genero" defaultValue={0}>
                                 <option disabled type="String" value={0}>Selecciona una opción</option>
-                                <option type="String">Masculino</option>
-                                <option type="String">Femenino</option>
+                                <option type="String">Hombre</option>
+                                <option type="String">Mujer</option>
                             </select>
                         </div>
                         <div className="w-1/5">
@@ -108,7 +99,8 @@ const NuevoProducto = ({formLabelTitle}) => {
                         </div>
                         <div className="w-1/5">
                             <label for="estado">{formLabelTitle.label7}</label>
-                            <select required class=" w-full h-8 text-gray-500 input-border" type="Boolean" name="estado">
+                            <select required class=" w-full h-8 text-gray-500 input-border" type="Boolean" name="estado" defaultValue={0}>
+                                <option disabled type="String" value={0}>Selecciona una opción</option>
                                 <option type="Boolean">Disponible</option>
                                 <option type="Boolean">No disponible</option>
                             </select>
@@ -117,11 +109,13 @@ const NuevoProducto = ({formLabelTitle}) => {
                     </div>
                 <div>
                     <div className=" w-full flex justify-center">
-                        <input className="w-1/6 cursor-pointer bg-green-400 h-10 rounded text-white font-bold my-16" type="submit" value="Guardar"/>
                         <ToastContainer position="top-right" autoClose={5000}/>
+                        <input className="w-1/6 cursor-pointer bg-green-400 h-10 rounded text-white font-bold my-16" type="submit" value="Guardar"/>
+                        
                     </div>
                 </div>
             </form>
+           
     )
 }
 

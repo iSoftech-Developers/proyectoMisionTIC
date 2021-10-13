@@ -2,14 +2,12 @@
 import logoSporty from '../../media/logoSporty.png';
 import './Sidebar.css';
 import { Link } from 'react-router-dom';
+import { useAuth0 } from '@auth0/auth0-react';
 
 import UseActiveRoute from '../../hooks/UseActiveRoute';
 
 const Siderbar =()=>{
-
-  
-    
-
+    const { logout } = useAuth0();
 
 
     return(
@@ -31,8 +29,15 @@ const Siderbar =()=>{
             <div className=" mb-10">   
                 <ul className="flex flex-col">
                     <Ruta ruta="/rolesUsuarios"icono="fas fa-users-cog"title="Administrar Usuarios"/>
-                    <Ruta ruta="/login" icono="fas fa-sign-out-alt"title="Cerrar Sesión"/>
+                    <button onClick={() => logout({ returnTo: window.location.origin })}  className="hover:bg-gray-500 w-full py-2 pr-24 text-gray-300">
+                    <i className="fas fa-sign-out-alt fa-lg text-gray-300 ml-5 w-9"></i>
+                    Cerrar Sesión </button>
+
+                    
+                    {/*<Ruta ruta="/login" icono="fas fa-sign-out-alt"title="Cerrar Sesión"/>*/}
+                    
                 </ul>
+                
             </div>
         </div>
     </div>
@@ -42,13 +47,15 @@ const Siderbar =()=>{
 
  const Ruta = ({ruta,icono,title})=>{
   const isActive = UseActiveRoute(ruta);
+  return(
+    <>
+     <Link to={ruta} className={`hover:bg-gray-500 w-full py-2 text-gray-${isActive?'800':'300'} bg-gray-${isActive?'600':'900'}`}><i className={`${icono} fa-lg text-${isActive?'900':'300'} ml-5 w-9`}></i>{title}
+     </Link>
+     </>
+    );
+  }
 
-     return(
-     <>
-      <Link to={ruta} className={`hover:bg-gray-500 w-full font-bold py-2 text-gray-${isActive?'900':'300'} bg-gray-${isActive?'600':'900'}`}><i className={`${icono} fa-lg text-${isActive?'900':'300'} ml-5 w-9`}></i>{title}</Link>
-      </>
-     );
+ 
 
- }
 
   export default Siderbar;
