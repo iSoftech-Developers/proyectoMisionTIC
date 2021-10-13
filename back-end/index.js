@@ -19,7 +19,7 @@ app.use(rutasClientes)
 app.use(rutasProductos)
 app.use(rutasUsuarios)
 
-
+//correr el servidor
 const PORT= process.env.PORT;
 app.listen(PORT)
 console.log(`Server running on port ${PORT}`)
