@@ -1,10 +1,21 @@
 import Usuario from "../models/usuario.js";
 
 
-const getUsuarios= async(response)=>{
-   await Usuario.find({}).then((usuarios)=>{
+const getVendedores= async(response)=>{
+   await Usuario.find({field4:"Vendedor"}).then((usuarios)=>{
         response.json(usuarios)
       })
+}
+
+const getAdministradores= async(response)=>{
+  await Usuario.find({field4:"Administrador"}).then((usuarios)=>{
+       response.json(usuarios)
+     })
+}
+const getUsuarios= async(response)=>{
+  await Usuario.find({}).then((usuarios)=>{
+       response.json(usuarios)
+     })
 }
 
 const postUsuarios = async(request, response)=>{
@@ -50,4 +61,4 @@ const deleteUsuarios  = async (id,response)=>{
 }
 
 
-export {getUsuarios, postUsuarios, patchUsuarios, deleteUsuarios}
+export {getVendedores, getAdministradores, getUsuarios, postUsuarios, patchUsuarios, deleteUsuarios}

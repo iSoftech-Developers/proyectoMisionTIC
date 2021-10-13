@@ -7,7 +7,7 @@ const PaginaVendedores =({cardsUsuarios})=> {
     icon:"fas fa-user-tag",
     cardTo:"/rolesUsuarios/detalleUsuarios",
     linkIcon:"/moduloVendedores/paginaEditarUsuarios",
-    route:"http://localhost:3001/usuarios",
+    route:"http://localhost:3001/usuarios/vendedores",
     page:"/moduloVendedores",
     field1:"Nombre y Apellidos",
     field2:"Documento",
