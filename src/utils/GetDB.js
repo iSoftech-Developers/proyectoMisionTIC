@@ -1,7 +1,16 @@
 import axios from 'axios';
+const getToken = () => {
+  return `Bearer ${localStorage.getItem('token')}`;
+};
 
 export const obtenerDB = async (setConsulta, setEjecutarConsulta,ruta) => {
-  const options = { method: 'GET', url: ruta };
+  const options = { 
+  method: 'GET',
+  url: ruta ,
+  headers: {
+    Authorization: getToken(),
+  },
+};
   await axios
     .request(options)
     .then(function (response) {
