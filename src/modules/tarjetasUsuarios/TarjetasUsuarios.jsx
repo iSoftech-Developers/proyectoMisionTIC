@@ -20,7 +20,6 @@ const TarjetasUsuarios = ({variableCards,userCardInfo}) => {
     const [consulta, setConsulta] = useState([]); 
     const [ejecutarConsulta, setEjecutarConsulta] = useState(true);
     const [changeTab, setChangeTab]= useState(true);
-    const [loading, setLoading] =useState(false);
     const [selectorRender, setSelectorRender] = useState("");
     const [render,setRender]=useState({});
 
@@ -94,8 +93,10 @@ const TarjetasUsuarios = ({variableCards,userCardInfo}) => {
                             </div>
                         </Link>
                     );}
+                }else{
+                    return null;
                 }
-                
+                return null
             }
                 
                 )}

@@ -4,11 +4,6 @@ const getClientes= async(response)=>{
     await Cliente.find({}).then((clientes)=>{
         response.json(clientes)
       })
-      .then(() => {
-        response.send(201)
-      }).catch(err => {
-        console.error(err)
-      })
 }
 
 const postClientes= async(request,response)=>{
@@ -25,7 +20,7 @@ const postClientes= async(request,response)=>{
       })
       await cliente.save()
       .then(() => {
-        response.send(201)
+        response.sendStatus(201)
       }).catch(err => {
         console.error(err)
       })
@@ -41,7 +36,7 @@ const patchClientes = async (id ,request,response)=>{
           field8:request.personacontacto,
       })
         .then(() => {
-          response.send(202)
+          response.sendStatus(202)
         }).catch(err => {
           console.error(err)
         })
@@ -50,7 +45,7 @@ const patchClientes = async (id ,request,response)=>{
 const deleteClientes = async (id, response)=>{
    await Cliente.findByIdAndRemove(id)
         .then(() => {
-          response.send(200)
+          response.sendStatus(200)
         }).catch(err => {
           console.error(err)
         })

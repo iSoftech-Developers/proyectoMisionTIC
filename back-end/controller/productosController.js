@@ -3,13 +3,10 @@ import Producto from '../models/producto.js'
 
 
 
-const getProductos= async(response)=>{
-    await Producto.find({}).then((productos)=>{
+const getProductos=(response)=>{
+     Producto.find({})
+        .then((productos)=>{
         response.json(productos)
-      }).then(() => {
-        response.send(202)
-      }).catch(err => {
-        console.error(err)
       })
 }
 
@@ -28,7 +25,7 @@ const postProductos= async(request,response)=>{
       })
          await producto.save()
           .then(() => {
-            response.send(201)
+            response.sendStatus(201)
           }).catch(err => {
             console.error(err)
           })
@@ -41,7 +38,7 @@ const patchProductos = async (id ,request,response)=>{
         field5:request.estado,
    })
       .then(() => {
-        response.send(202)
+        response.sendStatus(202)
       }).catch(err => {
         console.error(err)
       })
@@ -51,7 +48,7 @@ const deleteProductos = async (id,response)=>{
 
    await Producto.findByIdAndRemove(id)
     .then(() => {
-      response.send(200)
+      response.sendStatus(200)
     }).catch(err => {
       console.error(err)
     })
