@@ -2,6 +2,7 @@ import React from 'react'
 import BotonesDashboard from '../modules/botonesDashboard/BotonesDashboard'
 import Cards from '../modules/cards/Cards';
 import { useEffect, useState } from 'react';
+import PrivateRoute from '../modules/PrivateRoute';
 
 const Dashboard = () => {
     const [cardsDashboard,setCardDashboard] =useState([]);
@@ -48,13 +49,14 @@ const variableCardsVendedor = {
 
 
     return (
+      <PrivateRoute>
        <>
             <BotonesDashboard/>
             <Cards variableCards={variableCardsCliente} cardsinformation={cardsDashboard}/>
             <Cards variableCards={variableCardsVendedor} cardsinformation={cardsDashboard}/>
        </>
         
-       
+       </PrivateRoute>
     );
 }
 

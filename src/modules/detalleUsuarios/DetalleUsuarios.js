@@ -22,8 +22,6 @@ const DetalleUsuarios=()=>{
                             </div>  
                         </div>
                     </div>
-                                
-
                     <div className="flex">
                         <div className="flex w-full justify-between mt-12">
                             <div className="flex flex-col ">

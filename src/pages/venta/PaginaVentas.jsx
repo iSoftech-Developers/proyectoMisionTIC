@@ -35,4 +35,4 @@ const PaginaVentas =()=> {
       
     );
   }
-  export default PaginaVentas;
+export default PaginaVentas;

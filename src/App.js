@@ -24,7 +24,7 @@ import PaginaAgregarUsuarios from './pages/vendedoresUsuarios/PaginaAgregarUsuar
 import PaginaEditarVenta from './pages/venta/PaginaEditarVenta';
 import {BuscadorContext} from './context/BuscadorContext'
 import {SeleccionadoContext} from './context/Seleccionado';
-
+import { Auth0Provider } from "@auth0/auth0-react";
 
 
 
@@ -36,6 +36,12 @@ const App =()=> {
  
   
   return (
+    <Auth0Provider
+    domain="proyectosoftech.us.auth0.com"
+    clientId="0tByyzPYxpCCECVj0FpUvrMzpjWyJN1m"
+    redirectUri="http://localhost:3000/dashboard"
+    audience="api-proyecto-softech"
+  >
     <div className="template">
     <SeleccionadoContext.Provider value={{seleccionado, setSeleccionado}}>
     <BuscadorContext.Provider value={{busqueda, setBusqueda}}>
@@ -112,6 +118,7 @@ const App =()=> {
     </BuscadorContext.Provider>
     </SeleccionadoContext.Provider>
     </div> 
+    </Auth0Provider>
   );
 }
 
