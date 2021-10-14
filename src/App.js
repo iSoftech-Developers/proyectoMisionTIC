@@ -41,7 +41,7 @@ const App =()=> {
     domain="proyectosoftech.us.auth0.com"
     clientId="0tByyzPYxpCCECVj0FpUvrMzpjWyJN1m"
     redirectUri="http://localhost:3000/dashboard"
-  
+    audience="api-proyecto-softech"
   >
     <div className="template">
     <SeleccionadoContext.Provider value={{seleccionado, setSeleccionado}}>
