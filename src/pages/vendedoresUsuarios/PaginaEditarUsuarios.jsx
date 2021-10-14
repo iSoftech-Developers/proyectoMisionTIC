@@ -2,7 +2,7 @@ import EditarUsuario from '../../modules/editarUsuario/EditarUsuario';
 import NoButtonUpperBarSection from '../../modules/noButtonUpperBarSection/NoButtonUpperBarSection';
 
 
-const PaginaEditarUsuarios =({})=>{
+const PaginaEditarUsuarios =()=>{
 
     const formLabelTitle = {
         label1:"Documento",
