@@ -88,7 +88,7 @@ const NuevaVenta=()=>{
                 <div className="form-upper-section flex justify-between font-bold label-color">
                     <div className="w-1/6 ">
                         <label htmlFor="vendedor">Vendedor
-                            <select name='vendedor' className='p-2' defaultValue='' required >
+                            <select name='vendedor' className='p-2 input-border' defaultValue='' required >
                                 <option disabled value=''> Seleccione un Vendedor </option>
                                 {vendedores.map((el) => {
                                   if (el.field4==="Vendedor"){
@@ -97,7 +97,7 @@ const NuevaVenta=()=>{
                                   return null;
                                 })}
                             </select>
-                        </label>                    
+                        </label>
                     </div>
                     <div className="w-1/6">
                         <label htmlFor="usernit">NIT/C.C.</label>
@@ -139,12 +139,10 @@ const NuevaVenta=()=>{
                   setProductosTabla={setProductosTabla}/>
                 </div>
                 <div className=" w-full flex justify-center">
-                    <input className="w-1/6 cursor-pointer bg-green-400 h-10 rounded text-white font-bold my-16" type="submit" value="Guardar"/>
+                    <input className="w-1/6 cursor-pointer bg-green-600 hover:bg-green-500 h-10 rounded text-white font-bold my-8" type="submit" value="Guardar"/>
                     <ToastContainer position="top-right" autoClose={5000}/>
                 </div>
-
             </form>
-           
     </div>
 
     );
@@ -186,7 +184,7 @@ const TablaProductos = ({ productos, setProductos, setProductosTabla }) => {
         <div className='flex w-full justify-between'>
           <label className='flex flex-col' htmlFor='produto'>
             <select
-              className='p-2'
+              className='p-2 input-border mt-8'
               value={productoAAgregar._id ?? ''}
               onChange={(e) =>{
                 setProductoAAgregar(productos.filter((v) => v._id === e.target.value)[0])
@@ -212,7 +210,7 @@ const TablaProductos = ({ productos, setProductos, setProductosTabla }) => {
           <button
             type='button'
             onClick={() => agregarNuevoProducto()}
-            className= {`col-span-2 bg-green-400 p-2 rounded-full shadow-md hover:bg-green-600 text-white ${buttonActive}`}>
+            className= {`col-span-2  p-2 rounded-full shadow-md bg-green-400 hover:bg-green-600 text-white ${buttonActive}`}>
             Agregar Producto
           </button>
         </div>

@@ -49,7 +49,7 @@ const AgregarUsuario = ({formLabelTitle}) => {
                             <div className="justify-between mt-6">
                                 <div className="flex flex-col">
                                     <div className="w-1/6">
-                                        <label for="cargo" className="bg-black text-white text-xs">Cargo</label>
+                                        <label for="cargo" className="bg-black text-white text-sm px-2">Cargo</label>
                                     </div> 
                                     <div className="flex justify-between space-x-7">
                                         <div>
@@ -58,7 +58,7 @@ const AgregarUsuario = ({formLabelTitle}) => {
                                         </div>
                                         <div className="w-1/3">
                                         <label for="rol" className="font-bold">{formLabelTitle.label2}</label>
-                                            <select required className=" w-full h-8 font-bold pl-2 rounded-md input-border" name="rol" required>
+                                            <select required className=" w-full h-8 pl-2 rounded-md input-border" name="rol" required>
                                                 <option type="String" value="">Selecciona una opción</option>
                                                 <option type="String">Vendedor</option>
                                                 <option type="String">Administrador</option>
@@ -66,7 +66,7 @@ const AgregarUsuario = ({formLabelTitle}) => {
                                         </div>
                                         <div className="w-1/3">
                                             <label for="estado" className="font-bold">{formLabelTitle.label3}</label>
-                                            <select required className="w-full h-8 font-bold pl-2 rounded-md input-border" name="estado" placeholder="Selecciona una opción" required>
+                                            <select required className="w-full h-8 pl-2 rounded-md input-border" name="estado" placeholder="Selecciona una opción" required>
                                                 <option type="String" value="">Selecciona una opción</option>
                                                 <option required type="String">Pendiente</option>
                                                 <option required type="String">Autorizado</option>
@@ -98,7 +98,7 @@ const AgregarUsuario = ({formLabelTitle}) => {
                     </div>
                     <div>
                         <div className=" w-full text-center">
-                            <input className="w-1/6 cursor-pointer bg-green-400 h-10 rounded text-white font-bold my-16" type="submit" value="Guardar"/>
+                            <input className="w-1/6 cursor-pointer bg-green-600 hover:bg-green-500 h-10 rounded text-white font-bold my-16" type="submit" value="Guardar"/>
                             <ToastContainer position="top-right" autoClose={5000}/>
                         </div>
                     </div>
