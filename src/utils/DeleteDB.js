@@ -1,11 +1,11 @@
 import axios from 'axios'
 import { toast } from "react-toastify";
 
-      const DeleteDB = async ({seleccionado,variableCards}) => {
-        console.log(seleccionado);
+      const DeleteDB = async ({i,variableCards}) => {
+        console.log(i);
         const options = {
           method: 'DELETE',
-          url: `${variableCards.route}/${seleccionado._id}/`,
+          url: `${variableCards.route}/${i._id}/`,
           headers: { 'Content-Type': 'application/json' },
         };
     
