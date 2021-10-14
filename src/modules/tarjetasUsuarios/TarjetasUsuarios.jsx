@@ -46,7 +46,7 @@ const TarjetasUsuarios = ({variableCards,userCardInfo}) => {
                 if (i._id.includes(busqueda)||i.ids.toLowerCase().includes(busqueda.toLowerCase())){
                     return(
                         <Link key={i._id}
-                        to={{ pathname: `${variableCards.cardTo}/${i._id}`,}} onClick={() => setSeleccionado(i)>
+                        to={{ pathname: `${variableCards.cardTo}/${i._id}`,}} onClick={() => setSeleccionado(i)}>
                             <div className="display: inline-block">
                             <div className="mt-8">
                                 <div className="cards-container w-32 p-1 bg-white shadow-sm cursor-pointer transition duration-250 ease-in-out transform hover:-translate-y-1 hover:scale-105">
@@ -67,7 +67,6 @@ const TarjetasUsuarios = ({variableCards,userCardInfo}) => {
                                         <span className="font-bold text-center">ID {i.ids}</span>
                                         <span className="text-sm text-center">{i.field1}</span>
                                         <span className="text-sm text-center bg-black text-white" >{i.field4}</span>
-                                        
                                         <div className="flex justify-around mt-1">
                                             <div className="text-white bg-blue-700 hover:bg-blue-500 w-full text-center">
                                                 <Link to={`${variableCards.linkIcon}/${i._id}`} onClick={() =>setSeleccionado(i)}>
