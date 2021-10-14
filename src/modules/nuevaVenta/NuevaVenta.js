@@ -15,6 +15,9 @@ const NuevaVenta=()=>{
 
 
     useEffect(() => {
+      if (ejecutarConsulta){
+
+      
         const fetchVendores =  () => {
             obtenerDB(setVendedores,setEjecutarConsulta,"http://localhost:3001/usuarios");
         };
@@ -24,11 +27,14 @@ const NuevaVenta=()=>{
         const fetchClientes=()=>{
           obtenerDB(setClientes,setEjecutarConsulta,"http://localhost:3001/clientes")
       }
+      setEjecutarConsulta(false)
 
-        fetchVendores();
-        fetchProductos();
-        fetchClientes();
-        console.log(vendedores)
+      fetchVendores();
+      fetchProductos();
+      fetchClientes();
+      console.log(vendedores)
+      }
+   
     },[]);
    
 

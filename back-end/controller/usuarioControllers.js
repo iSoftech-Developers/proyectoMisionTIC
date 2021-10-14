@@ -20,7 +20,7 @@ const postUsuarios = async(request, response)=>{
       })
      await  usuario.save()
       .then(() => {
-        response.send(201)
+        response.sendStatus(201)
       }).catch(err => {
         console.error(err)
       })
@@ -34,7 +34,7 @@ const patchUsuarios = async (id ,request,response)=>{
         field7:request.estado,
     })
       .then(() => {
-        response.send(202)
+        response.sendStatus(202)
       }).catch(err => {
         console.error(err)
       })
@@ -43,7 +43,7 @@ const patchUsuarios = async (id ,request,response)=>{
 const deleteUsuarios  = async (id,response)=>{
     await Usuario.findByIdAndRemove(id)
     .then(() => {
-      response.send(200)
+      response.sendStatus(200)
     }).catch(err => {
       console.error(err)
     })
