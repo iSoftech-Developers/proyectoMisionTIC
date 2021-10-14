@@ -1,5 +1,4 @@
 
-import Form from '../../modules/Formularios/Form';
 import NoButtonUpperBarSection from '../../modules/noButtonUpperBarSection/NoButtonUpperBarSection';
 import AgregarUsuario from '../../modules/nuevoUsuario/AgregarUsuario';
 
@@ -14,7 +13,7 @@ const PaginaAgregarUsuarios =()=>{
         label3:"Estado",
         label4:"Fecha de ingreso",
         label5:"Nombres y apellidos",
-        label6:"Especialidad",
+        label6:"Correo electrónico",
         label7:"Celular",
     }
 
@@ -22,7 +21,6 @@ const PaginaAgregarUsuarios =()=>{
         <>
             <NoButtonUpperBarSection title="Agregar Vendedor"/>
             <AgregarUsuario formLabelTitle = {formLabelTitle}/>
-           
         </> 
     );
 }

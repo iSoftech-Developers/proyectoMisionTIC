@@ -13,7 +13,7 @@ const Navbar=()=>{
       if (location.pathname==="/rolesUsuarios"){
         setRender({placeholder:"Buscar por nombre usuario o ID",hidden:"",justify:"justify-between"})
       }
-      if (location.pathname==="/rolesUsuarios/"){
+      if (location.pathname.includes("/rolesUsuarios/")){
         setRender({placeholder:"",hidden:"hidden",justify:"justify-end"})
       }
       if (location.pathname==="/productos"){

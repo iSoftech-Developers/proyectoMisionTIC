@@ -8,7 +8,6 @@ import rutasUsuarios from './views/usuarios.js';
 db()
 
 
-
 const app = Express();
 dotenv.config({ path: './.env' });
 
