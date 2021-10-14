@@ -1,4 +1,3 @@
-
 import './App.css';
 import './index.css';
 import { BrowserRouter as Router,Route ,Switch } from 'react-router-dom';
@@ -48,11 +47,14 @@ const App =()=> {
     <BuscadorContext.Provider value={{busqueda, setBusqueda}}>
       <Router>
         <Switch>
-          <Route path ={['/dashboard','/nuevaVenta','/moduloVentas','/moduloVentas/detalleVenta', '/moduloVentas/editarVenta','/moduloClientes', 'moduloClientes/nuevoCliente','/moduloClientes/detalleCliente',' /moduloClientes/paginaEditarCliente', '/productos', '/productos/detalleProducto', '/productos/nuevoProducto','/productos/actualizarProducto','/rolesUsuarios', '/rolesUsuarios/detalleUsuario','/rolesUsuarios/nuevoUsuario','/moduloVendedores', '/moduloVendedores/detalleUsuario','/moduloVendedores/paginaEditarUsuarios','/rolesUsuarios/detalleUsuarios']}> 
+          <Route path ={['/dashboard','/nuevaVenta','/moduloVentas','/moduloVentas/detalleVenta', '/moduloVentas/editarVenta','/moduloClientes', 'moduloClientes/nuevoCliente','/moduloClientes/detalleCliente',' /moduloClientes/paginaEditarCliente', '/productos', '/productos/detalleProducto', '/productos/nuevoProducto','/productos/actualizarProducto','/rolesUsuarios', '/rolesUsuarios/detalleUsuario','/rolesUsuarios/nuevoUsuario','/moduloVendedores', '/moduloVendedores/detalleUsuario','/moduloVendedores/paginaEditarUsuarios','/rolesUsuarios/detalleUsuarios','/rolesUsuarios/paginaEditarUsuarios']}> 
             <Private>
               <Switch>
                 <Route path='/rolesUsuarios/nuevoUsuario'>
                   <PaginaAgregarUsuarios/>
+                </Route>
+                <Route path='/rolesUsuarios/paginaEditarUsuarios'>
+                  <PaginaEditarUsuarios/>
                 </Route>
                 <Route path='/rolesUsuarios/detalleUsuarios/:id'>
                   <PaginaDetalleUsuarios />

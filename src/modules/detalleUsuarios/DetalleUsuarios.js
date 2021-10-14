@@ -15,7 +15,7 @@ const DetalleUsuarios=()=>{
                     <div className="flex justify-between">
                         <div className="flex flex-col">
                             <div>
-                                <span className="bg-black text-white text-xs">Administrador</span>
+                                <span className="bg-black text-white text-xs">{seleccionado.field4}</span>
                             </div>
                             <div>
                                 <span className="text-lg">{seleccionado._id}</span>
@@ -50,7 +50,7 @@ const DetalleUsuarios=()=>{
                             </div>
                             <div className="flex flex-col">
                                 <div>
-                                    <span className="font-bold">Especialidad</span>
+                                    <span className="font-bold">Correo electrónico</span>
                                 </div>
                                 <div>
                                     <span>{seleccionado.field3}</span>
@@ -61,7 +61,7 @@ const DetalleUsuarios=()=>{
                                     <span className="font-bold">Celular</span> 
                                 </div>
                                 <div>
-                                    <span>{seleccionado.field4}</span>
+                                    <span>{seleccionado.field6}</span>
                                 </div>
                             </div>
                         </div>
