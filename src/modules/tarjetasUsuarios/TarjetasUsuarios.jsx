@@ -25,12 +25,7 @@ const TarjetasUsuarios = ({variableCards,userCardInfo}) => {
     const [render,setRender]=useState({});
 
 
-    const handleMouseEnter = e => {
-        e.target.style.background = "grey"
-      }
-      const handleMouseLeave = e => {
-        e.target.style.background = "maroon"
-      }
+
 
     useEffect(() => {
         <ReactLoading type={"spin"} color={"#ffffff"} height={667} width={375} />
@@ -54,9 +49,7 @@ const TarjetasUsuarios = ({variableCards,userCardInfo}) => {
                         to={{ pathname: `${variableCards.cardTo}/${i._id}`,}} onClick={() => setSeleccionado(i)>
                             <div className="display: inline-block">
                             <div className="mt-8">
-                                <div setRender={{
-
-                                }} className="cards-container w-32 p-1 bg-white shadow-sm cursor-pointer transition duration-250 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+                                <div className="cards-container w-32 p-1 bg-white shadow-sm cursor-pointer transition duration-250 ease-in-out transform hover:-translate-y-1 hover:scale-105">
                                     <Dialog open={openDialog}>
                                     <div className ='p-8 flex flex-col'>
                                         <h1 className= 'text gray-800 text-xl font-bold'> ¿Esta seguro de querer eliminarlo? </h1>
@@ -75,6 +68,25 @@ const TarjetasUsuarios = ({variableCards,userCardInfo}) => {
                                         <span className="text-sm text-center">{i.field1}</span>
                                         <span className="text-sm text-center bg-black text-white" >{i.field4}</span>
                                         
+                                        <div className="flex justify-around mt-1">
+                                            <div className="text-white bg-blue-700 hover:bg-blue-500 w-full text-center">
+                                                <Link to={`${variableCards.linkIcon}/${i._id}`} onClick={() =>setSeleccionado(i)}>
+                                                    <Tooltip title="editar">
+                                                        <i className="fas fa-pen fa-xs"></i>
+                                                    </Tooltip>
+                                                </Link>
+                                            </div>
+                                            <div className="text-white bg-red-800 hover:bg-red-600 w-full text-center">
+                                                <Link to={variableCards.page} onClick={()=>{
+                                                    setSeleccionado(i)
+                                                    setOpenDialog(true)}}>
+                                                    <Tooltip title="Eliminar">
+                                                    <i className="fas fa-trash fa-xs shadow-md "></i>
+                                                    </Tooltip>
+                                                </Link>
+                                            </div>
+                                            
+                                        </div>
                                     </div>
                                 </div>
 
