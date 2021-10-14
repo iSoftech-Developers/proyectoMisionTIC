@@ -1,5 +1,4 @@
 
-import Form from '../../modules/Formularios/Form';
 import NoButtonUpperBarSection from '../../modules/noButtonUpperBarSection/NoButtonUpperBarSection';
 import AgregarUsuario from '../../modules/nuevoUsuario/AgregarUsuario';
 
