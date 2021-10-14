@@ -2,10 +2,15 @@ import dotenv from 'dotenv';
 import db from './connection/mongoDB.js'
 import Express from 'express'
 import Cors from 'cors';
+import jwt from 'express-jwt';
+import jwks from 'jwks-rsa';
+
+
 import rutasClientes from './views/clientes.js';
 import rutasProductos from './views/productos.js';
 import rutasUsuarios from './views/usuarios.js';
 db()
+
 
 
 
@@ -15,6 +20,22 @@ dotenv.config({ path: './.env' });
 
 app.use(Cors())
 app.use(Express.json())
+
+var jwtCheck = jwt({
+    secret: jwks.expressJwtSecret({
+        cache: true,
+        rateLimit: true,
+        jwksRequestsPerMinute: 5,
+        jwksUri: 'https://proyectosoftech.us.auth0.com/.well-known/jwks.json'
+  }),
+  audience: 'api-proyecto-softech',
+  issuer: 'https://proyectosoftech.us.auth0.com/',
+  algorithms: ['RS256']
+});
+
+app.use(jwtCheck);
+
+
 app.use(rutasClientes)
 app.use(rutasProductos)
 app.use(rutasUsuarios)
