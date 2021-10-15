@@ -121,7 +121,7 @@ const NuevaVenta=()=>{
                             <label htmlFor="usercity">Ciudad</label>
                             <input required className=" w-full h-8 p-2 input-border" type="text" name="usercity" id="usercity"/>
                         </div>
-                        <div className="w-1/6 ">
+                        <div className="w-1/6 mb-12">
                             <label htmlFor="salestatus">Estado de venta</label>
                             <select required className=" w-full h-8 input-border text-gray-500 " name="salestatus">
                                 <option value="Usuarios">En proceso</option>
@@ -129,7 +129,7 @@ const NuevaVenta=()=>{
                                 <option value="Usuarios">Cancelada</option>
                             </select>
                         </div> 
-                    <div className="w-1/6">
+                    <div className="">
                     </div>
                 </div>
                 <div className= "w-full">
@@ -181,10 +181,10 @@ const TablaProductos = ({ productos, setProductos, setProductosTabla }) => {
   
     return (
       <div>
-        <div className='flex w-full justify-between'>
-          <label className='flex flex-col' htmlFor='produto'>
+        <div className='flex w-full justify-between '>
+          <label className='flex flex-col ' htmlFor='produto'>
             <select
-              className='p-2 input-border mt-8'
+              className='p-2 input-border'
               value={productoAAgregar._id ?? ''}
               onChange={(e) =>{
                 setProductoAAgregar(productos.filter((v) => v._id === e.target.value)[0])
@@ -210,7 +210,7 @@ const TablaProductos = ({ productos, setProductos, setProductosTabla }) => {
           <button
             type='button'
             onClick={() => agregarNuevoProducto()}
-            className= {`col-span-2  p-2 rounded-full shadow-md bg-green-400 hover:bg-green-600 text-white ${buttonActive}`}>
+            className= {`rounded shadow-md bg-gray-400 hover:bg-gray-600 text-white px-3 ${buttonActive}`}>
             Agregar Producto
           </button>
         </div>

@@ -2,13 +2,15 @@ import './Navbar.css';
 import { useLocation } from 'react-router-dom';
 import { useEffect , useState} from 'react';
 import { useBuscado } from '../../context/BuscadorContext';
+import { useUsuario } from '../../context/UsuarioConectado';
 
 const Navbar=()=>{
   
   const {setBusqueda}=useBuscado()
+  const {usuario}=useUsuario()
   const [render,setRender]=useState({});
   const location =useLocation()
-  
+  console.log(usuario)
   useEffect(() => {
       if (location.pathname==="/rolesUsuarios"){
         setRender({placeholder:"Buscar por nombre usuario o ID",hidden:"",justify:"justify-between"})
@@ -60,10 +62,10 @@ const Navbar=()=>{
         </div>
         <div className="flex items-center text-white">
             <div className="flex flex-col  mr-5 items-end">
-                <span className="font-bold">ID 2345</span>
-                <span clase="nameUser">Juan Pérez Pérez</span>
+                <span className="font-bold">ID  {usuario.field2}</span>
+                <span clase="nameUser">{usuario.field1}</span>
             </div>
-            <i className="fas fa-user-circle fa-3x  "></i>
+            <img src={usuario.field8} className=" flex justify-center  rounded-full h-16"/>
         </div>
     </div>
     </div>
