@@ -24,6 +24,7 @@ const EditarUsuario = ({formLabelTitle}) => {
         });
 
         const cambios={ 
+            idusuario:editarUsuario.idusuario,
             celular:editarUsuario.celular,
             estado:editarUsuario.estado,
             email:editarUsuario.email,
