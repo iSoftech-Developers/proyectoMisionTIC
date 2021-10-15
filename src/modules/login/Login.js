@@ -15,8 +15,8 @@ const Login=()=>{
         <div className="logo text-7xl">SPORTY </div>
         <div className="text-2xl mb-9">SALES MANAGER </div>
         
-        <button className= "w-1/6 cursor-pointer bg-gray-400 rounded h-10 text-gray-900 font-semibold flex items-center justify-center"
-        onClick={() => loginWithRedirect()}>LOGIN</button>
+        <button className= "w-1/6 cursor-pointer bg-black h-10 text-green-100 font-semibold border border-green-100 rounded flex items-center justify-center"
+        onClick={() => loginWithRedirect()}>Ingresar</button>
         {/*<button onClick={() => logout({ returnTo: window.location.origin })}>
             Cerrar Sesión
     </button>*/}
