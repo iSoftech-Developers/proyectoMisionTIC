@@ -1,12 +1,18 @@
 import {toast} from 'react-toastify';
 import axios from 'axios';
 
+
+const getToken = () => {
+    return `Bearer ${localStorage.getItem('token')}`;
+  };
+
 const PostDB = async (cambios, urlPost) => {
     const options = {
         
         method: 'POST',
         url: urlPost,
-        headers: {'Content-Type': 'application/json'},
+        headers: {'Content-Type': 'application/json',
+        Authorization: getToken()},
         data: cambios,
 
 };

@@ -1,11 +1,25 @@
 import Express from 'express'
 
-import { deleteUsuarios,  getUsuarios, patchUsuarios, postUsuarios } from '../controller/usuarioControllers.js';
+import { deleteUsuarios,  getUsuarios, patchUsuarios, postUsuarios , consultarOCrearUsuario} from '../controller/usuarioControllers.js';
 
 
 
 
 const rutasUsuarios = Express.Router();
+
+const genercCallback = (res) => (err, result) => {
+  if (err) {
+    res.status(500).send('Error consultando los usuarios');
+  } else {
+    res.json(result);
+  }
+};
+
+rutasUsuarios.route('/usuarios/self').get((req, res) => {
+  console.log('alguien hizo get en la ruta /self');
+  consultarOCrearUsuario(req,res);
+  // consultarUsuario(, genercCallback(res));
+});
 
 
 
