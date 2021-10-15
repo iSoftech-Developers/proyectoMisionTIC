@@ -13,7 +13,7 @@ const variableCards = {
     route:"http://localhost:3001/productos",
     page:"/productos",
     linkIcon:"/productos/actualizarProducto",
-    filtroVendedores:"",
+    filtroVendedores:false,
     titleCard:"Id Producto",
     field1:"Descripción",
     field2:"Valor unitario",

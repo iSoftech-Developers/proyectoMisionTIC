@@ -13,7 +13,7 @@ const PaginaClientes =({cardsClientes})=> {
     cardTo:"/moduloClientes/detalleCliente",
     linkIcon:"/moduloClientes/paginaEditarCliente",
     route:"http://localhost:3001/clientes",
-    filtroVendedores:"",
+    filtroVendedores:false,
     page:"/moduloClientes",
     titleCard:"Cliente ID",
     field1:"Razon Social*",

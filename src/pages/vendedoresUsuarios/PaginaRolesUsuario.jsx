@@ -1,8 +1,8 @@
 import TarjetasUsuarios from "../../modules/tarjetasUsuarios/TarjetasUsuarios";
-import { useEffect, useState } from 'react';
 
 
-const PaginaRolesUsuario =({})=>{
+
+const PaginaRolesUsuario =()=>{
 
     const variableCards = {
       cardTo:"/rolesUsuarios/detalleUsuarios",

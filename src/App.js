@@ -25,7 +25,7 @@ import PaginaEditarVenta from './pages/venta/PaginaEditarVenta';
 import {BuscadorContext} from './context/BuscadorContext'
 import {SeleccionadoContext} from './context/Seleccionado';
 import { Auth0Provider } from "@auth0/auth0-react";
-
+import { UsuarioConectadoContext } from './context/UsuarioConectado';
 
 
 
@@ -33,6 +33,7 @@ const App =()=> {
 
   const [busqueda, setBusqueda] = useState('');
   const [seleccionado,setSeleccionado] = useState('');
+  const [usuario,setUsuario]=useState('')
  
   
   return (
@@ -40,9 +41,9 @@ const App =()=> {
     domain="proyectosoftech.us.auth0.com"
     clientId="0tByyzPYxpCCECVj0FpUvrMzpjWyJN1m"
     redirectUri="http://localhost:3000/dashboard"
-    audience="api-proyecto-softech"
-  >
+    audience="api-proyecto-softech">
     <div className="template">
+    <UsuarioConectadoContext.Provider value={{usuario,setUsuario}}>
     <SeleccionadoContext.Provider value={{seleccionado, setSeleccionado}}>
     <BuscadorContext.Provider value={{busqueda, setBusqueda}}>
       <Router>
@@ -117,6 +118,7 @@ const App =()=> {
       </Router>
     </BuscadorContext.Provider>
     </SeleccionadoContext.Provider>
+    </UsuarioConectadoContext.Provider>
     </div> 
     </Auth0Provider>
   );
