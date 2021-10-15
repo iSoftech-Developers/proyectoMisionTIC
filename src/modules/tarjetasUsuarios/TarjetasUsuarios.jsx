@@ -64,8 +64,8 @@ const TarjetasUsuarios = ({variableCards}) => {
                                             <Link onClick={()=>setOpenDialog(false)} className= 'mx-2 my-4 px-4 py-2 bg-red-500 text-white hover:bg-red-700 rounded-md shadow-md' to={variableCards.page}> No </Link>
                                         </div>
                                     </div>
-                                 </Dialog>
-                                    <img src={i.field8}/>
+                                </Dialog>
+                                    <img className="w-full" src={i.field8}/>
                                     <div className="flex flex-col">
                                         <span className="font-bold text-center">ID {i.field2}</span>
                                         <span className="text-sm text-center">{i.field1}</span>
