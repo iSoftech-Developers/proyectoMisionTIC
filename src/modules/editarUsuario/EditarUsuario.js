@@ -88,7 +88,7 @@ const EditarUsuario = ({formLabelTitle}) => {
                             </div>
                             <div className="flex flex-col ">
                                 <label for="email" className="font-bold">{formLabelTitle.label6}</label>
-                                <input required class=" w-full h-8 p-2 rounded-md input-border" type="Email" name="email"/>
+                                <input required  value={seleccionado.field3}class=" w-full h-8 p-2 rounded-md input-border" type="Email" name="email"/>
                             </div>
                             <div className="flex flex-col ">
                                 <label for="celular" className="font-bold">{formLabelTitle.label7}</label>
