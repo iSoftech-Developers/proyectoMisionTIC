@@ -11,6 +11,7 @@ const PrivateRoute = ({ children }) => {
             const accesToken=  await getAccessTokenSilently({
                 audience: 'api-proyecto-softech',
         });
+        localStorage.setItem("token", accesToken);
        };
        if(isAuthenticated){
        fetchAuth0Token (); 

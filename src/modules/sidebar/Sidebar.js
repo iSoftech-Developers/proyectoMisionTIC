@@ -29,8 +29,8 @@ const Siderbar =()=>{
             <div className=" mb-10">   
                 <ul className="flex flex-col">
                     <Ruta ruta="/rolesUsuarios"icono="fas fa-users-cog"title="Administrar Usuarios"/>
-                    <button onClick={() => logout({ returnTo: window.location.origin })}  className="hover:bg-gray-500 w-full py-2 pr-24 text-gray-300">
-                    <i className="fas fa-sign-out-alt fa-lg text-gray-300 ml-5 w-9"></i>
+                    <button onClick={() => logout({ returnTo: window.location.origin })}  className="hover:bg-gray-500 w-full py-2 pr-24 text-gray-300 align-bottom">
+                    <i className="fas fa-sign-out-alt fa-lg text-gray-300 ml-4 w-9"></i>
                     Cerrar Sesión </button>
 
                     
