@@ -65,9 +65,9 @@ const TarjetasUsuarios = ({variableCards}) => {
                                         </div>
                                     </div>
                                  </Dialog>
-                                    <img src={image}/>
+                                    <img src={i.field8}/>
                                     <div className="flex flex-col">
-                                        <span className="font-bold text-center">ID {i.ids}</span>
+                                        <span className="font-bold text-center">ID {i.field2}</span>
                                         <span className="text-sm text-center">{i.field1}</span>
                                         <span className="text-sm text-center bg-black text-white" >{i.field4}</span>
                                         <div className="flex justify-around mt-1">

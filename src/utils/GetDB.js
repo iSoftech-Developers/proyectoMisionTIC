@@ -21,3 +21,15 @@ export const obtenerDB = async (setConsulta, setEjecutarConsulta,ruta) => {
     });
   setEjecutarConsulta(false);
 };
+
+
+export const obtenerDatosUsuario = async (successCallback, errorCallback) => {
+  const options = {
+    method: 'GET',
+    url: 'http://localhost:3001/usuarios/self',
+    headers: {
+      Authorization: getToken()
+    },
+  };
+  await axios.request(options).then(successCallback).catch(errorCallback);
+};

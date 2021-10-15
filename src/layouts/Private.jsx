@@ -1,7 +1,7 @@
 import Navbar from '../modules/navbar/Navbar';
 import Sidebar from '../modules/sidebar/Sidebar';
 import {useEffect} from 'react';
-
+import { obtenerDatosUsuario } from '../utils/GetDB'
 import { useAuth0 } from '@auth0/auth0-react';
 
 const Private = ({children}) => {
@@ -9,15 +9,25 @@ const Private = ({children}) => {
 
     useEffect(() => {
         const fetchAuth0Token = async ()=> {
-             const accessToken=  await getAccessTokenSilently({
-                 audience: 'api-proyecto-softech',
-         });
+
+            const accessToken=  await getAccessTokenSilently({
+                audience: 'api-proyecto-softech', });
+                
          localStorage.setItem('token', accessToken);
+         await obtenerDatosUsuario(
+            (response) => {
+              console.log('response con datos del usuario', response.data);
+            },
+            (err) => {
+              console.log('err', err);
+            }
+          );
         };
         if(isAuthenticated){
-        fetchAuth0Token (); 
+            fetchAuth0Token (); 
         }
      }, [isAuthenticated, getAccessTokenSilently]);
+
  
  
     return (

@@ -1,5 +1,8 @@
 import axios from "axios";
 import { toast } from "react-toastify";
+const getToken = () => {
+  return `Bearer ${localStorage.getItem('token')}`;
+};
 
 
 const PatchDB = async(cambios,seleccionado,urlEdit)=>{
@@ -7,7 +10,8 @@ const PatchDB = async(cambios,seleccionado,urlEdit)=>{
         const options = {
             method: 'PATCH',
             url:`${urlEdit}/${seleccionado._id}`,
-            headers: { 'Content-Type': 'application/json' },
+            headers: { 'Content-Type': 'application/json',
+            Authorization: getToken() },
             data: cambios
           };
           

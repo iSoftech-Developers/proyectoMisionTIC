@@ -1,12 +1,21 @@
 import axios from 'axios'
 import { toast } from "react-toastify";
 
+
+const getToken = () => {
+  return `Bearer ${localStorage.getItem('token')}`;
+};
+
+
       const DeleteDB = async ({i,variableCards}) => {
+        
+        
         console.log(i);
         const options = {
           method: 'DELETE',
           url: `${variableCards.route}/${i._id}/`,
-          headers: { 'Content-Type': 'application/json' },
+          headers: { 'Content-Type': 'application/json',
+          Authorization: getToken() },
         };
     
         await axios
