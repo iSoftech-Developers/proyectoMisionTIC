@@ -12,6 +12,139 @@ const NuevaVenta=()=>{
     const [clientes, setClientes] = useState([]);
     const [productosTabla, setProductosTabla] = useState([]);
     const [ejecutarConsulta, setEjecutarConsulta] = useState(true);
+    const [CapturaInput,setCapturaInput]=useState();
+    const [clienteSelect,setClienteSelect]=useState({})
+    const [capturaNumber,setCapturaNumber]=useState();
+    const [productoAAgregar, setProductoAAgregar] = useState({});
+    const [filasTabla, setFilasTabla] = useState([]);
+    const [buttonActive, setButtonActive] = useState('hidden');
+
+
+
+
+    const TablaProductos = ({ productos, setProductos, setProductosTabla,capturaNumber,setCapturaNumber }) => {
+  
+
+
+      useEffect(() => {
+        if(Object.keys(productoAAgregar).length !== 0){
+          console.log(productoAAgregar);
+          setButtonActive("")  
+        }
+       
+      }, [productoAAgregar]);
+    
+      useEffect(() => {
+        console.log('filasTabla', filasTabla);
+        setProductosTabla(filasTabla);
+      }, [ setProductosTabla]);
+    
+    
+      useEffect(() => {
+        console.log(capturaNumber);
+        
+      },);
+    
+    
+     
+    
+      const agregarNuevoProducto = () => {
+        setFilasTabla([...filasTabla, productoAAgregar]);
+        setProductos(productos.filter((v) => v._id !== productoAAgregar._id));
+        setProductoAAgregar({});
+        setButtonActive("hidden")  
+      };
+    
+      const eliminarProducto = (prodcutoAEliminar) => {
+        setFilasTabla(filasTabla.filter((v) => v._id !== prodcutoAEliminar._id));
+        setProductos([...productos, prodcutoAEliminar]);
+      };
+    
+      return (
+        <>
+          <div className='flex w-full justify-between'>
+            <label className='flex flex-col' htmlFor='produto'>
+              <select
+                className='p-2'
+                value={productoAAgregar._id ?? ''}
+                onChange={(e) =>{
+                  setProductoAAgregar(productos.filter((v) => v._id === e.target.value)[0])
+                  if(e.target.value==="Seleccione un Producto"){
+                    
+                  }
+                 }
+                }
+              >
+                <option name="Seleccione un Producto" disabled value=''>
+                  Seleccione un Producto
+                </option>
+                {productos.map((el) => {
+                  return (
+                    <option
+                      key={nanoid()}
+                      value={el._id}
+                    >{`${el.field1} ${el.field6} ${el.field4} ${el.field7}`}</option>
+                  );
+                })}
+              </select>
+            </label>
+            <button
+              type='button'
+              onClick={() => agregarNuevoProducto()}
+              className= {`col-span-2 bg-green-400 p-2 rounded-full shadow-md hover:bg-green-600 text-white ${buttonActive}`}>
+              Agregar Producto
+            </button>
+          </div>
+          <table className='table-fixed w-full bg-white border-solid border-gray-300 border my-5'>
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Genero</th>
+                <th>Talla</th>
+                <th>Color</th>
+                <th>Cantidad</th>
+                <th>Precio Unitario</th>
+                <th>Valor total</th>
+                <th>Eliminar</th>
+                <th className='hidden'>Input</th>
+              </tr>
+            </thead>
+            <tbody>
+              {filasTabla.map((el, index) => {
+                return (
+                  <tr key={nanoid()}>
+                    <td align="center" >{el.ids}</td>
+                    <td align="center">{el.field1}</td>
+                    <td align="center">{el.field6}</td>
+                    <td align="center">{el.field4}</td>
+                    <td align="center">{el.field7}</td>
+                    <td align="center">
+                      <label htmlFor={`cantidad_${index}`}>
+                        <input  type='text' name={`cantidad_${index}`}  id={`cantidad_${index}`}   />
+                      </label>  
+                    </td>
+                    <td align="center">{el.field2}</td>
+                    <td align="center">{el.field2}</td>
+                    <td align="center">
+                      <i
+                        onClick={() => eliminarProducto(el)}
+                        className='fas fa-minus text-red-500 cursor-pointer'
+                      />
+                    </td>
+                    <input hidden defaultValue={el._id} name={`producto_${index}`} />
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </>
+      );
+    };
+    
+  
+  
+
 
 
     useEffect(() => {
@@ -81,6 +214,27 @@ const NuevaVenta=()=>{
     toast.success('Venta guardada');
 };
 
+    
+    useEffect(()=>{
+      clientes.map((cliente)=>{
+        if(cliente.field2===CapturaInput){
+          setClienteSelect({
+             nombre:cliente.field1,
+             telefono:cliente.field5,
+             ciudad:cliente.field4,
+             email:cliente.field3})
+        }
+        return null;
+      })
+      
+    },[CapturaInput])
+
+
+
+
+
+
+
     return(
     
         <div>
@@ -100,43 +254,45 @@ const NuevaVenta=()=>{
                         </label>                    
                     </div>
                     <div className="w-1/6">
-                        <label htmlFor="usernit">NIT/C.C.</label>
-                        <input required className=" w-full h-8 p-2 input-border" type="text" name="usernit" id="usernit"/>
+                        <label htmlFor="clienteNit">NIT/C.C. Cliente</label>
+                        <input required className=" w-full h-8 p-2 input-border" type="text" name="clienteNit" id="clienteNit" onChange={(e) => {setCapturaInput(e.target.value)}}/>
                     </div>
                     <div className="w-1/6">
-                        <label htmlFor="username">Nombre cliente</label>
-                        <input required disabled className=" w-full h-8 p-2 rounded-md input-border" type="text" name="username" id="username" value="Crear fields en back"/>
+                        <label htmlFor="clienteName">Nombre cliente</label>
+                        <input required  className=" w-full h-8 p-2 rounded-md input-border" type="text" name="clienteName" id="clienteName" value={clienteSelect.nombre}/>
                     </div>
                     <div className="w-1/6">
-                        <label htmlFor="paydate">Fecha de pago</label>
-                        <input required className=" w-full h-8 p-2 input-border" type="text" name="paydate" id="paydate"/>
+                        <label htmlFor="payDate">Fecha de pago</label>
+                        <input required className=" w-full h-8 p-2 input-border" type="Date" name="payDate" id="payDate"/>
                     </div>
                 </div>
                 <div className="form-lower-section flex justify-between font-bold label-color">
                     <div className="w-1/6 ">
-                            <label htmlFor="celnumber">Teléfono</label>
-                            <input required className=" w-full h-8 p-2 input-border" type="text" name="celnumber" id="celnumber"/>
+                            <label htmlFor="celNumber">Teléfono</label>
+                            <input required className=" w-full h-8 p-2 input-border" type="text" name="celNumber" id="celNumber" value={clienteSelect.telefono}/>
                         </div>
                         <div className="w-1/6">
-                            <label htmlFor="usercity">Ciudad</label>
-                            <input required className=" w-full h-8 p-2 input-border" type="text" name="usercity" id="usercity"/>
+                            <label htmlFor="clienteCity">Ciudad</label>
+                            <input required className=" w-full h-8 p-2 input-border" type="text" name="clienteCity" id="clienteCity" value={clienteSelect.ciudad}/>
                         </div>
                         <div className="w-1/6 ">
-                            <label htmlFor="salestatus">Estado de venta</label>
-                            <select required className=" w-full h-8 input-border text-gray-500 " name="salestatus">
-                                <option value="Usuarios">En proceso</option>
-                                <option value="Usuarios">Entregada</option>
-                                <option value="Usuarios">Cancelada</option>
-                            </select>
+                            <label htmlFor="clienteEmail">Email</label>
+                            <input required className=" w-full h-8 p-2 input-border" type="email" name="clienteEmail" id="clienteEmail" value={clienteSelect.email}/>
                         </div> 
                     <div className="w-1/6">
+                    <label htmlFor="saleStatus">Estado de venta</label>
+                            <select required className=" w-full h-8 input-border text-gray-500 " name="saleStatus">
+                                <option value="Usuarios">En proceso</option>
+                            </select>
                     </div>
                 </div>
                 <div className= "w-full">
                   <TablaProductos
                   productos={productos}
                   setProductos={setProductos}
-                  setProductosTabla={setProductosTabla}/>
+                  setProductosTabla={setProductosTabla}
+                  capturaNumber={capturaNumber}
+                  setCapturaNumber={setCapturaNumber} />
                 </div>
                 <div className=" w-full flex justify-center">
                     <input className="w-1/6 cursor-pointer bg-green-400 h-10 rounded text-white font-bold my-16" type="submit" value="Guardar"/>
@@ -149,114 +305,11 @@ const NuevaVenta=()=>{
 
     );
 }
-const TablaProductos = ({ productos, setProductos, setProductosTabla }) => {
-    const [productoAAgregar, setProductoAAgregar] = useState({});
-    const [filasTabla, setFilasTabla] = useState([]);
-    const [buttonActive, setButtonActive] = useState('hidden');
-  
-    useEffect(() => {
-      if(Object.keys(productoAAgregar).length !== 0){
-        console.log(productoAAgregar);
-        setButtonActive("")  
-      }
-     
-    }, [productoAAgregar]);
-  
-    useEffect(() => {
-      console.log('filasTabla', filasTabla);
-      setProductosTabla(filasTabla);
-    }, [filasTabla, setProductosTabla]);
 
-   
-  
-    const agregarNuevoProducto = () => {
-      setFilasTabla([...filasTabla, productoAAgregar]);
-      setProductos(productos.filter((v) => v._id !== productoAAgregar._id));
-      setProductoAAgregar({});
-      setButtonActive("hidden")  
-    };
-  
-    const eliminarProducto = (prodcutoAEliminar) => {
-      setFilasTabla(filasTabla.filter((v) => v._id !== prodcutoAEliminar._id));
-      setProductos([...productos, prodcutoAEliminar]);
-    };
-  
-    return (
-      <div>
-        <div className='flex w-full justify-between'>
-          <label className='flex flex-col' htmlFor='produto'>
-            <select
-              className='p-2'
-              value={productoAAgregar._id ?? ''}
-              onChange={(e) =>{
-                setProductoAAgregar(productos.filter((v) => v._id === e.target.value)[0])
-                if(e.target.value==="Seleccione un Producto"){
-                  
-                }
-               }
-              }
-            >
-              <option name="Seleccione un Producto" disabled value=''>
-                Seleccione un Producto
-              </option>
-              {productos.map((el) => {
-                return (
-                  <option
-                    key={nanoid()}
-                    value={el._id}
-                  >{`${el.field1} ${el.field6} ${el.field4} ${el.field7}`}</option>
-                );
-              })}
-            </select>
-          </label>
-          <button
-            type='button'
-            onClick={() => agregarNuevoProducto()}
-            className= {`col-span-2 bg-green-400 p-2 rounded-full shadow-md hover:bg-green-600 text-white ${buttonActive}`}>
-            Agregar Producto
-          </button>
-        </div>
-        <table className='table-fixed w-full bg-white border-solid border-gray-300 border my-5'>
-          <thead>
-            <tr>
-              <th>Id</th>
-              <th>Nombre</th>
-              <th>Genero</th>
-              <th>Talla</th>
-              <th>Color</th>
-              <th>Cantidad</th>
-              <th>Eliminar</th>
-              <th className='hidden'>Input</th>
-            </tr>
-          </thead>
-          <tbody>
-            {filasTabla.map((el, index) => {
-              return (
-                <tr key={nanoid()}>
-                  <td align="center" >{el.ids}</td>
-                  <td align="center">{el.field1}</td>
-                  <td align="center">{el.field6}</td>
-                  <td align="center">{el.field4}</td>
-                  <td align="center">{el.field7}</td>
-                  <td align="center">
-                    <label htmlFor={`valor_${index}`}>
-                      <input type='number' name={`cantidad_${index}`} />
-                    </label>
-                  </td>
-                  <td align="center" >
-                    <i
-                      onClick={() => eliminarProducto(el)}
-                      className='fas fa-minus text-red-500 cursor-pointer'
-                    />
-                  </td>
-                  <input hidden defaultValue={el._id} name={`producto_${index}`} />
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
-      </div>
-    );
-  };
+
+
+
+
+
 
 export default NuevaVenta;
