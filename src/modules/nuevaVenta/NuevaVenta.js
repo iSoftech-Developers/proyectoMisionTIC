@@ -135,7 +135,7 @@ const NuevaVenta=()=>{
                                 <option disabled value=''> Seleccione un Vendedor </option>
                                 {vendedores.map((el) => {
                                   if (el.field4==="Vendedor"){
-                                    return (<option key={nanoid()} value={el._id}>{`${el.field1}`}</option>);
+                                    return (<option key={el._id} value={el._id}>{`${el.field1}`}</option>);
                                   }
                                   return null;
                                 })}
@@ -164,17 +164,16 @@ const NuevaVenta=()=>{
                             <label htmlFor="clienteCity">Ciudad</label>
                             <input required className=" w-full h-8 p-2 input-border" type="text" name="clienteCity" id="clienteCity" value={clienteSelect.field4}/>
                         </div>
-
-                        <div className="w-1/6 ">
+                        <div className="w-1/6">
                             <label htmlFor="clienteEmail">Email</label>
                             <input required className=" w-full h-8 p-2 input-border" type="email" name="clienteEmail" id="clienteEmail" value={clienteSelect.field3}/>
                         </div> 
-                    <div className="w-1/6">
+                    <div className="w-1/6 mb-12">
                     <label htmlFor="saleStatus">Estado de venta</label>
                             <select required className=" w-full h-8 input-border text-gray-500 " name="saleStatus">
                                 <option value="En Proceso">En proceso</option>
                             </select>
-                        
+                    </div>
                 </div>
                 <div className= "w-full">
                   <TablaProductos
@@ -214,7 +213,6 @@ const TablaProductos = ({ productos, setProductos, setProductosTabla,capturaNumb
     setProductosTabla(filasTabla);
   }, [filasTabla, setProductosTabla]);
   
-<<<<<<< HEAD
 
   const agregarNuevoProducto = () => {
     setFilasTabla([...filasTabla, productoAAgregar]);
@@ -256,73 +254,9 @@ const TablaProductos = ({ productos, setProductos, setProductosTabla,capturaNumb
               Seleccione un Producto
             </option>
             {productos.map((el) => {
-=======
-    const agregarNuevoProducto = () => {
-      setFilasTabla([...filasTabla, productoAAgregar]);
-      setProductos(productos.filter((v) => v._id !== productoAAgregar._id));
-      setProductoAAgregar({});
-      setButtonActive("hidden")  
-    };
-  
-    const eliminarProducto = (prodcutoAEliminar) => {
-      setFilasTabla(filasTabla.filter((v) => v._id !== prodcutoAEliminar._id));
-      setProductos([...productos, prodcutoAEliminar]);
-    };
-  
-    return (
-      <div>
-        <div className='flex w-full justify-between '>
-          <label className='flex flex-col ' htmlFor='produto'>
-            <select
-              className='p-2 input-border'
-              value={productoAAgregar._id ?? ''}
-              onChange={(e) =>{
-                setProductoAAgregar(productos.filter((v) => v._id === e.target.value)[0])
-                if(e.target.value==="Seleccione un Producto"){
-                  
-                }
-               }
-              }
-            >
-              <option name="Seleccione un Producto" disabled value=''>
-                Seleccione un Producto
-              </option>
-              {productos.map((el) => {
-                return (
-                  <option
-                    key={nanoid()}
-                    value={el._id}
-                  >{`${el.field1} ${el.field6} ${el.field4} ${el.field7}`}</option>
-                );
-              })}
-            </select>
-          </label>
-          <button
-            type='button'
-            onClick={() => agregarNuevoProducto()}
-            className= {`rounded shadow-md bg-gray-400 hover:bg-gray-600 text-white px-3 ${buttonActive}`}>
-            Agregar Producto
-          </button>
-        </div>
-        <table className='table-fixed w-full bg-white border-solid border-gray-300 border my-5'>
-          <thead>
-            <tr>
-              <th>Id</th>
-              <th>Nombre</th>
-              <th>Genero</th>
-              <th>Talla</th>
-              <th>Color</th>
-              <th>Cantidad</th>
-              <th>Eliminar</th>
-              <th className='hidden'>Input</th>
-            </tr>
-          </thead>
-          <tbody>
-            {filasTabla.map((el, index) => {
->>>>>>> c1b586a3de8f6517c2fa04851c9a08a85ab965c3
               return (
                 <option
-                  key={nanoid()}
+                  key={el._id}
                   value={el._id}
                 >{`${el.field1} ${el.field6} ${el.field4} ${el.field7}`}</option>
               );
@@ -380,12 +314,6 @@ const FilaProducto =({pr , index,eliminarProducto,modificarProducto})=>{
 
 
   const [prenda, setPrenda] = useState(pr);
-
-
-
-  useEffect(() => {
-    console.log('holaaaaaaaaa', prenda);
- }, [prenda]);
 
 
 

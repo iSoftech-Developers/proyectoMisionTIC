@@ -18,7 +18,7 @@ const CardsVentas = ({variableCards}) => {
         if (ejecutarConsulta) {
           obtenerDB(setVentas, setEjecutarConsulta,variableCards.route);
         }
-      }, []);
+      }, [ejecutarConsulta]);
 
       console.log(ventas)
 
@@ -34,6 +34,8 @@ const CardsVentas = ({variableCards}) => {
             return null;
 
         } )}
+
+    <ToastContainer position="top-right" autoClose={2000}/>
 
 
 
