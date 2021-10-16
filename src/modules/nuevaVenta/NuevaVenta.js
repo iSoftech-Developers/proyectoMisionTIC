@@ -131,7 +131,7 @@ const NuevaVenta=()=>{
                 <div className="form-upper-section flex justify-between font-bold label-color">
                     <div className="w-1/6 ">
                         <label htmlFor="vendedor">Vendedor
-                            <select name='vendedor' className='p-2' defaultValue='' required >
+                            <select name='vendedor' className='p-2 input-border' defaultValue='' required >
                                 <option disabled value=''> Seleccione un Vendedor </option>
                                 {vendedores.map((el) => {
                                   if (el.field4==="Vendedor"){
@@ -140,7 +140,7 @@ const NuevaVenta=()=>{
                                   return null;
                                 })}
                             </select>
-                        </label>                    
+                        </label>
                     </div>
                     <div className="w-1/6">
                         <label htmlFor="clienteNit">NIT/C.C. Cliente</label>
@@ -164,11 +164,11 @@ const NuevaVenta=()=>{
                             <label htmlFor="clienteCity">Ciudad</label>
                             <input required className=" w-full h-8 p-2 input-border" type="text" name="clienteCity" id="clienteCity" value={clienteSelect.field4}/>
                         </div>
-                        <div className="w-1/6 ">
+                        <div className="w-1/6">
                             <label htmlFor="clienteEmail">Email</label>
                             <input required className=" w-full h-8 p-2 input-border" type="email" name="clienteEmail" id="clienteEmail" value={clienteSelect.field3}/>
                         </div> 
-                    <div className="w-1/6">
+                    <div className="w-1/6 mb-12">
                     <label htmlFor="saleStatus">Estado de venta</label>
                             <select required className=" w-full h-8 input-border text-gray-500 " name="saleStatus">
                                 <option value="En Proceso">En proceso</option>
@@ -184,12 +184,10 @@ const NuevaVenta=()=>{
                   setCapturaNumber={setCapturaNumber} />
                 </div>
                 <div className=" w-full flex justify-center">
-                    <input className="w-1/6 cursor-pointer bg-green-400 h-10 rounded text-white font-bold my-16" type="submit" value="Guardar"/>
+                    <input className="w-1/6 cursor-pointer bg-green-600 hover:bg-green-500 h-10 rounded text-white font-bold my-8" type="submit" value="Guardar"/>
                     <ToastContainer position="top-right" autoClose={5000}/>
                 </div>
-
             </form>
-           
     </div>
 
     );

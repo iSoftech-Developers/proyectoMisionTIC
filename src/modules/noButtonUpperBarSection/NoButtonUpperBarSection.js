@@ -12,7 +12,7 @@ const NoButtonUpperBarSection =({title})=>{
     return(
         <div className=" my-9 flex justify-between">
             <span className="font-bold text-2xl">{title}</span>
-            <button onClick={back} className="w-1/6 cursor-pointer bg-green-500 rounded h-10 text-white font-semibold flex items-center justify-center">Atras</button>
+            <button onClick={back} className="w-1/6 cursor-pointer border-2 border-blue-600 rounded h-10 text-blue-600 font-semibold flex items-center justify-center">Regresar</button>
         </div >
     )
   }

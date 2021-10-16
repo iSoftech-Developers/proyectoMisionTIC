@@ -80,7 +80,7 @@ const NuevoCliente = ({formLabelTitle}) => {
                     </div>
                 </div>
                 <div className=" w-full flex justify-center">
-                    <input className="w-1/6 cursor-pointer bg-green-400 h-10 rounded text-white font-bold my-16 " type="submit" value="Guardar" />
+                    <input className="w-1/6 cursor-pointer bg-green-600 hover:bg-green-500 h-10 rounded text-white font-bold my-16 " type="submit" value="Guardar" />
                     <ToastContainer position='bottom-center' autoClose={5000} />
                 </div>
             </form> 

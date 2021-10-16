@@ -47,7 +47,7 @@ const NuevoProducto = ({formLabelTitle}) => {
                         <div className="w-1/5">
                             <label for="descripcion">{formLabelTitle.label1}</label>
                             <select class=" w-full h-8 text-gray-500 input-border" type="String" name="descripcion" required>
-                                <option disabled type="String" value="" >Selecciona una opción</option>
+                                <option disabled type="String" value="">Selecciona una opción</option>
                                 <option type="String">Camiseta</option>
                                 <option type="String">Vestido de baño</option>
                                 <option type="String">Medias</option>
@@ -110,12 +110,11 @@ const NuevoProducto = ({formLabelTitle}) => {
                 <div>
                     <div className=" w-full flex justify-center">
                         <ToastContainer position="top-right" autoClose={5000}/>
-                        <input className="w-1/6 cursor-pointer bg-green-400 h-10 rounded text-white font-bold my-16" type="submit" value="Guardar"/>
+                        <input className="w-1/6 cursor-pointer bg-green-600 hover:bg-green-500 h-10 rounded text-white font-bold my-8" type="submit" value="Guardar"/>
                         
                     </div>
                 </div>
             </form>
-           
     )
 }
 

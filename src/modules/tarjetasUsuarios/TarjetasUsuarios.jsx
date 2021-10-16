@@ -124,7 +124,7 @@ return (
                 }
 
                 }}
-                required className="flex pl-2 h-8 input-border text-gray-500" name="roleoptions">
+                required className="flex px-2 h-8 input-border text-gray-500" name="roleoptions">
                 <option  class="text-bold" value ="all">Todos los usuarios</option>
                 <option  class="text-bold" name="Vendedores">Vendedores</option>
                 <option class="text-bold" name="Administradores">Administradores</option>
