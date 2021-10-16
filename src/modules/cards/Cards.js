@@ -18,7 +18,7 @@ const Cards=({variableCards})=>{
         if (ejecutarConsulta) {
           obtenerDB(setConsulta, setEjecutarConsulta,variableCards.route);
         }
-      }, [ejecutarConsulta ,variableCards.route]);
+      }, [ejecutarConsulta]);
 
 
 
@@ -28,7 +28,7 @@ const Cards=({variableCards})=>{
     return(
       <>
       {consulta.map((i)=>{
-        if (i._id.includes(busqueda)||i.ids.toLowerCase().includes(busqueda.toLowerCase())){
+        if (i._id.includes(busqueda)||i.ids.toLowerCase().includes(busqueda.toLowerCase())||i.field1.toLowerCase().includes(busqueda.toLowerCase())){
           if(variableCards.filtroVendedores && i.field4==="Vendedor"){
             return <Card i={i} variableCards={variableCards} setEjecutarConsulta={setEjecutarConsulta} />
           }

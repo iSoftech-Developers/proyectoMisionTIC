@@ -44,6 +44,23 @@ rutasVenta.route('/venta/:id/').delete((request,response)=>{
   
 })
 
+rutasVenta.route('/venta/:id/').patch((request,response)=>{
+  const id = request.params.id 
+    Venta.findByIdAndUpdate(id, {
+      estadoVenta:request.body.estadoVenta,
+      fechaPago:request.body.fechaPago,
+      valorTotalVenta:request.body.valorTotalVenta,
+      productos:request.body.productos,
+      vendedor:request.body.vendedor,
+      cliente:request.body.cliente,
+  }).then(() => {
+    response.sendStatus(202)
+  }).catch(err => {
+    console.error(err)
+  })
+  
+})
+
 
 
 export default rutasVenta;
