@@ -26,6 +26,7 @@ import {BuscadorContext} from './context/BuscadorContext'
 import {SeleccionadoContext} from './context/Seleccionado';
 import { Auth0Provider } from "@auth0/auth0-react";
 import { UsuarioConectadoContext } from './context/UsuarioConectado';
+import PrivateRoute from './modules/PrivateRoute';
 
 
 
@@ -34,7 +35,7 @@ const App =()=> {
   const [busqueda, setBusqueda] = useState('');
   const [seleccionado,setSeleccionado] = useState('');
   const [usuario,setUsuario]=useState('')
- 
+
   
   return (
     <Auth0Provider
@@ -52,22 +53,34 @@ const App =()=> {
             <Private>
               <Switch>
                 <Route path='/rolesUsuarios/nuevoUsuario'>
-                  <PaginaAgregarUsuarios/>
+                  <PrivateRoute roleList={['Administrador']}>
+                    <PaginaAgregarUsuarios/>
+                  </PrivateRoute>
                 </Route>
                 <Route path='/rolesUsuarios/paginaEditarUsuarios'>
-                  <PaginaEditarUsuarios/>
+                  <PrivateRoute roleList={['Administrador']}>
+                    <PaginaEditarUsuarios/>
+                  </PrivateRoute>
                 </Route>
                 <Route path='/rolesUsuarios/detalleUsuarios/:id'>
-                  <PaginaDetalleUsuarios />
+                  <PrivateRoute roleList={['Administrador']}>
+                    <PaginaDetalleUsuarios />
+                  </PrivateRoute>
                 </Route>
                 <Route path='/rolesUsuarios'>
-                  <PaginaRolesUsuario/>
+                  <PrivateRoute roleList={['Administrador']}>
+                    <PaginaRolesUsuario/>
+                  </PrivateRoute>
                 </Route>
                 <Route path='/productos/actualizarProducto/:id'>
-                  <PaginaActualizarProducto />
+                  <PrivateRoute roleList={['Administrador']}>
+                    <PaginaActualizarProducto />
+                  </PrivateRoute>
                 </Route>
                 <Route path='/productos/nuevoProducto'>
-                  <PaginaNuevoProducto/>
+                  <PrivateRoute roleList={['Administrador']}>
+                    <PaginaNuevoProducto/>
+                  </PrivateRoute>
                 </Route>
                 <Route path='/productos/detalleProducto/:id'>
                   <PaginaDetalleProducto />
@@ -88,19 +101,21 @@ const App =()=> {
                   <PaginaEditarUsuarios/>
                 </Route>
                 <Route path='/moduloVendedores'>
-                  <PaginaVendedores />
+                  <PrivateRoute roleList={['Administrador']}>
+                    <PaginaVendedores/>
+                  </PrivateRoute> 
                 </Route>
                 <Route path='/moduloClientes/detalleCliente/:id'>
-                  <PaginaDetalleClientes />
+                  <PaginaDetalleClientes/>
                 </Route>
                 <Route path='/moduloClientes/paginaEditarCliente/:id'>
-                  <PaginaEditarCliente />
+                  <PaginaEditarCliente/>
                 </Route>
                 <Route path='/moduloClientes/nuevoCliente'>
                   <PaginaNuevoCliente/>
                 </Route>
                 <Route path='/moduloClientes'>
-                  <PaginaClientes />
+                  <PaginaClientes/>
                 </Route>
                 <Route path='/nuevaVenta'>
                   <PaginaNuevaVenta/>

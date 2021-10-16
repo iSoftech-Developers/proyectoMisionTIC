@@ -22,7 +22,7 @@ const PaginaVentas =()=> {
 
     return (
      <>
-        <UpperBarSection titlePage="Listado de ventas" nameButton="Nueva Venta" selectorButton="/nuevaVenta"/>
+        <UpperBarSection titlePage="Listado de ventas" nameButton="Nueva Venta" selectorButton="/nuevaVenta" vendedores= {false}/>
         <CardsVentas variableCards={variableCards} />
      </> 
       

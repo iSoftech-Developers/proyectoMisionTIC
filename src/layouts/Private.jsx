@@ -12,36 +12,35 @@ const Private = ({children}) => {
 
     useEffect(() => {
         const fetchAuth0Token = async ()=> {
-
-            const accessToken=  await getAccessTokenSilently({
-                audience: 'api-proyecto-softech', });
-                
-         localStorage.setItem('token', accessToken);
-         await obtenerDatosUsuario(
-            (response) => {
-                setUsuario(response.data)
-            },
-            (err) => {
-              console.log('err', err);
-            }
-          );
+        //1. pedir token a auth0
+        const accessToken=  await getAccessTokenSilently({
+            audience: 'api-proyecto-softech', });
+        // recibir token de auth0
+        localStorage.setItem('token', accessToken);
+        //3. enviar token back-end
+        await obtenerDatosUsuario(
+        (response) => {
+            setUsuario(response.data)
+        },
+        (err) => {
+            console.log('err', err);
+        }
+        );
         };
         if(isAuthenticated){
             fetchAuth0Token (); 
         }
-     }, [isAuthenticated, getAccessTokenSilently]);
+    }, [isAuthenticated, getAccessTokenSilently]);
 
 
- 
- 
     return (
         <>
             <Sidebar/>
             <main>
                     <Navbar/>
                     <section className="container-cards h-full">
-                         <section className="contenido">
-                            {children}
+                        <section className="contenido">
+                        {children}
                         </section>
                     </section>
             </main>

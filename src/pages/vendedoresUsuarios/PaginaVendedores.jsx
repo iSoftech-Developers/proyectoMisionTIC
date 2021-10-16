@@ -17,10 +17,9 @@ const PaginaVendedores =({cardsUsuarios})=> {
     field5:"Fecha de ingreso",
 }
     return (
-     <>
-          
-              <UpperBarSection titlePage="Lista de vendedores" selectorButton="/rolesUsuarios/nuevoUsuario" nameButton="Nuevo Vendedor"/>
-              <Cards variableCards={variableCards} />
+     <>        
+        <UpperBarSection titlePage="Lista de vendedores" selectorButton="/rolesUsuarios/nuevoUsuario" nameButton="Nuevo Vendedor" vendedores={true}/>
+        <Cards variableCards={variableCards} edit={false}/>
      </> 
       
     );

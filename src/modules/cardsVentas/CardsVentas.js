@@ -6,6 +6,7 @@ import { useState,useEffect } from 'react';
 import { useSeleccionado } from '../../context/Seleccionado';
 import { obtenerDB } from '../../utils/GetDB';
 import DeleteDB from '../../utils/DeleteDB';
+import PrivateComponent from '../PrivateComponent';
 
 const CardsVentas = ({variableCards}) => {
 
@@ -68,12 +69,15 @@ const Card = ({i,variableCards , setEjecutarConsulta})=>{
                                         <i className="fas fa-pen hover:text-blue-600 text-blue-800 fa-lg"></i>
                                     </Tooltip>
                                 </Link>
-                                <Link to={variableCards.page} onClick={()=>{console.log(i)
-                                  setOpenDialog(true)}}>
-                                    <Tooltip title="Eliminar">
-                                    <i className="fas fa-trash text-red-800 hover:text-red-600 shadow-md fa-lg"></i>
-                                    </Tooltip>
-                                </Link>
+                                <PrivateComponent roleList={['Administrador']}>
+                                  <Link to={variableCards.page} onClick={()=>{console.log(i)
+                                    setOpenDialog(true)}}>
+                                      <Tooltip title="Eliminar">
+                                      <i className="fas fa-trash text-red-800 hover:text-red-600 shadow-md fa-lg"></i>
+                                      </Tooltip>
+                                  </Link>
+                                </PrivateComponent>
+                                
                             </div>
                         </div>
                     </div>

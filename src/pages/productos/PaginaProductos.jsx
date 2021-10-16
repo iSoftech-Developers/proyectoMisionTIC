@@ -26,11 +26,8 @@ const variableCards = {
 
     return (
      <>
-  
-  
-        <UpperBarSection titlePage="Productos" nameButton="Nuevo Producto" selectorButton="/productos/nuevoProducto"/>
-        <Cards variableCards={variableCards} />
-       
+        <UpperBarSection titlePage="Productos" nameButton="Nuevo Producto" selectorButton="/productos/nuevoProducto" vendedores= {true}/>
+        <Cards variableCards={variableCards} edit={false}/>   
      </> 
       
     );

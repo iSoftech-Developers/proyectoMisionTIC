@@ -6,9 +6,10 @@ import { useState,useEffect } from 'react';
 import { useSeleccionado } from '../../context/Seleccionado';
 import { obtenerDB } from '../../utils/GetDB';
 import DeleteDB from '../../utils/DeleteDB';
+import PrivateComponent from '../PrivateComponent';
 
 
-const Cards=({variableCards})=>{
+const Cards=({variableCards, edit})=>{
     const {busqueda}=useBuscado()
     const [consulta, setConsulta] = useState([]); 
     const [ejecutarConsulta, setEjecutarConsulta] = useState(true);
@@ -20,20 +21,15 @@ const Cards=({variableCards})=>{
         }
       }, [ejecutarConsulta]);
 
-
-
-
-      
-
     return(
       <>
       {consulta.map((i)=>{
         if (i._id.includes(busqueda)||i.ids.toLowerCase().includes(busqueda.toLowerCase())||i.field1.toLowerCase().includes(busqueda.toLowerCase())){
           if(variableCards.filtroVendedores && i.field4==="Vendedor"){
-            return <Card i={i} variableCards={variableCards} setEjecutarConsulta={setEjecutarConsulta} />
+            return <Card i={i} variableCards={variableCards} edit={edit} setEjecutarConsulta={setEjecutarConsulta} />
           }
           if(!variableCards.filtroVendedores){
-            return <Card i={i} variableCards={variableCards} setEjecutarConsulta={setEjecutarConsulta}/>
+            return <Card i={i} variableCards={variableCards} edit={edit} setEjecutarConsulta={setEjecutarConsulta}/>
           }
           return null;
           }
@@ -46,11 +42,7 @@ const Cards=({variableCards})=>{
 );
 }
 
-
-
-
-
-const Card = ({i,variableCards , setEjecutarConsulta})=>{
+const Card = ({i,variableCards , setEjecutarConsulta, edit})=>{
 
 
 
@@ -68,17 +60,30 @@ const Card = ({i,variableCards , setEjecutarConsulta})=>{
                       <div className="card-info w-full align-center flex justify-between">
                           <span className="font-semibold pt-3">ID {i.ids}</span>
                           <div className="edit-card pt-4 space-x-5">
+                            {edit ?(
                               <Link to={`${variableCards.linkIcon}/${i._id}`} onClick={() => setSeleccionado(i)}>
-                                  <Tooltip title="editar">
-                                      <i className="fas fa-pen hover:text-blue-600 text-blue-800 fa-lg"></i>
-                                  </Tooltip>
+                                <Tooltip title="editar">
+                                    <i className="fas fa-pen hover:text-blue-600 text-blue-800 fa-lg"></i>
+                                </Tooltip>
                               </Link>
-                              <Link to={variableCards.page} onClick={()=>{console.log(i)
-                                setOpenDialog(true)}}>
-                                  <Tooltip title="Eliminar">
-                                  <i className="fas fa-trash text-red-800 hover:text-red-600 shadow-md fa-lg"></i>
-                                  </Tooltip>
-                              </Link>
+
+                            ):(
+                              <PrivateComponent roleList={['Administrador']}>
+                                <Link to={`${variableCards.linkIcon}/${i._id}`} onClick={() => setSeleccionado(i)}>
+                                    <Tooltip title="editar">
+                                        <i className="fas fa-pen hover:text-blue-600 text-blue-800 fa-lg"></i>
+                                    </Tooltip>
+                                </Link>
+                              </PrivateComponent>
+                            )}
+                              <PrivateComponent roleList={['Administrador']}>
+                                <Link to={variableCards.page} onClick={()=>{console.log(i)
+                                    setOpenDialog(true)}}>
+                                      <Tooltip title="Eliminar">
+                                      <i className="fas fa-trash text-red-800 hover:text-red-600 shadow-md fa-lg"></i>
+                                      </Tooltip>
+                                </Link>
+                              </PrivateComponent>
                           </div>
                       </div>
                   </div>

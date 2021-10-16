@@ -37,9 +37,6 @@ const TarjetasUsuarios = ({variableCards}) => {
 
 
 
-
-
-
     const CardsUsers = ({i})=>{
         const [hiddenButtons,setHiddenButtons]=useState("hidden")
         return(
