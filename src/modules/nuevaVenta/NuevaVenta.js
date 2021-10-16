@@ -3,6 +3,7 @@ import { useRef , useState,useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import { obtenerDB } from "../../utils/GetDB";
+import PostDB from '../../utils/PostDB';
 
 const NuevaVenta=()=>{
 
@@ -17,12 +18,7 @@ const NuevaVenta=()=>{
     const [capturaNumber,setCapturaNumber]=useState();
 
 
-
-
-
    
-  
-  
 
 
 
@@ -56,42 +52,59 @@ const NuevaVenta=()=>{
     const fd = new FormData(form.current);
 
     const nuevaVenta = {};
-    fd.forEach((value,key) => {
+    fd.forEach((value,key) => { 
         nuevaVenta[key] = value;
     });
 
 
     const listaProductos = Object.keys(nuevaVenta)
     .map((k) => {
+
       if (k.includes('producto')) {
-        return productosTabla.filter((v) => v._id === nuevaVenta[k])[0];
+        return productosTabla.filter((v) => v._id === nuevaVenta[k])[0]
       }
       return null;
     })
     .filter((v) => v);
-    console.log('lista antes de cantidad', listaProductos);
+
+
+    
 
 
     Object.keys(nuevaVenta).forEach((k) => {
+      
         if (k.includes('cantidad')) {
           const indice = parseInt(k.split('_')[1]);
-          listaProductos[indice]['cantidad'] = nuevaVenta[k];
+          listaProductos[indice]['cantidad'] = nuevaVenta[k];       
         }
+        
       });
+
+
+      let sumador= 0
+      listaProductos.map(tp=>{
+        tp.field8=tp.field2*tp.cantidad
+        sumador=sumador+tp.field8
+        return null;
+      })
   
       console.log('lista despues de cantidad', listaProductos);
+      
 
       const datosVenta = {
+        fechaPago:nuevaVenta.payDate,
+        estadoVenta:nuevaVenta.saleStatus,
+        valorTotalVenta: sumador,
         vendedor: vendedores.filter((v) => v._id === nuevaVenta.vendedor)[0],
         productos: listaProductos,
         cliente:clientes.filter((i)=>i._id===clienteSelect._id)[0],
         
       };
   
-      console.log('lista productos', datosVenta);
 
-    
-    toast.success('Venta guardada');
+      PostDB(datosVenta, "http://localhost:3001/venta/")
+
+
 };
 
     
@@ -158,7 +171,7 @@ const NuevaVenta=()=>{
                     <div className="w-1/6">
                     <label htmlFor="saleStatus">Estado de venta</label>
                             <select required className=" w-full h-8 input-border text-gray-500 " name="saleStatus">
-                                <option value="Usuarios">En proceso</option>
+                                <option value="En Proceso">En proceso</option>
                             </select>
                     </div>
                 </div>
@@ -199,16 +212,9 @@ const TablaProductos = ({ productos, setProductos, setProductosTabla,capturaNumb
   }, [productoAAgregar]);
 
   useEffect(() => {
-    console.log('filasTabla', filasTabla);
     setProductosTabla(filasTabla);
   }, [filasTabla, setProductosTabla]);
-
-
-  useEffect(() => {
-    console.log(capturaNumber);
-    
-  },);
-
+  
 
   const agregarNuevoProducto = () => {
     setFilasTabla([...filasTabla, productoAAgregar]);
@@ -224,12 +230,17 @@ const TablaProductos = ({ productos, setProductos, setProductosTabla,capturaNumb
 
 
   const modificarProducto = (producto, cantidad) => {
-    const productoModificado = filasTabla.filter((v) => v._id === producto._id)[0];
-    productoModificado.cantidad = cantidad;
-    let ft = [...filasTabla];
-    ft = ft.filter((v) => v._id !== producto._id);
-    ft = [...ft, productoModificado];
-    setFilasTabla(ft);
+    console.log('filas tabla',filasTabla)
+    
+    setFilasTabla(
+      filasTabla.map((ft) => {
+        if (ft._id === producto.id) {
+          ft.cantidad = cantidad;
+          ft.total = producto.valor * cantidad;
+        }
+        return ft;
+      })
+    );
   };
 
   return (
@@ -239,8 +250,9 @@ const TablaProductos = ({ productos, setProductos, setProductosTabla,capturaNumb
           <select
             className='p-2'
             value={productoAAgregar._id ?? ''}
-            onChange={(e) => setProductoAAgregar(productos.filter((v) => v._id === e.target.value)[0])}>
-            <option name="Seleccione un Producto" disabled value=''>
+            onChange={(e) => 
+            setProductoAAgregar(productos.filter((v) => v._id === e.target.value)[0])}>
+            <option disabled value=''>
               Seleccione un Producto
             </option>
             {productos.map((el) => {
@@ -278,11 +290,9 @@ const TablaProductos = ({ productos, setProductos, setProductosTabla,capturaNumb
         <tbody>
           {filasTabla.map((el, index) => {
             return (
-
-
               <FilaProducto
-              key={nanoid()}
-              producto={el}
+              key={el._id}
+              pr={el}
               index={index}
               eliminarProducto={eliminarProducto}
               modificarProducto={modificarProducto}
@@ -295,30 +305,63 @@ const TablaProductos = ({ productos, setProductos, setProductosTabla,capturaNumb
   );
 };
 
-const FilaProducto =({producto , index,eliminarProducto,modificarProducto})=>{
+
+
+
+
+
+
+
+const FilaProducto =({pr , index,eliminarProducto,modificarProducto})=>{
+
+
+  const [prenda, setPrenda] = useState(pr);
+
+
+
+  useEffect(() => {
+    console.log('holaaaaaaaaa', prenda);
+ }, [prenda]);
+
+
+
+
   return (
 
-    <tr key={nanoid()}>
-      <td align="center" >{producto.ids}</td>
-      <td align="center">{producto.field1}</td>
-      <td align="center">{producto.field6}</td>
-      <td align="center">{producto.field4}</td>
-      <td align="center">{producto.field7}</td>
+    <tr>
+      <td align="center">{prenda.ids}</td>
+      <td align="center">{prenda.field1}</td>
+      <td align="center">{prenda.field6}</td>
+      <td align="center">{prenda.field4}</td>
+      <td align="center">{prenda.field7}</td>
       <td align="center">
-        <label htmlFor={`cantidad_${index}`}>
-          <input value={producto.cantidad}  type='text' name={`cantidad_${index}`}  id={`cantidad_${index}` } 
-          onBlur={(e) => modificarProducto(producto, e.target.value)}/>
+        <label htmlFor={`valor_${index}`}>
+          <input 
+          value={prenda.cantidad} 
+          type='number'
+          name={`cantidad_${index}`} 
+          onChange={(e) => {
+          modificarProducto(prenda, e.target.value === '' ? '0' : e.target.value);
+          setPrenda({
+              ...prenda,
+              cantidad: e.target.value === '' ? '0' : e.target.value,
+              field8:parseFloat(prenda.field2) *parseFloat(e.target.value === '' ? '0' : e.target.value),
+                });
+              }}
+          />
         </label>  
       </td>
-      <td align="center">$ {producto.field2}</td>
-      <td align="center">$ {producto.field2 *producto.cantidad}</td>
+      <td align="center">{prenda.field2}</td>
+      <td align="center" >{parseFloat(prenda.field8 ?? 0)}</td>
       <td align="center">
         <i
-          onClick={() => eliminarProducto(producto)}
+          onClick={() => eliminarProducto(prenda)}
           className='fas fa-minus text-red-500 cursor-pointer'
         />
       </td>
-      <input hidden defaultValue={producto._id} name={`producto_${index}`} />
+      <td className='hidden'>
+      <input hidden defaultValue={prenda._id} name={`producto_${index}`} />
+      </td>
   </tr>
 
   );

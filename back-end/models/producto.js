@@ -9,6 +9,7 @@ const productoSchema = new Mongoose.Schema({
     field5:String, // estado
     field6:String, // genero
     field7:String, // color
+    field8:Number,//
     
   });
 

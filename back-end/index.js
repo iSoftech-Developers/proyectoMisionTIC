@@ -9,6 +9,7 @@ import jwks from 'jwks-rsa';
 import rutasClientes from './views/clientes.js';
 import rutasProductos from './views/productos.js';
 import rutasUsuarios from './views/usuarios.js';
+import rutasVenta from './views/venta.js';
 db()
 
 
@@ -37,6 +38,7 @@ app.use(jwtCheck);
 app.use(rutasClientes)
 app.use(rutasProductos)
 app.use(rutasUsuarios)
+app.use(rutasVenta)
 
 
 const PORT= process.env.PORT;
