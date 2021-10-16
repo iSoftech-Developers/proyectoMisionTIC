@@ -8,7 +8,7 @@ export const obtenerDB = async (setConsulta, setEjecutarConsulta,ruta) => {
   method: 'GET',
   url: ruta ,
   headers: {
-    Authorization: getToken(),
+    Authorization: getToken(), //enviar token a back-end
   },
 };
   await axios

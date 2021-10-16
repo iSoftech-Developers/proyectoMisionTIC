@@ -4,12 +4,9 @@ import jwt_decode from 'jwt-decode';
 
 const getUsuarios= async(response)=>{
   await Usuario.find({}).then((usuarios)=>{
-       response.json(usuarios)
-     })
+      response.json(usuarios)
+    })
 }
-
-
-
 
 const consultarOCrearUsuario =  (request, response) => {
   // 6.1. obtener los datos del usuario desde el token
@@ -17,7 +14,7 @@ const consultarOCrearUsuario =  (request, response) => {
   const user = jwt_decode(token)["http://localhost/userData"];
 
   // 6.2. con el correo del usuario o con el id de auth0, verificar si el usuario ya esta en la bd o no´
-   Usuario.findOne({ field3: user.email },function (err, adventure){
+  Usuario.findOne({ field3: user.email },function (err, adventure){
     if (adventure){
       response.json(adventure)
     }else{

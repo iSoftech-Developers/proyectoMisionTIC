@@ -25,8 +25,8 @@ const PaginaClientes =({cardsClientes})=> {
     return (
      <>
   
-        <UpperBarSection titlePage="Clientes" nameButton="Nuevo Cliente" selectorButton="/moduloClientes/nuevoCliente"/>
-        <Cards variableCards={variableCards} cardsinformation={cardsClientes}/>
+        <UpperBarSection titlePage="Clientes" nameButton="Nuevo Cliente" selectorButton="/moduloClientes/nuevoCliente" vendedores= {false}/>
+        <Cards variableCards={variableCards} cardsinformation={cardsClientes} edit={true}/>
        
      </> 
       
