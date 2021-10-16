@@ -14,7 +14,6 @@ const NuevaVenta=()=>{
     const [ejecutarConsulta, setEjecutarConsulta] = useState(true);
     const [CapturaInput,setCapturaInput]=useState();
     const [clienteSelect,setClienteSelect]=useState({})
-    const [capturaNumber,setCapturaNumber]=useState();
 
 
    
@@ -39,7 +38,6 @@ const NuevaVenta=()=>{
       fetchVendores();
       fetchProductos();
       fetchClientes();
-      console.log(vendedores)
       }
    
     },[]);
@@ -178,9 +176,7 @@ const NuevaVenta=()=>{
                   <TablaProductos
                   productos={productos}
                   setProductos={setProductos}
-                  setProductosTabla={setProductosTabla}
-                  capturaNumber={capturaNumber}
-                  setCapturaNumber={setCapturaNumber} />
+                  setProductosTabla={setProductosTabla} />
                 </div>
                 <div className=" w-full flex justify-center">
                     <input className="w-1/6 cursor-pointer bg-green-600 hover:bg-green-500 h-10 rounded text-white font-bold my-8" type="submit" value="Guardar"/>
@@ -192,7 +188,7 @@ const NuevaVenta=()=>{
     );
 }
 
-const TablaProductos = ({ productos, setProductos, setProductosTabla,capturaNumber,setCapturaNumber }) => {
+const TablaProductos = ({ productos, setProductos, setProductosTabla}) => {
 
   const [productoAAgregar, setProductoAAgregar] = useState({});
   const [filasTabla, setFilasTabla] = useState([]);
@@ -245,7 +241,7 @@ const TablaProductos = ({ productos, setProductos, setProductosTabla,capturaNumb
       <div className='flex w-full justify-between'>
         <label className='flex flex-col' htmlFor='produto'>
           <select
-            className='p-2'
+            className='p-2 input-border font-bold'
             value={productoAAgregar._id ?? ''}
             onChange={(e) => 
             setProductoAAgregar(productos.filter((v) => v._id === e.target.value)[0])}>
@@ -254,7 +250,7 @@ const TablaProductos = ({ productos, setProductos, setProductosTabla,capturaNumb
             </option>
             {productos.map((el) => {
               return (
-                <option
+                <option 
                   key={el._id}
                   value={el._id}
                 >{`${el.field1} ${el.field6} ${el.field4} ${el.field7}`}</option>
@@ -265,7 +261,7 @@ const TablaProductos = ({ productos, setProductos, setProductosTabla,capturaNumb
         <button
           type='button'
           onClick={() => agregarNuevoProducto()}
-          className= {`col-span-2 bg-green-400 p-2 rounded-full shadow-md hover:bg-green-600 text-white ${buttonActive}`}>
+          className= {`col-span-2 bg-gray-500 p-2 rounded shadow-md hover:bg-gray-400 text-white ${buttonActive}`}>
           Agregar Producto
         </button>
       </div>
