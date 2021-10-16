@@ -1,25 +1,18 @@
-import Cards from '../../modules/cards/Cards';
+import CardsVentas from '../../modules/cardsVentas/CardsVentas';
 import UpperBarSection from '../../modules/upperBarSection/UpperBarSection';
-import {useEffect, useState} from 'react';
 
 
 const PaginaVentas =()=> {
 
 
-  const [cardsVentas,setCardsVentas] =useState([]);
-  useEffect(()=>{
-    setCardsVentas(VENTAS);
-  },[]);
-
-  const VENTAS = [
-    { _id:"0",field1: 1037645234, ids: "Juan Sebastian Cabrera Rojas", field3: "Online", field4: "313248789", field5: "29/09/2021" },
-  ];
   
   const variableCards = {
     icon:"fas fa-tag",
     cardTo:"/moduloVentas/detalleVenta",
     linkIcon:"/moduloVentas/editarVenta",
+    route:"http://localhost:3001/venta",
     titleCard:"Id Venta",
+    page:"/moduloVentas",
     field1:"Documento",
     field2:"Nombres y apellidos",
     field3:"Valor total",
@@ -30,7 +23,7 @@ const PaginaVentas =()=> {
     return (
      <>
         <UpperBarSection titlePage="Listado de ventas" nameButton="Nueva Venta" selectorButton="/nuevaVenta"/>
-        <Cards variableCards={variableCards} cardsinformation={cardsVentas}/>
+        <CardsVentas variableCards={variableCards} />
      </> 
       
     );

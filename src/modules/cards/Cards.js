@@ -1,7 +1,6 @@
 import { Dialog,Tooltip } from '@material-ui/core';
 import { Link} from 'react-router-dom';
 import { ToastContainer} from "react-toastify";
-import './Cards.css';
 import { useBuscado } from '../../context/BuscadorContext';
 import { useState,useEffect } from 'react';
 import { useSeleccionado } from '../../context/Seleccionado';
@@ -20,6 +19,11 @@ const Cards=({variableCards})=>{
           obtenerDB(setConsulta, setEjecutarConsulta,variableCards.route);
         }
       }, [ejecutarConsulta ,variableCards.route]);
+
+
+
+
+      
 
     return(
       <>

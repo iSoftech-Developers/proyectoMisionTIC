@@ -53,3 +53,12 @@ label{
   border: solid 1px;
   border-color: #d7d7d7;
 }
+
+.cards-container{
+  border: 0.09px solid #E2E1E1;
+}
+
+
+td{
+  border-top: 0.374657px solid #787777;
+}
