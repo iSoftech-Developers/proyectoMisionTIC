@@ -1,4 +1,3 @@
-import { nanoid } from 'nanoid';
 import { useRef , useState,useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
@@ -148,7 +147,7 @@ const NuevaVenta=()=>{
                     </div>
                     <div className="w-1/6">
                         <label htmlFor="clienteName">Nombre cliente</label>
-                        <input required  className=" w-full h-8 p-2 rounded-md input-border" type="text" name="clienteName" id="clienteName" value={clienteSelect.field1}/>
+                        <input required disabled  className=" w-full h-8 p-2 rounded-md input-border" type="text" name="clienteName" id="clienteName" value={clienteSelect.field1}/>
                     </div>
                     <div className="w-1/6">
                         <label htmlFor="payDate">Fecha de pago</label>
@@ -158,15 +157,15 @@ const NuevaVenta=()=>{
                 <div className="form-lower-section flex justify-between font-bold label-color">
                     <div className="w-1/6 ">
                             <label htmlFor="celNumber">Teléfono</label>
-                            <input required className=" w-full h-8 p-2 input-border" type="text" name="celNumber" id="celNumber" value={clienteSelect.field5}/>
+                            <input required disabled className=" w-full h-8 p-2 input-border" type="text" name="celNumber" id="celNumber" value={clienteSelect.field5}/>
                         </div>
                         <div className="w-1/6">
                             <label htmlFor="clienteCity">Ciudad</label>
-                            <input required className=" w-full h-8 p-2 input-border" type="text" name="clienteCity" id="clienteCity" value={clienteSelect.field4}/>
+                            <input required disabled className=" w-full h-8 p-2 input-border" type="text" name="clienteCity" id="clienteCity" value={clienteSelect.field4}/>
                         </div>
                         <div className="w-1/6">
                             <label htmlFor="clienteEmail">Email</label>
-                            <input required className=" w-full h-8 p-2 input-border" type="email" name="clienteEmail" id="clienteEmail" value={clienteSelect.field3}/>
+                            <input required disabled className=" w-full h-8 p-2 input-border" type="email" name="clienteEmail" id="clienteEmail" value={clienteSelect.field3}/>
                         </div> 
                     <div className="w-1/6 mb-12">
                     <label htmlFor="saleStatus">Estado de venta</label>
