@@ -135,7 +135,7 @@ const NuevaVenta=()=>{
                                 <option disabled value=''> Seleccione un Vendedor </option>
                                 {vendedores.map((el) => {
                                   if (el.field4==="Vendedor"){
-                                    return (<option key={nanoid()} value={el._id}>{`${el.field1}`}</option>);
+                                    return (<option key={el._id} value={el._id}>{`${el.field1}`}</option>);
                                   }
                                   return null;
                                 })}
@@ -258,7 +258,7 @@ const TablaProductos = ({ productos, setProductos, setProductosTabla,capturaNumb
             {productos.map((el) => {
               return (
                 <option
-                  key={nanoid()}
+                  key={el._id}
                   value={el._id}
                 >{`${el.field1} ${el.field6} ${el.field4} ${el.field7}`}</option>
               );
@@ -316,12 +316,6 @@ const FilaProducto =({pr , index,eliminarProducto,modificarProducto})=>{
 
 
   const [prenda, setPrenda] = useState(pr);
-
-
-
-  useEffect(() => {
-    console.log('holaaaaaaaaa', prenda);
- }, [prenda]);
 
 
 
