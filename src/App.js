@@ -42,7 +42,7 @@ const App =()=> {
     <Auth0Provider
     domain="proyectosoftech.us.auth0.com"
     clientId="0tByyzPYxpCCECVj0FpUvrMzpjWyJN1m"
-    redirectUri={BASE_URL2}
+    redirectUri={`${BASE_URL2}/dashboard`}
     useRefreshTokens="true"
     cacheLocation="localstorage"
     audience="api-proyecto-softech">
