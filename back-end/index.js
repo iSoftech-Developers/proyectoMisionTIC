@@ -4,6 +4,7 @@ import Express from 'express'
 import Cors from 'cors';
 import jwt from 'express-jwt';
 import jwks from 'jwks-rsa';
+import autorizacionEstadoUsuario from './middleware/autorizacionEstadoUsuario.js';
 
 
 import rutasClientes from './views/clientes.js';
@@ -34,6 +35,7 @@ var jwtCheck = jwt({
 
 // 4 y 5: enviar token a auth para que devuelva si es valido o no
 app.use(jwtCheck);
+app.use(autorizacionEstadoUsuario);
 
 
 app.use(rutasClientes)
