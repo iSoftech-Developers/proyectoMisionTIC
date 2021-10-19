@@ -8,11 +8,11 @@ const autorizacionEstadoUsuario = async (req, res, next) => {
   console.log(user);
 
   // paso 2: consultar el usuario en la BD
-  await Usuario.findOne({ field3: user.email }, async (err, response) => {
+   Usuario.findOne({ field3: user.email },function (err, response) {
     if (response) {
       console.log(response);
       // paso 3: verificar el estado del usuario.
-      if (response.estado === 'rechazado') {
+      if (response.field7 === 'rechazado') {
         // paso 4: si el usuario es rechazado, devolver un error de autenticacion.
         res.sendStatus(401);
         res.end();
