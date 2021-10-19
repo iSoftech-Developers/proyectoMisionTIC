@@ -123,9 +123,7 @@ const App =()=> {
                   <PaginaNuevaVenta/>
                 </Route>
                 <Route path='/dashboard'>
-                  <PrivateRoute roleList={['Administrador','Vendedor']}>
                     <Dashboard/>
-                  </PrivateRoute>
                 </Route>
               </Switch>
             </Private>
