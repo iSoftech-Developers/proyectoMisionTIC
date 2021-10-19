@@ -13,7 +13,8 @@ return(
 
     <>
         <div className="notAllowed">
-            <h1 className="text-7xl">No tienes permiso para ver esta página</h1>
+            <i class="fas fa-exclamation-triangle"></i>
+            <h1 className="text-5xl">No tienes permiso para ver esta página</h1>
         </div>
     </>
 );
