@@ -7,7 +7,8 @@ import PatchDB from "../../utils/PatchDB";
 
     
 const EditarCliente = ({formLabelTitle}) => {
-    const urlEdit= 'https://dry-woodland-34975.herokuapp.com/clientes'
+    const BASE_URL = process.env.REACT_APP_BASE_URL;
+    const urlEdit= `${BASE_URL}/clientes`
 
     const {seleccionado}=useSeleccionado()
 

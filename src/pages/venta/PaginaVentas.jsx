@@ -4,13 +4,14 @@ import UpperBarSection from '../../modules/upperBarSection/UpperBarSection';
 
 const PaginaVentas =()=> {
 
+  const BASE_URL = process.env.REACT_APP_BASE_URL;
 
   
   const variableCards = {
     icon:"fas fa-tag",
     cardTo:"/moduloVentas/detalleVenta",
     linkIcon:"/moduloVentas/editarVenta",
-    route:"https://dry-woodland-34975.herokuapp.com/venta",
+    route:`${BASE_URL}/venta`,
     titleCard:"Id Venta",
     page:"/moduloVentas",
     field1:"Documento",

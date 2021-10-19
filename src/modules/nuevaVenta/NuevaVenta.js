@@ -5,6 +5,7 @@ import { obtenerDB } from "../../utils/GetDB";
 import PostDB from '../../utils/PostDB';
 
 const NuevaVenta=()=>{
+  const BASE_URL = process.env.REACT_APP_BASE_URL;
 
     const form = useRef(null);
     const [vendedores, setVendedores] = useState([]);
@@ -25,13 +26,13 @@ const NuevaVenta=()=>{
 
       
         const fetchVendores =  () => {
-            obtenerDB(setVendedores,setEjecutarConsulta,"https://dry-woodland-34975.herokuapp.com/usuarios");
+            obtenerDB(setVendedores,setEjecutarConsulta,`${BASE_URL}/usuarios`);
         };
         const fetchProductos=()=>{
-            obtenerDB(setProductos,setEjecutarConsulta,"https://dry-woodland-34975.herokuapp.com/productos")
+            obtenerDB(setProductos,setEjecutarConsulta,`${BASE_URL}/productos`)
         }
         const fetchClientes=()=>{
-          obtenerDB(setClientes,setEjecutarConsulta,"https://dry-woodland-34975.herokuapp.com/clientes")
+          obtenerDB(setClientes,setEjecutarConsulta,`${BASE_URL}/clientes`)
       }
       setEjecutarConsulta(false)
 
@@ -99,7 +100,7 @@ const NuevaVenta=()=>{
       };
   
 
-      PostDB(datosVenta, "http://localhost:3001/venta/")
+      PostDB(datosVenta, `${BASE_URL}/venta`)
 
 
 };

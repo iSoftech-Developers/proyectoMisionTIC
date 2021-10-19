@@ -6,10 +6,11 @@ import { useSeleccionado } from '../../context/Seleccionado';
 import PatchDB from "../../utils/PatchDB";
 
 const EditarUsuario = ({formLabelTitle}) => {
+    const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 
 
-    const urlEdit= 'https://dry-woodland-34975.herokuapp.com/usuarios'
+    const urlEdit= `${BASE_URL}/usuarios`
     const {seleccionado}=useSeleccionado()
     const form = useRef(null);
 

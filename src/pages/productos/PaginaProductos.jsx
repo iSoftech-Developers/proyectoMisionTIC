@@ -5,12 +5,14 @@ import UpperBarSection from '../../modules/upperBarSection/UpperBarSection';
 
 
 const PaginaProductos =()=> {
+    const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 
 const variableCards = {
+    
     icon:"fas fa-tshirt",
     cardTo:"/productos/detalleProducto",
-    route:"https://dry-woodland-34975.herokuapp.com/productos",
+    route:`${BASE_URL}/productos`,
     page:"/productos",
     linkIcon:"/productos/actualizarProducto",
     filtroVendedores:false,

@@ -4,8 +4,9 @@ import { useRef } from "react";
 import PostDB from '../../utils/PostDB';
 
 const NuevoCliente = ({formLabelTitle}) => {
+    const BASE_URL = process.env.REACT_APP_BASE_URL;
 
-    const urlPost = 'https://dry-woodland-34975.herokuapp.com/clientes/'
+    const urlPost = `${BASE_URL}/clientes`
     const form = useRef(null);
 
     const submitForm =  async (e) => {

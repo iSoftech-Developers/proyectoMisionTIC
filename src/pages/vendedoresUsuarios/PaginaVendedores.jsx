@@ -1,13 +1,14 @@
 import Cards from '../../modules/cards/Cards';
 import UpperBarSection from '../../modules/upperBarSection/UpperBarSection'
 
-const PaginaVendedores =({cardsUsuarios})=> {
+const PaginaVendedores =()=> {
+  const BASE_URL = process.env.REACT_APP_BASE_URL;
 
   const variableCards = {
     icon:"fas fa-user-tag",
     cardTo:"/rolesUsuarios/detalleUsuarios",
     linkIcon:"/moduloVendedores/paginaEditarUsuarios",
-    route:"https://dry-woodland-34975.herokuapp.com/usuarios",
+    route:`${BASE_URL}/usuarios`,
     filtroVendedores:true,
     page:"/moduloVendedores",
     field1:"Nombre y Apellidos",

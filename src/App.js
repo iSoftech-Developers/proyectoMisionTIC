@@ -31,6 +31,7 @@ import PrivateRoute from './modules/PrivateRoute';
 
 
 const App =()=> {
+  const BASE_URL2 = process.env.REACT_APP_BASE_URL;
 
   const [busqueda, setBusqueda] = useState('');
   const [seleccionado,setSeleccionado] = useState('');
@@ -41,7 +42,7 @@ const App =()=> {
     <Auth0Provider
     domain="proyectosoftech.us.auth0.com"
     clientId="0tByyzPYxpCCECVj0FpUvrMzpjWyJN1m"
-    redirectUri="https://fierce-shelf-40447.herokuapp.com/dashboard"
+    redirectUri={BASE_URL2}
     useRefreshTokens="true"
     cacheLocation="localstorage"
     audience="api-proyecto-softech">
@@ -123,9 +124,7 @@ const App =()=> {
                   <PaginaNuevaVenta/>
                 </Route>
                 <Route path='/dashboard'>
-                  <PrivateRoute roleList={['Administrador','Vendedor']}>
                     <Dashboard/>
-                  </PrivateRoute>
                 </Route>
               </Switch>
             </Private>

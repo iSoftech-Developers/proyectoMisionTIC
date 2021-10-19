@@ -5,8 +5,10 @@ import 'react-toastify/dist/ReactToastify.css';
 import PostDB from '../../utils/PostDB';
 
 const AgregarUsuario = ({formLabelTitle}) => {
+    
+    const BASE_URL = process.env.REACT_APP_BASE_URL;
 
-    const urlPost = 'https://dry-woodland-34975.herokuapp.com/usuarios/'
+    const urlPost = `${BASE_URL}/usuarios/`
     const form = useRef(null);
 
     const submitForm = async (e) => {

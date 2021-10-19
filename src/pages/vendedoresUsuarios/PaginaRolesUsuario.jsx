@@ -3,11 +3,12 @@ import TarjetasUsuarios from "../../modules/tarjetasUsuarios/TarjetasUsuarios";
 
 
 const PaginaRolesUsuario =()=>{
+  const BASE_URL = process.env.REACT_APP_BASE_URL;
 
     const variableCards = {
       cardTo:"/rolesUsuarios/detalleUsuarios",
       linkIcon:"/rolesUsuarios/paginaEditarUsuarios",
-      route:"https://dry-woodland-34975.herokuapp.com/usuarios",
+      route:`${BASE_URL}/usuarios`,
       page:"/rolesUsuarios",
   }
 
