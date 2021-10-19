@@ -52,7 +52,7 @@ const NuevoProducto = ({formLabelTitle}) => {
                                 <option type="String">Vestido de baño</option>
                                 <option type="String">Medias</option>
                                 <option type="String">Tops</option>
-                                <option type="String">Zapato</option>
+                                <option type="String">Zapatos</option>
                             </select>
                         </div>
                         <div className="w-1/5">
