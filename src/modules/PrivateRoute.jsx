@@ -13,7 +13,7 @@ return(
 
     <>
         <div className="notAllowed">
-            <h1>No tienes permiso para ver esta página</h1>
+            <h1 className="text-7xl">No tienes permiso para ver esta página</h1>
         </div>
     </>
 );
