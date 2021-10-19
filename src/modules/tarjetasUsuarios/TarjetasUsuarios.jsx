@@ -1,7 +1,6 @@
 import React from 'react';
 import { Dialog,Tooltip } from '@material-ui/core';
 import {useState,useEffect} from 'react';
-import image from '../../media/image.jpeg';
 import { Link } from 'react-router-dom';
 import { useSeleccionado } from '../../context/Seleccionado';
 import { useBuscado } from '../../context/BuscadorContext';

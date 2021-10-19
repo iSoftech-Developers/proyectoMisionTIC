@@ -13,24 +13,27 @@ const Private = ({children}) => {
     const [loadingUserInformation, setLoadingUserInformation] = useState(false);
 
     useEffect(() => {
-        const fetchAuth0Token = async ()=> {
-        //1. pedir token a auth0
-        const accessToken=  await getAccessTokenSilently({
-            audience: 'api-proyecto-softech', });
-        // recibir token de auth0
-        localStorage.setItem('token', accessToken);
-        //3. enviar token back-end
-        await obtenerDatosUsuario(
-        (response) => {
-            setUsuario(response.data)
-        },
-        (err) => {
-            console.log('err', err);
-            setLoadingUserInformation(false);
-            logout({ returnTo: 'http://localhost:3000/' });
-            
-        }
+        if(localStorage.getItem !== null){
+            var fetchAuth0Token = async ()=> {
+            //1. pedir token a auth0
+            const accessToken=  await getAccessTokenSilently({
+                audience: 'api-proyecto-softech', });
+            // recibir token de auth0
+            localStorage.setItem('token', accessToken);
+            console.log("pedi el tokennn")
+            //3. enviar token back-end
+            await obtenerDatosUsuario(
+            (response) => {
+                setUsuario(response.data)
+            },
+            (err) => {
+                console.log('err', err);
+                setLoadingUserInformation(false);
+                logout({ returnTo: 'http://localhost:3000/' });
+                
+            }
         );
+            }
         };
         if(isAuthenticated){
             fetchAuth0Token (); 
