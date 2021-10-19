@@ -31,7 +31,7 @@ import PrivateRoute from './modules/PrivateRoute';
 
 
 const App =()=> {
-  const BASE_URL2 = process.env.REACT_APP_BASE_URL;
+  const BASE_URL2 = process.env.REACT_APP_BASE_URL2;
 
   const [busqueda, setBusqueda] = useState('');
   const [seleccionado,setSeleccionado] = useState('');
