@@ -24,9 +24,11 @@ export const obtenerDB = async (setConsulta, setEjecutarConsulta,ruta) => {
 
 
 export const obtenerDatosUsuario = async (successCallback, errorCallback) => {
+  const BASE_URL = process.env.REACT_APP_BASE_URL;
+  
   const options = {
     method: 'GET',
-    url: 'http://localhost:3001/usuarios/self',
+    url: `${BASE_URL}/usuarios/self`,
     headers: {
       Authorization: getToken()
     },

@@ -31,6 +31,7 @@ import PrivateRoute from './modules/PrivateRoute';
 
 
 const App =()=> {
+  const BASE_URL2 = process.env.REACT_APP_BASE_URL2;
 
   const [busqueda, setBusqueda] = useState('');
   const [seleccionado,setSeleccionado] = useState('');
@@ -41,7 +42,7 @@ const App =()=> {
     <Auth0Provider
     domain="proyectosoftech.us.auth0.com"
     clientId="0tByyzPYxpCCECVj0FpUvrMzpjWyJN1m"
-    redirectUri="http://localhost:3000/dashboard"
+    redirectUri={`${BASE_URL2}/dashboard`}
     useRefreshTokens="true"
     cacheLocation="localstorage"
     audience="api-proyecto-softech">

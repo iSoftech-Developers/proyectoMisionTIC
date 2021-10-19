@@ -4,8 +4,9 @@ import { useRef } from "react";
 import PostDB from '../../utils/PostDB';
 
 const NuevoCliente = ({formLabelTitle}) => {
+    const BASE_URL = process.env.REACT_APP_BASE_URL;
 
-    const urlPost = 'http://localhost:3001/clientes/'
+    const urlPost = `${BASE_URL}/clientes`
     const form = useRef(null);
 
     const submitForm =  async (e) => {

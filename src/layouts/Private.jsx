@@ -7,7 +7,7 @@ import { useUsuario } from '../context/UsuarioConectado';
 import ReactLoading from 'react-loading';
 
 const Private = ({children}) => {
-
+    const BASE_URL2 = process.env.REACT_APP_BASE_URL2;
     const { isAuthenticated, isLoading, getAccessTokenSilently,loginWithRedirect,logout  } = useAuth0();
     const {setUsuario}=useUsuario()
     const [loadingUserInformation, setLoadingUserInformation] = useState(false);
@@ -29,7 +29,7 @@ const Private = ({children}) => {
             (err) => {
                 console.log('err', err);
                 setLoadingUserInformation(false);
-                logout({ returnTo: 'http://localhost:3000/' });
+                logout({ returnTo: BASE_URL2 });
                 
             }
         );
