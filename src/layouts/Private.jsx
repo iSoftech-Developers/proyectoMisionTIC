@@ -1,14 +1,16 @@
 import Navbar from '../modules/navbar/Navbar';
 import Sidebar from '../modules/sidebar/Sidebar';
-import {useEffect} from 'react';
+import {useEffect,useState} from 'react';
 import { obtenerDatosUsuario } from '../utils/GetDB'
 import { useAuth0 } from '@auth0/auth0-react';
 import { useUsuario } from '../context/UsuarioConectado';
+import ReactLoading from 'react-loading';
 
 const Private = ({children}) => {
 
-    const { isAuthenticated, isLoading, getAccessTokenSilently } = useAuth0();
+    const { isAuthenticated, isLoading, getAccessTokenSilently,loginWithRedirect,logout  } = useAuth0();
     const {setUsuario}=useUsuario()
+    const [loadingUserInformation, setLoadingUserInformation] = useState(false);
 
     useEffect(() => {
         const fetchAuth0Token = async ()=> {
@@ -24,6 +26,9 @@ const Private = ({children}) => {
         },
         (err) => {
             console.log('err', err);
+            setLoadingUserInformation(false);
+            logout({ returnTo: 'http://localhost:3000/' });
+            
         }
         );
         };
@@ -31,6 +36,13 @@ const Private = ({children}) => {
             fetchAuth0Token (); 
         }
     }, [isAuthenticated, getAccessTokenSilently]);
+
+    if (isLoading || loadingUserInformation)
+    return <ReactLoading type='cylon' color='#abc123' height={667} width={375} />;
+
+  if (!isAuthenticated) {
+    return loginWithRedirect();
+  }
 
 
     return (
