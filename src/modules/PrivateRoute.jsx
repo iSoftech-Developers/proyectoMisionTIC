@@ -1,5 +1,6 @@
 import { useUsuario } from '../context/UsuarioConectado';
 import React from 'react';
+import './PrivateComponent.css';
 
 const PrivateRoute = ({ roleList, children }) => {
 const { usuario } = useUsuario();
@@ -11,7 +12,9 @@ return children;
 return(
 
     <>
-        <h1>No tienes permiso para ver esta página</h1>
+        <div className="notAllowed">
+            <h1>No tienes permiso para ver esta página</h1>
+        </div>
     </>
 );
 };
