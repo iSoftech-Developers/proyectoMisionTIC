@@ -12,7 +12,7 @@ const autorizacionEstadoUsuario = async (req, res, next) => {
     if (response) {
       console.log(response);
       // paso 3: verificar el estado del usuario.
-      if (response.field7 === 'Rechazado') {
+      if (response.field7 === 'Rechazado' && response.field7==='Pendiente') {
         // paso 4: si el usuario es rechazado, devolver un error de autenticacion.
         res.sendStatus(401);
         res.end();

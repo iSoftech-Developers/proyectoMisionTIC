@@ -21,7 +21,7 @@ const consultarOCrearUsuario =  (request, response) => {
       user.auth0ID = user._id;
       delete user._id;
       user.rol = 'sin rol';
-      user.estado = 'pendiente';
+      user.estado = 'Pendiente';
       postUsuariosAuth0(user,response); 
     }
   })

@@ -10,7 +10,6 @@ const Navbar=()=>{
   const {usuario}=useUsuario()
   const [render,setRender]=useState({});
   const location =useLocation()
-  console.log(usuario)
   useEffect(() => {
       if (location.pathname==="/rolesUsuarios"){
         setRender({placeholder:"Buscar por nombre usuario o ID",hidden:"",justify:"justify-between"})
