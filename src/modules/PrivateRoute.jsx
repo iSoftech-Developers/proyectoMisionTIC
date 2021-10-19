@@ -12,9 +12,11 @@ return children;
 return(
 
     <>
-        <div className="notAllowed">
-            <i class="fas fa-exclamation-triangle"></i>
-            <h1 className="text-5xl">No tienes permiso para ver esta página</h1>
+        <div className="text-center mt-52 p-10">
+            <i class="fas fa-exclamation-triangle fa-4x"></i>
+            <h1 className="text-2xl mt-6 font-bold">No tienes permiso para ver esta página</h1>
+            <p className="mt-4 text-sm leading-4">Contacta al administrador para resolver<br/>
+                 problemas de accesibilidad </p>
         </div>
     </>
 );
