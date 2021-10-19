@@ -6,7 +6,7 @@ import PostDB from '../../utils/PostDB';
 
 const AgregarUsuario = ({formLabelTitle}) => {
 
-    const urlPost = 'http://localhost:3001/usuarios/'
+    const urlPost = 'https://dry-woodland-34975.herokuapp.com/usuarios/'
     const form = useRef(null);
 
     const submitForm = async (e) => {

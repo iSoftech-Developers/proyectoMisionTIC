@@ -8,7 +8,7 @@ import PatchDB from "../../utils/PatchDB";
 const ActualizarProducto = ({formLabelTitle}) => {
 
 
-    const urlEdit= 'http://localhost:3001/productos'
+    const urlEdit= 'https://dry-woodland-34975.herokuapp.com/productos'
     const {seleccionado}=useSeleccionado()
 
     const form = useRef(null);

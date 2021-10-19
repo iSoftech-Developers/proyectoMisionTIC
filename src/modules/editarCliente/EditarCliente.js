@@ -7,7 +7,7 @@ import PatchDB from "../../utils/PatchDB";
 
     
 const EditarCliente = ({formLabelTitle}) => {
-    const urlEdit= 'http://localhost:3001/clientes'
+    const urlEdit= 'https://dry-woodland-34975.herokuapp.com/clientes'
 
     const {seleccionado}=useSeleccionado()
 

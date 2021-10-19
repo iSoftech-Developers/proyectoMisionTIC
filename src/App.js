@@ -41,7 +41,7 @@ const App =()=> {
     <Auth0Provider
     domain="proyectosoftech.us.auth0.com"
     clientId="0tByyzPYxpCCECVj0FpUvrMzpjWyJN1m"
-    redirectUri="http://localhost:3000/dashboard"
+    redirectUri="https://fierce-shelf-40447.herokuapp.com/dashboard"
     useRefreshTokens="true"
     cacheLocation="localstorage"
     audience="api-proyecto-softech">

@@ -9,7 +9,7 @@ const EditarUsuario = ({formLabelTitle}) => {
 
 
 
-    const urlEdit= 'http://localhost:3001/usuarios'
+    const urlEdit= 'https://dry-woodland-34975.herokuapp.com/usuarios'
     const {seleccionado}=useSeleccionado()
     const form = useRef(null);
 

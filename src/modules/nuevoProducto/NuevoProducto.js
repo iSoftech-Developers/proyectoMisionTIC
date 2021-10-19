@@ -7,7 +7,7 @@ import PostDB from '../../utils/PostDB';
 const NuevoProducto = ({formLabelTitle}) => {
 
 
-    const urlPost = 'http://localhost:3001/productos/'
+    const urlPost = 'https://dry-woodland-34975.herokuapp.com/productos/'
     const form = useRef(null);
 
     const submitForm = async (e)  => {

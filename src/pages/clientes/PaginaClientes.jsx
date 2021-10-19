@@ -12,7 +12,7 @@ const PaginaClientes =({cardsClientes})=> {
     icon:" fas fa-users",
     cardTo:"/moduloClientes/detalleCliente",
     linkIcon:"/moduloClientes/paginaEditarCliente",
-    route:"http://localhost:3001/clientes",
+    route:"https://dry-woodland-34975.herokuapp.com/clientes",
     filtroVendedores:false,
     page:"/moduloClientes",
     titleCard:"Cliente ID",

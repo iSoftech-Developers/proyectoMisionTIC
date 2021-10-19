@@ -5,7 +5,7 @@ import PostDB from '../../utils/PostDB';
 
 const NuevoCliente = ({formLabelTitle}) => {
 
-    const urlPost = 'http://localhost:3001/clientes/'
+    const urlPost = 'https://dry-woodland-34975.herokuapp.com/clientes/'
     const form = useRef(null);
 
     const submitForm =  async (e) => {

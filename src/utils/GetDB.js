@@ -26,7 +26,7 @@ export const obtenerDB = async (setConsulta, setEjecutarConsulta,ruta) => {
 export const obtenerDatosUsuario = async (successCallback, errorCallback) => {
   const options = {
     method: 'GET',
-    url: 'http://localhost:3001/usuarios/self',
+    url: 'https://dry-woodland-34975.herokuapp.com/usuarios/self',
     headers: {
       Authorization: getToken()
     },

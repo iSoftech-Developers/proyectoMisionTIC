@@ -22,13 +22,13 @@ const EditarVenta=()=>{
   
         
           const fetchVendores =  () => {
-              obtenerDB(setVendedores,setEjecutarConsulta,"http://localhost:3001/usuarios");
+              obtenerDB(setVendedores,setEjecutarConsulta,"https://dry-woodland-34975.herokuapp.com/usuarios");
           }
           const fetchProductos=()=>{
-            obtenerDB(setProductos,setEjecutarConsulta,"http://localhost:3001/productos")
+            obtenerDB(setProductos,setEjecutarConsulta,"https://dry-woodland-34975.herokuapp.com/productos")
         }
         const fetchClientes=()=>{
-            obtenerDB(setClientes,setEjecutarConsulta,"http://localhost:3001/clientes")
+            obtenerDB(setClientes,setEjecutarConsulta,"https://dry-woodland-34975.herokuapp.com/clientes")
         }
 
           setEjecutarConsulta(false)

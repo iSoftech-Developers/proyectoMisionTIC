@@ -10,7 +10,7 @@ const PaginaVentas =()=> {
     icon:"fas fa-tag",
     cardTo:"/moduloVentas/detalleVenta",
     linkIcon:"/moduloVentas/editarVenta",
-    route:"http://localhost:3001/venta",
+    route:"https://dry-woodland-34975.herokuapp.com/venta",
     titleCard:"Id Venta",
     page:"/moduloVentas",
     field1:"Documento",

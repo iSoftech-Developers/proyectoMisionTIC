@@ -10,7 +10,7 @@ const PaginaProductos =()=> {
 const variableCards = {
     icon:"fas fa-tshirt",
     cardTo:"/productos/detalleProducto",
-    route:"http://localhost:3001/productos",
+    route:"https://dry-woodland-34975.herokuapp.com/productos",
     page:"/productos",
     linkIcon:"/productos/actualizarProducto",
     filtroVendedores:false,
