@@ -25,6 +25,8 @@
     "web-vitals": "^1.0.1",
     "yarn": "^1.22.11"
   },
+
+
   "scripts": {
     "start": "craco start",
     "build": "craco build",

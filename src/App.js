@@ -123,7 +123,7 @@ const App =()=> {
                   <PaginaNuevaVenta/>
                 </Route>
                 <Route path='/dashboard'>
-                  <Dashboard/>
+                    <Dashboard/>
                 </Route>
               </Switch>
             </Private>
