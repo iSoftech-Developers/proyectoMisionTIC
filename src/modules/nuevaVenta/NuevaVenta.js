@@ -78,7 +78,7 @@ const NuevaVenta=()=>{
       });
 
 
-      let sumador= 0
+      let sumador = 0
       listaProductos.map(tp=>{
         tp.field8=tp.field2*tp.cantidad
         sumador=sumador+tp.field8
@@ -327,6 +327,7 @@ const FilaProducto =({pr , index,eliminarProducto,modificarProducto})=>{
           value={prenda.cantidad} 
           type='number'
           name={`cantidad_${index}`} 
+          min={0}
           onChange={(e) => {
           modificarProducto(prenda, e.target.value === '' ? '0' : e.target.value);
           setPrenda({
@@ -339,7 +340,7 @@ const FilaProducto =({pr , index,eliminarProducto,modificarProducto})=>{
         </label>  
       </td>
       <td align="center">{prenda.field2}</td>
-      <td align="center" >{parseFloat(prenda.field8 ?? 0)}</td>
+      <td align="center">{parseFloat(prenda.field8 ?? 0)}</td>
       <td align="center">
         <i
           onClick={() => eliminarProducto(prenda)}

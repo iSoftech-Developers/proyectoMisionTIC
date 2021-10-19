@@ -42,6 +42,8 @@ const App =()=> {
     domain="proyectosoftech.us.auth0.com"
     clientId="0tByyzPYxpCCECVj0FpUvrMzpjWyJN1m"
     redirectUri="http://localhost:3000/dashboard"
+    useRefreshTokens="true"
+    cacheLocation="localstorage"
     audience="api-proyecto-softech">
     <div className="template">
     <UsuarioConectadoContext.Provider value={{usuario,setUsuario}}>
