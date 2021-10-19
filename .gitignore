@@ -6,6 +6,7 @@
 /back-end/.env
 /.pnp
 .pnp.js
+/back-end
 
 
 # testing
