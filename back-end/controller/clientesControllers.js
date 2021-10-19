@@ -48,7 +48,7 @@ const deleteClientes = async (id, response)=>{
           response.sendStatus(200)
         }).catch(err => {
           console.error(err)
-        })
+})
 }
 
 export {getClientes, postClientes, patchClientes, deleteClientes};
