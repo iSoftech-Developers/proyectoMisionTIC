@@ -13,7 +13,7 @@ const Private = ({children}) => {
     const [loadingUserInformation, setLoadingUserInformation] = useState(false);
 
     useEffect(() => {
-        if(localStorage.getItem !== null){
+        
             var fetchAuth0Token = async ()=> {
             //1. pedir token a auth0
             const accessToken=  await getAccessTokenSilently({
@@ -34,7 +34,6 @@ const Private = ({children}) => {
             }
         );
             }
-        };
         if(isAuthenticated){
             fetchAuth0Token (); 
         }
