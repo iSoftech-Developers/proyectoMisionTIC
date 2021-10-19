@@ -266,7 +266,7 @@ const TablaProductos = ({ productos, setProductos, setProductosTabla}) => {
           Agregar Producto
         </button>
       </div>
-      <table className='table-fixed w-full bg-white border-solid border-gray-300 border my-5'>
+      <table className=' w-full bg-white border-solid border-gray-300 border my-5'>
         <thead>
           <tr>
             <th>Id</th>
@@ -324,7 +324,7 @@ const FilaProducto =({pr , index,eliminarProducto,modificarProducto})=>{
       <td align="center">{prenda.field7}</td>
       <td align="center">
         <label htmlFor={`valor_${index}`}>
-          <input 
+          <input className="w-20 text-center" 
           value={prenda.cantidad} 
           type='number'
           name={`cantidad_${index}`} 

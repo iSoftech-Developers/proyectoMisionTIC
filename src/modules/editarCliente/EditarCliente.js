@@ -35,7 +35,7 @@ const EditarCliente = ({formLabelTitle}) => {
         PatchDB(cambios,seleccionado,urlEdit)
 
 
-          };
+        };
     
     
     return (
