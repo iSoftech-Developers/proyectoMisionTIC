@@ -20,32 +20,12 @@ const consultarOCrearUsuario = (request, response) => {
     }else{
       user.auth0ID = user._id;
       delete user._id;
-      user.rol = 'inactivo';
+      user.rol = 'sin rol';
+      user.estado = 'pendiente';
       postUsuariosAuth0(user,response); 
     }
   })
   
-  // Usuario.findOne({ field3: user.email }, async (err, response) => {
-  //   console.log('response consulta bd', response);
-  //   if (response) {
-  //     // 7.1. si el usuario ya esta en la BD, devuelve la info del usuario
-      
-  //   } else {
-  //     user.auth0ID = user._id;
-  //     delete user._id;
-  //     user.rol = 'inactivo';
-  //     postUsuariosAuth0(user, (err, respuesta) => response(err, user));
-  //     }
-  //     }
-  //   )
-  //   .then(() => {
-  //     response.sendStatus(200)
-  //   }).catch(err => {
-  //     console.error(err)
-     
-      
-  //   })
-
     console.log('response consulta bd', response)
    
       // 7.2. si el usuario no esta en la bd, lo crea y devuelve la info
@@ -56,6 +36,7 @@ const consultarOCrearUsuario = (request, response) => {
 const postUsuariosAuth0 = async(request, response)=>{
   console.log(request)
   const usuario = new Usuario({
+      field7:request.estado,
       field1:request.name,
       field3:request.email,
       field4:request.rol,
