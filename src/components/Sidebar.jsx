@@ -1,11 +1,9 @@
-
-import logoSporty from '../../media/logoSporty.png';
-import './Sidebar.css';
+import logoSporty from '../media/logoSporty.png'
 import { Link } from 'react-router-dom';
 import { useAuth0 } from '@auth0/auth0-react';
 
-import UseActiveRoute from '../../hooks/UseActiveRoute';
-import PrivateComponent from '../PrivateComponent';
+import UseActiveRoute from '../hooks/UseActiveRoute';
+import PrivateComponent from './PrivateComponent';
 
 const Siderbar =()=>{
     const { logout } = useAuth0();

@@ -22,6 +22,10 @@ main{
 body{
   background-color: #f7f7f7;
 }
+header{
+  background: linear-gradient(145deg,#616c01,#123629,#0c1f32,#720143);
+}
+
 
 .contenido{
   background-color: #f7f7f7;
@@ -62,3 +66,18 @@ label{
 td{
   border-top: 0.374657px solid #787777;
 }
+
+.notAllowed{
+
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  
+}
+
+
+.sidebar-li:active{
+  background-color: #c5ebff;
+}
+
+

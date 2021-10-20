@@ -1,5 +1,5 @@
-import Navbar from '../modules/navbar/Navbar';
-import Sidebar from '../modules/sidebar/Sidebar';
+import Navbar from '../components/Navbar';
+import Sidebar from '../components/Sidebar'
 import {useEffect,useState} from 'react';
 import { obtenerDatosUsuario } from '../utils/GetDB'
 import { useAuth0 } from '@auth0/auth0-react';

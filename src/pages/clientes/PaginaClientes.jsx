@@ -1,5 +1,5 @@
-import Cards from '../../modules/cards/Cards';
-import UpperBarSection from '../../modules/upperBarSection/UpperBarSection';
+import Cards from '../../components/Cards';
+import UpperBarSection from '../../components/UpperBarSection';
 
 
 

@@ -19,13 +19,12 @@ import PaginaRolesUsuario from './pages/vendedoresUsuarios/PaginaRolesUsuario';
 import Private from './layouts/Private';
 import Dashboard from './pages/Dashboard';
 import PaginaEditarCliente from './pages/clientes/PaginaEditarCliente';
-import PaginaAgregarUsuarios from './pages/vendedoresUsuarios/PaginaAgregarUsuarios';
 import PaginaEditarVenta from './pages/venta/PaginaEditarVenta';
 import {BuscadorContext} from './context/BuscadorContext'
 import {SeleccionadoContext} from './context/Seleccionado';
 import { Auth0Provider } from "@auth0/auth0-react";
 import { UsuarioConectadoContext } from './context/UsuarioConectado';
-import PrivateRoute from './modules/PrivateRoute';
+import PrivateRoute from './components/PrivateRoute'
 
 
 
@@ -52,13 +51,8 @@ const App =()=> {
       <Router>
         <Switch>
         <Private>
-          <Route path ={['/dashboard','/nuevaVenta','/moduloVentas','/moduloVentas/detalleVenta', '/moduloVentas/editarVenta','/moduloClientes', 'moduloClientes/nuevoCliente','/moduloClientes/detalleCliente',' /moduloClientes/paginaEditarCliente', '/productos', '/productos/detalleProducto', '/productos/nuevoProducto','/productos/actualizarProducto','/rolesUsuarios', '/rolesUsuarios/detalleUsuario','/rolesUsuarios/nuevoUsuario','/moduloVendedores', '/moduloVendedores/detalleUsuario','/moduloVendedores/paginaEditarUsuarios','/rolesUsuarios/detalleUsuarios','/rolesUsuarios/paginaEditarUsuarios']}> 
+          <Route path ={['/dashboard','/nuevaVenta','/moduloVentas','/moduloVentas/detalleVenta', '/moduloVentas/editarVenta','/moduloClientes', 'moduloClientes/nuevoCliente','/moduloClientes/detalleCliente',' /moduloClientes/paginaEditarCliente', '/productos', '/productos/detalleProducto', '/productos/nuevoProducto','/productos/actualizarProducto','/rolesUsuarios', '/rolesUsuarios/detalleUsuario','/moduloVendedores', '/moduloVendedores/detalleUsuario','/moduloVendedores/paginaEditarUsuarios','/rolesUsuarios/detalleUsuarios','/rolesUsuarios/paginaEditarUsuarios']}> 
               <Switch>
-                <Route path='/rolesUsuarios/nuevoUsuario'>
-                  <PrivateRoute roleList={['Administrador']}>
-                    <PaginaAgregarUsuarios/>
-                  </PrivateRoute>
-                </Route>
                 <Route path='/rolesUsuarios/paginaEditarUsuarios'>
                   <PrivateRoute roleList={['Administrador']}>
                     <PaginaEditarUsuarios/>

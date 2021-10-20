@@ -1,12 +1,12 @@
 import { Dialog,Tooltip } from '@material-ui/core';
 import { Link} from 'react-router-dom';
 import { ToastContainer} from "react-toastify";
-import { useBuscado } from '../../context/BuscadorContext';
+import { useBuscado } from '../context/BuscadorContext';
 import { useState,useEffect } from 'react';
-import { useSeleccionado } from '../../context/Seleccionado';
-import { obtenerDB } from '../../utils/GetDB';
-import DeleteDB from '../../utils/DeleteDB';
-import PrivateComponent from '../PrivateComponent';
+import { useSeleccionado } from '../context/Seleccionado';
+import { obtenerDB } from '../utils/GetDB';
+import DeleteDB from '../utils/DeleteDB';
+import PrivateComponent from './PrivateComponent';
 
 const CardsVentas = ({variableCards}) => {
 
