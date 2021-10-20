@@ -1,7 +1,6 @@
 import DetalleCliente from "../../modules/detalleCliente/DetalleCliente";
 import NobuttonUpperBarSection from'../../modules/noButtonUpperBarSection/NoButtonUpperBarSection';
 import Tablas from '../../modules/tablas/tablas'
-import UpperBarSection from "../../modules/upperBarSection/UpperBarSection";
 
 
 const PaginaDetalleClientes = ({cardsClientes}) => {
