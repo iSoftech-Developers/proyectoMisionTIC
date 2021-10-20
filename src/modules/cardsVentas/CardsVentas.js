@@ -28,7 +28,7 @@ const CardsVentas = ({variableCards}) => {
     return (
         <>
         {ventas.map(i=>{
-            if (i._id.includes(busqueda)){
+            if (i._id.includes(busqueda) || i.cliente.field2.includes(busqueda)  || i.vendedor.field2.includes(busqueda)){
 
             return <Card i={i}  variableCards={variableCards} setEjecutarConsulta={setEjecutarConsulta} />
             }

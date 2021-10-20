@@ -149,8 +149,11 @@ const EditarVenta=()=>{
                         </div> 
                     <div className="w-1/6 mb-12">
                     <label htmlFor="saleStatus">Estado de venta</label>
-                            <select required className=" w-full h-8 input-border text-gray-500 " name="saleStatus">
+                            <select required className=" w-full h-8 input-border text-gray-500 " defaultValue="" name="saleStatus">
+                                <option disabled type="String" value="">Selecciona una opción</option>
                                 <option value="En Proceso">En proceso</option>
+                                <option value="Cancelado">Cancelado</option>
+                                <option value="Entregado">Entregado</option>
                             </select>
                     </div>
                 </div>

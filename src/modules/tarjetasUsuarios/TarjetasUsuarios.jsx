@@ -128,7 +128,7 @@ return (
 
             {consulta.map((i)=>{ 
             if(i.field4.includes(selectorRender)){
-                if (i._id.includes(busqueda)||i.ids.toLowerCase().includes(busqueda.toLowerCase())){
+                if (i._id.includes(busqueda) || i.field1.toLowerCase().includes(busqueda.toLowerCase()) ){
                     return(
                         <CardsUsers i={i}/>
                         );}

@@ -60,7 +60,7 @@ const EditarUsuario = ({formLabelTitle}) => {
                                         </div>
                                         <div className="w-1/3">
                                         <label for="rol" className="font-bold">{formLabelTitle.label2}</label>
-                                            <select class=" w-full h-8 font-bold pl-2 rounded-md input-border" name="rol" required>
+                                            <select class=" w-full h-8 font-bold pl-2 rounded-md input-border" name="rol" defaultValue="" required>
                                                 <option disabled type="String" value="">Selecciona una opción</option>
                                                 <option type="String">Vendedor</option>
                                                 <option type="String">Administrador</option>
@@ -68,7 +68,7 @@ const EditarUsuario = ({formLabelTitle}) => {
                                         </div>
                                         <div className="w-1/3">
                                             <label for="estado" className="font-bold">{formLabelTitle.label3}</label>
-                                            <select class="w-full h-8 font-bold pl-2 rounded-md input-border" name="estado" placeholder="Selecciona una opción" required>
+                                            <select class="w-full h-8 font-bold pl-2 rounded-md input-border" name="estado" defaultValue=""  required>
                                                 <option disabled type="String" value="">Selecciona una opción</option>
                                                 <option type="String">Pendiente</option>
                                                 <option type="String">Autorizado</option>
