@@ -1,5 +1,4 @@
-import Cards from '../../modules/cards/Cards';
-import UpperBarSection from '../../modules/upperBarSection/UpperBarSection'
+import Cards from "../../components/Cards";
 
 const PaginaVendedores =()=> {
   const BASE_URL = process.env.REACT_APP_BASE_URL;
@@ -19,7 +18,9 @@ const PaginaVendedores =()=> {
 }
     return (
      <>        
-        <UpperBarSection titlePage="Lista de vendedores" selectorButton="/rolesUsuarios/nuevoUsuario" nameButton="Nuevo Vendedor" vendedores={true}/>
+        <div className=" my-9 flex justify-between">
+            <span className="text-2xl font-bold">Lista de Vendedores</span> 
+        </div>
         <Cards variableCards={variableCards} edit={false}/>
      </> 
       

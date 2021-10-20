@@ -1,8 +1,7 @@
-import './Navbar.css';
 import { useLocation } from 'react-router-dom';
 import { useEffect , useState} from 'react';
-import { useBuscado } from '../../context/BuscadorContext';
-import { useUsuario } from '../../context/UsuarioConectado';
+import { useBuscado } from '../context/BuscadorContext';
+import { useUsuario } from '../context/UsuarioConectado';
 
 const Navbar=()=>{
   

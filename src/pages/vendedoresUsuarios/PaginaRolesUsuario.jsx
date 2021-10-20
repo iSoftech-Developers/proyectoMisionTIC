@@ -1,4 +1,4 @@
-import TarjetasUsuarios from "../../modules/tarjetasUsuarios/TarjetasUsuarios";
+import TarjetasUsuarios from "../../components/TarjetasUsuarios";
 
 
 

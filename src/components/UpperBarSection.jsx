@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import PrivateComponent from '../PrivateComponent';
+import PrivateComponent from './PrivateComponent';
 
 
 const UpperBarSection =({titlePage,selectorButton,nameButton,vendedores})=>{

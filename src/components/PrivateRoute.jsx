@@ -1,6 +1,5 @@
 import { useUsuario } from '../context/UsuarioConectado';
 import React from 'react';
-import './PrivateComponent.css';
 
 const PrivateRoute = ({ roleList, children }) => {
 const { usuario } = useUsuario();

@@ -1,5 +1,5 @@
-import CardsVentas from '../../modules/cardsVentas/CardsVentas';
-import UpperBarSection from '../../modules/upperBarSection/UpperBarSection';
+import CardsVentas from '../../components/CardsVentas';
+import UpperBarSection from '../../components/UpperBarSection';
 
 
 const PaginaVentas =()=> {
