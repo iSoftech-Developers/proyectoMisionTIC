@@ -17,15 +17,12 @@ const NuevaVenta=()=>{
     const [clienteSelect,setClienteSelect]=useState({})
 
 
-   
-
-
 
     useEffect(() => {
       if (ejecutarConsulta){
 
       
-        const fetchVendores =  () => {
+        const fetchVendores = () => {
             obtenerDB(setVendedores,setEjecutarConsulta,`${BASE_URL}/usuarios`);
         };
         const fetchProductos=()=>{

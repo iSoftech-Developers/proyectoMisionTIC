@@ -312,10 +312,11 @@ const TablaProductos = ({ productos, setProductos, setProductosTabla,productosCo
         <td align="center">{prenda.field7}</td>
         <td align="center">
           <label htmlFor={`valor_${index}`}>
-            <input 
+            <input className="w-20 text-center" 
             value={prenda.cantidad} 
             type='number'
             name={`cantidad_${index}`} 
+            min={0}
             onChange={(e) => {
             modificarProducto(prenda, e.target.value === '' ? '0' : e.target.value);
             setPrenda({
