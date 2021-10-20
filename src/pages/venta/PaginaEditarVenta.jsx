@@ -5,7 +5,7 @@ import EditarVenta from '../../modules/editarVenta/EditarVenta';
 const PaginaEditarVenta = () => {
     return (
         <>
-            <NoButtonUpperBarSection title="Editar Venta"/>
+            <NoButtonUpperBarSection title="Editar Venta" edit={false}/>
             <EditarVenta/>
         </>
     )

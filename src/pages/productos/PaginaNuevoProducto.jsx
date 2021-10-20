@@ -20,7 +20,7 @@ const PaginaNuevoProducto =()=> {
 
     return (
      <>
-        <NoButtonUpperBarSection title="Nuevo Producto"/>
+        <NoButtonUpperBarSection title="Nuevo Producto" edit={false}/>
         <NuevoProducto formLabelTitle = {formLabelTitle}/>
         <Tablas field1="ID Producto" field2="Descripción" field3="Talla" field4="Valor unitario" field6="Estado"/>
      </> 

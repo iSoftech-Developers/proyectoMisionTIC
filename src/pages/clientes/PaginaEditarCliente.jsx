@@ -17,7 +17,7 @@ const PaginaEditarCliente = ({cardsClientes}) => {
 
     return (
         <>
-          <NoButtonUpperBarSection title="Editar Cliente"/>
+          <NoButtonUpperBarSection title="Editar Cliente" edit={false}/>
           <EditarCliente formLabelTitle={formLabelTitle} cardsClientes={cardsClientes}/>
         </>
     )

@@ -17,7 +17,7 @@ const PaginaNuevoCliente =()=>{
 
     return(
       <>
-        <NoButtonUpperBarSection title="Agregar Cliente"/>
+        <NoButtonUpperBarSection title="Agregar Cliente" edit={false}/>
         <NuevoCliente formLabelTitle = {formLabelTitle}/>
       </>
 

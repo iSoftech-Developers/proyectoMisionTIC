@@ -10,6 +10,7 @@ const DetalleCliente = () => {
     return (
         
         <>
+            
             <div className="flex justify-between">
                 <div className="">
                     <div>

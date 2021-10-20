@@ -7,7 +7,7 @@ const PaginaNuevaVenta =()=>{
 
     return(
         <>    
-            <NoButtonUpperBarSection title="Nueva Venta"/>
+            <NoButtonUpperBarSection title="Nueva Venta" edit={false}/>
             <NuevaVenta/>
         </>
 

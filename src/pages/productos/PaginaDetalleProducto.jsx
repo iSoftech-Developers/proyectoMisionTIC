@@ -7,7 +7,7 @@ const PaginaDetalleProducto =( {cardsProductosInformation})=>{
 
     return(
         <>
-            <NoButtonUpperBarSection title="Detalle Producto"/>
+            <NoButtonUpperBarSection title="Detalle Producto" cardTo="/productos/actualizarProducto" edit={true}/>
             <DetalleProducto cardsinformation={cardsProductosInformation}/>
        </> 
     );

@@ -6,7 +6,7 @@ const PaginaDetalleUsuarios =({cardsUsuarios})=>{
 
     return(
         <>
-            <NoButtonUpperBarSection title="Detalle Usuarios"/>
+            <NoButtonUpperBarSection title="Detalle Usuarios" cardTo="/moduloVendedores/paginaEditarUsuarios" edit={true}/>
             <DetalleUsuarios cardsUsuarios={cardsUsuarios}/>
         </>
     );

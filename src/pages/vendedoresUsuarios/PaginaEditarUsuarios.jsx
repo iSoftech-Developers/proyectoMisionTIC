@@ -16,7 +16,7 @@ const PaginaEditarUsuarios =()=>{
 
     return(
         <>
-            <NoButtonUpperBarSection title="Editar Usuarios"/>
+            <NoButtonUpperBarSection title="Editar Usuarios" edit={false}/>
             <EditarUsuario formLabelTitle={formLabelTitle}/>
         </>
     );

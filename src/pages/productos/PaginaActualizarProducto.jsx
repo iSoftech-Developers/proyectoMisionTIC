@@ -19,7 +19,7 @@ const PaginaActualizarProducto =({cardsProductosInformation})=> {
 
     return (
      <>
-        <NoButtonUpperBarSection title="Actualizar producto"/>
+        <NoButtonUpperBarSection title="Actualizar producto" edit={false}/>
         <ActualizarProducto formLabelTitle = {formLabelTitle} cardsProductosInformation={cardsProductosInformation}/>
         <Tablas field1="ID Producto" field2="Descripción" field3="Talla" field4="Valor unitario" field5= "Cantidad" field6="Estado"/>
      </> 

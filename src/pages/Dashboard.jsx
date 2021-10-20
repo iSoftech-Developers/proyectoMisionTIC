@@ -8,9 +8,9 @@ const Dashboard = () => {
 
 
     return (
-       <>
-            <BotonesDashboard/>
-       </>
+    <>
+        <BotonesDashboard/>
+    </>
         
     );
 }
