@@ -4,7 +4,6 @@ import { BrowserRouter as Router,Route ,Switch } from 'react-router-dom';
 import {useState} from "react";
 import PaginaVendedores from './pages/vendedoresUsuarios/PaginaVendedores';
 import PaginaInfoDetalleVentas from './pages/venta/PaginaInfoDetalleVentas';
-import Login from './modules/login/Login';
 import PaginaClientes from './pages/clientes/PaginaClientes';
 import PaginaVentas from './pages/venta/PaginaVentas';
 import PaginaNuevaVenta from './pages/venta/PaginaNuevaVenta';
@@ -52,8 +51,8 @@ const App =()=> {
     <BuscadorContext.Provider value={{busqueda, setBusqueda}}>
       <Router>
         <Switch>
+        <Private>
           <Route path ={['/dashboard','/nuevaVenta','/moduloVentas','/moduloVentas/detalleVenta', '/moduloVentas/editarVenta','/moduloClientes', 'moduloClientes/nuevoCliente','/moduloClientes/detalleCliente',' /moduloClientes/paginaEditarCliente', '/productos', '/productos/detalleProducto', '/productos/nuevoProducto','/productos/actualizarProducto','/rolesUsuarios', '/rolesUsuarios/detalleUsuario','/rolesUsuarios/nuevoUsuario','/moduloVendedores', '/moduloVendedores/detalleUsuario','/moduloVendedores/paginaEditarUsuarios','/rolesUsuarios/detalleUsuarios','/rolesUsuarios/paginaEditarUsuarios']}> 
-            <Private>
               <Switch>
                 <Route path='/rolesUsuarios/nuevoUsuario'>
                   <PrivateRoute roleList={['Administrador']}>
@@ -127,11 +126,8 @@ const App =()=> {
                     <Dashboard/>
                 </Route>
               </Switch>
-            </Private>
-          </Route>
-          <Route path={['/']}>
-            <Login/>
-          </Route>
+            </Route>
+          </Private>
         </Switch>
       </Router>
     </BuscadorContext.Provider>

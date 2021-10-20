@@ -1,6 +1,5 @@
 import DetalleVentas from '../../modules/detalleVentas/DetalleVentas';
 import NoButtonUpperBarSection from '../../modules/noButtonUpperBarSection/NoButtonUpperBarSection';
-import Tablas from '../../modules/tablas/tablas'
 
 
 
