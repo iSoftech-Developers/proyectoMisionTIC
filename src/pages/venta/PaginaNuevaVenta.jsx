@@ -5,10 +5,17 @@ import { ToastContainer} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import { obtenerDB } from "../../utils/GetDB";
 import PostDB from '../../utils/PostDB';
+import { useHistory } from 'react-router-dom';
 
 
 const PaginaNuevaVenta =()=>{
 
+    const history=useHistory();
+
+
+  
+
+    const datePick = new Date().toISOString().split("T")[0];
 
     const BASE_URL = process.env.REACT_APP_BASE_URL;
 
@@ -72,7 +79,6 @@ const PaginaNuevaVenta =()=>{
   
   
       Object.keys(nuevaVenta).forEach((k) => {
-        
           if (k.includes('cantidad')) {
             const indice = parseInt(k.split('_')[1]);
             listaProductos[indice]['cantidad'] = nuevaVenta[k];       
@@ -100,9 +106,19 @@ const PaginaNuevaVenta =()=>{
           cliente:clientes.filter((i)=>i._id===clienteSelect._id)[0],
           
         };
+
+       
     
   
         PostDB(datosVenta, `${BASE_URL}/venta`)
+
+        const back = () => {
+          history.goBack();
+        };
+        back()
+
+   
+        
   
   
   };
@@ -150,7 +166,7 @@ const PaginaNuevaVenta =()=>{
                     </div>
                     <div className="w-1/6">
                         <label htmlFor="payDate">Fecha de pago</label>
-                        <input required className=" w-full h-8 p-2 input-border" type="Date" name="payDate" id="payDate"/>
+                        <input required className=" w-full h-8 p-2 input-border" type="Date" name="payDate" id="payDate" min={datePick  }/>
                     </div>
                 </div>
                 <div className="form-lower-section flex justify-between font-bold label-color">
@@ -223,9 +239,9 @@ const TablaProductos = ({ productos, setProductos, setProductosTabla}) => {
       setButtonActive("hidden")  
     };
   
-    const eliminarProducto = (prodcutoAEliminar) => {
-      setFilasTabla(filasTabla.filter((v) => v._id !== prodcutoAEliminar._id));
-      setProductos([...productos, prodcutoAEliminar]);
+    const eliminarProducto = (productoAEliminar) => {
+      setFilasTabla(filasTabla.filter((v) => v._id !== productoAEliminar._id));
+      setProductos([...productos, productoAEliminar]);
     };
   
   
@@ -256,12 +272,17 @@ const TablaProductos = ({ productos, setProductos, setProductosTabla}) => {
                 Seleccione un Producto
               </option>
               {productos.map((el) => {
+                if(el.field5==='Disponible' && el.field3>0){
                 return (
                   <option 
                     key={el._id}
                     value={el._id}
                   >{`${el.field1} ${el.field6} ${el.field4} ${el.field7}`}</option>
                 );
+                }else{
+                  <></>
+                }
+                return null
               })}
             </select>
           </label>
@@ -279,7 +300,8 @@ const TablaProductos = ({ productos, setProductos, setProductosTabla}) => {
               <th>Nombre</th>
               <th>Genero</th>
               <th>Talla</th>
-              <th>Color</th>
+              <th>Color</th>  
+              <th>Unidades disponibles</th>
               <th>Cantidad</th>
               <th>Precio Unitario</th>
               <th>Valor total</th>
@@ -324,18 +346,21 @@ const TablaProductos = ({ productos, setProductos, setProductosTabla}) => {
         <td align="center">{prenda.field6}</td>
         <td align="center">{prenda.field4}</td>
         <td align="center">{prenda.field7}</td>
+        <td align="center" >{prenda.field3}</td>
         <td align="center">
           <label htmlFor={`valor_${index}`}>
             <input className="w-20 text-center" 
+            required
             value={prenda.cantidad} 
             type='number'
             name={`cantidad_${index}`} 
-            min={0}
+            min={1}
+            max={prenda.field3}
             onChange={(e) => {
-            modificarProducto(prenda, e.target.value === '' ? '0' : e.target.value);
+
             setPrenda({
                 ...prenda,
-                cantidad: e.target.value === '' ? '0' : e.target.value,
+                cantidad: e.target.value > prenda.field3 || e.target.value < 0  ? 0 : e.target.value,
                 field8:parseFloat(prenda.field2) *parseFloat(e.target.value === '' ? '0' : e.target.value),
                   });
                 }}
@@ -343,7 +368,7 @@ const TablaProductos = ({ productos, setProductos, setProductosTabla}) => {
           </label>  
         </td>
         <td align="center">{prenda.field2}</td>
-        <td align="center">{parseFloat(prenda.field8 ?? 0)}</td>
+        <td align="center">{prenda.cantidad===0? 0 : prenda.field8}</td>
         <td align="center">
           <i
             onClick={() => eliminarProducto(prenda)}

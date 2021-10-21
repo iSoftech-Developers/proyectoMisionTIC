@@ -94,7 +94,7 @@ const PaginaNuevoProducto =()=> {
                 </div>
                 <div className="flex justify-between font-bold ">
                     <div className="w-1/5">
-                            <label for="cantidad">Cantidad</label>
+                            <label for="cantidad">Unidades disponibles</label>
                             <input required class=" w-full h-8 p-2 input-border" type="Number" min={0} name="cantidad"/>
                         </div> 
                         <div className="w-1/5">
