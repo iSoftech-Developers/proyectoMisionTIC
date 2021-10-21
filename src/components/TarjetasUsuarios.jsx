@@ -50,14 +50,14 @@ const TarjetasUsuarios = ({variableCards}) => {
                         <div className="pt-8 ">
                             <div className="cards-container w-32 p-1 bg-white shadow-sm cursor-pointer transition duration-250 ease-in-out transform hover:-translate-y-1 hover:scale-105">
                                 <Dialog open={openDialog}>
-                                    <div className ='p-8 flex flex-col'>
+                                    <div className =' p-8 flex flex-col'>
                                         <h1 className= 'text gray-800 text-xl font-bold'> ¿Esta seguro de querer eliminarlo? </h1>
                                         <div className='flex w-full items-center justify-center'> 
                                             <Link to={variableCards.page} onClick={()=>{
                                                 DeleteDB({i,variableCards})
                                                 setOpenDialog(false)
-                                                setEjecutarConsulta(true)}} className= 'mx-2 my-4 px-4 py-2 bg-green-500 text-white hover:bg-green-700 rounded-md shadow-md'> Si </Link>
-                                            <Link onClick={()=>setOpenDialog(false)} className= 'mx-2 my-4 px-4 py-2 bg-red-500 text-white hover:bg-red-700 rounded-md shadow-md' to={variableCards.page}> No </Link>
+                                                setEjecutarConsulta(true)}} className= 'dialogButYes mx-2 my-4 px-4 py-2 text-white'> Si </Link>
+                                            <Link onClick={()=>setOpenDialog(false)} className= 'dialogButNo mx-2 my-4 px-4 py-2 text-white' to={variableCards.page}> No </Link>
                                         </div>
                                     </div>
                                  </Dialog>
@@ -67,12 +67,12 @@ const TarjetasUsuarios = ({variableCards}) => {
                                         <span className="text-sm text-center">{i.field1}</span>
                                         <span className="text-sm text-center bg-black text-white" >{i.field4}</span>
                                         <div className="flex justify-around mt-1">
-                                                <Link className="text-white bg-blue-700 hover:bg-blue-500 w-full text-center" to={`${variableCards.linkIcon}/${i._id}`} onClick={() =>setSeleccionado(i)}>
+                                                <Link className="editIconBg text-white  w-full text-center" to={`${variableCards.linkIcon}/${i._id}`} onClick={() =>setSeleccionado(i)}>
                                                     <Tooltip title="editar">
                                                     <i className={`fas fa-pen fa-xs ${hiddenButtons}`}></i>
                                                     </Tooltip>
                                                 </Link>
-                                                <Link className="text-white bg-red-800 hover:bg-red-600 w-full text-center" to={variableCards.page} onClick={()=>{
+                                                <Link className="text-white deleteIconBg w-full text-center" to={variableCards.page} onClick={()=>{
                                                     setSeleccionado(i)
                                                     setOpenDialog(true)}}>
                                                     <Tooltip title="Eliminar">

@@ -75,9 +75,136 @@ td{
   
 }
 
-
 .sidebar-li:active{
   background-color: #c5ebff;
 }
 
+.greenButton{
+  background-color: #4ba043;
+  color: white;
+  font-weight: bold;
+}
+
+.greenButton:hover{
+  background-color: #57b84e;
+  box-shadow: 0px 0px 2px rgba(33, 33, 33, 0.5)
+}
+
+.backButton{
+  border: 1px solid;
+  border-color: #4ba043;
+  color: #4ba043;
+}
+
+.backButton:hover{
+  border: 1px solid;
+  border-color: #80bb40;
+  color: #80bb40;
+  background-color: #7fbb4020;
+  font-style: bold;
+}
+
+.editIcon{
+  color: #2a5bd7;
+}
+
+.editIcon:hover{
+  color: #3870ff;
+}
+
+.editIconBg{
+  background-color: #0d4075;
+}
+
+.editIconBg:hover{
+  background-color: #0d4480;
+}
+
+.deleteIcon{
+  color: #a0021d;
+}
+
+.deleteIcon:hover{
+  color: #c50122;
+}
+
+.deleteIconBg{
+  background-color: #a0021d;
+ 
+}
+
+.deleteIconBg:hover{
+  background-color: #c50122;
+}
+
+.dialogButYes{
+  background-color: #57b84e;
+  border-radius: 5px;
+}
+
+.dialogButYes:hover{
+  background-color: #5fc956;
+  border-radius: 5px;
+  box-shadow: 0px 0px 2px rgba(33, 33, 33, 0.5)
+}
+
+.dialogButNo{
+  background-color: #a0021d;
+  border-radius: 5px;
+}
+
+.dialogButNo:hover{
+  background-color: #bd0322;
+  border-radius: 5px;
+  
+}
+
+.dashButtons{
+  border-radius: 10px;
+}
+
+.dashButtons:hover{
+  border-radius: 10px;
+  box-shadow: 0px 0px 3px rgba(33, 33, 33, 0.5);
+}
+
+.dashBut1{
+  background-color: #80bb40;
+}
+
+.dashBut1:hover{
+  background-color: #86c443;
+}
+
+.dashBut2{
+  background-color: #074e3b;
+}
+
+.dashBut2:hover{
+  background-color: #0b6a50;
+}
+
+.dashBut3{
+  background-color: #08294d;
+}
+
+.dashBut3:hover{
+  background-color: #0d4075;
+}
+
+.dashBut4{
+  background-color: #3c1147;
+}
+
+.dashBut4:hover{
+  background-color: #571868;
+}
+
+.dashBut5{
+  background-color: #720145;
+}
+
+.dashBut5:hover{
+  background-color: #83024f;
+}
 

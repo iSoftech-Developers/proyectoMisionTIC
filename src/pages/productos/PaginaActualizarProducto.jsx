@@ -85,7 +85,7 @@ const BASE_URL = process.env.REACT_APP_BASE_URL;
                     </div>
                 <div>
                     <div className=" w-full flex justify-center">
-                        <input className="w-1/6 cursor-pointer bg-green-400 h-10 rounded text-white font-bold my-16" type="submit" value="Guardar"/>
+                        <input className="w-1/6 cursor-pointer greenButton h-10 rounded text-white font-bold my-16" type="submit" value="Guardar"/>
                         <ToastContainer position="top-right" autoClose={1000}/>
                     </div>
                 </div>
