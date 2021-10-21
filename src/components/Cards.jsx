@@ -71,7 +71,7 @@ const Card = ({i,variableCards , setEjecutarConsulta, edit})=>{
                               <PrivateComponent roleList={['Administrador']}>
                                 <Link to={`${variableCards.linkIcon}/${i._id}`} onClick={() => setSeleccionado(i)}>
                                     <Tooltip title="editar">
-                                        <i className="fas fa-pen hover:text-blue-600 text-blue-800 fa-lg"></i>
+                                        <i className="editIcon fas fa-pen fa-lg"></i>
                                     </Tooltip>
                                 </Link>
                               </PrivateComponent>
@@ -80,7 +80,7 @@ const Card = ({i,variableCards , setEjecutarConsulta, edit})=>{
                                 <Link to={variableCards.page} onClick={()=>{console.log(i)
                                     setOpenDialog(true)}}>
                                       <Tooltip title="Eliminar">
-                                      <i className="fas fa-trash text-red-800 hover:text-red-600 shadow-md fa-lg"></i>
+                                      <i className="deleteIcon fas fa-trash fa-lg"></i>
                                       </Tooltip>
                                 </Link>
                               </PrivateComponent>
