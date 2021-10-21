@@ -4,9 +4,14 @@ import { useSeleccionado } from "../../context/Seleccionado";
 import { obtenerDB } from "../../utils/GetDB";
 import PatchDB from '../../utils/PatchDB'
 import { ToastContainer} from "react-toastify";
+import { useHistory } from 'react-router-dom';
 
 
 const PaginaEditarVenta = () => {
+
+  const history=useHistory();
+
+    const datePick = new Date().toISOString().split("T")[0];
 
     const BASE_URL = process.env.REACT_APP_BASE_URL;
     const {seleccionado}=useSeleccionado()
@@ -100,6 +105,11 @@ const PaginaEditarVenta = () => {
   
 
       PatchDB(datosVenta,seleccionado, `${BASE_URL}/venta`)
+
+      const back = () => {
+        history.goBack();
+      };
+      back()
 }
 
 
@@ -131,7 +141,7 @@ const PaginaEditarVenta = () => {
                     </div>
                     <div className="w-1/6">
                         <label htmlFor="payDate">Fecha de pago</label>
-                        <input required className=" w-full h-8 p-2 input-border" type="Date" name="payDate" id="payDate"/>
+                        <input required className=" w-full h-8 p-2 input-border" type="Date" name="payDate" id="payDate" min={datePick}/>
                     </div>
                 </div>
                 <div className="form-lower-section flex justify-between font-bold label-color">
@@ -224,19 +234,6 @@ const TablaProductos = ({ productos, setProductos, setProductosTabla,productosCo
     };
   
   
-    const modificarProducto = (producto, cantidad) => {
-      console.log('filas tabla',filasTabla)
-      
-      setFilasTabla(
-        filasTabla.map((ft) => {
-          if (ft._id === producto.id) {
-            ft.cantidad = cantidad;
-            ft.total = producto.valor * cantidad;
-          }
-          return ft;
-        })
-      );
-    };
   
     return (
       <> 
@@ -252,12 +249,17 @@ const TablaProductos = ({ productos, setProductos, setProductosTabla,productosCo
                 Seleccione un Producto
               </option>
               {productos.map((el) => {
+                if(el.field5==='Disponible' && el.field3>0){
                 return (
                   <option 
                     key={el._id}
                     value={el._id}
                   >{`${el.field1} ${el.field6} ${el.field4} ${el.field7}`}</option>
                 );
+                }else{
+                  <></>
+                }
+                return null
               })}
             </select>
           </label>
@@ -276,6 +278,7 @@ const TablaProductos = ({ productos, setProductos, setProductosTabla,productosCo
               <th>Genero</th>
               <th>Talla</th>
               <th>Color</th>
+              <th>Inventario</th>
               <th>Cantidad</th>
               <th>Precio Unitario</th>
               <th>Valor total</th>
@@ -291,7 +294,7 @@ const TablaProductos = ({ productos, setProductos, setProductosTabla,productosCo
                 pr={el}
                 index={index}
                 eliminarProducto={eliminarProducto}
-                modificarProducto={modificarProducto}
+                productos={productos}
               />
               );
             })}
@@ -301,7 +304,7 @@ const TablaProductos = ({ productos, setProductos, setProductosTabla,productosCo
     );
   };
 
-  const FilaProducto =({pr , index,eliminarProducto,modificarProducto})=>{
+  const FilaProducto =({pr , index,eliminarProducto ,productos})=>{
 
 
     const [prenda, setPrenda] = useState(pr);
@@ -317,17 +320,19 @@ const TablaProductos = ({ productos, setProductos, setProductosTabla,productosCo
         <td align="center">{prenda.field6}</td>
         <td align="center">{prenda.field4}</td>
         <td align="center">{prenda.field7}</td>
+        <td align="center">{prenda.field3}</td>
         <td align="center">
           <label htmlFor={`valor_${index}`}>
-            <input 
+            <input className="w-20 text-center"
             value={prenda.cantidad} 
             type='number'
+            min={1}
             name={`cantidad_${index}`} 
+            max={prenda.field3}
             onChange={(e) => {
-            modificarProducto(prenda, e.target.value === '' ? '0' : e.target.value);
-            setPrenda({
+              setPrenda({
                 ...prenda,
-                cantidad: e.target.value === '' ? '0' : e.target.value,
+                cantidad: e.target.value > prenda.field3 || e.target.value < 0  ? 0 : e.target.value,
                 field8:parseFloat(prenda.field2) *parseFloat(e.target.value === '' ? '0' : e.target.value),
                   });
                 }}
@@ -335,7 +340,7 @@ const TablaProductos = ({ productos, setProductos, setProductosTabla,productosCo
           </label>  
         </td>
         <td align="center">{prenda.field2}</td>
-        <td align="center" >{parseFloat(prenda.field8 ?? 0)}</td>
+        <td align="center" >{prenda.cantidad===0? 0 : prenda.field8}</td>
         <td align="center">
           <i
             onClick={() => eliminarProducto(prenda)}
