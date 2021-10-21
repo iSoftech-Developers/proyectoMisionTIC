@@ -77,8 +77,7 @@ const Card = ({i,variableCards , setEjecutarConsulta, edit})=>{
                               </PrivateComponent>
                             )}
                               <PrivateComponent roleList={['Administrador']}>
-                                <Link to={variableCards.page} onClick={()=>{console.log(i)
-                                    setOpenDialog(true)}}>
+                                <Link to={variableCards.page} onClick={()=>{setOpenDialog(true)}}>
                                       <Tooltip title="Eliminar">
                                       <i className="deleteIcon fas fa-trash fa-lg"></i>
                                       </Tooltip>
