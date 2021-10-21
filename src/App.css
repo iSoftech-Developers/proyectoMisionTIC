@@ -82,7 +82,7 @@ td{
 .greenButton{
   background-color: #4ba043;
   color: white;
-  font-weight: bold;
+  font-weight: 300;
 }
 
 .greenButton:hover{
@@ -94,6 +94,7 @@ td{
   border: 1px solid;
   border-color: #4ba043;
   color: #4ba043;
+  font-weight: normal;
 }
 
 .backButton:hover{
@@ -102,14 +103,15 @@ td{
   color: #80bb40;
   background-color: #7fbb4020;
   font-style: bold;
+  font-weight: normal;
 }
 
 .editIcon{
-  color: #2a5bd7;
+  color: #0e4c8f;
 }
 
 .editIcon:hover{
-  color: #3870ff;
+  color: #1165c0;
 }
 
 .editIconBg{
@@ -130,7 +132,6 @@ td{
 
 .deleteIconBg{
   background-color: #a0021d;
- 
 }
 
 .deleteIconBg:hover{
@@ -160,6 +161,7 @@ td{
 }
 
 .dashButtons{
+  font-weight: regular;
   border-radius: 10px;
 }
 

@@ -50,7 +50,7 @@ const TarjetasUsuarios = ({variableCards}) => {
                         <div className="pt-8 ">
                             <div className="cards-container w-32 p-1 bg-white shadow-sm cursor-pointer transition duration-250 ease-in-out transform hover:-translate-y-1 hover:scale-105">
                                 <Dialog open={openDialog}>
-                                    <div className =' p-8 flex flex-col'>
+                                    <div className ='p-8 flex flex-col'>
                                         <h1 className= 'text gray-800 text-xl font-bold'> ¿Esta seguro de querer eliminarlo? </h1>
                                         <div className='flex w-full items-center justify-center'> 
                                             <Link to={variableCards.page} onClick={()=>{
@@ -65,7 +65,8 @@ const TarjetasUsuarios = ({variableCards}) => {
                                     <div className="flex flex-col">
                                         <span className="font-bold text-center">ID {i.field2}</span>
                                         <span className="text-sm text-center">{i.field1}</span>
-                                        <span className="text-sm text-center bg-black text-white" >{i.field4}</span>
+                                        <span className="text-sm text-center bg-black text-white mt-2" >{i.field4}</span>
+                                        <span className="text-sm text-center text-gray-500 mt-1" >{i.field7}</span>
                                         <div className="flex justify-around mt-1">
                                                 <Link className="editIconBg text-white  w-full text-center" to={`${variableCards.linkIcon}/${i._id}`} onClick={() =>setSeleccionado(i)}>
                                                     <Tooltip title="editar">
@@ -128,7 +129,7 @@ return (
 
             {consulta.map((i)=>{ 
             if(i.field4.includes(selectorRender)){
-                if (i._id.includes(busqueda) || i.field1.toLowerCase().includes(busqueda.toLowerCase()) ){
+                if (i._id.includes(busqueda) || i.field1.toLowerCase().includes(busqueda.toLowerCase() || i.field4) ){
                     return(
                         <CardsUsers i={i}/>
                         );}
@@ -139,7 +140,7 @@ return (
                 }
                     
                     )}
-           
+
             </div>
             ):(
 

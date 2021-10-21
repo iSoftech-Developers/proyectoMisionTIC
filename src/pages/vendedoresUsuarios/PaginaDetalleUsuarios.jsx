@@ -9,7 +9,7 @@ const PaginaDetalleUsuarios =()=>{
         <>
             <NoButtonUpperBarSection title="Detalle Usuarios" cardTo="/moduloVendedores/paginaEditarUsuarios" edit={true}/>
             <div className="flex mt-14">
-                <div className="p-8 border-solid border-2 border-gray-400">
+                <div className="p-8 border-solid border border-gray-400">
                     <i className="fas fa-user fa-10x text-gray-300"></i>
                 </div>
                 <div className="w-full ml-10 mt-8">

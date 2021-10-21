@@ -71,7 +71,7 @@ const PaginaEditarUsuarios =()=>{
                                         </div>
                                         <div className="w-1/3">
                                             <label for="estado" className="font-bold">Estado</label>
-                                            <select class="w-full h-8 font-bold pl-2 rounded-md input-border" name="estado" defaultValue=""  required>
+                                            <select class="w-full h-8 font-bold pl-2 rounded-md input-border" name="estado" defaultValue="" required>
                                                 <option disabled type="String" value="">Selecciona una opción</option>
                                                 <option type="String">Pendiente</option>
                                                 <option type="String">Autorizado</option>
@@ -84,7 +84,7 @@ const PaginaEditarUsuarios =()=>{
                         <div className="flex w-full justify-between mt-12">
                             <div className="flex flex-col ">
                                 <label for="fechaingreso" className="font-bold">Fecha de ingreso</label>
-                                <input required  class=" w-full h-8 p-2 rounded-md input-border" type="text" name="fechaingreso" value={seleccionado.field5}/>
+                                <input required class=" w-full h-8 p-2 rounded-md input-border" type="text" name="fechaingreso" value={seleccionado.field5}/>
                             </div>
                             <div className="flex flex-col ">
                                 <label for="nombre" className="font-bold">Nombres y apellidos</label>

@@ -10,7 +10,7 @@ const Dashboard = () => {
     <>
         <div className= "flex justify-between space-x-5 mt-6 h-28 mb-9">
                 <div className="dashButtons dashBut1 w-full flex items-center">
-                    <Link className="active w-full py-2 flex flex-col items-center text-white font-normal" to="/nuevaVenta"><i className="fas fa-plus-circle fa-lg text-white text-3xl"></i>Nueva venta</Link>  
+                    <Link className="active w-full py-2 flex flex-col items-center text-white" to="/nuevaVenta"><i className="fas fa-plus-circle fa-lg text-white text-3xl"></i>Nueva venta</Link>  
                 </div>
                 <div className="dashButtons dashBut2 w-full flex items-center">
                     <Link className="active w-full py-2 flex flex-col items-center text-white" to="/moduloClientes"><i className="fas fa-users fa-lg text-white text-3xl"></i>Clientes</Link> 
