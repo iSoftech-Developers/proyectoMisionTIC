@@ -67,6 +67,7 @@ const PaginaEditarUsuarios =()=>{
                                                 <option disabled type="String" value="">Selecciona una opción</option>
                                                 <option type="String">Vendedor</option>
                                                 <option type="String">Administrador</option>
+                                                <option type="String">Sin Rol</option>
                                             </select>
                                         </div>
                                         <div className="w-1/3">

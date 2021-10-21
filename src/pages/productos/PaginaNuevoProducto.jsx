@@ -114,7 +114,7 @@ const PaginaNuevoProducto =()=> {
                 <div>
                     <div className=" w-full flex justify-center">
                         <ToastContainer position="top-right" autoClose={1000}/>
-                        <input className="w-1/6 cursor-pointer bg-green-600 hover:bg-green-500 h-10 rounded text-white font-bold my-8" type="submit" value="Guardar"/>
+                        <input className="w-1/6 cursor-pointer greenButton h-10 rounded text-white my-8" type="submit" value="Guardar"/>
                         
                     </div>
                 </div>

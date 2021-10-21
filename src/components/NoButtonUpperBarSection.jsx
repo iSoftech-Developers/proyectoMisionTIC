@@ -27,7 +27,7 @@ const NoButtonUpperBarSection =({title, cardTo, edit})=>{
               <></>
               )} 
             </div>
-            <button onClick={back} className="w-1/6 cursor-pointer border-2 border-blue-600 rounded h-10 text-blue-600 font-semibold flex items-center justify-center">Regresar</button>
+            <button onClick={back} className="w-1/6 cursor-pointer rounded h-10 text-white backButton font-semibold flex items-center justify-center">Regresar</button>
         </div >
     )
   }

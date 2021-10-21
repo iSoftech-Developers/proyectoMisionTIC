@@ -10,7 +10,6 @@ const getToken = () => {
       const DeleteDB = async ({i,variableCards}) => {
         
         
-        console.log(i);
         const options = {
           method: 'DELETE',
           url: `${variableCards.route}/${i._id}/`,

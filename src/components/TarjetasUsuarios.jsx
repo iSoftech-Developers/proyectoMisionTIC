@@ -15,7 +15,7 @@ const TarjetasUsuarios = ({variableCards}) => {
 
 
 
-    const {setSeleccionado}=useSeleccionado()
+    const {seleccionado,setSeleccionado}=useSeleccionado()
     const {busqueda}=useBuscado()
     const [openDialog,setOpenDialog]=useState(false)
     const [consulta, setConsulta] = useState([]); 
@@ -49,30 +49,18 @@ const TarjetasUsuarios = ({variableCards}) => {
                     <div className="display: inline-block">
                         <div className="pt-8 ">
                             <div className="cards-container w-32 p-1 bg-white shadow-sm cursor-pointer transition duration-250 ease-in-out transform hover:-translate-y-1 hover:scale-105">
-                                <Dialog open={openDialog}>
-                                    <div className ='p-8 flex flex-col'>
-                                        <h1 className= 'text gray-800 text-xl font-bold'> ¿Esta seguro de querer eliminarlo? </h1>
-                                        <div className='flex w-full items-center justify-center'> 
-                                            <Link to={variableCards.page} onClick={()=>{
-                                                DeleteDB({i,variableCards})
-                                                setOpenDialog(false)
-                                                setEjecutarConsulta(true)}} className= 'mx-2 my-4 px-4 py-2 bg-green-500 text-white hover:bg-green-700 rounded-md shadow-md'> Si </Link>
-                                            <Link onClick={()=>setOpenDialog(false)} className= 'mx-2 my-4 px-4 py-2 bg-red-500 text-white hover:bg-red-700 rounded-md shadow-md' to={variableCards.page}> No </Link>
-                                        </div>
-                                    </div>
-                                 </Dialog>
                                     <img src={i.field8} className=" flex justify-center w-full"/>
                                     <div className="flex flex-col">
                                         <span className="font-bold text-center">ID {i.field2}</span>
                                         <span className="text-sm text-center">{i.field1}</span>
                                         <span className="text-sm text-center bg-black text-white" >{i.field4}</span>
                                         <div className="flex justify-around mt-1">
-                                                <Link className="text-white bg-blue-700 hover:bg-blue-500 w-full text-center" to={`${variableCards.linkIcon}/${i._id}`} onClick={() =>setSeleccionado(i)}>
+                                                <Link className="editIconBg text-white  w-full text-center" to={`${variableCards.linkIcon}/${i._id}`} onClick={() =>setSeleccionado(i)}>
                                                     <Tooltip title="editar">
                                                     <i className={`fas fa-pen fa-xs ${hiddenButtons}`}></i>
                                                     </Tooltip>
                                                 </Link>
-                                                <Link className="text-white bg-red-800 hover:bg-red-600 w-full text-center" to={variableCards.page} onClick={()=>{
+                                                <Link className="text-white deleteIconBg w-full text-center" to={variableCards.page} onClick={()=>{
                                                     setSeleccionado(i)
                                                     setOpenDialog(true)}}>
                                                     <Tooltip title="Eliminar">
@@ -84,6 +72,19 @@ const TarjetasUsuarios = ({variableCards}) => {
                             </div>
                         </div>
                     </div>
+                    <Dialog open={openDialog}>
+                        <div className =' p-8 flex flex-col'>
+                            <h1 className= 'text gray-800 text-xl font-bold'> ¿Esta seguro de querer eliminarlo? </h1>
+                            <div className='flex w-full items-center justify-center'> 
+                                <Link to={variableCards.page} onClick={()=>{
+                                    let i=seleccionado
+                                    DeleteDB({i,variableCards})
+                                    setOpenDialog(false)
+                                    setEjecutarConsulta(true)}} className= 'dialogButYes mx-2 my-4 px-4 py-2 text-white'> Si </Link>
+                                <Link onClick={()=>setOpenDialog(false)} className= 'dialogButNo mx-2 my-4 px-4 py-2 text-white' to={variableCards.page}> No </Link>
+                            </div>
+                        </div>
+                    </Dialog>
             </Link>
 
         </>
@@ -127,7 +128,7 @@ return (
             </select>
 
             {consulta.map((i)=>{ 
-            if(i.field4.includes(selectorRender)){
+            if(i.field4.includes(selectorRender) && i.field4 !== "Sin Rol" && i.field7 ==="Autorizado"){
                 if (i._id.includes(busqueda) || i.field1.toLowerCase().includes(busqueda.toLowerCase()) ){
                     return(
                         <CardsUsers i={i}/>
@@ -142,32 +143,26 @@ return (
            
             </div>
             ):(
+                <>
 
-                <div className="flex mt-8 cards-container mb-6 shadow-sm bg-gray-100">
-                <div className="bg-black h-24 w-24 my-4 ml-4"></div>
-                    <div className="w-full">
-                        <div className= "mx-4 flex flex-col h-full justify-center">
-                            <span className="text-black font-bold">ID 123456</span>
-                            <table className="w-full text-sm bg-white border-gray-400 border">
-                                <tr>
-                                    <th >Campo1</th>
-                                    <th >Campo2</th>
-                                    <th >Campo3</th>
-                                    <th >Campo4</th>
-                                    <th >Campo5</th>
-                                </tr>
-                                <tr>
-                                    <td align="center">item1</td>
-                                    <td align="center">item2</td>
-                                    <td align="center">item3</td>
-                                    <td align="center">item4</td>
-                                    <td align="center">item5</td>
-                                </tr>
-                            </table>
-    
-                        </div>
-                    </div>
-                </div>
+                {consulta.map((i)=>{ 
+                    if(i.field4 === "Sin Rol" || i.field7 ==='Pendiente'|| i.field7=== 'Rechazado'){
+                        if (i._id.includes(busqueda) || i.field1.toLowerCase().includes(busqueda.toLowerCase()) ){
+                            return(
+                                <CardsUsers i={i}/>
+                                );}
+                            }else{
+                                return null;
+                            }
+                            return null
+                }
+                    
+                    )}
+
+
+                </>
+              
+       
             )}
                 <ToastContainer position="top-right" autoClose={2000}/>
         </>

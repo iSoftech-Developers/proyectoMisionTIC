@@ -166,7 +166,7 @@ const PaginaNuevaVenta =()=>{
                     </div>
                     <div className="w-1/6">
                         <label htmlFor="payDate">Fecha de pago</label>
-                        <input required className=" w-full h-8 p-2 input-border" type="Date" name="payDate" id="payDate" min={datePick  }/>
+                        <input required className=" w-full h-8 p-2 input-border" type="Date" name="payDate" id="payDate" min={datePick}/>
                     </div>
                 </div>
                 <div className="form-lower-section flex justify-between font-bold label-color">
@@ -196,7 +196,7 @@ const PaginaNuevaVenta =()=>{
                   setProductosTabla={setProductosTabla} />
                 </div>
                 <div className=" w-full flex justify-center">
-                    <input className="w-1/6 cursor-pointer bg-green-600 hover:bg-green-500 h-10 rounded text-white font-bold my-8" type="submit" value="Guardar"/>
+                    <input className="w-1/6 cursor-pointer greenButton h-10 rounded text-white my-8" type="submit" value="Guardar"/>
                     <ToastContainer position="top-right" autoClose={1000}/>
                 </div>
             </form>
@@ -245,20 +245,7 @@ const TablaProductos = ({ productos, setProductos, setProductosTabla}) => {
     };
   
   
-    const modificarProducto = (producto, cantidad) => {
-      console.log('filas tabla',filasTabla)
-      
-      setFilasTabla(
-        filasTabla.map((ft) => {
-          if (ft._id === producto.id) {
-            ft.cantidad = cantidad;
-            ft.total = producto.valor * cantidad;
-          }
-          return ft;
-        })
-      );
-    };
-  
+ 
     return (
       <>
         <div className='flex w-full justify-between'>
@@ -301,7 +288,7 @@ const TablaProductos = ({ productos, setProductos, setProductosTabla}) => {
               <th>Genero</th>
               <th>Talla</th>
               <th>Color</th>  
-              <th>Unidades disponibles</th>
+              <th>Inventario</th>
               <th>Cantidad</th>
               <th>Precio Unitario</th>
               <th>Valor total</th>
@@ -317,7 +304,6 @@ const TablaProductos = ({ productos, setProductos, setProductosTabla}) => {
                 pr={el}
                 index={index}
                 eliminarProducto={eliminarProducto}
-                modificarProducto={modificarProducto}
               />
               );
             })}
@@ -330,7 +316,7 @@ const TablaProductos = ({ productos, setProductos, setProductosTabla}) => {
 
 
 
-  const FilaProducto =({pr , index,eliminarProducto,modificarProducto})=>{
+  const FilaProducto =({pr , index,eliminarProducto})=>{
 
 
     const [prenda, setPrenda] = useState(pr);
@@ -346,7 +332,7 @@ const TablaProductos = ({ productos, setProductos, setProductosTabla}) => {
         <td align="center">{prenda.field6}</td>
         <td align="center">{prenda.field4}</td>
         <td align="center">{prenda.field7}</td>
-        <td align="center" >{prenda.field3}</td>
+        <td align="center">{prenda.field3}</td>
         <td align="center">
           <label htmlFor={`valor_${index}`}>
             <input className="w-20 text-center" 
@@ -357,7 +343,6 @@ const TablaProductos = ({ productos, setProductos, setProductosTabla}) => {
             min={1}
             max={prenda.field3}
             onChange={(e) => {
-
             setPrenda({
                 ...prenda,
                 cantidad: e.target.value > prenda.field3 || e.target.value < 0  ? 0 : e.target.value,
