@@ -22,10 +22,10 @@ const PaginaEditarVenta = () => {
         if (ejecutarConsulta){
   
         
-          const fetchVendores =  () => {
+        const fetchVendores =  () => {
               obtenerDB(setVendedores,setEjecutarConsulta,`${BASE_URL}/usuarios`);
           }
-          const fetchProductos=()=>{
+        const fetchProductos=()=>{
             obtenerDB(setProductos,setEjecutarConsulta,`${BASE_URL}/productos`)
         }
         const fetchClientes=()=>{
@@ -179,11 +179,15 @@ const TablaProductos = ({ productos, setProductos, setProductosTabla,productosCo
     const [productoAAgregar, setProductoAAgregar] = useState({});
     const [filasTabla, setFilasTabla] = useState([]);
     const [buttonActive, setButtonActive] = useState('hidden');
+    
+    
 
-
+  
     useEffect(() =>{
         setFilasTabla(productosComprados)
     },[])
+
+
   
     useEffect(() => {
       if(Object.keys(productoAAgregar).length !== 0){
@@ -192,22 +196,31 @@ const TablaProductos = ({ productos, setProductos, setProductosTabla,productosCo
       }
      
     }, [productoAAgregar]);
+    
   
     useEffect(() => {
       setProductosTabla(filasTabla);
     }, [filasTabla, setProductosTabla]);
     
-  
+
+    const actualizarLista =()=>{
+        setProductos(productos.filter((v)=>productosComprados.filter((x)=>x._id === v._id).length===0))
+   }
+
+
+
     const agregarNuevoProducto = () => {
+      
       setFilasTabla([...filasTabla, productoAAgregar]);
       setProductos(productos.filter((v) => v._id !== productoAAgregar._id));
       setProductoAAgregar({});
       setButtonActive("hidden")  
     };
-  
-    const eliminarProducto = (prodcutoAEliminar) => {
-      setFilasTabla(filasTabla.filter((v) => v._id !== prodcutoAEliminar._id));
-      setProductos([...productos, prodcutoAEliminar]);
+   
+
+    const eliminarProducto = (productoAEliminar) => {
+      setFilasTabla(filasTabla.filter((v) => v._id !== productoAEliminar._id));
+      setProductos([...productos, productoAEliminar]);
     };
   
   
@@ -226,10 +239,11 @@ const TablaProductos = ({ productos, setProductos, setProductosTabla,productosCo
     };
   
     return (
-      <>
+      <> 
         <div className='flex w-full justify-between'>
           <label className='flex flex-col' htmlFor='produto'>
             <select
+              onClick={()=>actualizarLista()}
               className='p-2 input-border font-bold'
               value={productoAAgregar._id ?? ''}
               onChange={(e) => 
