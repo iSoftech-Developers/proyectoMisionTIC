@@ -24,7 +24,8 @@ const Siderbar =()=>{
                         <Ruta ruta="/moduloVendedores" icono="fas fa-user-tag "title="Vendedores"/>
                     </PrivateComponent>
                     <Ruta ruta="/moduloVentas" icono="far fa-list-alt"title="Ventas"/>
-                    <Ruta ruta="/productos" icono="fas fa-tshirt far"title="Productos"/> 
+                    <Ruta ruta="/productos" icono="fas fa-tshirt far"title="Productos"/>
+                    <Ruta ruta="/games" icono="fas fa-gamepad"title="Games"/>
                 </ul>
             </div>
             <div className=" mb-10">

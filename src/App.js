@@ -25,6 +25,7 @@ import {SeleccionadoContext} from './context/Seleccionado';
 import { Auth0Provider } from "@auth0/auth0-react";
 import { UsuarioConectadoContext } from './context/UsuarioConectado';
 import PrivateRoute from './components/PrivateRoute'
+import Games from './pages/Games';
 
 
 
@@ -51,7 +52,7 @@ const App =()=> {
       <Router>
         <Switch>
         <Private>
-          <Route path ={['/dashboard','/nuevaVenta','/moduloVentas','/moduloVentas/detalleVenta', '/moduloVentas/editarVenta','/moduloClientes', 'moduloClientes/nuevoCliente','/moduloClientes/detalleCliente',' /moduloClientes/paginaEditarCliente', '/productos', '/productos/detalleProducto', '/productos/nuevoProducto','/productos/actualizarProducto','/rolesUsuarios', '/rolesUsuarios/detalleUsuario','/moduloVendedores', '/moduloVendedores/detalleUsuario','/moduloVendedores/paginaEditarUsuarios','/rolesUsuarios/detalleUsuarios','/rolesUsuarios/paginaEditarUsuarios']}> 
+          <Route path ={['/dashboard','/nuevaVenta','/moduloVentas','/moduloVentas/detalleVenta', '/moduloVentas/editarVenta','/moduloClientes', 'moduloClientes/nuevoCliente','/moduloClientes/detalleCliente',' /moduloClientes/paginaEditarCliente', '/productos', '/productos/detalleProducto', '/productos/nuevoProducto','/productos/actualizarProducto','/rolesUsuarios', '/rolesUsuarios/detalleUsuario','/moduloVendedores', '/moduloVendedores/detalleUsuario','/moduloVendedores/paginaEditarUsuarios','/rolesUsuarios/detalleUsuarios','/rolesUsuarios/paginaEditarUsuarios','/games']}> 
               <Switch>
                 <Route path='/rolesUsuarios/paginaEditarUsuarios'>
                   <PrivateRoute roleList={['Administrador']}>
@@ -118,6 +119,9 @@ const App =()=> {
                 </Route>
                 <Route path='/dashboard'>
                     <Dashboard/>
+                </Route>
+                <Route path='/games'>
+                    <Games/>
                 </Route>
               </Switch>
             </Route>
