@@ -6,6 +6,8 @@ const Games = () => {
         <div className="flex flex-col w-full">
             <div className=" my-9 flex justify-center">
 
+                
+
 
                 <span className="text-2xl font-bold">Quien quiere ser millonario</span>
 
