@@ -31,7 +31,11 @@ const variableCards = {
         <UpperBarSection titlePage="Productos" nameButton="Nuevo Producto" selectorButton="/productos/nuevoProducto" vendedores= {true}/>
         <Cards variableCards={variableCards} edit={false}/>   
      </> 
-      
+
+
+
+
+       
     );
   }
   export default PaginaProductos;
